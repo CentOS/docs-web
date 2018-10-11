@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic System Recovery :: CentOS Docs Site</title>
+    <link rel="canonical" href="https://docs.centos.org/centos/install-guide/Rescue_Mode/">
+    <meta name="generator" content="Antora 1.0.1">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://docs.centos.org"><img src="https://docs.centos.org/_images/logo_small.png"></a>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="https://www.centos.org/download/">Download CentOS</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="main-wrapper">
+<div class="navigation-container" data-component="centos" data-version="master">
+  <aside class="navigation">
+    <div class="panels">
+<div class="navigation-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../">Installation Guide</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../getting-started/">Getting Started</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../downloading/">Downloading CentOS</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="../Making_Media/">Preparing Installation Media</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Making_Media_Optical/">CD or DVD</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="../Making_Media_USB/">USB Drive</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Making_Media_USB_Linux/">Making an Installation USB Drive on Linux</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Making_Media_USB_Windows/">Making an Installation USB Drive on Windows</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Making_Media_USB_Mac/">Making an Installation USB Drive on Mac</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="../Preparing_Install_Sources/">Preparing Installation Sources</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Install_Source_DVD/">Installation Source on a DVD</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Install_Source_HDD/">Installation Source on a Hard Drive</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Install_Source_Network/">Installation Source on the Network</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="../Part_Install_x86/">Installing on x86_64 and ARM 64</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Simple_Installation/">Quick Installation Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Steps-x86/">Planning for Installation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../DU-Updating_drivers_during_installation_x86/">Updating Drivers During Installation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Boot_x86/">Booting the Installation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="../Graphical_Installation-x86/">Installing Using Anaconda</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Consoles_Logs_During_Install_x86/">Consoles and Logging During the Installation</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Text_Installation_Intro-x86/">Installing in Text Mode</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Graphical_Installation_Intro-x86/">Installing in the Graphical User Interface</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../WelcomeSpoke-x86/">Welcome Screen and Language Selection</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../SummaryHub-x86/">The Installation Summary Screen</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../DateTimeSpoke-x86/">Date &amp; Time</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../LangSupportSpoke-x86/">Language Support</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../KeyboardSpoke-x86/">Keyboard Configuration</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../SecurityPolicySpoke-x86/">Security Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../SourceSpoke-x86/">Installation Source</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../NetworkSpoke-x86/">Network &amp; Hostname</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../SoftwareSpoke-x86/">Software Selection</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../StorageSpoke-x86/">Installation Destination</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../CustomSpoke-x86/">Manual Partitioning</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../FilterSpoke-x86/">Storage Devices</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../KdumpSpoke-x86/">Kdump</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Write_changes_to_disk_x86/">Begin Installation</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../ProgressHub-x86/">Installation Progress</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../PasswordSpoke-x86/">Set the Root Password</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../UserSpoke-x86/">Create a User Account</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Complete-x86/">Installation Complete</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Trouble-x86/">Troubleshooting</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="../Part_Install_ppc/">Installing on IBM Power Systems</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Steps-ppc/">Planning for Installation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../DU-Updating_drivers_during_installation_ppc/">Updating Drivers During Installation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Boot_ppc/">Booting the Installation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="../Graphical_Installation-ppc/">Installing Using Anaconda</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Consoles_Logs_During_Install_ppc/">Consoles and Logging During the Installation</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Text_Installation_Intro-ppc/">Installing in Text Mode</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Graphical_Installation_Intro-ppc/">Installing in the Graphical User Interface</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../WelcomeSpoke-ppc64/">Welcome Screen and Language Selection</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../SummaryHub-ppc64/">The Installation Summary Screen</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../DateTimeSpoke-ppc64/">Date &amp; Time</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../LangSupportSpoke-ppc64/">Language Support</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../KeyboardSpoke-ppc64/">Keyboard Configuration</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../SecurityPolicySpoke-ppc64/">Security Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../SourceSpoke-ppc64/">Installation Source</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../NetworkSpoke-ppc64/">Network &amp; Hostname</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../SoftwareSpoke-ppc64/">Software Selection</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../StorageSpoke-ppc64/">Installation Destination</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../CustomSpoke-ppc64/">Manual Partitioning</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../FilterSpoke-ppc64/">Storage Devices</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../KdumpSpoke-ppc64/">Kdump</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Write_changes_to_disk_ppc/">Begin Installation</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../ProgressHub-ppc64/">Installation Progress</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../PasswordSpoke-ppc64/">Set the Root Password</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../UserSpoke-ppc64/">Create a User Account</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Complete-ppc/">Installation Complete</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Trouble-ppc/">Troubleshooting</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="../Part_Install_Advanced/">Advanced Installation Options</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../adminoptions/">Boot Options</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../pxe-server/">Preparing for a Network Installation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../vnc-installations/">Using VNC</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../headless-installations/">Headless Systems</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Kickstart2/">Kickstart Installations</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../disk-image-install/">Installing into a Disk Image</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="../Part_After_Install/">After Installation</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../InitialSetupHub-common/">Initial Setup</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../nextsteps/">Your Next Steps</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="./">Basic System Recovery</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../uninstall/">Uninstalling CentOS</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="../Part_Appendixes/">Technical Appendixes</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Partitions-x86/">An Introduction to Disk Partitions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../iSCSI/">iSCSI Disks</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Understanding_LVM/">Understanding LVM</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../techref/">Other Technical Documentation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ext4_to_xfs_command_reference_table/">Reference Table for ext4 and XFS Commands</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../data_size_appendix/">Data Size Terminology Reference Table</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="navigation-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Installation Guide</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <span class="title">CentOS Documentation</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../docs/">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <span class="title">Installation Guide</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+  <main class="main">
+<div class="toolbar" role="navigation">
+  <button class="navigation-toggle"></button>
+  <a href="../../../docs/" class="home-link"></a>
+<nav class="crumbs" aria-label="breadcrumbs">
+  <ul>
+    <li class="crumb"><a href="../">Installation Guide</a></li>
+    <li class="crumb"><a href="../Part_After_Install/">After Installation</a></li>
+    <li class="crumb"><a href="./">Basic System Recovery</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/CentOS/docs-installation-guide/edit/7.5/modules/install-guide/pages/Rescue_Mode.adoc">Edit this Page</a></div>
+</div>
+<article class="doc">
+<h1>Basic System Recovery</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#sect-rescue-mode-common-problems">Common Problems</a>
+<ul class="sectlevel2">
+<li><a href="#sect-rescue-mode-no-boot">Unable to Boot into CentOS</a></li>
+<li><a href="#sect-rescue-mode-hardware-issues">Hardware and Software Problems</a></li>
+<li><a href="#sect-rescue-mode-reset-root-password">Resetting the Root Password</a></li>
+</ul>
+</li>
+<li><a href="#sect-rescue-mode">Anaconda Rescue Mode</a>
+<ul class="sectlevel2">
+<li><a href="#sect-rescue-reinstall-grub2">Reinstalling the Boot Loader</a></li>
+<li><a href="#sect-rescue-driver-add-remove-replace">Using RPM to Add, Remove, or Replace a Driver</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>When things go wrong, there are ways to fix problems. However, these methods require that you understand the system well. This chapter contains information on common problems you might face and it also describes <em>installation program rescue mode</em>, which can be used to fix these problems.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sect-rescue-mode-common-problems"><a class="anchor" href="#sect-rescue-mode-common-problems"></a>Common Problems</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You might need to boot into installation program rescue mode for any of the following reasons:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You are unable to boot into CentOS normally.</p>
+</li>
+<li>
+<p>You are having hardware or software problems, and you want to recover data from your system&#8217;s hard drive.</p>
+</li>
+<li>
+<p>You forgot the root password.</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="sect-rescue-mode-no-boot"><a class="anchor" href="#sect-rescue-mode-no-boot"></a>Unable to Boot into CentOS</h3>
+<div class="paragraph">
+<p>This problem is often caused by the installation of another operating system after you have installed CentOS. Some other operating systems assume that you have no other operating system(s) on your computer. They overwrite the Master Boot Record (MBR) that originally contained the GRUB2 boot loader. If the boot loader is overwritten in this manner, you cannot boot CentOS unless you can boot into installation program rescue mode and reconfigure the boot loader.</p>
+</div>
+<div class="paragraph">
+<p>Another common problem occurs when using a partitioning tool to resize a partition or create a new partition from free space after installation, and it changes the order of your partitions. If the partition number of your <code>/</code> partition changes, the boot loader might not be able to find it to mount the partition. To fix this problem, you will need to reinstall the boot loader. See <a href="#sect-rescue-reinstall-grub2">Reinstalling the Boot Loader</a> for instructions on how to do this.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-rescue-mode-hardware-issues"><a class="anchor" href="#sect-rescue-mode-hardware-issues"></a>Hardware and Software Problems</h3>
+<div class="paragraph">
+<p>This category includes a wide variety of different situations. Two examples include failing hard drives and specifying an invalid root device or kernel in the boot loader configuration file. If either of these occur, you might not be able to reboot into CentOS. However, if you boot into installation program rescue mode, you might be able to resolve the problem or at least get copies of your most important files.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-rescue-mode-reset-root-password"><a class="anchor" href="#sect-rescue-mode-reset-root-password"></a>Resetting the Root Password</h3>
+<div class="paragraph">
+<p>See the corresponding section in the <em class="citetitle"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/System_Administrators_Guide/sec-Terminal_Menu_Editing_During_Boot.html#sec-Changing_and_Resetting_the_Root_Password">Red&#160;Hat Enterprise&#160;Linux&#160;7 System Administrator&#8217;s Guide</a></em>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sect-rescue-mode"><a class="anchor" href="#sect-rescue-mode"></a>Anaconda Rescue Mode</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <strong class="application">Anaconda</strong> installation program&#8217;s rescue mode is a minimal Linux environment that can be booted from the CentOS&#160;7.5.1804 DVD or other boot media. It contains command-line utilities for repairing a wide variety of issues. This rescue mode can be accessed from the Troubleshooting submenu of the boot menu. In this mode, you can mount file systems as read-only or even to not mount them at all, blacklist or add a driver provided on a driver disc, install or upgrade system packages, or manage partitions.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p><strong class="application">Anaconda</strong> rescue mode is different from <em>rescue mode</em> (an equivalent to <em>single-user mode</em>) and <em>emergency mode</em>, which are provided as parts of the <strong class="application">systemd</strong> system and service manager. For more information about these modes, see <a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/System_Administrators_Guide/index.html">Red&#160;Hat Enterprise&#160;Linux&#160;7 System Administrator&#8217;s Guide</a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>To boot into <strong class="application">Anaconda</strong> rescue mode, you must be able to boot the system using one CentOS boot media, such as a minimal boot disc or USB drive, or a full installation DVD.</p>
+</div>
+<div class="paragraph">
+<p>For detailed information about booting the system using media provided by CentOS, see the appropriate chapters:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="../Boot_x86/#chap-booting-installer-x86" class="page">Booting the Installation on 64-bit AMD, Intel, and ARM systems</a> for 64-bit AMD, Intel, and ARM systems</p>
+</li>
+<li>
+<p><a href="../Boot_ppc/#chap-booting-installer-ppc" class="page">Booting the Installation on IBM Power&#160;Systems</a> for IBM Power&#160;Systems servers</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Advanced storage, such as iSCSI or zFCP devices, must be configured using <code>dracut</code> boot options such as <code class="option">rd.zfcp=</code> or <code class="option">root=iscsi:<em>options</em></code>. It is not possible to configure these storage devices interactively after booting into rescue mode.</p>
+</div>
+<div class="paragraph">
+<p>For information about <code>dracut</code> boot options, see the <code>dracut.cmdline(7)</code> man page.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="proc-booting-into-installer-rescue-mode" class="olist arabic">
+<div class="title">Booting into Anaconda Rescue Mode</div>
+<ol class="arabic">
+<li>
+<p>Boot the system from either minimal boot media, or a full installation DVD or USB drive, and wait for the boot menu to appear.</p>
+</li>
+<li>
+<p>From the boot menu, either select the Rescue a CentOS system option from the Troubleshooting submenu, or append the <code class="option">inst.rescue</code> option to the boot command line. To enter the boot command line, press the <kbd>Tab</kbd> key on BIOS-based systems or the <kbd>e</kbd> key on the UEFI-based systems.</p>
+</li>
+<li>
+<p>If your system requires a third-party driver provided on a <em>driver disc</em> to boot, append the <code class="option">inst.dd=<em>driver_name</em></code> to the boot command line:</p>
+<div class="literalblock">
+<div class="content">
+<pre>inst.rescue inst.dd=driver_name</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For more information on using a driver disc at boot time, see <a href="../DU-Updating_drivers_during_installation_x86/#sect-driver-updates-manual-x86" class="page">Manual Driver Update (x86)</a> for AMD64 and Intel&#160;64 systems or <a href="../DU-Updating_drivers_during_installation_ppc/#sect-driver-updates-manual-ppc" class="page">Manual Driver Update (ppc)</a> for IBM Power&#160;Systems servers.</p>
+</div>
+</li>
+<li>
+<p>If a driver that is part of the CentOS&#160;7.5.1804 distribution prevents the system from booting, append the <code class="option">modprobe.blacklist=</code> option to the boot command line:</p>
+<div class="literalblock">
+<div class="content">
+<pre>inst.rescue modprobe.blacklist=driver_name</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For more information about blacklisting drivers, see <a href="../DU-Updating_drivers_during_installation_x86/#sect-blacklisting-a-driver-x86" class="page">Blacklisting a Driver (x86)</a>.</p>
+</div>
+</li>
+<li>
+<p>When ready, press <kbd>Enter</kbd> (BIOS-based systems) or <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>X</kbd></span> (UEFI-based systems) to boot the modified option. Then wait until the following message is displayed:</p>
+<div class="literalblock">
+<div class="content">
+<pre>The rescue environment will now attempt to find your Linux installation and mount it under the <code>/mnt/sysimage/</code> directory. You can then make any changes required to your system. If you want to proceed with this step choose 'Continue'. You can also choose to mount your file systems read-only instead of read-write by choosing 'Read-only'. If for some reason this process fails you can choose 'Skip' and this step will be skipped and you will go directly to a command line.</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you select <b class="button">Continue</b>, it attempts to mount your file system under the directory <code>/mnt/sysimage/</code>. If it fails to mount a partition, you will be notified. If you select <b class="button">Read-Only</b>, it attempts to mount your file system under the directory <code>/mnt/sysimage/</code>, but in read-only mode. If you select <b class="button">Skip</b>, your file system is not mounted. Choose <b class="button">Skip</b> if you think your file system is corrupted.</p>
+</div>
+</li>
+<li>
+<p>Once you have your system in rescue mode, a prompt appears on VC (virtual console) 1 and VC 2 (use the <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>F1</kbd></span> key combination to access VC 1 and <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>F2</kbd></span> to access VC 2):</p>
+<div class="literalblock">
+<div class="content">
+<pre><code>sh-4.2#</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Even if your file system is mounted, the default root partition while in <strong class="application">Anaconda</strong> rescue mode is a temporary root partition, not the root partition of the file system used during normal user mode (<code>multi-user.target</code> or <code>graphical.target</code>). If you selected to mount your file system and it mounted successfully, you can change the root partition of the <strong class="application">Anaconda</strong> rescue mode environment to the root partition of your file system by executing the following command:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre><code>sh-4.2#</code> chroot /mnt/sysimage</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This is useful if you need to run commands, such as <code class="command">rpm</code>, that require your root partition to be mounted as <code>/</code>. To exit the <code class="command">chroot</code> environment, type <code class="command">exit</code> to return to the prompt.</p>
+</div>
+<div class="paragraph">
+<p>If you selected <b class="button">Skip</b>, you can still try to mount a partition or LVM2 logical volume manually inside <strong class="application">Anaconda</strong> rescue mode by creating a directory, such as <code><em>/directory/</em></code>, and typing the following command:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre><code>sh-4.2#</code> mount -t xfs /dev/mapper/VolGroup00-LogVol02 /directory</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In the above command, <code><em>/directory/</em></code> is a directory that you have created and <code class="command"><em>/dev/mapper/VolGroup00-LogVol02</em></code> is the LVM2 logical volume you want to mount. If the partition is a different type than XFS, replace the <em>xfs</em> string with the correct type (such as <code>ext4</code>).</p>
+</div>
+<div class="paragraph">
+<p>If you do not know the names of all physical partitions, use the following command to list them:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre><code>sh-4.2#</code> fdisk -l</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you do not know the names of all LVM2 physical volumes, volume groups, or logical volumes, use the <code class="command">pvdisplay</code>, <code class="command">vgdisplay</code> or <code class="command">lvdisplay</code> commands, respectively.</p>
+</div>
+<div class="paragraph">
+<p>From the prompt, you can run many useful commands, such as:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code class="command">ssh</code>, <code class="command">scp</code>, and <code class="command">ping</code> if the network is started</p>
+<div class="paragraph">
+<p>For details, see the <em class="citetitle"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/System_Administrators_Guide/s1-ssh-clients.html">Red&#160;Hat Enterprise&#160;Linux&#160;7 System Administrator&#8217;s Guide</a></em>.</p>
+</div>
+</li>
+<li>
+<p><code class="command">dump</code> and <code class="command">restore</code> for users with tape drives</p>
+</li>
+<li>
+<p><code class="command">parted</code> and <code class="command">fdisk</code> for managing partitions</p>
+<div class="paragraph">
+<p>For details, see the <em class="citetitle"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Storage_Administration_Guide/ch-partitions.html">Red&#160;Hat Enterprise&#160;Linux&#160;7 Storage Administration Guide</a></em>.</p>
+</div>
+</li>
+<li>
+<p><code class="command">rpm</code> for installing or upgrading software</p>
+<div class="paragraph">
+<p>For details, see the <em class="citetitle"><a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/System_Administrators_Guide/ch-RPM.html">Red&#160;Hat Enterprise&#160;Linux&#160;7 Administrator&#8217;s Guide</a></em></p>
+</div>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="sect-rescue-reinstall-grub2"><a class="anchor" href="#sect-rescue-reinstall-grub2"></a>Reinstalling the Boot Loader</h3>
+<div class="paragraph">
+<p>In some cases, the GRUB2 boot loader can mistakenly be deleted, corrupted, or replaced by other operating systems. The following steps detail the process on how GRUB is reinstalled on the master boot record:</p>
+</div>
+<div id="proc-rescue-reinstalling-GRUB2" class="olist arabic">
+<div class="title">Reinstalling the GRUB2 Boot Loader</div>
+<ol class="arabic">
+<li>
+<p>Follow instructions in <a href="#proc-booting-into-installer-rescue-mode">Booting into Anaconda Rescue Mode</a> to boot into <strong class="application">Anaconda</strong> rescue mode. Ensure that you mount the installed system&#8217;s <code>/</code> (root) partition in read-write mode.</p>
+</li>
+<li>
+<p>Change the root partition:</p>
+<div class="literalblock">
+<div class="content">
+<pre><code>sh-4.2#</code> chroot /mnt/sysimage/</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Use the following command to reinstall the GRUB2 boot loader, where <em>install_device</em> is the boot device (typically, /dev/sda):</p>
+<div class="literalblock">
+<div class="content">
+<pre><code>sh-4.2#</code> /sbin/grub2-install install_device</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Reboot the system.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-rescue-driver-add-remove-replace"><a class="anchor" href="#sect-rescue-driver-add-remove-replace"></a>Using RPM to Add, Remove, or Replace a Driver</h3>
+<div class="paragraph">
+<p>Missing or malfunctioning drivers can cause problems when booting the system. <strong class="application">Anaconda</strong> rescue mode provides an environment in which you can add, remove, or replace a driver even when the system fails to boot. Wherever possible, we recommend that you use the <strong class="application">RPM</strong> package manager to remove malfunctioning drivers or to add updated or missing drivers.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>When you install a driver from a driver disc, the driver disc updates all initramfs images on the system to use this driver. If a problem with a driver prevents a system from booting, you cannot rely on booting the system from another initramfs image.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="proc-rescue-remove-drivers" class="olist arabic">
+<div class="title">Using RPM to Remove a Driver</div>
+<ol class="arabic">
+<li>
+<p>Boot the system into <strong class="application">Anaconda</strong> rescue mode. Follow the instructions in <a href="#proc-booting-into-installer-rescue-mode">Booting into Anaconda Rescue Mode</a>. Ensure that you mount the installed system in read-write mode.</p>
+</li>
+<li>
+<p>Change the root directory to <code>/mnt/sysimage/</code>:</p>
+<div class="literalblock">
+<div class="content">
+<pre><code>sh-4.2#</code> chroot /mnt/sysimage/</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Use the <code class="command">rpm -e</code> command to remove the driver package. For example, to remove the <strong class="package">xorg-x11-drv-wacom</strong> driver package, run:</p>
+<div class="literalblock">
+<div class="content">
+<pre><code>sh-4.2#</code> rpm -e xorg-x11-drv-wacom</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Exit the chroot environment:</p>
+<div class="literalblock">
+<div class="content">
+<pre><code>sh-4.2#</code> exit</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>If you cannot remove a malfunctioning driver for some reason, you can instead <em>blacklist</em> the driver so that it does not load at boot time. See <a href="../DU-Updating_drivers_during_installation_x86/#sect-blacklisting-a-driver-x86" class="page">Blacklisting a Driver (x86)</a> and <a href="../adminoptions/#chap-anaconda-boot-options" class="page">Boot Options</a> for more information about blacklisting drivers.</p>
+</div>
+<div class="paragraph">
+<p>Installing a driver is a similar process but the RPM package must be available on the system:</p>
+</div>
+<div id="proc-installing-a-driver-from-an-RPM-package" class="olist arabic">
+<div class="title">Installing a Driver from an RPM package</div>
+<ol class="arabic">
+<li>
+<p>Boot the system into <strong class="application">Anaconda</strong> rescue mode. Follow the instructions in <a href="#proc-booting-into-installer-rescue-mode">Booting into Anaconda Rescue Mode</a>. Do <em>not</em> choose to mount the installed system as read only.</p>
+</li>
+<li>
+<p>Make the RPM package that contains the driver available. For example, mount a CD or USB flash drive and copy the RPM package to a location of your choice under <code>/mnt/sysimage/</code>, for example: <code>/mnt/sysimage/root/drivers/</code></p>
+</li>
+<li>
+<p>Change the root directory to <code>/mnt/sysimage/</code>:</p>
+<div class="literalblock">
+<div class="content">
+<pre><code>sh-4.2#</code> chroot /mnt/sysimage/</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Use the <code class="command">rpm -ivh</code> command to install the driver package. For example, to install the <strong class="package">xorg-x11-drv-wacom</strong> driver package from <code>/root/drivers/</code>, run:</p>
+<div class="literalblock">
+<div class="content">
+<pre><code>sh-4.2#</code> rpm -­ivh /root/drivers/xorg-x11-drv-wacom-0.23.0-6.el7.x86_64.rpm</pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The <code>/root/drivers/</code> directory in this chroot environment is the <code>/mnt/sysimage/root/drivers/</code> directory in the original rescue environment.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Exit the chroot environment:</p>
+<div class="literalblock">
+<div class="content">
+<pre><code>sh-4.2#</code> exit</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>When you have finished removing and installing drivers, reboot the system.</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script src="../../../_/js/vendor/highlight.js"></script>
+<script>hljs.initHighlighting()</script>
+  </body>
+</html>

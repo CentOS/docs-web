@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Installation Source on a Network :: CentOS Docs Site</title>
+    <link rel="canonical" href="https://docs.centos.org/centos/install-guide/Install_Source_Network/">
+    <meta name="generator" content="Antora 1.0.1">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://docs.centos.org"><img src="https://docs.centos.org/_images/logo_small.png"></a>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="https://www.centos.org/download/">Download CentOS</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="main-wrapper">
+<div class="navigation-container" data-component="centos" data-version="master">
+  <aside class="navigation">
+    <div class="panels">
+<div class="navigation-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../">Installation Guide</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../getting-started/">Getting Started</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../downloading/">Downloading CentOS</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="../Making_Media/">Preparing Installation Media</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Making_Media_Optical/">CD or DVD</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="../Making_Media_USB/">USB Drive</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Making_Media_USB_Linux/">Making an Installation USB Drive on Linux</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Making_Media_USB_Windows/">Making an Installation USB Drive on Windows</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Making_Media_USB_Mac/">Making an Installation USB Drive on Mac</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="../Preparing_Install_Sources/">Preparing Installation Sources</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Install_Source_DVD/">Installation Source on a DVD</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Install_Source_HDD/">Installation Source on a Hard Drive</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="./">Installation Source on the Network</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="../Part_Install_x86/">Installing on x86_64 and ARM 64</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Simple_Installation/">Quick Installation Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Steps-x86/">Planning for Installation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../DU-Updating_drivers_during_installation_x86/">Updating Drivers During Installation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Boot_x86/">Booting the Installation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="../Graphical_Installation-x86/">Installing Using Anaconda</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Consoles_Logs_During_Install_x86/">Consoles and Logging During the Installation</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Text_Installation_Intro-x86/">Installing in Text Mode</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Graphical_Installation_Intro-x86/">Installing in the Graphical User Interface</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../WelcomeSpoke-x86/">Welcome Screen and Language Selection</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../SummaryHub-x86/">The Installation Summary Screen</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../DateTimeSpoke-x86/">Date &amp; Time</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../LangSupportSpoke-x86/">Language Support</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../KeyboardSpoke-x86/">Keyboard Configuration</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../SecurityPolicySpoke-x86/">Security Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../SourceSpoke-x86/">Installation Source</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../NetworkSpoke-x86/">Network &amp; Hostname</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../SoftwareSpoke-x86/">Software Selection</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../StorageSpoke-x86/">Installation Destination</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../CustomSpoke-x86/">Manual Partitioning</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../FilterSpoke-x86/">Storage Devices</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../KdumpSpoke-x86/">Kdump</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Write_changes_to_disk_x86/">Begin Installation</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../ProgressHub-x86/">Installation Progress</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../PasswordSpoke-x86/">Set the Root Password</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../UserSpoke-x86/">Create a User Account</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Complete-x86/">Installation Complete</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Trouble-x86/">Troubleshooting</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="../Part_Install_ppc/">Installing on IBM Power Systems</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Steps-ppc/">Planning for Installation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../DU-Updating_drivers_during_installation_ppc/">Updating Drivers During Installation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Boot_ppc/">Booting the Installation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="../Graphical_Installation-ppc/">Installing Using Anaconda</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Consoles_Logs_During_Install_ppc/">Consoles and Logging During the Installation</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Text_Installation_Intro-ppc/">Installing in Text Mode</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Graphical_Installation_Intro-ppc/">Installing in the Graphical User Interface</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../WelcomeSpoke-ppc64/">Welcome Screen and Language Selection</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../SummaryHub-ppc64/">The Installation Summary Screen</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../DateTimeSpoke-ppc64/">Date &amp; Time</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../LangSupportSpoke-ppc64/">Language Support</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../KeyboardSpoke-ppc64/">Keyboard Configuration</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../SecurityPolicySpoke-ppc64/">Security Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../SourceSpoke-ppc64/">Installation Source</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../NetworkSpoke-ppc64/">Network &amp; Hostname</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../SoftwareSpoke-ppc64/">Software Selection</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../StorageSpoke-ppc64/">Installation Destination</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../CustomSpoke-ppc64/">Manual Partitioning</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../FilterSpoke-ppc64/">Storage Devices</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../KdumpSpoke-ppc64/">Kdump</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Write_changes_to_disk_ppc/">Begin Installation</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../ProgressHub-ppc64/">Installation Progress</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../PasswordSpoke-ppc64/">Set the Root Password</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../UserSpoke-ppc64/">Create a User Account</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Complete-ppc/">Installation Complete</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Trouble-ppc/">Troubleshooting</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="../Part_Install_Advanced/">Advanced Installation Options</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../adminoptions/">Boot Options</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../pxe-server/">Preparing for a Network Installation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../vnc-installations/">Using VNC</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../headless-installations/">Headless Systems</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Kickstart2/">Kickstart Installations</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../disk-image-install/">Installing into a Disk Image</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="../Part_After_Install/">After Installation</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../InitialSetupHub-common/">Initial Setup</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../nextsteps/">Your Next Steps</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Rescue_Mode/">Basic System Recovery</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../uninstall/">Uninstalling CentOS</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="../Part_Appendixes/">Technical Appendixes</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Partitions-x86/">An Introduction to Disk Partitions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../iSCSI/">iSCSI Disks</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Understanding_LVM/">Understanding LVM</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../techref/">Other Technical Documentation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ext4_to_xfs_command_reference_table/">Reference Table for ext4 and XFS Commands</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../data_size_appendix/">Data Size Terminology Reference Table</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="navigation-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Installation Guide</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <span class="title">CentOS Documentation</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../docs/">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <span class="title">Installation Guide</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+  <main class="main">
+<div class="toolbar" role="navigation">
+  <button class="navigation-toggle"></button>
+  <a href="../../../docs/" class="home-link"></a>
+<nav class="crumbs" aria-label="breadcrumbs">
+  <ul>
+    <li class="crumb"><a href="../">Installation Guide</a></li>
+    <li class="crumb"><a href="../Making_Media/">Preparing Installation Media</a></li>
+    <li class="crumb"><a href="../Preparing_Install_Sources/">Preparing Installation Sources</a></li>
+    <li class="crumb"><a href="./">Installation Source on the Network</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/CentOS/docs-installation-guide/edit/7.5/modules/install-guide/pages/Install_Source_Network.adoc">Edit this Page</a></div>
+</div>
+<article class="doc">
+<h1>Installation Source on a Network</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#sect-making-media-sources-nfs">Installation Source on an NFS Server</a></li>
+<li><a href="#sect-making-media-sources-http-ftp">Installation Source on an HTTP, HTTPS or FTP Server</a></li>
+<li><a href="#sect-making-media-sources-firewall">Firewall Considerations for Network-based Installations</a></li>
+</ul>
+</div>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Placing the installation source on a network has the advantage of allowing you to install multiple systems from a single source, without having to connect and disconnect any physical media. Network-based installations can be especially useful when used together with a TFTP server, which allows you to boot the installation program from the network as well. This approach completely eliminates the need for creating physical media, allowing easy deployment of CentOS on multiple systems at the same time. For further information about setting up a TFTP server, see <a href="../pxe-server/#chap-installation-server-setup" class="page">Preparing for a Network Installation</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sect-making-media-sources-nfs"><a class="anchor" href="#sect-making-media-sources-nfs"></a>Installation Source on an NFS Server</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <code>NFS</code> installation method uses an ISO image of the CentOS binary DVD placed in a <code>Network File System</code> server&#8217;s <em>exported directory</em>, which the installation system must be able to read. To perform an NFS-based installation, you will need another running system which will act as the NFS host.</p>
+</div>
+<div class="paragraph">
+<p>For more information about NFS servers, see the <a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Storage_Administration_Guide/index.html">Red&#160;Hat Enterprise&#160;Linux&#160;7 Storage Administration Guide</a>.</p>
+</div>
+<div class="paragraph">
+<p>The following procedure is only meant as a basic outline of the process. The precise steps you must take to set up an NFS server will vary based on the system&#8217;s architecture, operating system, package manager, service manager, and other factors. On CentOS&#160;7.5.1804 systems, the procedure can be followed exactly as documented. For procedures describing the installation source creation process on earlier releases of CentOS, see the appropriate <em class="citetitle">Installation Guide</em> for that release.</p>
+</div>
+<div id="proc-installation-server-setup-nfs" class="olist arabic">
+<div class="title">Preparing for Installation Using NFS</div>
+<ol class="arabic">
+<li>
+<p>Install the <strong class="package">nfs-utils</strong> package by running the following command as <code>root</code>:</p>
+<div class="literalblock">
+<div class="content">
+<pre><code>#</code> yum install nfs-utils</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Copy the full CentOS&#160;7.5.1804 binary DVD ISO image to a suitable directory on the NFS server. For example, you can create directory <code>/CentOS-install/</code> for this purpose and save the ISO image here.</p>
+</li>
+<li>
+<p>Open the <code>/etc/exports</code> file using a text editor and add a line with the following syntax:</p>
+<div class="literalblock">
+<div class="content">
+<pre><em>/exported_directory/</em> <em>clients</em></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Replace <em>/exported_directory/</em> with the full path to the directory holding the ISO image. Instead of <em>clients</em>, use the host name or IP address of the computer which is to be installed from this NFS server, the subnetwork from which all computers are to have access the ISO image, or the asterisk sign (<code>*</code>) if you want to allow any computer with network access to the NFS server to use the ISO image. See the <code>exports(5)</code> man page for detailed information about the format of this field.</p>
+</div>
+<div class="paragraph">
+<p>The following is a basic configuration which makes the <code>/CentOS-install/</code> directory available as read-only to all clients:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>/CentOS-install *</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Save the <code>/etc/exports</code> file after finishing the configuration and exit the text editor.</p>
+</li>
+<li>
+<p>Start the <code>nfs</code> service:</p>
+<div class="literalblock">
+<div class="content">
+<pre><code>#</code> <code class="command">systemctl start nfs.service</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If the service was already running before you changed the <code>/etc/exports</code> file, enter the following command instead, in order for the running NFS server to reload its configuration:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre><code>#</code> <code class="command">systemctl reload nfs.service</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>After completing the procedure above, the ISO image is accessible over <code>NFS</code> and ready to be used as an installation source.</p>
+</div>
+<div class="paragraph">
+<p>When configuring the installation source before or during the installation, use <code>nfs:</code> as the protocol, the server&#8217;s host name or IP address, the colon sign (<code>:</code>), and the directory holding the ISO image. For example, if the server&#8217;s host name is <code>myserver.example.com</code> and you have saved the ISO image in <code>/CentOS-install/</code>, specify <code>nfs:myserver.example.com:/CentOS-install/</code> as the installation source.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sect-making-media-sources-http-ftp"><a class="anchor" href="#sect-making-media-sources-http-ftp"></a>Installation Source on an HTTP, HTTPS or FTP Server</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This installation method allows for a network-based installation using an installation tree, which is a directory containing extracted contents of the binary DVD ISO image and a valid <code>.treeinfo</code> file. The installation source is accessed over <code>HTTP</code>, <code>HTTPS</code>, or <code>FTP</code>.</p>
+</div>
+<div class="paragraph">
+<p>For more information about HTTP and FTP servers, see the <a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/System_Administrators_Guide/index.html">CentOS&#160;7 System Administrator&#8217;s Guide</a>.</p>
+</div>
+<div class="paragraph">
+<p>The following procedure is only meant as a basic outline of the process. The precise steps you must take to set up an FTP server will vary based on the system&#8217;s architecture, operating system, package manager, service manager, and other factors. On CentOS&#160;7.5.1804 systems, the procedure can be followed exactly as documented. For procedures describing the installation source creation process on earlier releases of CentOS, see the appropriate <em class="citetitle">Installation Guide</em> for that release.</p>
+</div>
+<div id="proc-installation-server-setup-http" class="olist arabic">
+<div class="title">Preparing Installation Using HTTP or HTTPS</div>
+<ol class="arabic">
+<li>
+<p>Install the <strong class="package">httpd</strong> package by running the following command as <code>root</code>:</p>
+<div class="literalblock">
+<div class="content">
+<pre><code>#</code> <code class="command">yum install httpd</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>An <code>HTTPS</code> server needs additional configuration. For detailed information, see section <a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/System_Administrators_Guide/ch-Web_Servers.html#s2-apache-mod_ssl">Setting Up an SSL Server</a> in the Red&#160;Hat Enterprise&#160;Linux&#160;7 System Administrator&#8217;s Guide. However, <code>HTTPS</code> is not necessary in most cases, because no sensitive data is sent between the installation source and the installer, and <code>HTTP</code> is sufficient.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If your <strong class="application">Apache</strong> web server configuration enables SSL security, make sure to only enable the <code>TLSv1</code> protocol, and disable <code>SSLv2</code> and <code>SSLv3</code>. This is due to the POODLE SSL vulnerability (CVE-2014-3566). See <a href="https://access.redhat.com/solutions/1232413" class="bare">https://access.redhat.com/solutions/1232413</a> for details.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If you decide to use <code>HTTPS</code> and the server is using a self-signed certificate, you must boot the installer with the <code class="option">noverifyssl</code> option.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Copy the full CentOS&#160;7.5.1804 binary DVD ISO image to the HTTP(S) server.</p>
+</li>
+<li>
+<p>Mount the binary DVD ISO image, using the <code class="command">mount</code> command, to a suitable directory:</p>
+<div class="literalblock">
+<div class="content">
+<pre><code>#</code> <code class="command">mount -o loop,ro -t iso9660 /image_directory/image.iso /mount_point/</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Replace <em>/image_directory/image.iso</em> with the path to the binary DVD ISO image, and <em>/mount_point/</em> with the path to the directory in which you want the content of the ISO image to appear. For example, you can create directory <code>/mnt/CentOS-install/</code> for this purpose and use that as the parameter of the <code class="command">mount</code> command.</p>
+</div>
+</li>
+<li>
+<p>Copy the files from the mounted image to the HTTP server root.</p>
+<div class="literalblock">
+<div class="content">
+<pre><code>#</code> <code class="command">cp -r /mnt/CentOS-install/ /var/www/html/</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This command creates the <code>/var/www/html/CentOS-install/</code> directory with the content of the image.</p>
+</div>
+</li>
+<li>
+<p>Start the <code>httpd</code> service:</p>
+<div class="literalblock">
+<div class="content">
+<pre><code>#</code> <code class="command">systemctl start httpd.service</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>After completing the procedure above, the installation tree is accessible and ready to be used as the installation source.</p>
+</div>
+<div class="paragraph">
+<p>When configuring the installation source before or during the installation, use <code>http://</code> or <code>https://</code> as the protocol, the server&#8217;s host name or IP address, and the directory in which you have stored the files from the ISO image, relative to the HTTP server root. For example, if you are using <code>HTTP</code>, the server&#8217;s host name is <code>myserver.example.com</code>, and you have copied the files from the image to <code>/var/www/html/CentOS-install/</code>, specify <code><a href="http://myserver.example.com/CentOS-install/" class="bare">http://myserver.example.com/CentOS-install/</a></code> as the installation source.</p>
+</div>
+<div id="proc-installation-server-setup-ftp" class="olist arabic">
+<div class="title">Preparing for Installation Using FTP</div>
+<ol class="arabic">
+<li>
+<p>Install the <strong class="package">vsftpd</strong> package by running the following command as <code>root</code>:</p>
+<div class="literalblock">
+<div class="content">
+<pre><code>#</code> <code class="command">yum install vsftpd</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Optionally, open the <code>/etc/vsftpd/vsftpd.conf</code> configuration file in a text editor, and edit any options you want to change. For available options, see the <code>vsftpd.conf(5)</code> man page. The rest of this procedure assumes that default options are used; notably, to follow the rest of the procedure, anonymous users of the FTP server must be permitted to download files.</p>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If you configured SSL/TLS security in your <code>vsftpd.conf</code> file, make sure to only enable the <code>TLSv1</code> protocol, and disable <code>SSLv2</code> and <code>SSLv3</code>. This is due to the POODLE SSL vulnerability (CVE-2014-3566). See <a href="https://access.redhat.com/solutions/1234773" class="bare">https://access.redhat.com/solutions/1234773</a> for details.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Copy the full CentOS&#160;7.5.1804 binary DVD ISO image to the FTP server.</p>
+</li>
+<li>
+<p>Mount the binary DVD ISO image, using the <code class="command">mount</code> command, to a suitable directory:</p>
+<div class="literalblock">
+<div class="content">
+<pre><code>#</code> <code class="command">mount -o loop,ro -t iso9660 /image_directory/image.iso /mount_point</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Replace <em>/image_directory/image.iso</em> with the path to the binary DVD ISO image, and <em>/mount_point</em> with the path to the directory in which you want the content of the ISO image to appear. For example, you can create directory <code>/mnt/CentOS-install/</code> for this purpose and use that as the parameter of the <code class="command">mount</code> command.</p>
+</div>
+</li>
+<li>
+<p>Copy the files from the mounted image to the FTP server root:</p>
+<div class="literalblock">
+<div class="content">
+<pre><code>#</code> <code class="command">cp -r /mnt/CentOS-install/ /var/ftp/</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This command creates the <code>/var/ftp/CentOS-install/</code> directory with the content of the image.</p>
+</div>
+</li>
+<li>
+<p>Start the <code>vsftpd</code> service:</p>
+<div class="literalblock">
+<div class="content">
+<pre><code>#</code> <code class="command">systemctl start vsftpd.service</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If the service was already running before you changed the <code>/etc/vsftpd/vsftpd.conf</code> file, restart it to ensure the edited file is loaded. To restart, execute the following command:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre><code>#</code> <code class="command">systemctl restart vsftpd.service</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>After completing the procedure above, the installation tree is accessible and ready to be used as the installation source.</p>
+</div>
+<div class="paragraph">
+<p>When configuring the installation source before or during the installation, use <code>ftp://</code> as the protocol, the server&#8217;s host name or IP address, and the directory in which you have stored the files from the ISO image, relative to the FTP server root. For example, if the server&#8217;s host name is <code>myserver.example.com</code> and you have copied the files from the image to <code>/var/ftp/CentOS-install/</code>, specify <code><a href="ftp://myserver.example.com/CentOS-install/" class="bare">ftp://myserver.example.com/CentOS-install/</a></code> as the installation source.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sect-making-media-sources-firewall"><a class="anchor" href="#sect-making-media-sources-firewall"></a>Firewall Considerations for Network-based Installations</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When using a network-based installation source, make sure that your firewall allows the server you are installing to access the remote installation source. The following table shows which ports must be open for each type of network-based installation</p>
+</div>
+<table id="tabl-making-media-sources-firewall-ports" class="tableblock frame-all grid-all spread">
+<caption class="title">Table 1. Ports Used by Network Protocols</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Protocol used</th>
+<th class="tableblock halign-left valign-top">Ports to open</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>FTP</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>21</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>HTTP</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>80</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>HTTPS</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>443</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>NFS</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>2049</code>, <code>111</code>, <code>20048</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>TFTP</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>69</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>For information about opening specific firewall ports, see the <a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Security_Guide/index.html">Red&#160;Hat Enterprise&#160;Linux&#160;7 Security Guide</a>.</p>
+</div>
+</div>
+</div>
+</article>
+  </main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script src="../../../_/js/vendor/highlight.js"></script>
+<script>hljs.initHighlighting()</script>
+  </body>
+</html>

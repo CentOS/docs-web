@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual Partitioning :: CentOS Docs Site</title>
+    <link rel="canonical" href="https://docs.centos.org/centos/install-guide/CustomSpoke-x86/">
+    <meta name="generator" content="Antora 1.0.1">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://docs.centos.org"><img src="https://docs.centos.org/_images/logo_small.png"></a>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="https://www.centos.org/download/">Download CentOS</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="main-wrapper">
+<div class="navigation-container" data-component="centos" data-version="master">
+  <aside class="navigation">
+    <div class="panels">
+<div class="navigation-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../">Installation Guide</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../getting-started/">Getting Started</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../downloading/">Downloading CentOS</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="../Making_Media/">Preparing Installation Media</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Making_Media_Optical/">CD or DVD</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="../Making_Media_USB/">USB Drive</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Making_Media_USB_Linux/">Making an Installation USB Drive on Linux</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Making_Media_USB_Windows/">Making an Installation USB Drive on Windows</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Making_Media_USB_Mac/">Making an Installation USB Drive on Mac</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="../Preparing_Install_Sources/">Preparing Installation Sources</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Install_Source_DVD/">Installation Source on a DVD</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Install_Source_HDD/">Installation Source on a Hard Drive</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Install_Source_Network/">Installation Source on the Network</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="../Part_Install_x86/">Installing on x86_64 and ARM 64</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Simple_Installation/">Quick Installation Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Steps-x86/">Planning for Installation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../DU-Updating_drivers_during_installation_x86/">Updating Drivers During Installation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Boot_x86/">Booting the Installation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="../Graphical_Installation-x86/">Installing Using Anaconda</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Consoles_Logs_During_Install_x86/">Consoles and Logging During the Installation</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Text_Installation_Intro-x86/">Installing in Text Mode</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Graphical_Installation_Intro-x86/">Installing in the Graphical User Interface</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../WelcomeSpoke-x86/">Welcome Screen and Language Selection</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../SummaryHub-x86/">The Installation Summary Screen</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../DateTimeSpoke-x86/">Date &amp; Time</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../LangSupportSpoke-x86/">Language Support</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../KeyboardSpoke-x86/">Keyboard Configuration</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../SecurityPolicySpoke-x86/">Security Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../SourceSpoke-x86/">Installation Source</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../NetworkSpoke-x86/">Network &amp; Hostname</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../SoftwareSpoke-x86/">Software Selection</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../StorageSpoke-x86/">Installation Destination</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="./">Manual Partitioning</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../FilterSpoke-x86/">Storage Devices</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../KdumpSpoke-x86/">Kdump</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Write_changes_to_disk_x86/">Begin Installation</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../ProgressHub-x86/">Installation Progress</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../PasswordSpoke-x86/">Set the Root Password</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../UserSpoke-x86/">Create a User Account</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Complete-x86/">Installation Complete</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Trouble-x86/">Troubleshooting</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="../Part_Install_ppc/">Installing on IBM Power Systems</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Steps-ppc/">Planning for Installation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../DU-Updating_drivers_during_installation_ppc/">Updating Drivers During Installation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Boot_ppc/">Booting the Installation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="../Graphical_Installation-ppc/">Installing Using Anaconda</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Consoles_Logs_During_Install_ppc/">Consoles and Logging During the Installation</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Text_Installation_Intro-ppc/">Installing in Text Mode</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Graphical_Installation_Intro-ppc/">Installing in the Graphical User Interface</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../WelcomeSpoke-ppc64/">Welcome Screen and Language Selection</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../SummaryHub-ppc64/">The Installation Summary Screen</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../DateTimeSpoke-ppc64/">Date &amp; Time</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../LangSupportSpoke-ppc64/">Language Support</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../KeyboardSpoke-ppc64/">Keyboard Configuration</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../SecurityPolicySpoke-ppc64/">Security Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../SourceSpoke-ppc64/">Installation Source</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../NetworkSpoke-ppc64/">Network &amp; Hostname</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../SoftwareSpoke-ppc64/">Software Selection</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../StorageSpoke-ppc64/">Installation Destination</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../CustomSpoke-ppc64/">Manual Partitioning</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../FilterSpoke-ppc64/">Storage Devices</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../KdumpSpoke-ppc64/">Kdump</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Write_changes_to_disk_ppc/">Begin Installation</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../ProgressHub-ppc64/">Installation Progress</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../PasswordSpoke-ppc64/">Set the Root Password</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../UserSpoke-ppc64/">Create a User Account</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Complete-ppc/">Installation Complete</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Trouble-ppc/">Troubleshooting</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="../Part_Install_Advanced/">Advanced Installation Options</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../adminoptions/">Boot Options</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../pxe-server/">Preparing for a Network Installation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../vnc-installations/">Using VNC</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../headless-installations/">Headless Systems</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Kickstart2/">Kickstart Installations</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../disk-image-install/">Installing into a Disk Image</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="../Part_After_Install/">After Installation</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../InitialSetupHub-common/">Initial Setup</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../nextsteps/">Your Next Steps</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Rescue_Mode/">Basic System Recovery</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../uninstall/">Uninstalling CentOS</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="../Part_Appendixes/">Technical Appendixes</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Partitions-x86/">An Introduction to Disk Partitions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../iSCSI/">iSCSI Disks</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Understanding_LVM/">Understanding LVM</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../techref/">Other Technical Documentation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ext4_to_xfs_command_reference_table/">Reference Table for ext4 and XFS Commands</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../data_size_appendix/">Data Size Terminology Reference Table</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="navigation-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Installation Guide</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <span class="title">CentOS Documentation</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../docs/">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <span class="title">Installation Guide</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+  <main class="main">
+<div class="toolbar" role="navigation">
+  <button class="navigation-toggle"></button>
+  <a href="../../../docs/" class="home-link"></a>
+<nav class="crumbs" aria-label="breadcrumbs">
+  <ul>
+    <li class="crumb"><a href="../">Installation Guide</a></li>
+    <li class="crumb"><a href="../Part_Install_x86/">Installing on x86_64 and ARM 64</a></li>
+    <li class="crumb"><a href="../Graphical_Installation-x86/">Installing Using Anaconda</a></li>
+    <li class="crumb"><a href="./">Manual Partitioning</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/CentOS/docs-installation-guide/edit/7.5/modules/install-guide/pages/CustomSpoke-x86.adoc">Edit this Page</a></div>
+</div>
+<article class="doc">
+<h1>Manual Partitioning</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#sect-partition-configuration-x86">Adding File Systems and Configuring Partitions</a>
+<ul class="sectlevel2">
+<li><a href="#sect-file-system-types-x86">File System Types</a></li>
+</ul>
+</li>
+<li><a href="#sect-create-lvm-x86">Create LVM Logical Volume</a></li>
+<li><a href="#sect-recommended-partitioning-scheme-x86">Recommended Partitioning Scheme</a>
+<ul class="sectlevel2">
+<li><a href="#sect-partitioning-advice">Advice on Partitions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <code>Manual Partitioning</code> screen is displayed when you click <b class="button">Done</b> from Installation Destination if you selected the <code>I will configure partitioning</code> option. On this screen you configure your disk partitions and mount points. This defines the file system that CentOS will be installed on.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Back up any data that you have on your systems. Unforeseen circumstances can result in loss of all your data.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/diskpartitioning/ddmain.png" alt="The Manual Partitioning Screen">
+</div>
+<div class="title">Figure 1. The Manual Partitioning Screen</div>
+</div>
+<div class="paragraph">
+<p>The <code>Manual Partitioning</code> screen initially features a single pane on the left for the mount points. The pane is either empty except for information about creating mount points, or it displays existing mount points that the installation program has detected. These mount points are organized by detected operating system installations. Therefore, some file systems might be displayed multiple times if a partition is shared among several installations. The total space and available space on selected storage devices are displayed beneath this pane.</p>
+</div>
+<div class="paragraph">
+<p>If your system contains existing file systems, ensure that enough space will be available for the installation. Use the <b class="button">-</b> button to remove unneeded partitions.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>For recommendations and additional information about disk partitions, see <a href="../Partitions-x86/#appe-disk-partitions-overview" class="page">An Introduction to Disk Partitions</a> and <a href="#sect-recommended-partitioning-scheme-x86">Recommended Partitioning Scheme (x86)</a>. At a bare minimum, you need an appropriately sized root partition, and usually a swap partition appropriate to the amount of RAM you have on your system.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sect-partition-configuration-x86"><a class="anchor" href="#sect-partition-configuration-x86"></a>Adding File Systems and Configuring Partitions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>An installation of CentOS requires a minimum of one partition but CentOS recommends using at least the following partitions or volumes: <code>/</code>, <code>/home</code>, <code>/boot</code>, and <code>swap</code>. You can also create additional partitions and volumes as you require. See <a href="#sect-recommended-partitioning-scheme-x86">Recommended Partitioning Scheme (x86)</a> for further details.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If you have any specific requirements for some partitions (for example, requiring that a particular partition be on a specific disk) and less specific requirements for other partitions, create the partitions first which have more specific requirements.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Adding a file system is a two-step process. You first create a mount point in a certain partitioning scheme. The mount point appears in the left pane. Next, you can customize it using the options in the right pane, where you can change the mount point, capacity, the device type, file system type, label, and whether to encrypt or reformat the corresponding partition.</p>
+</div>
+<div class="paragraph">
+<p>If you have no existing file systems and want the installation program to create the required file systems and their mount points for you, select your preferred partitioning scheme from the drop-down menu in the left pane (default for CentOS is LVM), then click the link on top of the pane for creating mount points automatically. This will generate a <code>/boot</code> partition, a <code>/</code> (root) volume, and a swap volume proportionate to the size of the available storage. These are the recommended file systems for a typical installation, but you can add additional file systems and mount points if you need to.</p>
+</div>
+<div class="paragraph">
+<p>Alternatively, create individual mount points using the <b class="button">+</b> button at the bottom of the pane. The <code>Add a New Mount Point</code> dialog then opens. Either select one of the preset paths from the <code>Mount Point</code> drop-down menu or type your own; for example, select <code>/</code> for the root partition or <code>/boot</code> for the boot partition. Then enter the size of the file system in the <code>Desired Capacity</code> text field; for example, <code>2GiB</code>. If you leave the field empty or if you specify a size bigger than available space, all remaining free space is used instead. After entering these details, click the <b class="button">Add mount point</b> button to create the partition.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>To avoid problems with space allocation, first create small partitions with known fixed sizes, such as <code>/boot</code>, and then create the rest of the partitions, letting the installation program allocate the remaining capacity to them.</p>
+</div>
+<div class="paragraph">
+<p>Similarly, if you have multiple disks that the system is to reside on, they differ in size, and a particular partition must be created on the first disk detected by BIOS, be sure to start by creating such a partition.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>For each new mount point you create manually, you can set its partitioning scheme from the drop-down menu located in the left pane. The available options are <code>Standard Partition</code>, <code>BTRFS</code>, <code>LVM</code>, and <code>LVM Thin Provisioning</code>. Note that the <code>/boot</code> partition will always be located on a standard partition, regardless of the value selected in this menu.</p>
+</div>
+<div class="paragraph">
+<p>To change on which devices a single non-LVM mount point should be located, select the mount point and click the <code>Modify&#8230;&#8203;</code> button in the right pane to open the <code>Configure Mount Point</code> dialog. Select one or more devices and click <b class="button">Select</b>. After the dialog closes, note that you also need to confirm this setting by clicking the <b class="button">Update Settings</b> button on the right side of the <code>Manual Partitioning</code> screen.</p>
+</div>
+<div id="figu-disk-partitioning-mount-points-x86" class="imageblock">
+<div class="content">
+<img src="../_images/diskpartitioning/ddmain-mount-points-x86.png" alt="Configuring mount points.">
+</div>
+<div class="title">Figure 2. Configuring Mount Points</div>
+</div>
+<div class="paragraph">
+<p>To refresh information about all local disks and partitions on them, click the <b class="button">Rescan</b> button (with the circular arrow icon on it) in the toolbar. You only need to do this action after performing advanced partition configuration outside the installation program. Note that if you click the <b class="button">Rescan Disks</b> button, all configuration changes you previously made in the installation program will be lost.</p>
+</div>
+<div id="figu-disk-partitioning-rescan-x86" class="imageblock">
+<div class="content">
+<img src="../_images/diskpartitioning/ddmain-rescan.png" alt="Rescan disks dialog.">
+</div>
+<div class="title">Figure 3. Rescanning Disks</div>
+</div>
+<div class="paragraph">
+<p>At the bottom of the screen, a link states how many storage devices have been selected in <code>Installation Destination</code> (see <a href="../StorageSpoke-x86/#sect-disk-partitioning-setup-x86" class="page">Installation Destination (x86)</a>). Clicking on this link opens the <code>Selected Disks</code> dialog, where you review the information about the disks. See <a href="../StorageSpoke-x86/#sect-bootloader-x86" class="page">Boot Loader Installation (x86)</a> for more information.</p>
+</div>
+<div class="paragraph">
+<p>To customize a partition or a volume, select its mount point in the left pane and the following customizable features then appear to the right:</p>
+</div>
+<div id="figu-disk-partitioning-customizing-x86" class="imageblock">
+<div class="content">
+<img src="../_images/diskpartitioning/ddmain-custom.png" alt="Customizing partitions.">
+</div>
+<div class="title">Figure 4. Customizing Partitions</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Mount Point</code> - enter the file system&#8217;s mount point. For example, if a file system should be the root file system, enter <code>/</code>; enter <code>/boot</code> for the <code>/boot</code> file system, and so on. For a swap file system, the mount point should not be set - setting the file system type to <code>swap</code> is sufficient.</p>
+</li>
+<li>
+<p><code>Desired Capacity</code> - enter the desired size of the file system. You can use common size units such as KiB or GiB. The default is MiB if no other unit is specified.</p>
+</li>
+<li>
+<p><code>Device type</code> - choose one of these types: <code>Standard Partition</code>, <code>LVM</code>, <code>RAID</code>, <code>LVM Thin Provisioning</code>, or <code>BTRFS</code>. Check the adjacent <code>Encrypt</code> box to encrypt the partition or volume. You will be prompted to set a password later. <code>RAID</code> is only available if two or more disks are selected for partitioning, and if you choose this type, you can also set the <code>RAID Level</code>. Similarly, if you select <code>LVM</code>, you can specify the <code>Volume Group</code>.</p>
+</li>
+<li>
+<p><code>File system</code> - in the drop-down menu, select the appropriate file system type for this partition or volume. Check the adjacent <code>Reformat</code> box to format an existing partition, or leave it unchecked to retain your data. Note that newly created partitions and volumes must be reformatted, and the check box cannot be unchecked in this case.</p>
+</li>
+<li>
+<p><code>Label</code> - assign a label to the partition. Labels are used for you to easily recognize and address individual partitions.</p>
+</li>
+<li>
+<p><code>Name</code> - assign a name to an LVM or Btrfs volume. Note that standard partitions are named automatically when they are created and their name cannot be edited, such as <code>/home</code> being assigned the name <code>sda1</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>See <a href="#sect-file-system-types-x86">File System Types (x86)</a> for more information about file system and device types.</p>
+</div>
+<div class="paragraph">
+<p>Click the <b class="button">Update Settings</b> button to save your changes and select another partition to customize. Note that the changes will not be applied until you actually start the installation from the Installation summary page. Click the <b class="button">Reset All</b> button to discard all changes to all partitions and start over.</p>
+</div>
+<div class="paragraph">
+<p>When all file systems and mount points have been created and customized, click the <b class="button">Done</b> button. If you chose to encrypt any file system, you will now be prompted to create a passphrase. Then, a dialog appears, showing a summary of all actions related to storage that the installation program will take. This includes creating, resizing, or deleting partitions and file systems. You can review all the changes and click <b class="button">Cancel &amp; Return to Custom Partitioning</b> to go back. To confirm your changes, click <b class="button">Accept Changes</b> to return to the Installation Summary page. To partition additional devices, select them in the <code>Installation Destination</code> screen, return to the <code>Manual Partitioning</code> screen, repeat the steps outlined in this section for the additional devices.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If <code>/usr</code> or <code>/var</code> is partitioned separately from the rest of the root volume, the boot process becomes much more complex because these directories contain components critical to it. In some situations, such as when these directories are placed on an iSCSI drive or an FCoE location, the system can either be unable to boot, or hang with a <code>Device is busy</code> error when powering off or rebooting.</p>
+</div>
+<div class="paragraph">
+<p>This limitation only applies to <code>/usr</code> or <code>/var</code>, not to directories below them. For example, a separate partition for <code>/var/www</code> will work without issues.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="sect-file-system-types-x86"><a class="anchor" href="#sect-file-system-types-x86"></a>File System Types</h3>
+<div class="paragraph">
+<p>CentOS allows you to create different device types and file systems. The following is a brief description of the different device types and file systems available, and how they can be used.</p>
+</div>
+<div class="ulist">
+<div class="title">Device Types</div>
+<ul>
+<li>
+<p><code>standard partition</code> - A standard partition can contain a file system or swap space, or it can provide a container for software RAID or an LVM physical volume.</p>
+</li>
+<li>
+<p><code>logical volume (LVM)</code> - Creating an LVM partition automatically generates an LVM logical volume. LVM can improve performance when using physical disks. For information on how to create a logical volume, see <a href="#sect-create-lvm-x86">Create LVM Logical Volume (x86)</a>. For more information regarding LVM, see the <a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Logical_Volume_Manager_Administration/index.html">Red&#160;Hat Enterprise&#160;Linux&#160;7 Logical Volume Manager Administration</a> guide.</p>
+</li>
+<li>
+<p><code>LVM thin provisioning</code> - Using thin provisioning, you can manage a storage pool of free space, known as a thin pool, which can be allocated to an arbitrary number of devices when needed by applications. The thin pool can be expanded dynamically when needed for cost-effective allocation of storage space. For more information regarding LVM, see the <a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Logical_Volume_Manager_Administration/index.html">Red&#160;Hat Enterprise&#160;Linux&#160;7 Logical Volume Manager Administration</a> guide.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The installer will automatically reserve 20% of any requested space for an LVM thin pool logical volume in the volume group containing it. This is a safety measure to ensure that you can extend either the metadata volume or the data volume of your thinly provisioned logical volume.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<div class="title">File Systems</div>
+<ul>
+<li>
+<p><code>xfs</code> - XFS is a highly scalable, high-performance file system that supports file systems up to 16 EiB (approximately 16 billion GiB), files up to 8 EiB (approximately 8 billion GiB), and directory structures containing tens of millions of entries. XFS supports metadata journaling, which facilitates quicker crash recovery. The XFS file system can also be defragmented and resized while mounted and active. This file system is selected by default and is highly recommended. For information on how to translate common commands from previously used ext4 file system to XFS, see <a href="../ext4_to_xfs_command_reference_table/#appe-ext4-to-xfs-command-reference" class="page">Reference Table for ext4 and XFS Commands</a>.</p>
+<div class="paragraph">
+<p>The maximum supported size of an XFS file system in CentOS is currently <em>500 TiB</em>.</p>
+</div>
+</li>
+<li>
+<p><code>ext4</code> - The ext4 file system is based on the ext3 file system and features a number of improvements. These include support for larger file systems and larger files, faster and more efficient allocation of disk space, no limit on the number of subdirectories within a directory, faster file system checking, and more robust journaling.</p>
+<div class="paragraph">
+<p>The maximum supported size of an ext4 file system in CentOS is currently <em>50 TiB</em>.</p>
+</div>
+</li>
+<li>
+<p><code>ext3</code> - The ext3 file system is based on the ext2 file system and has one main advantage - journaling. Using a journaling file system reduces time spent recovering a file system after a crash as there is no need to check the file system for metadata consistency by running the <code>fsck</code> utility every time a crash occurs.</p>
+</li>
+<li>
+<p><code>ext2</code> - An ext2 file system supports standard Unix file types, including regular files, directories, or symbolic links. It provides the ability to assign long file names, up to 255 characters.</p>
+</li>
+<li>
+<p><code>vfat</code> - The VFAT file system is a Linux file system that is compatible with Microsoft Windows long file names on the FAT file system.</p>
+</li>
+<li>
+<p><code>swap</code> - Swap partitions are used to support virtual memory. In other words, data is written to a swap partition when there is not enough RAM to store the data your system is processing.</p>
+</li>
+<li>
+<p><code>BIOS Boot</code> - A very small partition required for booting a device with a GUID partition table (GPT) on a BIOS system. See <a href="../StorageSpoke-x86/#sect-bootloader-x86" class="page">Boot Loader Installation (x86)</a> for details.</p>
+</li>
+<li>
+<p><code>EFI System Partition</code> - A small partition required for booting a device with a GUID partition table (GPT) on a UEFI system. See <a href="../StorageSpoke-x86/#sect-bootloader-x86" class="page">Boot Loader Installation (x86)</a> for details.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Each file system has different size limits for the file system itself as well as individual files contained within. For a list of maximum supported file and file system sizes, see the Red&#160;Hat Enterprise&#160;Linux technology capabilities and limits page, available on the Customer Portal at <a href="https://access.redhat.com/site/articles/rhel-limits" class="bare">https://access.redhat.com/site/articles/rhel-limits</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sect-create-lvm-x86"><a class="anchor" href="#sect-create-lvm-x86"></a>Create LVM Logical Volume</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><em>Logical Volume Management</em> (LVM) presents a simple logical view of underlying physical storage space, such as hard drives or LUNs. Partitions on physical storage are represented as <em>physical volumes</em> that can be grouped together into <em>volume groups</em>. Each volume group can be divided into multiple <em>logical volumes</em>, each of which is analogous to a standard disk partition. Therefore, LVM logical volumes function as partitions that can span multiple physical disks.</p>
+</div>
+<div class="paragraph">
+<p>To learn more about LVM, see <a href="../Understanding_LVM/#appe-lvm-overview" class="page">Understanding LVM</a> or read the <a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Logical_Volume_Manager_Administration/index.html">Red&#160;Hat Enterprise&#160;Linux&#160;7 Logical Volume Manager Administration</a> guide. Note that LVM configuration is only available in the graphical installation program.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>During text-mode installation, LVM configuration is not available. If you need to create an LVM configuration from scratch, press <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>F2</kbd></span> to use a different virtual console, and run the <code class="command">lvm</code> command. To return to the text-mode installation, press <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>F1</kbd></span>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/diskpartitioning/lvm-pv.png" alt="Configuring a Logical Volume.">
+</div>
+<div class="title">Figure 5. Configuring a Logical Volume</div>
+</div>
+<div class="paragraph">
+<p>To create a logical volume and add it to a new or existing volume group:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Create a mount point for the LVM volume as described in <a href="#sect-partition-configuration-x86">Adding File Systems and Configuring Partitions (x86)</a>.</p>
+</li>
+<li>
+<p>Click the <code>Device Type</code> drop-down menu and select <code>LVM</code>. The <code>Volume Group</code> drop-down menu appears and displays the newly-created volume group name.</p>
+</li>
+<li>
+<p>Optionally, either click the menu and select <code>Create a new volume group</code> or click <b class="button">Modify</b> to configure the newly-created volume group, if you need to. Both the <code>Create a new volume group</code> option and the <b class="button">Modify</b> button lead to the <code>Configure Volume Group</code> dialog, where you can rename the logical volume group and select which disks will be included.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The configuration dialog does not allow you to specify the size of the volume group&#8217;s physical extents. The size will always be set to the default value of 4 MiB. If you want to create a volume group with different physical extents, create it manually by switching to an interactive shell and using the <code class="command">vgcreate</code> command, or use a Kickstart file with the <code class="command">volgroup --pesize=<em>size</em></code> command.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/diskpartitioning/lvm-volume-x86.png" alt="Customizing an LVM Volume Group.">
+</div>
+<div class="title">Figure 6. Customizing an LVM Volume Group</div>
+</div>
+<div class="paragraph">
+<p>The available RAID levels are the same as with actual RAID devices. You can also mark the volume group for encryption and set the size policy for it. The available policy options are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Automatic</code> - the size of the volume group is set automatically so that it is just large enough to contain the configured logical volumes. This is optimal if you do not need free space within the volume group.</p>
+</li>
+<li>
+<p><code>As large as possible</code> - the volume group is created with maximum size, regardless of the size of the configured logical volumes it contains. This is optimal if you plan to keep most of your data on LVM and later need to increase the size of some existing logical volumes, or if you need to create additional logical volumes within this group.</p>
+</li>
+<li>
+<p><code>Fixed</code> - with this option, you can set an exact size of the volume group. Any configured logical volumes must then fit within this fixed size. This is useful if you know exactly how large you would like the volume group to be.</p>
+<div class="paragraph">
+<p>Click <b class="button">Save</b> when the group is configured.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Click <b class="button">Update Settings</b> to save your changes, and either continue with another partition or click <b class="button">Done</b> to return to the <code>Installation Summary</code> screen.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Placing the <code>/boot</code> partition on an LVM volume is not supported.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sect-recommended-partitioning-scheme-x86"><a class="anchor" href="#sect-recommended-partitioning-scheme-x86"></a>Recommended Partitioning Scheme</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>CentOS recommends that you create separate file systems at the following mount points:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>/boot</code></p>
+</li>
+<li>
+<p><code>/</code> (root)</p>
+</li>
+<li>
+<p><code>/home</code></p>
+</li>
+<li>
+<p><code>swap</code></p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code>/boot</code> partition - recommended size at least 1 GiB</dt>
+<dd>
+<div class="paragraph">
+<p>The partition mounted on <code>/boot</code> contains the operating system kernel, which allows your system to boot CentOS, along with files used during the bootstrap process. Due to the limitations of most firmwares, creating a small partition to hold these is recommended. In most scenarios, a 1 GiB boot partition is adequate. Unlike other mount points, using an LVM volume for <code>/boot</code> is not possible - <code>/boot</code> must be located on a separate disk partition.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Normally, the <code>/boot</code> partition is created automatically by the installation program. However, if the <code>/</code> (root) partition is larger than 2&#160;TiB and (U)EFI is used for booting, you need to create a separate <code>/boot</code> partition that is smaller than 2&#160;TiB to boot the machine successfully.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If you have a RAID card, be aware that some BIOS types do not support booting from the RAID card. In such a case, the <code>/boot</code> partition must be created on a partition outside of the RAID array, such as on a separate hard drive.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</dd>
+<dt class="hdlist1"><code>root</code> - recommended size of 10 GiB</dt>
+<dd>
+<div class="paragraph">
+<p>This is where "<code>/</code>", or the root directory, is located. The root directory is the top-level of the directory structure. By default, all files are written to this file system unless a different file system is mounted in the path being written to (for example, <code>/boot</code> or <code>/home</code>).</p>
+</div>
+<div class="paragraph">
+<p>While a 5&#160;GiB root file system allows you to install a minimal installation, it is recommended to allocate at least 10&#160;GiB so that you can install as many package groups as you want.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Do not confuse the <code>/</code> directory with the <code>/root</code> directory. The <code>/root</code> directory is the home directory of the root user. The <code>/root</code> directory is sometimes referred to as <em>slash root</em> to distinguish it from the root directory.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</dd>
+<dt class="hdlist1"><code>/home</code> - recommended size at least 1 GiB</dt>
+<dd>
+<div class="paragraph">
+<p>To store user data separately from system data, create a dedicated file system for the <code>/home</code> directory. This file system should be sized based on the amount of data that will be stored locally, number of users, and so on. This will enable you to reinstall CentOS without erasing user data files. If you select automatic partitioning, it is recommended to have at least 55GiB of disk space available for the installation, to ensure that the <code>/home</code> file system is created.</p>
+</div>
+</dd>
+<dt class="hdlist1"><code>swap</code> partition - recommended size at least 1 GB</dt>
+<dd>
+<div class="paragraph">
+<p>Swap file systems support virtual memory; data is written to a swap file system when there is not enough RAM to store the data your system is processing. Swap size is a function of system memory workload, not total system memory and therefore is not equal to the total system memory size. Therefore, it is important to analyze what applications a system will be running and the load those applications will serve in order to determine the system memory workload. Application providers and developers should be able to provide some guidance.</p>
+</div>
+<div class="paragraph">
+<p>When the system runs out of swap space, the kernel terminates processes as the system RAM memory is exhausted. Configuring too much swap space results in storage devices being allocated but idle and is a poor use of resources. Too much swap space can also hide memory leaks. The maximum size for a swap partition and other additional information can be found in the <code>mkswap(8)</code> manual page.</p>
+</div>
+<div class="paragraph">
+<p>The following table provides the recommended size of a swap partition depending on the amount of RAM in your system and whether you want sufficient memory for your system to hibernate. If you let the installation program partition your system automatically, the swap partition size will be established using these guidelines. Automatic partitioning setup assumes hibernation is not in use. The maximum size of the swap partition is limited to 10% of the total size of the hard drive, and the installer cannot create swap partitions more than 128GB in size. If you want to set up enough swap space to allow for hibernation, or if you want to set the swap partition size to more than 10% of the system&#8217;s storage space, or more than 128GB, you must edit the partitioning layout manually.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 1. Recommended System Swap Space</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Amount of RAM in the system</th>
+<th class="tableblock halign-left valign-top">Recommended swap space</th>
+<th class="tableblock halign-left valign-top">Recommended swap space if allowing for hibernation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">less than&#160;2 GB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2 times the amount of RAM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">3 times the amount of RAM</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2 GB - 8 GB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Equal to the amount of RAM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2 times the amount of RAM</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8 GB - 64 GB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4GB to 0.5 times the amount of RAM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1.5 times the amount of RAM</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">more than 64 GB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">workload dependent (at least 4GB)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">hibernation not recommended</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>At the border between each range listed above (for example, a system with 2&#160;GB, 8&#160;GB, or 64&#160;GB of system RAM), discretion can be exercised with regard to chosen swap space and hibernation support. If your system resources allow for it, increasing the swap space can lead to better performance.</p>
+</div>
+<div class="paragraph">
+<p>Distributing swap space over multiple storage devices - particularly on systems with fast drives, controllers and interfaces - also improves swap space performance.</p>
+</div>
+</dd>
+</dl>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Many systems have more partitions and volumes than the minimum listed above. Choose partitions based on your particular system needs. See <a href="#sect-partitioning-advice">Advice on Partitions</a> for more information.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Only assign storage capacity to those partitions you require immediately. You can allocate free space at any time, to meet needs as they occur. To learn about a more flexible method for storage management, see <a href="../Understanding_LVM/#appe-lvm-overview" class="page">Understanding LVM</a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>If you are not sure how best to configure the partitions for your computer, accept the automatic default partition layout provided by the installation program.</p>
+</div>
+<div class="sect2">
+<h3 id="sect-partitioning-advice"><a class="anchor" href="#sect-partitioning-advice"></a>Advice on Partitions</h3>
+<div class="paragraph">
+<p>Optimal partition setup depends on the usage for the Linux system in question. Use these tips to decide how to configure your disk space.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Consider encrypting any partitions that might contain sensitive data. Encryption prevents unauthorized people from accessing the data on the partitions, even if they have access to the physical storage device. In most cases, you should at least encrypt the <code>/home</code> partition.</p>
+</li>
+<li>
+<p>Each kernel installed on your system requires approximately 20&#160;MiB on the <code>/boot</code> partition. The default partition size of 1&#160;GiB for <code>/boot</code> should suffice for most common uses; increase the size of this partition if you plan to keep many kernels installed at the same time.</p>
+</li>
+<li>
+<p>The <code>/var</code> directory holds content for a number of applications, including the <strong class="application">Apache</strong> web server. It also is used to store downloaded update packages on a temporary basis. Ensure that the partition containing the <code>/var</code> directory has enough space to download pending updates and hold your other content.</p>
+</li>
+<li>
+<p>The <strong class="application">PackageKit</strong> update software downloads updated packages to <code>/var/cache/yum/</code> by default. If you create a separate partition or volume for <code>/var</code>, ensure that it is at least 3GB in size to accommodate downloaded package updates.</p>
+</li>
+<li>
+<p>The <code>/usr</code> directory holds the majority of software content on a CentOS system. For an installation of the default set of software, allocate at least 5&#160;GB of space. If the system will be used as a software development workstation, allocate at least 10GB.</p>
+</li>
+<li>
+<p>If <code>/usr</code> or <code>/var</code> is partitioned separately from the rest of the root volume, the boot process becomes much more complex because these directories contain components critical to it. In some situations, such as when these directories are placed on an iSCSI drive or an FCoE location, the system can either be unable to boot, or it can hang with a <code>Device is busy</code> error when powering off or rebooting.</p>
+<div class="paragraph">
+<p>This limitation only applies to <code>/usr</code> or <code>/var</code>, not to directories below them. For example, a separate partition for <code>/var/www</code> will work without issues.</p>
+</div>
+</li>
+<li>
+<p>Consider leaving a portion of the space in an LVM volume group unallocated. This unallocated space gives you flexibility if your space requirements change but you do not want to remove data from other partitions to reallocate storage. You can also select the <code>Thin provisioning</code> device type for the partition to have the unused space handled automatically by the volume.</p>
+</li>
+<li>
+<p>If you separate subdirectories into partitions, you can retain content in those subdirectories if you decide to install a new version of CentOS over your current system. For instance, if you intend to run a <strong class="application">MySQL</strong> database in <code>/var/lib/mysql/</code>, make a separate partition for that directory in case you need to reinstall later.</p>
+</li>
+<li>
+<p>On a BIOS system with its boot loader using GPT (GUID partition table), you need to create the <code>biosboot</code> partition of 1&#160;MiB in size. See <a href="../StorageSpoke-x86/#sect-bootloader-x86" class="page">Boot Loader Installation (x86)</a> for more details.</p>
+</li>
+<li>
+<p>UEFI systems need to contain a small partition with a mount point of <code>/boot/efi/</code> containing an EFI System Partition file system. Its recommended size is 200&#160;MiB, which is also the default value for automatic partitioning.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script src="../../../_/js/vendor/highlight.js"></script>
+<script>hljs.initHighlighting()</script>
+  </body>
+</html>

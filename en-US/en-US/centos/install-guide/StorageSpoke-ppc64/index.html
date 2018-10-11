@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Installation Destination :: CentOS Docs Site</title>
+    <link rel="canonical" href="https://docs.centos.org/centos/install-guide/StorageSpoke-ppc64/">
+    <meta name="generator" content="Antora 1.0.1">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://docs.centos.org"><img src="https://docs.centos.org/_images/logo_small.png"></a>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="https://www.centos.org/download/">Download CentOS</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="main-wrapper">
+<div class="navigation-container" data-component="centos" data-version="master">
+  <aside class="navigation">
+    <div class="panels">
+<div class="navigation-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../">Installation Guide</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../getting-started/">Getting Started</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../downloading/">Downloading CentOS</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="../Making_Media/">Preparing Installation Media</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Making_Media_Optical/">CD or DVD</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="../Making_Media_USB/">USB Drive</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Making_Media_USB_Linux/">Making an Installation USB Drive on Linux</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Making_Media_USB_Windows/">Making an Installation USB Drive on Windows</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Making_Media_USB_Mac/">Making an Installation USB Drive on Mac</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="../Preparing_Install_Sources/">Preparing Installation Sources</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Install_Source_DVD/">Installation Source on a DVD</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Install_Source_HDD/">Installation Source on a Hard Drive</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Install_Source_Network/">Installation Source on the Network</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="../Part_Install_x86/">Installing on x86_64 and ARM 64</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Simple_Installation/">Quick Installation Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Steps-x86/">Planning for Installation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../DU-Updating_drivers_during_installation_x86/">Updating Drivers During Installation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Boot_x86/">Booting the Installation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="../Graphical_Installation-x86/">Installing Using Anaconda</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Consoles_Logs_During_Install_x86/">Consoles and Logging During the Installation</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Text_Installation_Intro-x86/">Installing in Text Mode</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Graphical_Installation_Intro-x86/">Installing in the Graphical User Interface</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../WelcomeSpoke-x86/">Welcome Screen and Language Selection</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../SummaryHub-x86/">The Installation Summary Screen</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../DateTimeSpoke-x86/">Date &amp; Time</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../LangSupportSpoke-x86/">Language Support</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../KeyboardSpoke-x86/">Keyboard Configuration</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../SecurityPolicySpoke-x86/">Security Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../SourceSpoke-x86/">Installation Source</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../NetworkSpoke-x86/">Network &amp; Hostname</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../SoftwareSpoke-x86/">Software Selection</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../StorageSpoke-x86/">Installation Destination</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../CustomSpoke-x86/">Manual Partitioning</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../FilterSpoke-x86/">Storage Devices</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../KdumpSpoke-x86/">Kdump</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Write_changes_to_disk_x86/">Begin Installation</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../ProgressHub-x86/">Installation Progress</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../PasswordSpoke-x86/">Set the Root Password</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../UserSpoke-x86/">Create a User Account</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Complete-x86/">Installation Complete</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Trouble-x86/">Troubleshooting</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="../Part_Install_ppc/">Installing on IBM Power Systems</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Steps-ppc/">Planning for Installation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../DU-Updating_drivers_during_installation_ppc/">Updating Drivers During Installation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Boot_ppc/">Booting the Installation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="../Graphical_Installation-ppc/">Installing Using Anaconda</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Consoles_Logs_During_Install_ppc/">Consoles and Logging During the Installation</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Text_Installation_Intro-ppc/">Installing in Text Mode</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Graphical_Installation_Intro-ppc/">Installing in the Graphical User Interface</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../WelcomeSpoke-ppc64/">Welcome Screen and Language Selection</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../SummaryHub-ppc64/">The Installation Summary Screen</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../DateTimeSpoke-ppc64/">Date &amp; Time</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../LangSupportSpoke-ppc64/">Language Support</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../KeyboardSpoke-ppc64/">Keyboard Configuration</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../SecurityPolicySpoke-ppc64/">Security Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../SourceSpoke-ppc64/">Installation Source</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../NetworkSpoke-ppc64/">Network &amp; Hostname</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../SoftwareSpoke-ppc64/">Software Selection</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="3">
+    <a class="nav-link" href="./">Installation Destination</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../CustomSpoke-ppc64/">Manual Partitioning</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../FilterSpoke-ppc64/">Storage Devices</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../KdumpSpoke-ppc64/">Kdump</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Write_changes_to_disk_ppc/">Begin Installation</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../ProgressHub-ppc64/">Installation Progress</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../PasswordSpoke-ppc64/">Set the Root Password</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../UserSpoke-ppc64/">Create a User Account</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Complete-ppc/">Installation Complete</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Trouble-ppc/">Troubleshooting</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="../Part_Install_Advanced/">Advanced Installation Options</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../adminoptions/">Boot Options</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../pxe-server/">Preparing for a Network Installation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../vnc-installations/">Using VNC</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../headless-installations/">Headless Systems</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Kickstart2/">Kickstart Installations</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../disk-image-install/">Installing into a Disk Image</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="../Part_After_Install/">After Installation</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../InitialSetupHub-common/">Initial Setup</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../nextsteps/">Your Next Steps</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Rescue_Mode/">Basic System Recovery</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../uninstall/">Uninstalling CentOS</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="../Part_Appendixes/">Technical Appendixes</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Partitions-x86/">An Introduction to Disk Partitions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../iSCSI/">iSCSI Disks</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Understanding_LVM/">Understanding LVM</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../techref/">Other Technical Documentation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ext4_to_xfs_command_reference_table/">Reference Table for ext4 and XFS Commands</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../data_size_appendix/">Data Size Terminology Reference Table</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="navigation-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Installation Guide</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <span class="title">CentOS Documentation</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../docs/">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <span class="title">Installation Guide</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+  <main class="main">
+<div class="toolbar" role="navigation">
+  <button class="navigation-toggle"></button>
+  <a href="../../../docs/" class="home-link"></a>
+<nav class="crumbs" aria-label="breadcrumbs">
+  <ul>
+    <li class="crumb"><a href="../">Installation Guide</a></li>
+    <li class="crumb"><a href="../Part_Install_ppc/">Installing on IBM Power Systems</a></li>
+    <li class="crumb"><a href="../Graphical_Installation-ppc/">Installing Using Anaconda</a></li>
+    <li class="crumb"><a href="./">Installation Destination</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/CentOS/docs-installation-guide/edit/7.5/modules/install-guide/pages/StorageSpoke-ppc64.adoc">Edit this Page</a></div>
+</div>
+<article class="doc">
+<h1>Installation Destination</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#sect-bootloader-ppc">Boot Loader Installation</a></li>
+<li><a href="#sect-encrypt-partitions-ppc">Encrypt Partitions</a></li>
+<li><a href="#sect-reclaim-disk-space-ppc">Reclaim Disk Space</a></li>
+</ul>
+</div>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>To select the disks and partition the storage space on which you will install CentOS, select <code>Installation Destination</code> in the <code>Installation Summary</code> screen. If you are unfamiliar with disk partitions, see <a href="../Partitions-x86/#appe-disk-partitions-overview" class="page">An Introduction to Disk Partitions</a> for more information.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Back up any data that you have on your systems. Unforeseen circumstances can result in loss of all your data.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If you install CentOS in text mode, you can only use the default partitioning schemes described in this section. You cannot add or remove partitions or file systems beyond those that the installation program automatically adds or removes.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<div class="title">Special cases</div>
+<ul>
+<li>
+<p>If you have a RAID card, be aware that some BIOS types do not support booting from the RAID card. In such a case, the <code>/boot</code> partition must be created on a partition outside of the RAID array, such as on a separate hard drive. It is necessary to use an internal hard drive for partition creation with problematic RAID cards. A <code>/boot</code> partition is also necessary for software RAID setups.
+If you have chosen to automatically partition your system, you should manually edit your <code>/boot</code> partition; see <a href="../CustomSpoke-ppc64/#sect-custom-partitioning-ppc" class="page">Manual Partitioning (ppc)</a> for more details.</p>
+</li>
+<li>
+<p>When you install CentOS on a system with both multipath and non-multipath storage devices, the automatic partitioning layout in the installation program might create volume groups that contain a mix of multipath and non-multipath devices. This defeats the purpose of multipath storage. We advise that you select only multipath or only non-multipath devices on the <code>Installation Destination</code> screen. Alternatively, proceed to manual partitioning.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/diskpartsetup/disk-setup-ppc.png" alt="Storage Space Overview.">
+</div>
+<div class="title">Figure 1. Storage Space Overview</div>
+</div>
+<div class="paragraph">
+<p>On this screen, you can see storage devices available locally on your computer. You can also add additional specialized or network devices by clicking the <b class="button">Add a disk</b> button. To learn more about these devices see <a href="../FilterSpoke-ppc64/#sect-storage-devices-ppc" class="page">Storage Devices (ppc)</a>.</p>
+</div>
+<div class="paragraph">
+<p>If you do not feel comfortable with partitioning your system, leave the default selection of the <code>Automatically configure partitioning</code> radio button to let the installation program partition the storage devices for you.</p>
+</div>
+<div class="paragraph">
+<p>Below the panes for storage devices is a form of additional controls labeled <code>Other Storage Options</code>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>In the <code>Partitioning</code> section, you can select how storage devices are partitioned and how volumes are created. You can configure the partitions, manually or allow the installation program to do it automatically.</p>
+<div class="paragraph">
+<p>Automatic partitioning is recommended if you are doing a clean installation on previously unused storage or do not need to keep any data that might be present on the storage. To proceed this way, leave the default selection of the <code>Automatically configure partitioning</code> radio button, and the installation program will create the necessary partitions and volumes on the storage space for you.</p>
+</div>
+<div class="paragraph">
+<p>For automatic partitioning, you can also select the <code>I would like to make additional space available</code> check box to choose how to reassign space from other file systems to this installation. After you click <b class="button">Done</b>, there are two dialogs that can appear. If you selected automatic partitioning but there is not enough storage space to complete the installation using the recommended partitioning configuration, a dialog will appear:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/diskpartsetup/install-options-reclaim.png" alt="There is not enough room to install CentOS so the Installation Options dialog asks if you want to reclaim space from other file systems.">
+</div>
+<div class="title">Figure 2. Installation Options Dialog with Option to Reclaim Space</div>
+</div>
+<div class="paragraph">
+<p>You can click to the <code>CentOS software selection</code> link. The link will navigate you to the <code>Software selection</code> section, where you can change what software you want to install, and free some aditional storage space.</p>
+</div>
+<div class="paragraph">
+<p>Alternatively, you can click <b class="button">Cancel &amp; add more disks</b> to return to the <code>Installation Destination</code> screen, where it is possible to add more storage devices or choose to configure partitioning manually. Click <b class="button">Reclaim space</b> to free some storage space from existing file systems. See <a href="#sect-reclaim-disk-space-ppc">Reclaim Disk Space (ppc)</a> for details.</p>
+</div>
+<div class="paragraph">
+<p>The second dialog appears if you cannot create enough free space. In this case, you have to add more disks on the initial storage screen or quit the installation.</p>
+</div>
+<div class="paragraph">
+<p>If you select the <code>I will configure partitioning</code> radio button for manual setup, you will be brought to the <code>Manual Partitioning</code> screen after clicking <b class="button">Done</b>. See <a href="../CustomSpoke-ppc64/#sect-custom-partitioning-ppc" class="page">Manual Partitioning (ppc)</a> for details.</p>
+</div>
+</li>
+<li>
+<p>In the <code>Encryption</code> section, you can select the <code>Encrypt my data</code> check box to encrypt all partitions except for the <code>/boot</code> partition. See the <a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Security_Guide/index.html">Red&#160;Hat Enterprise&#160;Linux&#160;7 Security Guide</a> for information on encryption.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>At the bottom of the screen is the <b class="button">Full disk summary and bootloader</b> button for you to configure a disk on which a boot loader will be installed.</p>
+</div>
+<div class="paragraph">
+<p>See <a href="#sect-bootloader-ppc">Boot Loader Installation (ppc)</a> for more information.</p>
+</div>
+<div class="paragraph">
+<p>Click the <b class="button">Done</b> button once you have made your selections to either return to the <code>Installation Summary</code> screen or to proceed to the <code>Manual Partitioning</code> screen.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sect-bootloader-ppc"><a class="anchor" href="#sect-bootloader-ppc"></a>Boot Loader Installation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>CentOS uses GRUB2 (GRand Unified Bootloader version 2) as its boot loader. The boot loader is the first program that runs when the computer starts and is responsible for loading and transferring control to an operating system. GRUB2 can boot any compatible operating system and can also use <em>chain loading</em> to transfer control to other boot loaders for unsupported operating systems.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Installing GRUB2 can overwrite your existing boot loader.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>If you have other operating systems already installed, CentOS attempts to automatically detect and configure GRUB2 to boot them. You can manually configure any additional operating systems if they are not detected properly.</p>
+</div>
+<div class="paragraph">
+<p>To specify which device the boot loader should be installed on, click the <code>Full disk summary and bootloader</code> link at the bottom of the <code>Installation Destination</code> screen. The <code>Selected Disks</code> dialog will appear. If you are partitioning the drive manually, this dialog can be reached by clicking <code>Storage device/s selected</code> on the <code>Manual Partitioning</code> screen.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/bootloader/ppc-bootloader.png" alt="Summary of Selected Disks">
+</div>
+<div class="title">Figure 3. Summary of Selected Disks</div>
+</div>
+<div class="paragraph">
+<p>In the <code>Boot</code> column, a green tick icon marks one of the devices as the intended boot device. To change the boot device, select a device from the list and click the <b class="button">Set as Boot Device</b> button to install the boot loader there instead.</p>
+</div>
+<div class="paragraph">
+<p>To decline installation of a new boot loader, select the marked device and click the <b class="button">Do not install bootloader</b> button. This will remove the tick and ensure GRUB2 is not installed on any device.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If you choose not to install a boot loader for any reason, you will not be able to boot the system directly, and you must use another boot method, such as a commercial boot loader application. Use this option only if you are sure you have another way to boot your system.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sect-encrypt-partitions-ppc"><a class="anchor" href="#sect-encrypt-partitions-ppc"></a>Encrypt Partitions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you selected the <code>Encrypt my data</code> option, when you click to proceed to the next screen the installation program will prompt you for a passphrase with which to encrypt the partitions on the system.</p>
+</div>
+<div class="paragraph">
+<p>Partitions are encrypted using the <em>Linux Unified Key Setup</em> - see the <a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Security_Guide/index.html">Red&#160;Hat Enterprise&#160;Linux&#160;7 Security Guide</a> for more information.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/encrypt/passphrase.png" alt="The dialog contains text boxes to enter a passphrase and to confirm it.">
+</div>
+<div class="title">Figure 4. Enter Passphrase for an Encrypted Partition</div>
+</div>
+<div class="paragraph">
+<p>Choose a passphrase and type it into each of the two fields in the dialog box. Note that you need to use the same keyboard layout for setting up this passphrase that you will use to unlock partitions later. Use the language layout icon to ensure the correct layout is selected. You must provide this passphrase every time that the system boots. Press <kbd>Tab</kbd> while in the <code>Passphrase</code> input field to retype it. If the passphrase is too weak, a warning icon appears in the field and you will not be allowed to type in the second field. Hover your mouse cursor over the warning icon to learn how to improve the passphrase.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If you lose this passphrase, any encrypted partitions and the data on them will become completely inaccessible. There is no way to recover a lost passphrase.</p>
+</div>
+<div class="paragraph">
+<p>Note that if you perform a Kickstart installation, you can save encryption passphrases and create backup encryption passphrases during installation. See the <a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Security_Guide/index.html">Red&#160;Hat Enterprise&#160;Linux&#160;7 Security Guide</a> for more information about disk encryption.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sect-reclaim-disk-space-ppc"><a class="anchor" href="#sect-reclaim-disk-space-ppc"></a>Reclaim Disk Space</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If there is insufficient space to install CentOS on the disks selected in <code>Installation Destination</code> and you selected <b class="button">Reclaim Space</b> at the <code>Installation Options</code> dialog, the <code>Reclaim Disk Space</code> dialog appears.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Unless you select to shrink a partition, reclaiming space on a partition involves deleting all the data on it and you should always verify that any data you need to keep was backed up.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../_images/diskpartsetup/reclaim-space-ppc.png" alt="This dialog allows you to preserve / shrink / delete existing file systems to generate necessary space for the installation.">
+</div>
+<div class="title">Figure 5. Reclaim Disk Space from Existing File Systems</div>
+</div>
+<div class="paragraph">
+<p>The existing file systems CentOS has detected are listed in a table as part of their respective disks. The <code>Reclaimable Space</code> column lists the space that could be reassigned to this installation. The <code>Action</code> column lists what action will be taken with the file system to reclaim space.</p>
+</div>
+<div class="paragraph">
+<p>Beneath the table are four buttons:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><b class="button">Preserve</b> - leaves the file system untouched and no data will be deleted. This is the default action.</p>
+</li>
+<li>
+<p><b class="button">Delete</b> - removes the file system entirely. All the space it takes up on the disk will be made available for the installation.</p>
+</li>
+<li>
+<p><b class="button">Shrink</b> - recovers free space from the file system and makes it available for this installation. Use the slider to set a new size for the selected partition. Can only be used on resizable partitions where LVM or RAID is not used.</p>
+</li>
+<li>
+<p><b class="button">Delete all/Preserve all</b> - this button, located on the right, marks all file systems for deletion by default. Upon clicking, it changes the label and allows you to mark all file systems to be preserved again.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Select a file system or a whole disk in the table with your mouse and click one of the buttons. The label in the <code>Action</code> column will change to match your selection and the amount of <code>Total selected space to reclaim</code> displayed beneath the table will adjust accordingly. Beneath this value is the amount of space the installation requires based on the packages you have selected to install.</p>
+</div>
+<div class="paragraph">
+<p>When enough space has been reclaimed for the installation to proceed, the <b class="button">Reclaim Space</b> button will become available. Click this button to return to the Installation Summary screen and proceed with the installation.</p>
+</div>
+</div>
+</div>
+</article>
+  </main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script src="../../../_/js/vendor/highlight.js"></script>
+<script>hljs.initHighlighting()</script>
+  </body>
+</html>

@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Troubleshooting Installation on 64-bit AMD, Intel, and ARM Systems :: CentOS Docs Site</title>
+    <link rel="canonical" href="https://docs.centos.org/centos/install-guide/Trouble-x86/">
+    <meta name="generator" content="Antora 1.0.1">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://docs.centos.org"><img src="https://docs.centos.org/_images/logo_small.png"></a>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="https://www.centos.org/download/">Download CentOS</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="main-wrapper">
+<div class="navigation-container" data-component="centos" data-version="master">
+  <aside class="navigation">
+    <div class="panels">
+<div class="navigation-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../">Installation Guide</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../getting-started/">Getting Started</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../downloading/">Downloading CentOS</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="../Making_Media/">Preparing Installation Media</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Making_Media_Optical/">CD or DVD</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="../Making_Media_USB/">USB Drive</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Making_Media_USB_Linux/">Making an Installation USB Drive on Linux</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Making_Media_USB_Windows/">Making an Installation USB Drive on Windows</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Making_Media_USB_Mac/">Making an Installation USB Drive on Mac</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="../Preparing_Install_Sources/">Preparing Installation Sources</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Install_Source_DVD/">Installation Source on a DVD</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Install_Source_HDD/">Installation Source on a Hard Drive</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Install_Source_Network/">Installation Source on the Network</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="../Part_Install_x86/">Installing on x86_64 and ARM 64</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Simple_Installation/">Quick Installation Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Steps-x86/">Planning for Installation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../DU-Updating_drivers_during_installation_x86/">Updating Drivers During Installation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Boot_x86/">Booting the Installation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="../Graphical_Installation-x86/">Installing Using Anaconda</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Consoles_Logs_During_Install_x86/">Consoles and Logging During the Installation</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Text_Installation_Intro-x86/">Installing in Text Mode</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Graphical_Installation_Intro-x86/">Installing in the Graphical User Interface</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../WelcomeSpoke-x86/">Welcome Screen and Language Selection</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../SummaryHub-x86/">The Installation Summary Screen</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../DateTimeSpoke-x86/">Date &amp; Time</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../LangSupportSpoke-x86/">Language Support</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../KeyboardSpoke-x86/">Keyboard Configuration</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../SecurityPolicySpoke-x86/">Security Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../SourceSpoke-x86/">Installation Source</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../NetworkSpoke-x86/">Network &amp; Hostname</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../SoftwareSpoke-x86/">Software Selection</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../StorageSpoke-x86/">Installation Destination</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../CustomSpoke-x86/">Manual Partitioning</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../FilterSpoke-x86/">Storage Devices</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../KdumpSpoke-x86/">Kdump</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Write_changes_to_disk_x86/">Begin Installation</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../ProgressHub-x86/">Installation Progress</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../PasswordSpoke-x86/">Set the Root Password</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../UserSpoke-x86/">Create a User Account</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Complete-x86/">Installation Complete</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="./">Troubleshooting</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="../Part_Install_ppc/">Installing on IBM Power Systems</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Steps-ppc/">Planning for Installation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../DU-Updating_drivers_during_installation_ppc/">Updating Drivers During Installation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Boot_ppc/">Booting the Installation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="../Graphical_Installation-ppc/">Installing Using Anaconda</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Consoles_Logs_During_Install_ppc/">Consoles and Logging During the Installation</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Text_Installation_Intro-ppc/">Installing in Text Mode</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Graphical_Installation_Intro-ppc/">Installing in the Graphical User Interface</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../WelcomeSpoke-ppc64/">Welcome Screen and Language Selection</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../SummaryHub-ppc64/">The Installation Summary Screen</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../DateTimeSpoke-ppc64/">Date &amp; Time</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../LangSupportSpoke-ppc64/">Language Support</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../KeyboardSpoke-ppc64/">Keyboard Configuration</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../SecurityPolicySpoke-ppc64/">Security Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../SourceSpoke-ppc64/">Installation Source</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../NetworkSpoke-ppc64/">Network &amp; Hostname</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../SoftwareSpoke-ppc64/">Software Selection</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../StorageSpoke-ppc64/">Installation Destination</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../CustomSpoke-ppc64/">Manual Partitioning</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../FilterSpoke-ppc64/">Storage Devices</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../KdumpSpoke-ppc64/">Kdump</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Write_changes_to_disk_ppc/">Begin Installation</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../ProgressHub-ppc64/">Installation Progress</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../PasswordSpoke-ppc64/">Set the Root Password</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../UserSpoke-ppc64/">Create a User Account</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Complete-ppc/">Installation Complete</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Trouble-ppc/">Troubleshooting</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="../Part_Install_Advanced/">Advanced Installation Options</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../adminoptions/">Boot Options</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../pxe-server/">Preparing for a Network Installation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../vnc-installations/">Using VNC</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../headless-installations/">Headless Systems</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Kickstart2/">Kickstart Installations</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../disk-image-install/">Installing into a Disk Image</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="../Part_After_Install/">After Installation</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../InitialSetupHub-common/">Initial Setup</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../nextsteps/">Your Next Steps</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Rescue_Mode/">Basic System Recovery</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../uninstall/">Uninstalling CentOS</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="../Part_Appendixes/">Technical Appendixes</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Partitions-x86/">An Introduction to Disk Partitions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../iSCSI/">iSCSI Disks</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Understanding_LVM/">Understanding LVM</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../techref/">Other Technical Documentation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ext4_to_xfs_command_reference_table/">Reference Table for ext4 and XFS Commands</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../data_size_appendix/">Data Size Terminology Reference Table</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="navigation-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Installation Guide</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <span class="title">CentOS Documentation</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../docs/">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <span class="title">Installation Guide</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+  <main class="main">
+<div class="toolbar" role="navigation">
+  <button class="navigation-toggle"></button>
+  <a href="../../../docs/" class="home-link"></a>
+<nav class="crumbs" aria-label="breadcrumbs">
+  <ul>
+    <li class="crumb"><a href="../">Installation Guide</a></li>
+    <li class="crumb"><a href="../Part_Install_x86/">Installing on x86_64 and ARM 64</a></li>
+    <li class="crumb"><a href="./">Troubleshooting</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/CentOS/docs-installation-guide/edit/7.5/modules/install-guide/pages/Trouble-x86.adoc">Edit this Page</a></div>
+</div>
+<article class="doc">
+<h1>Troubleshooting Installation on 64-bit AMD, Intel, and ARM Systems</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#sect-trouble-beginning-installation-x86">Trouble Beginning the Installation</a>
+<ul class="sectlevel2">
+<li><a href="#_problems_with_booting_into_the_graphical_installation">Problems with Booting into the Graphical Installation</a></li>
+<li><a href="#_serial_console_not_detected">Serial Console Not Detected</a></li>
+</ul>
+</li>
+<li><a href="#sect-trouble-during-installation-x86">Trouble During the Installation</a>
+<ul class="sectlevel2">
+<li><a href="#sect-trouble-during-no-target-x86">No Disks Detected</a></li>
+<li><a href="#creating_pre-installation-logs-x86">Creating Pre-installation Log Files</a></li>
+</ul>
+</li>
+<li><a href="#sect-trouble-after-x86">Problems After Installation</a>
+<ul class="sectlevel2">
+<li><a href="#_are_you_unable_to_boot_with_your_raid_card">Are You Unable to Boot With Your RAID Card?</a></li>
+<li><a href="#sect-trouble-after-graphical-boot-x86">Trouble With the Graphical Boot Sequence</a></li>
+<li><a href="#sect-trouble-after-graphical-login-x86">Booting into a Graphical Environment</a></li>
+<li><a href="#_no_graphical_user_interface_present">No Graphical User Interface Present</a></li>
+<li><a href="#_x_server_crashing_after_user_logs_in">X Server Crashing After User Logs In</a></li>
+<li><a href="#sect-trouble-after-ram-x86">Is Your RAM Not Being Recognized?</a></li>
+<li><a href="#_is_your_system_displaying_signal_11_errors">Is Your System Displaying Signal 11 Errors?</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This chapter discusses some common installation problems and their solutions.</p>
+</div>
+<div class="paragraph">
+<p>For debugging purposes, <strong class="application">Anaconda</strong> logs installation actions into files in the <code>/tmp</code> directory. These files are listed in the following table.</p>
+</div>
+<table id="tabl-installation-log-files-x86" class="tableblock frame-all grid-all spread">
+<caption class="title">Table 1. Log Files Generated During the Installation</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Log file</th>
+<th class="tableblock halign-left valign-top">Contents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/tmp/anaconda.log</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">general <strong class="application">Anaconda</strong> messages</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/tmp/program.log</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">all external programs run during the installation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/tmp/storage.log</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">extensive storage module information</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/tmp/packaging.log</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong class="application">yum</strong> and <strong class="application">rpm</strong> package installation messages</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>/tmp/syslog</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">hardware-related system messages</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>If the installation fails, the messages from these files are consolidated into <code>/tmp/anaconda-tb-<em>identifier</em></code>, where <em>identifier</em> is a random string.</p>
+</div>
+<div class="paragraph">
+<p>After successful installation, by default, these files will be copied to the installed system under the directory <code>/var/log/anaconda/</code>. However, if installation is unsuccessful, or if the <code class="option">inst.nosave=all</code> or <code class="option">inst.nosave=logs</code> options are used when booting the installation system, these logs will only exist in the installation program&#8217;s RAM disk. This means they are not saved permanently and will be lost once the system is powered down. To store them permanently, copy those files to another system on the network by using <code class="command">scp</code> on the system running the installation program, or copy them to a mounted storage device (such as an USB flash drive). Details on how to transfer the log files over the network are below. Note that if you use an USB flash drive or other removable media, you should make sure to back up any data on it before starting the procedure.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Transferring Log Files Onto a USB Drive</div>
+<ol class="arabic">
+<li>
+<p>On the system you are installing, press <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>F2</kbd></span> to access a shell prompt. You will be logged into a root account and you will have access to the installation program&#8217;s temporary file system.</p>
+</li>
+<li>
+<p>Connect a USB flash drive to the system and execute the <code class="command">dmesg</code> command. A log detailing all recent events will be displayed. At the bottom of this log, you will see a set of messages caused by the USB flash drive you just connected. It will look like a set of lines similar to the following:</p>
+<div class="literalblock">
+<div class="content">
+<pre><code>[  170.171135] sd 5:0:0:0: [sdb] Attached SCSI removable disk</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note the name of the connected device - in the above example, it is <code>sdb</code>.</p>
+</div>
+</li>
+<li>
+<p>Go to the <code>/mnt</code> directory and once there, create new directory which will serve as the mount target for the USB drive. The name of the directory does not matter; this example uses the name <code>usb</code>.</p>
+<div class="literalblock">
+<div class="content">
+<pre><code>#</code> mkdir usb</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Mount the USB flash drive onto the newly created directory. Note that in most cases, you do not want to mount the whole drive, but a partition on it. Therefore, do not use the name <code>sdb</code> - use the name of the partition you want to write the log files to. In this example, the name <code>sdb1</code> is used.</p>
+<div class="literalblock">
+<div class="content">
+<pre><code>#</code> mount /dev/sdb1 /mnt/usb</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can now verify that you mounted the correct device and partition by accessing it and listing its contents - the list should match what you expect to be on the drive.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre><code>#</code> cd /mnt/usb</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre><code>#</code> ls</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Copy the log files to the mounted device.</p>
+<div class="literalblock">
+<div class="content">
+<pre><code>#</code> cp /tmp/*log /mnt/usb</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Unmount the USB flash drive. If you get an error message saying that the target is busy, change your working directory to outside the mount (for example, <code>/</code>).</p>
+<div class="literalblock">
+<div class="content">
+<pre><code>#</code> umount /mnt/usb</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The log files from the installation are now saved on the USB flash drive.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Transferring Log Files Over the Network</div>
+<ol class="arabic">
+<li>
+<p>On the system you are installing, press <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>F2</kbd></span> to access a shell prompt. You will be logged into a root account and you will have access to the installation program&#8217;s temporary file system.</p>
+</li>
+<li>
+<p>Switch to the <code>/tmp</code> directory where the log files are located:</p>
+<div class="literalblock">
+<div class="content">
+<pre><code>#</code> cd /tmp</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Copy the log files onto another system on the network using the <code class="command">scp</code> command:</p>
+<div class="literalblock">
+<div class="content">
+<pre><code>#</code> scp *log user@address:path</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Replace <em>user</em> with a valid user name on the target system, <em>address</em> with the target system&#8217;s address or host name, and <em>path</em> with the path to the directory you want to save the log files into. For example, if you want to log in as <code>john</code> to a system with an IP address of <code>192.168.0.122</code> and place the log files into the <code>/home/john/logs/</code> directory on that system, the command will have the following form:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre><code>#</code> scp *log john@192.168.0.122:/home/john/logs/</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When connecting to the target system for the first time, the SSH client asks you to confirm that the fingerprint of the remote system is correct and that you want to continue:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre><code>The authenticity of host '192.168.0.122 (192.168.0.122)' can't be established.</code>
+<code>ECDSA key fingerprint is a4:60:76:eb:b2:d0:aa:23:af:3d:59:5c:de:bb:c4:42.</code>
+<code>Are you sure you want to continue connecting (yes/no)?</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Type <code>yes</code> and press <kbd>Enter</kbd> to continue. Then, provide a valid password when prompted. The files will start transferring to the specified directory on the target system.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The log files from the installation are now permanently saved on the target system and available for review.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sect-trouble-beginning-installation-x86"><a class="anchor" href="#sect-trouble-beginning-installation-x86"></a>Trouble Beginning the Installation</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_problems_with_booting_into_the_graphical_installation"><a class="anchor" href="#_problems_with_booting_into_the_graphical_installation"></a>Problems with Booting into the Graphical Installation</h3>
+<div class="paragraph">
+<p>Systems with some video cards have trouble booting into the graphical installation program. If the installation program does not run using its default settings, it attempts to run in a lower resolution mode. If that still fails, the installation program attempts to run in text mode.</p>
+</div>
+<div class="paragraph">
+<p>There are several possible solutions to display issues, most of which involve specifying custom boot options. For more information, see <a href="../adminoptions/#sect-boot-options-installer" class="page">Configuring the Installation System at the Boot Menu</a>.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Use the basic graphics mode</dt>
+<dd>
+<div class="paragraph">
+<p>You can attempt to perform the installation using the basic graphics driver. To do this, either select Troubleshooting &gt; <code>Install CentOS in basic graphics mode</code> in the boot menu, or edit the installation program&#8217;s boot options and append <code class="option">inst.xdriver=vesa</code> at the end of the command line.</p>
+</div>
+</dd>
+<dt class="hdlist1">Specify the display resolution manually</dt>
+<dd>
+<div class="paragraph">
+<p>If the installation program fails to detect your screen resolution, you can override the automatic detection and specify it manually. To do this, append the <code class="option">inst.resolution=<em>x</em></code> option at the boot menu, where <em>x</em> is your display&#8217;s resolution (for example, <code>1024x768</code>).</p>
+</div>
+</dd>
+<dt class="hdlist1">Use an alternate video driver</dt>
+<dd>
+<div class="paragraph">
+<p>You can also attempt to specify a custom video driver, overriding the installation program&#8217;s automatic detection. To specify a driver, use the <code class="option">inst.xdriver=<em>x</em></code> option, where <em>x</em> is the device driver you want to use (for example, <code>nouveau</code>).</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>If specifying a custom video driver solves your problem, you should report it as a bug at <a href="https://bugzilla.redhat.com" class="bare">https://bugzilla.redhat.com</a> under the <code>anaconda</code> component. <strong class="application">Anaconda</strong> should be able to detect your hardware automatically and use the appropriate driver without your intervention.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</dd>
+<dt class="hdlist1">Perform the installation using VNC</dt>
+<dd>
+<div class="paragraph">
+<p>If the above options fail, you can use a separate system to access the graphical installation over the network, using the <em>Virtual Network Computing</em> (VNC) protocol. For details on installing using VNC, see <a href="../vnc-installations/#chap-vnc-installations" class="page">Using VNC</a>.</p>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_serial_console_not_detected"><a class="anchor" href="#_serial_console_not_detected"></a>Serial Console Not Detected</h3>
+<div class="paragraph">
+<p>In some cases, attempting to install in text mode using a serial console will result in no output on the console. This happens on systems which have a graphics card, but no monitor connected. If <strong class="application">Anaconda</strong> detects a graphics card, it will attempt to use it for a display, even if no display is connected.</p>
+</div>
+<div class="paragraph">
+<p>If you want to perform a text-based installation on a serial console, use the <code class="option">inst.text</code> and <code class="option">console=</code> boot options. See <a href="../adminoptions/#chap-anaconda-boot-options" class="page">Boot Options</a> for more details.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sect-trouble-during-installation-x86"><a class="anchor" href="#sect-trouble-during-installation-x86"></a>Trouble During the Installation</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="sect-trouble-during-no-target-x86"><a class="anchor" href="#sect-trouble-during-no-target-x86"></a>No Disks Detected</h3>
+<div class="paragraph">
+<p>In the <code>Installation Destination</code> screen, the following error message can appear at the bottom: <code>No disks detected. Please shut down the computer, connect at least one disk, and restart to complete installation</code>.</p>
+</div>
+<div class="paragraph">
+<p>The message indicates that <strong class="application">Anaconda</strong> did not find any writable storage devices to install to. In that case, first make sure that your system does have at least one storage device attached.</p>
+</div>
+<div class="paragraph">
+<p>If your system uses a hardware RAID controller, verify that the controller is properly configured and working. See your controller&#8217;s documentation for instructions.</p>
+</div>
+<div class="paragraph">
+<p>If you are installing into one or more iSCSI devices and there is no local storage present on the system, make sure that all required LUNs (<em>Logical Unit Numbers</em>) are being presented to the appropriate HBA (<em>Host Bus Adapter</em>). For additional information about iSCSI, see <a href="../iSCSI/#appe-iscsi-disks" class="page">iSCSI Disks</a>.</p>
+</div>
+<div class="paragraph">
+<p>If you made sure you have a connected and properly configured storage device and the message still appears after you reboot the system and start the installation again, it means that the installation program failed to detect the storage. In most cases this message appears when you attempt to install on an SCSI device which has not been recognized by the installation program.</p>
+</div>
+<div class="paragraph">
+<p>In that case, you will have to perform a driver update before starting the installation. Check your hardware vendor&#8217;s website to determine if a driver update is available that fixes your problem. For more general information on driver updates, see <a href="../DU-Updating_drivers_during_installation_x86/#chap-driver-updates-x86" class="page">Updating Drivers During Installation on AMD64 and Intel&#160;64 Systems</a>.</p>
+</div>
+<div class="paragraph">
+<p>You can also consult the <em class="citetitle">Red&#160;Hat Hardware Compatibility List</em>, available online at <a href="https://hardware.redhat.com" class="bare">https://hardware.redhat.com</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="creating_pre-installation-logs-x86"><a class="anchor" href="#creating_pre-installation-logs-x86"></a>Creating Pre-installation Log Files</h3>
+<div class="paragraph">
+<p>To debug installation problems you can set the <code class="option">inst.debug</code> option to create log files from the environment before the installation starts. These log files contain, for example, the current storage configuration.</p>
+</div>
+<div class="paragraph">
+<p>To set the option in the CentOS installation boot menu:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Select the <code>Install CentOS&#160;7.5.1804</code> entry.</p>
+</li>
+<li>
+<p>Press the <kbd>Tab</kbd> key to edit the boot options.</p>
+</li>
+<li>
+<p>Append <code class="option">inst.debug</code> to the options. For example:</p>
+<div class="literalblock">
+<div class="content">
+<pre>&gt; vmlinuz ... <code>inst.debug</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For further details, see <a href="../adminoptions/#chap-anaconda-boot-options" class="page">Boot Options</a>.</p>
+</div>
+</li>
+<li>
+<p>Press <kbd>Enter</kbd> to start the setup.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The system stores the pre-installation log files in the <code>/tmp/pre-anaconda-logs/</code> directory before Anaconda starts. To access the log files:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Switch to the console. See <a href="../Consoles_Logs_During_Install_x86/#sect-installation-consoles-x86" class="page">Accessing Consoles (x86)</a>.</p>
+</li>
+<li>
+<p>Change into the <code>/tmp/pre-anaconda-logs/</code> directory:</p>
+<div class="literalblock">
+<div class="content">
+<pre># cd /tmp/pre-anaconda-logs/</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sect-trouble-after-x86"><a class="anchor" href="#sect-trouble-after-x86"></a>Problems After Installation</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_are_you_unable_to_boot_with_your_raid_card"><a class="anchor" href="#_are_you_unable_to_boot_with_your_raid_card"></a>Are You Unable to Boot With Your RAID Card?</h3>
+<div class="paragraph">
+<p>If you have performed an installation and cannot boot your system properly, you might need to reinstall and partition your system&#8217;s storage differently.</p>
+</div>
+<div class="paragraph">
+<p>Some BIOS types do not support booting from RAID cards. After you finish the installation and reboot the system for the first time, a text-based screen showing the boot loader prompt (for example, <code>grub&gt;</code>) and a flashing cursor might be all that appears. If this is the case, you must repartition your system and move your <code>/boot</code> partition and the boot loader outside the RAID array. The <code>/boot</code> partition and the boot loader must be on the same drive.</p>
+</div>
+<div class="paragraph">
+<p>Once these changes have been made, you should be able to finish your installation and boot the system properly. For more information about partitioning, see <a href="../StorageSpoke-x86/#sect-disk-partitioning-setup-x86" class="page">Installation Destination (x86)</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-trouble-after-graphical-boot-x86"><a class="anchor" href="#sect-trouble-after-graphical-boot-x86"></a>Trouble With the Graphical Boot Sequence</h3>
+<div class="paragraph">
+<p>After you finish the installation and reboot your system for the first time, it is possible that the system stops responding during the graphical boot sequence, requiring a reset. In this case, the boot loader is displayed successfully, but selecting any entry and attempting to boot the system results in a halt. This usually means a problem with the graphical boot sequence; to solve this issue, you must disable graphical boot. To do this, temporarily alter the setting at boot time before changing it permanently.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Disabling Graphical Boot Temporarily</div>
+<ol class="arabic">
+<li>
+<p>Start your computer and wait until the boot loader menu appears. If you set your boot loader timeout period to 0, hold down the <kbd>Esc</kbd> key to access it.</p>
+</li>
+<li>
+<p>When the boot loader menu appears, use your cursor keys to highlight the entry you want to boot and press the <kbd>e</kbd> key to edit this entry&#8217;s options.</p>
+</li>
+<li>
+<p>In the list of options, find the kernel line - that is, the line beginning with the keyword <code>linux</code> (or, in some cases, <code>linux16</code> or <code>linuxefi</code>). On this line, locate the <code>rhgb</code> option and delete it. The option might not be immediately visible; use the cursor keys to scroll up and down.</p>
+</li>
+<li>
+<p>Press <kbd>F10</kbd> or <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>X</kbd></span> to boot your system with the edited options.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>If the system started successfully, you can log in normally. Then you will need to disable the graphical boot permanently - otherwise you will have to perform the previous procedure every time the system boots. To permanently change boot options, do the following.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Disabling Graphical Boot Permanently</div>
+<ol class="arabic">
+<li>
+<p>Log in to the <code>root</code> account using the <code class="command">su -</code> command:</p>
+<div class="literalblock">
+<div class="content">
+<pre><code>$</code> <code class="command">su -</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Use the <strong class="application">grubby</strong> tool to find the default <strong class="application">GRUB2</strong> kernel:</p>
+<div class="literalblock">
+<div class="content">
+<pre><code>#</code> grubby --default-kernel
+/boot/vmlinuz-3.10.0-229.4.2.el7.x86_64</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Use the <strong class="application">grubby</strong> tool to remove the <code>rhgb</code> boot option from the default kernel, identified in the last step, in your <strong class="application">GRUB2</strong> configuration. For example:</p>
+<div class="literalblock">
+<div class="content">
+<pre><code>#</code> grubby --remove-args="rhgb" --update-kernel <em>/boot/vmlinuz-3.10.0-229.4.2.el7.x86_64</em></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>After you finish this procedure, you can reboot your computer. CentOS will not use the graphical boot sequence any more. If you want to enable graphical boot in the future, follow the same procedure, replacing the <code>--remove-args="rhgb"</code> parameter with the <code>--args="rhgb"</code> paramter. This will restore the <code>rhgb</code> boot option to the default kernel in your <strong class="application">GRUB2</strong> configuration.</p>
+</div>
+<div class="paragraph">
+<p>See the <a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/System_Administrators_Guide/index.html">Red&#160;Hat Enterprise&#160;Linux&#160;7 System Administrator&#8217;s Guide</a> for more information about working with the <strong class="application">GRUB2</strong> boot loader.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-trouble-after-graphical-login-x86"><a class="anchor" href="#sect-trouble-after-graphical-login-x86"></a>Booting into a Graphical Environment</h3>
+<div class="paragraph">
+<p>If you have installed the <strong class="application">X Window System</strong> but are not seeing a graphical desktop environment once you log into your system, you can start it manually using the <code class="command">startx</code> command. Note, however, that this is just a one-time fix and does not change the log in process for future log ins.</p>
+</div>
+<div class="paragraph">
+<p>To set up your system so that you can log in at a graphical login screen, you must change the default <strong class="application">systemd</strong> target to <code>graphical.target</code>. When you are finished, reboot the computer. You will presented with a graphical login prompt after the system restarts.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Setting Graphical Login as Default</div>
+<ol class="arabic">
+<li>
+<p>Open a shell prompt. If you are in your user account, become root by typing the <code class="command">su -</code> command.</p>
+</li>
+<li>
+<p>Change the default target to <code>graphical.target</code>. To do this, execute the following command:</p>
+<div class="literalblock">
+<div class="content">
+<pre><code>#</code> systemctl set-default graphical.target</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Graphical login is now enabled by default - you will be presented with a graphical login prompt after the next reboot. If you want to reverse this change and keep using the text-based login prompt, execute the following command as <code>root</code>:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre><code>#</code> systemctl set-default multi-user.target</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For more information about targets in <strong class="application">systemd</strong>, see the <a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/System_Administrators_Guide/index.html">Red&#160;Hat Enterprise&#160;Linux&#160;7 System Administrator&#8217;s Guide</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_no_graphical_user_interface_present"><a class="anchor" href="#_no_graphical_user_interface_present"></a>No Graphical User Interface Present</h3>
+<div class="paragraph">
+<p>If you are having trouble getting <strong class="application">X</strong> (the <strong class="application">X Window System</strong>) to start, it is possible that it has not been installed. Some of the preset base environments you can select during the installation, such as <code>Minimal install</code> or <code>Web Server</code>, do not include a graphical interface - it has to be installed manually.</p>
+</div>
+<div class="paragraph">
+<p>If you want <strong class="application">X</strong>, you can install the necessary packages afterwards. See the Knowledgebase article at <a href="https://access.redhat.com/site/solutions/5238" class="bare">https://access.redhat.com/site/solutions/5238</a> for information on installing a graphical desktop environment.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_x_server_crashing_after_user_logs_in"><a class="anchor" href="#_x_server_crashing_after_user_logs_in"></a>X Server Crashing After User Logs In</h3>
+<div class="paragraph">
+<p>If you are having trouble with the <strong class="application">X</strong> server crashing when a user logs in, one or more of your file systems can be full or nearly full. To verify that this is the problem you are experiencing, execute the following command:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre><code>$</code> <code class="command">df -h</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The output will help you diagnose which partition is full - in most cases, the problem will be on the <code>/home</code> partition. The following is a sample output of the <code class="command">df</code> command:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Filesystem                                  Size  Used Avail Use% Mounted on
+/dev/mapper/vg_centos-root                     20G  6.0G   13G  32% /
+devtmpfs                                    1.8G     0  1.8G   0% /dev
+tmpfs                                       1.8G  2.7M  1.8G   1% /dev/shm
+tmpfs                                       1.8G 1012K  1.8G   1% /run
+tmpfs                                       1.8G     0  1.8G   0% /sys/fs/cgroup
+tmpfs                                       1.8G  2.6M  1.8G   1% /tmp
+/dev/sda1                                   976M  150M  760M  17% /boot
+/dev/dm-4                                    90G   90G     0 100% /home</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In the above example, you can see that the <code>/home</code> partition is full, which causes the crash. You can make some room on the partition by removing unneeded files. After you free up some disk space, start <strong class="application">X</strong> using the <code class="command">startx</code> command.</p>
+</div>
+<div class="paragraph">
+<p>For additional information about <code class="command">df</code> and an explanation of the options available (such as the <code class="option">-h</code> option used in this example), see the <code>df(1)</code> man page.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-trouble-after-ram-x86"><a class="anchor" href="#sect-trouble-after-ram-x86"></a>Is Your RAM Not Being Recognized?</h3>
+<div class="paragraph">
+<p>In some cases the kernel does not recognize all of your memory (RAM), which causes the system to use less memory than is installed. You can find out how much RAM is being utilized using the <code class="command">free -m</code> command. If the displayed total amount of memory does not match your expectations, it is likely that at least one of your memory modules is faulty. On BIOS-based systems, you can use the <strong class="application">Memtest86+</strong> utility to test your system&#8217;s memory - see <a href="../adminoptions/#sect-boot-options-memtest" class="page">Loading the Memory Testing Mode</a> for details.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Some hardware configurations have a part of the system&#8217;s RAM reserved and unavailable to the main system. Notably, laptop computers with integrated graphics cards will reserve some memory for the GPU. For example, a laptop with 4&#160;GiB of RAM and an integrated Intel graphics card will show only roughly 3.7&#160;GiB of available memory.</p>
+</div>
+<div class="paragraph">
+<p>Additionally, the <strong class="application">kdump</strong> crash kernel dumping mechanism, which is enabled by default on most CentOS systems, reserves some memory for the secondary kernel used in case of the primary kernel crashing. This reserved memory will also not be displayed as available when using the <code class="command">free</code> command. For details about <strong class="application">kdump</strong> and its memory requirements, see the <a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Kernel_Crash_Dump_Guide/index.html">Red&#160;Hat Enterprise&#160;Linux&#160;7 Kernel Crash Dump Guide</a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>If you made sure that your memory does not have any issues, you can try and set the amount of memory manually using the <code class="option">mem=</code> kernel option.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Configuring the Memory Manually</div>
+<ol class="arabic">
+<li>
+<p>Start your computer and wait until the boot loader menu appears. If you set your boot loader timeout period to 0, hold down the <kbd>Esc</kbd> key to access it.</p>
+</li>
+<li>
+<p>When the boot loader menu appears, use your cursor keys to highlight the entry you want to boot and press the <kbd>e</kbd> key to edit this entry&#8217;s options.</p>
+</li>
+<li>
+<p>In the list of options, find the kernel line - that is, the line beginning with the keyword <code>linux</code> (or, in some cases, <code>linux16</code>). Append the following option to the end of this line:</p>
+<div class="literalblock">
+<div class="content">
+<pre>mem=<em>xx</em>M</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Replace <em>xx</em> with the amount of RAM you have in MiB.</p>
+</div>
+</li>
+<li>
+<p>Press <kbd>F10</kbd> or <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>X</kbd></span> to boot your system with the edited options.</p>
+</li>
+<li>
+<p>Wait for the system to boot and log in. Then, open a command line and execute the <code class="command">free -m</code> command again. If total amount of RAM displayed by the command matches your expectations, append the following to the line beginning with <code>GRUB_CMDLINE_LINUX</code> in the <code>/etc/default/grub</code> file to make the change permanent:</p>
+<div class="literalblock">
+<div class="content">
+<pre>mem=<em>xx</em>M</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Replace <em>xx</em> with the amount of RAM you have in MiB.</p>
+</div>
+</li>
+<li>
+<p>After you updated the file and saved it, refresh the boot loader configuration so that the change will take effect. Run the following command with root privileges:</p>
+<div class="literalblock">
+<div class="content">
+<pre><code>#</code> grub2-mkconfig --output=/boot/grub2/grub.cfg</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>In <code>/etc/default/grub</code>, the above example would look similar to the following:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>GRUB_TIMEOUT=5
+GRUB_DISTRIBUTOR="$(sed 's, release.*$,,g' /etc/system-release)"
+GRUB_DEFAULT=saved
+GRUB_DISABLE_SUBMENU=true
+GRUB_TERMINAL_OUTPUT="console"
+GRUB_CMDLINE_LINUX="rd.lvm.lv=centos/root vconsole.font=latarcyrheb-sun16 rd.lvm.lv=centos/swap $([ -x /usr/sbin/rhcrashkernel.param ] &amp;&amp; /usr/sbin/rhcrashkernel-param || :) vconsole.keymap=us rhgb quiet mem=1024M"
+GRUB_DISABLE_RECOVERY="true"</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>See the <a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/System_Administrators_Guide/index.html">Red&#160;Hat Enterprise&#160;Linux&#160;7 System Administrator&#8217;s Guide</a> for more information about working with the <strong class="application">GRUB2</strong> boot loader.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_is_your_system_displaying_signal_11_errors"><a class="anchor" href="#_is_your_system_displaying_signal_11_errors"></a>Is Your System Displaying Signal 11 Errors?</h3>
+<div class="paragraph">
+<p>A signal 11 error, commonly known as a <em>segmentation fault</em>, means that a program accessed a memory location that was not assigned to it. A signal 11 error can occur due to a bug in one of the software programs that is installed, or faulty hardware.</p>
+</div>
+<div class="paragraph">
+<p>If you receive a fatal signal 11 error during the installation, first make sure you are using the most recent installation images, and let <strong class="application">Anaconda</strong> verify them to make sure they are not corrupted. Bad installation media (such as an improperly burned or scratched optical disk) are a common cause of signal 11 errors. Verifying the integrity of the installation media is recommended before every installation.</p>
+</div>
+<div class="paragraph">
+<p>For information about obtaining the most recent installation media, see <a href="../downloading/#chap-download" class="page">Downloading CentOS</a>. To perform a media check before the installation starts, append the <code class="option">rd.live.check</code> boot option at the boot menu. See <a href="../adminoptions/#sect-boot-options-mediacheck" class="page">Verifying Boot Media</a> for details.</p>
+</div>
+<div class="paragraph">
+<p>If you performed a media check without any errors and you still have issues with segmentation faults, it usually means that your system encountered a hardware error. In this case, the problem is most likely in the system&#8217;s memory (RAM). This can be a problem even if you previously used a different operating system on the same computer without any errors. On BIOS-based systems, you can use the <strong class="application">Memtest86+</strong> memory testing module included on the installation media to perform a thorough test of your system&#8217;s memory. See <a href="../adminoptions/#sect-boot-options-memtest" class="page">Loading the Memory Testing Mode</a> for details.</p>
+</div>
+<div class="paragraph">
+<p>Other possible causes are beyond this document&#8217;s scope. Consult your hardware manufacturer&#8217;s documentation and also see the <em class="citetitle">Red&#160;Hat Hardware Compatibility List</em>, available online at <a href="https://hardware.redhat.com" class="bare">https://hardware.redhat.com</a>.</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script src="../../../_/js/vendor/highlight.js"></script>
+<script>hljs.initHighlighting()</script>
+  </body>
+</html>

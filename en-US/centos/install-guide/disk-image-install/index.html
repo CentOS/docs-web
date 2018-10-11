@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Installing into a Disk Image :: CentOS Docs Site</title>
+    <link rel="canonical" href="https://docs.centos.org/centos/install-guide/disk-image-install/">
+    <meta name="generator" content="Antora 1.0.1">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://docs.centos.org"><img src="https://docs.centos.org/_images/logo_small.png"></a>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="https://www.centos.org/download/">Download CentOS</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="main-wrapper">
+<div class="navigation-container" data-component="centos" data-version="master">
+  <aside class="navigation">
+    <div class="panels">
+<div class="navigation-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../">Installation Guide</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../getting-started/">Getting Started</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../downloading/">Downloading CentOS</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="../Making_Media/">Preparing Installation Media</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Making_Media_Optical/">CD or DVD</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="../Making_Media_USB/">USB Drive</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Making_Media_USB_Linux/">Making an Installation USB Drive on Linux</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Making_Media_USB_Windows/">Making an Installation USB Drive on Windows</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Making_Media_USB_Mac/">Making an Installation USB Drive on Mac</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="../Preparing_Install_Sources/">Preparing Installation Sources</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Install_Source_DVD/">Installation Source on a DVD</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Install_Source_HDD/">Installation Source on a Hard Drive</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Install_Source_Network/">Installation Source on the Network</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="../Part_Install_x86/">Installing on x86_64 and ARM 64</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Simple_Installation/">Quick Installation Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Steps-x86/">Planning for Installation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../DU-Updating_drivers_during_installation_x86/">Updating Drivers During Installation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Boot_x86/">Booting the Installation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="../Graphical_Installation-x86/">Installing Using Anaconda</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Consoles_Logs_During_Install_x86/">Consoles and Logging During the Installation</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Text_Installation_Intro-x86/">Installing in Text Mode</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Graphical_Installation_Intro-x86/">Installing in the Graphical User Interface</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../WelcomeSpoke-x86/">Welcome Screen and Language Selection</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../SummaryHub-x86/">The Installation Summary Screen</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../DateTimeSpoke-x86/">Date &amp; Time</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../LangSupportSpoke-x86/">Language Support</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../KeyboardSpoke-x86/">Keyboard Configuration</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../SecurityPolicySpoke-x86/">Security Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../SourceSpoke-x86/">Installation Source</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../NetworkSpoke-x86/">Network &amp; Hostname</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../SoftwareSpoke-x86/">Software Selection</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../StorageSpoke-x86/">Installation Destination</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../CustomSpoke-x86/">Manual Partitioning</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../FilterSpoke-x86/">Storage Devices</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../KdumpSpoke-x86/">Kdump</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Write_changes_to_disk_x86/">Begin Installation</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../ProgressHub-x86/">Installation Progress</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../PasswordSpoke-x86/">Set the Root Password</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../UserSpoke-x86/">Create a User Account</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Complete-x86/">Installation Complete</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Trouble-x86/">Troubleshooting</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="../Part_Install_ppc/">Installing on IBM Power Systems</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Steps-ppc/">Planning for Installation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../DU-Updating_drivers_during_installation_ppc/">Updating Drivers During Installation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Boot_ppc/">Booting the Installation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="../Graphical_Installation-ppc/">Installing Using Anaconda</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Consoles_Logs_During_Install_ppc/">Consoles and Logging During the Installation</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Text_Installation_Intro-ppc/">Installing in Text Mode</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Graphical_Installation_Intro-ppc/">Installing in the Graphical User Interface</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../WelcomeSpoke-ppc64/">Welcome Screen and Language Selection</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../SummaryHub-ppc64/">The Installation Summary Screen</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../DateTimeSpoke-ppc64/">Date &amp; Time</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../LangSupportSpoke-ppc64/">Language Support</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../KeyboardSpoke-ppc64/">Keyboard Configuration</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../SecurityPolicySpoke-ppc64/">Security Policy</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../SourceSpoke-ppc64/">Installation Source</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../NetworkSpoke-ppc64/">Network &amp; Hostname</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../SoftwareSpoke-ppc64/">Software Selection</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../StorageSpoke-ppc64/">Installation Destination</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../CustomSpoke-ppc64/">Manual Partitioning</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../FilterSpoke-ppc64/">Storage Devices</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../KdumpSpoke-ppc64/">Kdump</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Write_changes_to_disk_ppc/">Begin Installation</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../ProgressHub-ppc64/">Installation Progress</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../PasswordSpoke-ppc64/">Set the Root Password</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../UserSpoke-ppc64/">Create a User Account</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../Complete-ppc/">Installation Complete</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Trouble-ppc/">Troubleshooting</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="../Part_Install_Advanced/">Advanced Installation Options</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../adminoptions/">Boot Options</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../pxe-server/">Preparing for a Network Installation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../vnc-installations/">Using VNC</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../headless-installations/">Headless Systems</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Kickstart2/">Kickstart Installations</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="./">Installing into a Disk Image</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="../Part_After_Install/">After Installation</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../InitialSetupHub-common/">Initial Setup</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../nextsteps/">Your Next Steps</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Rescue_Mode/">Basic System Recovery</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../uninstall/">Uninstalling CentOS</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="../Part_Appendixes/">Technical Appendixes</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Partitions-x86/">An Introduction to Disk Partitions</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../iSCSI/">iSCSI Disks</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Understanding_LVM/">Understanding LVM</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../techref/">Other Technical Documentation</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../ext4_to_xfs_command_reference_table/">Reference Table for ext4 and XFS Commands</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../data_size_appendix/">Data Size Terminology Reference Table</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="navigation-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Installation Guide</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <span class="title">CentOS Documentation</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../docs/">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <span class="title">Installation Guide</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+  <main class="main">
+<div class="toolbar" role="navigation">
+  <button class="navigation-toggle"></button>
+  <a href="../../../docs/" class="home-link"></a>
+<nav class="crumbs" aria-label="breadcrumbs">
+  <ul>
+    <li class="crumb"><a href="../">Installation Guide</a></li>
+    <li class="crumb"><a href="../Part_Install_Advanced/">Advanced Installation Options</a></li>
+    <li class="crumb"><a href="./">Installing into a Disk Image</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/CentOS/docs-installation-guide/edit/7.5/modules/install-guide/pages/disk-image-install.adoc">Edit this Page</a></div>
+</div>
+<article class="doc">
+<h1>Installing into a Disk Image</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#sect-disk-image-installation-manual">Manual Disk Image Installation</a>
+<ul class="sectlevel2">
+<li><a href="#sect-prepare-disk-image">Preparing a Disk Image</a></li>
+<li><a href="#sect-install-into-disk-image">Installing CentOS into a Disk Image</a></li>
+</ul>
+</li>
+<li><a href="#sect-disk-image-installation-automatic">Automatic Disk Image Installation</a>
+<ul class="sectlevel2">
+<li><a href="#sect-livemedia-creator-overview">Overview of livemedia-creator</a></li>
+<li><a href="#sect-livemedia-creator-install">Installing livemedia-creator</a></li>
+<li><a href="#sect-livemedia-creator-samples">Sample Kickstart Files</a></li>
+<li><a href="#sect-livemedia-creator-usage">Creating Custom Images</a></li>
+<li><a href="#sect-livemedia-creator-trouble">Troubleshooting livemedia-creator Problems</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This chapter describes the process of creating custom, bootable images of several different types, and other related topics. The image creation and installation process can be either performed manually in a procedure similar to a normal hard drive installation, or it can be automated using a Kickstart file and the <strong class="application">livemedia-creator</strong> tool.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Creating custom images using <strong class="application">livemedia-creator</strong> is currently supported only on AMD64 and Intel&#160;64 (x86_64) and IBM POWER (big endian) systems.</p>
+</div>
+<div class="paragraph">
+<p>Additionally, CentOS only supports creating custom images of CentOS&#160;7.5.1804.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>If you choose the manual approach, you will be able to perform the installation interactively, using the graphical installation program. The process is similar to installing using CentOS bootable media and the graphical installation program; however, before you begin the installation, you must create one or more empty image files manually.</p>
+</div>
+<div class="paragraph">
+<p>Automated disk image installations using <strong class="application">livemedia-creator</strong> are somewhat similar to Kickstart installations with network boot. To use this approach, you must prepare a valid Kickstart file, which will be used by <strong class="application">livemedia-creator</strong> to perform the installation. The disk image file will be created automatically.</p>
+</div>
+<div class="paragraph">
+<p>Both approaches to disk image installations require a separate installation source. In most cases, the best approach is to use an ISO image of the binary CentOS DVD. See <a href="../downloading/#chap-download" class="page">Downloading CentOS</a> for information about obtaining installation ISO images.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>It is not currently possible to use an installation ISO image of CentOS without any additional preparation. The installation source for a disk image installation must be prepared the same way it would be prepared when performing a normal installation. See <a href="../Preparing_Install_Sources/#sect-making-media-additional-sources" class="page">Preparing Installation Sources</a> for information about preparing installation sources.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sect-disk-image-installation-manual"><a class="anchor" href="#sect-disk-image-installation-manual"></a>Manual Disk Image Installation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A manual installation into a disk image is performed by executing the <strong class="application">Anaconda</strong> installation program on an existing system and specifying one or more disk image files as installation targets. Additional options can also be used to configure <strong class="application">Anaconda</strong> further. A list of available options can be obtained by using the <code class="command">anaconda -h</code> command.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Image installation using <strong class="application">Anaconda</strong> is potentially dangerous, because it uses the installation program on an already installed system. While no bugs are known at this moment which could cause any problems, it is possible that this process could render the entire system unusable. Installation into disk images should always be performed on systems or virtual machines specifically reserved for this purpose, and not on systems containing any valuable data.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>This section provides information about creating empty disk images and using the <strong class="application">Anaconda</strong> installation program to install CentOS into these images.</p>
+</div>
+<div class="sect2">
+<h3 id="sect-prepare-disk-image"><a class="anchor" href="#sect-prepare-disk-image"></a>Preparing a Disk Image</h3>
+<div class="paragraph">
+<p>The first step in manual disk image installation is creating one or more image files, which will later be used as installation targets similar to physical storage devices. On CentOS, a disk image file can be created using the following command:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre><code>$</code> <code class="command">fallocate -l <em>size</em> <em>name</em></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Replace <em>size</em> with a value representing the size of the image (such as <code>10G</code> or <code>5000M</code>), and <em>name</em> with the file name of the image to be created. For example, to create a disk image file named <code>myimage.raw</code> with the size of 30GB, use the following command:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre><code>$</code> <code class="command">fallocate -l 30G myimage.raw</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The <code class="command">fallocate</code> command allows you to specify the size of the file to be created in different ways, depending on the suffix used. For details about specifying the size, see the <code>fallocate(1)</code> man page.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The size of the disk image file you create will limit the maximum capacity of file systems created during the installation. The image must always have a minimum size of 3GB, but in most cases, the space requirements will be larger. The exact size you will need for your installation will vary depending on the software you want to install, the amount of swap space, and the amount of space you will need to be available after the installation. More details about partitioning are available in:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="../CustomSpoke-x86/#sect-recommended-partitioning-scheme-x86" class="page">Recommended Partitioning Scheme (x86)</a> for 64-bit AMD, Intel, and ARM systems</p>
+</li>
+<li>
+<p><a href="../CustomSpoke-ppc64/#sect-recommended-partitioning-scheme-ppc" class="page">Recommended Partitioning Scheme (ppc)</a> for IBM Power Systems servers</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>After you create one or more empty disk image files, continue with <a href="#sect-install-into-disk-image">Installing CentOS into a Disk Image</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-install-into-disk-image"><a class="anchor" href="#sect-install-into-disk-image"></a>Installing CentOS into a Disk Image</h3>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Set Security Enhanced Linux (<code>SELinux</code>) to permissive (or disabled) mode before creating custom images with <strong class="application">Anaconda</strong>. See <a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/SELinux_Users_and_Administrators_Guide/index.html">Red&#160;Hat Enterprise&#160;Linux&#160;7 SELinux User&#8217;s and Administrator&#8217;s Guide</a> for information on setting <code>SELinux</code> modes.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>To start the installation into a disk image file, execute the following command as <code>root</code>:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre><code>#</code> anaconda --image=/path/to/image/file</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Replace <em>/path/to/image/file</em> with the <em>full</em> path to the image file you created earlier.</p>
+</div>
+<div class="paragraph">
+<p>After executing this command, <strong class="application">Anaconda</strong> will start on your system. The installation interface will be the same as if you performed the installation normally (booting the system from CentOS media), but the graphical installation will start directly, skipping the boot menu. This means that boot options must be specified as additional arguments to the <code class="command">anaconda</code> command. You can view the full list of supported commands by executing <code class="command">anaconda -h</code> on a command line.</p>
+</div>
+<div class="paragraph">
+<p>One of the most important options is <code class="option">--repo=</code>, which allows you to specify an installation source. This option uses the same syntax as the <code class="option">inst.repo=</code> boot option. See <a href="../adminoptions/#sect-boot-options-installer" class="page">Configuring the Installation System at the Boot Menu</a> for more information.</p>
+</div>
+<div class="paragraph">
+<p>When you use the <code class="option">--image=</code> option, <em>only</em> the disk image file specified will be available as the installation target. No other devices will be visible in the <code>Installation Destination</code> dialog. If you want to use multiple disk images, you must specify the <code class="option">--image=</code> option separately for each image file separately. For example:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre><code>#</code> anaconda --image=/home/testuser/diskinstall/image1.raw --image=/home/testuser/diskinstall/image2.raw</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The above command will start <strong class="application">Anaconda</strong>, and in the <code>Installation Destination</code> screen, both image files specified will be available as installation targets.</p>
+</div>
+<div class="paragraph">
+<p>Optionally, you can also assign custom names to the disk image files used in the installation. To assign a name to a disk image file, append <code>:<em>name</em></code> to the end of the disk image file name. For example, to use a disk image file located in <code>/home/testuser/diskinstall/image1.raw</code> and assign the name <code>myimage</code> to it, execute the following command:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre><code>#</code> anaconda --image=/home/testuser/diskinstall/image1.raw:myimage</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sect-disk-image-installation-automatic"><a class="anchor" href="#sect-disk-image-installation-automatic"></a>Automatic Disk Image Installation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Creation of disk images and the installation into them can be automated using <strong class="application">livemedia-creator</strong>. To perform an automatic installation, you will need an installed CentOS system and a Kickstart file. The disk images themselves do not need to be created manually. For information about creating and using Kickstart files, see <a href="../Kickstart2/#chap-kickstart-installations" class="page">Kickstart Installations</a>.</p>
+</div>
+<div class="sect2">
+<h3 id="sect-livemedia-creator-overview"><a class="anchor" href="#sect-livemedia-creator-overview"></a>Overview of livemedia-creator</h3>
+<div class="paragraph">
+<p>Creating custom images using <strong class="application">livemedia-creator</strong> is usually a two stage process. In the first stage, a temporary disk image file is created and <strong class="application">Anaconda</strong>, the CentOS installation program, installs a system on this image based on the parameters provided in a Kickstart file. Then, in the second stage, <strong class="application">livemedia-creator</strong> uses this temporary system to create the final, bootable image.</p>
+</div>
+<div class="paragraph">
+<p>This behavior can be changed by specifying additional options. For example, it is possible to go through the first stage only, with the result being a disk image file, or to skip the first stage and use an existing disk or file system image to create the final bootable ISO image.</p>
+</div>
+<div class="paragraph">
+<p>Sample usage of <strong class="application">livemedia-creator</strong> is described in <a href="#sect-livemedia-creator-usage">Creating Custom Images</a>. On a system where the <strong class="package">lorax</strong> package is installed, a list of all available options can be displayed using the <code class="command">livemedia-creator --help</code> command. Additional documentation is also installed along with the <strong class="package">lorax</strong> package: the <code>livemedia-creator(1)</code> man page and the <code>README.livemedia-creator</code> file located in the <code>/usr/share/doc/lorax-<em>version</em>/</code> directory, where <em>version</em> is the version of the <strong class="package">lorax</strong> package you have installed.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-livemedia-creator-install"><a class="anchor" href="#sect-livemedia-creator-install"></a>Installing livemedia-creator</h3>
+<div class="paragraph">
+<p>The <strong class="application">livemedia-creator</strong> tool is a part of the <strong class="package">lorax</strong> package. To install the package, execute the following command as <code>root</code>:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre><code>#</code> yum install lorax</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You will also need to install several other packages in addition to <strong class="package">lorax</strong> itself. These packages are not dependencies of <strong class="package">lorax</strong> and therefore they are not installed automatically, but you might need them depending on what exactly are you using <strong class="application">livemedia-creator</strong> for. Among these packages are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="package">virt-install</strong>: a package providing tools to build new virtual machines, used in the first stage of live media creation unless the <code class="option">--no-virt</code> option is specified.</p>
+</li>
+<li>
+<p><strong class="package">libvirt</strong>, <strong class="package">qemu-kvm</strong>, <strong class="package">libvirt-client</strong> and other virtualization tools: when using <strong class="package">virt-install</strong>, your system must be prepared to create, run and manage a virtual machine. See the <a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Virtualization_Deployment_and_Administration_Guide/index.html">Red&#160;Hat Enterprise&#160;Linux&#160;7 Virtualization Deployment and Administration Guide</a> for information on virtualization in CentOS and for documentation about installing and working with virtualization tools.</p>
+</li>
+<li>
+<p><strong class="package">anaconda</strong>: the CentOS installation program, used in the first stage instead of virt-install if the <code class="option">--no-virt</code> option is used.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Other applications, which are beyond the scope of this chapter, might be necessary. If you attempt to execute <strong class="application">livemedia-creator</strong> and a package required with the options you specified is missing, the program will stop and an error message will be displayed informing you of packages you need to install before proceeding.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-livemedia-creator-samples"><a class="anchor" href="#sect-livemedia-creator-samples"></a>Sample Kickstart Files</h3>
+<div class="paragraph">
+<p>To successfully create a custom live image, you will need a valid Kickstart configuration file. Two samples are automatically installed along with <strong class="package">lorax</strong>. You can use these samples as a reference when creating your own custom images, or you can copy them and modify them to suit your intended usage. Both provided samples are located in the <code>/usr/share/doc/lorax-<em>version</em>/</code> directory, where <em>version</em> is the version number of the lorax package installed on your system.</p>
+</div>
+<div class="paragraph">
+<p>The available samples are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>rhel7-minimal.ks</code>: a configuration file which provides only a minimal installation (the <code>@core</code> group) and other essentials such as the kernel and the <strong class="application">GRUB2</strong> boot loader. No users apart from <code>root</code> are created, and no graphical interface or additional packages are installed.</p>
+</li>
+<li>
+<p><code>rhel7-livemedia.ks</code>: a more advanced configuration file which creates a live system with a graphical interface. A user named <code>liveuser</code> is created along with <code>root</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Both sample configurations need to be modified to use a valid location as the installation source. To do this edit the file and update the url command to refer to a valid installation source. See <a href="../Kickstart2/#chap-kickstart-installations" class="page">Kickstart Installations</a> for more information about Kickstart. No other changes are necessary for these samples to work.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Do not modify the samples in their original location. Copy them to another directory and modify the copies instead.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Only repositories provided by CentOS are supported as installation sources.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>When modifying the provided samples or making a Kickstart file from scratch, do not use the <code class="command">%include</code> statement as they are not supported by <code class="command">livemedia-creator</code>. All Kickstart files must be flattened either manually or using the <code class="command">ksflatten</code> tool before they can be used.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-livemedia-creator-usage"><a class="anchor" href="#sect-livemedia-creator-usage"></a>Creating Custom Images</h3>
+<div class="paragraph">
+<p>This section describes several common usage patterns for tools in the <strong class="package">lorax</strong> package. It is not intended to be a complete list of available options. To view every available option for livemedia-creator, execute <code class="command">livemedia-creator --help</code> or see the <code>livemedia-creator(1)</code> man page. For more information about lorax, see <a href="https://rhinstaller.github.io/lorax/lorax.html" class="bare">https://rhinstaller.github.io/lorax/lorax.html</a>.</p>
+</div>
+<div class="sect3">
+<h4 id="sect-lorax-usage"><a class="anchor" href="#sect-lorax-usage"></a>Using lorax to create a boot.iso file</h4>
+<div class="paragraph">
+<p>The installation system of CentOS is created by a tool named lorax. The lorax tool can also be used to create your own installation media, for example containing an updated kernel or additional packages.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>It is recommended to use lorax on a system that is the same release of CentOS as the image being created.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>After running the following as root, an installation image named <code>boot.iso</code> will exist in the <code>results/images</code> directory. The <code class="option">--repo=</code> command loads a Yum repository configuration file, in this case the default one, and use it to download packages the same way they would be downloaded during a system update.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre><code>#</code> yum install lorax
+<code>#</code> setenforce 0
+<code>#</code> lorax -p RHEL -v 7.4 -r 7.4 --repo=/etc/yum.repos.d/redhat.repo ./results/
+<code>#</code> setenforce 1</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="sect-livemedia-usage-virt"><a class="anchor" href="#sect-livemedia-usage-virt"></a>Creating a Live Image Using virt-install</h4>
+<div class="paragraph">
+<p>Perhaps the most common use of <strong class="application">livemedia-creator</strong> involves using <strong class="package">virt-install</strong> to create a temporary virtual machine to be used for the live image creation process. To create a live ISO using virt-install, you will need a valid Kickstart file and a bootable ISO image which contains the <strong class="application">Anaconda</strong> installation program. Such images are provided by Red&#160;Hat as "minimal boot media"; see <a href="../Making_Media_USB/#sect-making-usb-media" class="page">Making Installation USB Media</a> for details.</p>
+</div>
+<div class="paragraph">
+<p>The following command is the bare minimum you need to create a live image using <strong class="application">virt-install</strong>:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre><code>#</code> livemedia-creator --make-iso --iso=/path/to/boot.iso --ks=/path/to/valid/kickstart.ks</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Replace <em>/path/to/boot.iso</em> with a path to a minimal boot image and <em>/path/to/valid/kickstart.ks</em> with a path to a valid Kickstart file to be used in the image creation process.</p>
+</div>
+<div class="paragraph">
+<p>Other frequently used options in this particular use case are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code class="option">--vnc vnc</code>: this option allows you to watch the installation process using a VNC client such as <strong class="application">TigerVNC</strong>. The option is passed to virt-install&#8217;s <code class="option">--graphics</code> option. See <a href="../vnc-installations/#chap-vnc-installations" class="page">Using VNC</a> for more information.</p>
+</li>
+<li>
+<p><code class="option">--ram <em>x</em></code>: allows you to specify the amount of RAM for the temporary virtual machine in MiB.</p>
+</li>
+<li>
+<p><code class="option">--vcpus <em>x</em></code>: the amount of the virtual machine&#8217;s processors.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="sect-livemedia-usage-no-virt"><a class="anchor" href="#sect-livemedia-usage-no-virt"></a>Creating a Live Image Using Anaconda&#8217;s Image Install</h4>
+<div class="paragraph">
+<p>The <strong class="application">livemedia-creator</strong> application can create a live image using the <strong class="package">Anaconda</strong> package if <strong class="application">virt-install</strong> is not available. In this case, no image containing the installation program is needed, but the <strong class="package">Anaconda</strong> package must be installed on the system. Again, the process has two stages: first, a temporary disk image is created and a system is installed into it, and then this image is used to create the final bootable ISO.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Live image creation using <strong class="application">Anaconda</strong> is potentially dangerous, because it uses the installation program on the system itself instead of inside a virtual machine. While no bugs are known at this moment that would cause any problems, it is possible that this process could render the entire system unusable. Running <strong class="application">livemedia-creator</strong> with the <code class="option">--no-virt</code> option is therefore only recommended on virtual machines (guests) specifically reserved for this purpose.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Set Security Enhanced Linux (<code>SELinux</code>) to permissive (or disabled) mode before creating custom images with <strong class="application">Anaconda</strong>. See <a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/SELinux_Users_and_Administrators_Guide/index.html">Red&#160;Hat Enterprise&#160;Linux&#160;7 SELinux User&#8217;s and Administrator&#8217;s Guide</a> for information on setting <code>SELinux</code> modes.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>To create a live image using <strong class="application">Anaconda</strong>, use the <code class="option">--no-virt</code> option. For example:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre><code>#</code> livemedia-creator --make-iso --ks=/path/to/valid/kickstart.ks --no-virt</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="sect-livemedia-usage-stage1"><a class="anchor" href="#sect-livemedia-usage-stage1"></a>Creating a Disk or File System Image</h4>
+<div class="paragraph">
+<p>You can also use <strong class="application">livemedia-creator</strong> to create a disk or file system image. This means running only the first stage of the image creation process. The final ISO will not be created, the program will stop after finishing the installation process on the temporary disk or file system image file. You can then mount and inspect this image for errors, which can be useful when troubleshooting a modified Kickstart file, and you can also keep it for future use to save time when creating images in the future.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>It is also possible to use the <code class="option">--no-virt</code> option in all examples in this section.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>There are several ways to stop the creation process after the first stage. You can use the <code class="option">--image-only</code> option as illustrated in the following example:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>	<code>#</code> livemedia-creator --make-iso --ks=/path/to/valid/kickstart.ks --iso=/path/to/boot.iso --image-only</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Alternatively, you can use the <code class="option">--make-disk</code> option instead of <code class="option">--make-iso</code>:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>	<code>#</code> livemedia-creator --make-disk --ks=/path/to/valid/kickstart.ks --iso=/path/to/boot.iso</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can also create a file system image instead of partitioned disk image using the <code class="option">--make-fsimage</code> option:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>	<code>#</code> livemedia-creator --make-fsimage --ks=/path/to/valid/kickstart.ks --iso=/path/to/boot.iso</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In all cases, the result will be a partitioned disk image or a file system image, located in the <code>/var/tmp/</code> directory by default. To change the location of the result, use the <code class="option">--tmp <em>/path/to/temporary/directory/</em></code> option, where <em>/path/to/temporary/directory/</em> is the path to the target directory.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="sect-livemedia-usage-stage2"><a class="anchor" href="#sect-livemedia-usage-stage2"></a>Using a Previously Created Disk or File System Image</h4>
+<div class="paragraph">
+<p>If you already have a disk or file system image (see <a href="#sect-livemedia-usage-stage1">Creating a Disk or File System Image</a>), you can supply it to <strong class="application">livemedia-creator</strong> to produce the final bootable ISO image. In this case no Kickstart File or <strong class="application">Anaconda</strong> installation image is necessary; these are only needed in the first stage of the image creation process, which is skipped in this case.</p>
+</div>
+<div class="paragraph">
+<p>To create a final image from an existing partitioned disk image file, use the <code class="option">--disk-image</code> option. For example:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre><code>#</code> livemedia-creator --make-iso --disk-image=/path/to/disk/image.img</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If you want to use a file system image instead of a disk image, use the <code class="option">--fs-image</code> option instead:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre><code>#</code> livemedia-creator --make-iso --fs-image=/path/to/filesystem/image.img</pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="sect-livemedia-usage-appliance"><a class="anchor" href="#sect-livemedia-usage-appliance"></a>Creating an Appliance</h4>
+<div class="paragraph">
+<p>The <strong class="application">livemedia-creator</strong> utility can be used to create appliance images (a partitioned disk image), including an XML file containing its description, generated using a template. Virtual machine installations as well as image installations are supported in this case. To create an appliance image and description, use the <code class="option">--make-appliance</code> option instead of <code class="option">--make-iso</code>. For example:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre><code>#</code> livemedia-creator --make-appliance --ks=/path/to/valid/kickstart.ks --iso=/path/to/boot.iso</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Both the image and the description XML file will be stored in the <code>/var/tmp/</code> directory unless a different one is specified using the <code class="option">--resultdir</code> option.</p>
+</div>
+<div class="paragraph">
+<p>Additional options specific to appliance creation are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code class="option">--app-name <em>name</em></code>: specifies the name of the appliance, which will appear in the XML description file marked by the <code>&lt;name&gt;</code> tag. The default value is <code>None</code>.</p>
+</li>
+<li>
+<p><code class="option">--app-template <em>/path/to/template.tmpl</em></code>: specifies the template to be used. The default is <code>/usr/share/lorax/appliance/libvirt.tmpl</code>.</p>
+</li>
+<li>
+<p><code class="option">--app-file <em>/path/to/app/file.xml</em></code>: specifies name of the generated description XML file. The default value is <code>appliance.xml</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="sect-livemedia-usage-ami"><a class="anchor" href="#sect-livemedia-usage-ami"></a>Creating an Amazon Machine Image (AMI)</h4>
+<div class="paragraph">
+<p>To create an Amazon Machine Image (AMI) for use within the Amazon Elastic Compute Cloud (EC2), use the <code class="option">--make-ami</code> option. Virtualized and image installations are both supported.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre><code>#</code> livemedia-creator --make-ami --ks=/path/to/valid/kickstart.ks --iso=/path/to/boot.iso</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The result will be an image file named <code>ami-root.img</code>, located in the <code>/var/tmp/</code> directory, unless you used the <code class="option">--resultdir</code> option to specify a different one.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="sect-livemedia-usage-common"><a class="anchor" href="#sect-livemedia-usage-common"></a>Additional Arguments</h4>
+<div class="paragraph">
+<p>The following options can be used with all use cases listed above (virtual installations, <strong class="application">Anaconda</strong> image installations and others).</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code class="option">--keep-image</code>: when you specify this option, the temporary disk image file used in the first stage of the installation will not be deleted. It will be located in the <code>/var/tmp/</code> directory and it will have a randomly generated name such as <code>diskgU42Cq.img</code>.</p>
+</li>
+<li>
+<p><code class="option">--image-only</code>: using this option means that only the first stage of the image creation process will be executed. Instead of producing the final bootable ISO image, <strong class="application">livemedia-creator</strong> will only create the temporary disk image file and perform an installation on it. This option allows you to save time when testing modifications to your Kickstart file, because you can skip the time-consuming second stage and inspect the temporary disk image file.</p>
+</li>
+<li>
+<p><code class="option">--image-name <em>name</em></code>: allows you to specify a custom name for the temporary disk image file. The default name is randomly generated (for example, <code>disk1Fac8G.img</code>).</p>
+</li>
+<li>
+<p><code class="option">--tmp <em>/path/to/temporary/directory/</em></code>: specifies the top level temporary directory. The default value is <code>/var/tmp/</code>. When using this option, you must specify a directory which already exists.</p>
+</li>
+<li>
+<p><code class="option">--resultdir <em>/path/to/results/directory/</em></code>: specifies the directory where the results (the bootable ISO image) will appear after <strong class="application">livemedia-creator</strong> finishes. An already existing directory cannot be specified. The default is <code>/var/tmp/</code>. This option only applies to the final ISO image; if you are creating a disk or file system image and want it to be saved at a specific location, use the <code class="option">--tmp</code> option.</p>
+</li>
+<li>
+<p><code class="option">--logfile <em>/path/to/log/file/</em></code>: specifies the location of the program&#8217;s log file.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sect-livemedia-creator-trouble"><a class="anchor" href="#sect-livemedia-creator-trouble"></a>Troubleshooting livemedia-creator Problems</h3>
+<div class="paragraph">
+<p>This section offers suggestions on solving various issues commonly encountered when using <strong class="application">livemedia-creator</strong>. If you encounter a problem not described here, you can look into the program&#8217;s log files, which are automatically generated during every run and saved into the directory from which you executed the tool, unless you specify a different directory using the <code class="option">--logfile</code> option. The log files will be different based on the options you used - for example, <code>virt-install.log</code> will not be generated when you use the <code class="option">--no-virt</code> option (instead, you will get log files from <strong class="application">Anaconda</strong>, located in the <code>anaconda/</code> directory). Other files, namely <code>livemedia.log</code> and <code>program.log</code>, are generated every time.</p>
+</div>
+<div class="paragraph">
+<p>Another way to find and solve problems is using the <code class="option">--image-only</code> option when running the utility. This option will stop the program after the first stage, so only a disk image file will be generated instead of the final bootable ISO. You can then mount the disk image file and examine its contents without having to wait for the second stage to finish. Alternatively, you can use the <code class="option">--keep-image</code> option, which will execute both stages, but keep the temporary disk image for later analysis.</p>
+</div>
+<div class="paragraph">
+<p>Using the <code class="option">--vnc</code> option is recommended when testing changes to the Kickstart file. This option will allow you to use a VNC client to connect to the virtual machine and watch the installation progress. See <a href="../vnc-installations/#chap-vnc-installations" class="page">Using VNC</a> for details.</p>
+</div>
+<div class="sect3">
+<h4 id="sect-livemedia-trouble-hang"><a class="anchor" href="#sect-livemedia-trouble-hang"></a>Stuck Virtual Machine Installation</h4>
+<div class="paragraph">
+<p>If the installation program stops for any reason during the first stage of a virtual installation, <strong class="application">livemedia-creator</strong> will stop as well, waiting for the installation to finish. You can either interrupt the program directly, or you can solve this problem by stopping the temporary virtual machine. <strong class="application">Livemedia-creator</strong> will detect that the guest operating system has been stopped, delete all temporary files and exit.</p>
+</div>
+<div class="paragraph">
+<p>To stop the temporary virtual machine, follow this procedure:</p>
+</div>
+<div class="olist arabic">
+<div class="title">Stopping the Temporary Virtual Machine</div>
+<ol class="arabic">
+<li>
+<p>Use <strong class="application">virsh</strong> to list all virtual machines (guests) currently available on the system. The output will be similar to the following:</p>
+<div class="literalblock">
+<div class="content">
+<pre><code>#</code> virsh list --all
+	Id    Name                           State
+	----------------------------------------------------
+	93    LiveOS-2a198971-ba97-454e-a056-799f453e1bd7 running
+	-     RHEL7                      shut off</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Identify the temporary virtual machine. Its name will always start with <code>LiveOS</code>, followed by a string of random numbers and characters.</p>
+</div>
+</li>
+<li>
+<p>Once you have identified the temporary virtual machine, stop it using the <code class="command">virsh destroy <em>name</em></code> command, where <em>name</em> is the virtual machine&#8217;s name:</p>
+<div class="literalblock">
+<div class="content">
+<pre><code>#</code> virsh destroy LiveOS-2a198971-ba97-454e-a056-799f453e1bd7
+Domain LiveOS-2a198971-ba97-454e-a056-799f453e1bd7 destroyed</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="sect-livemedia-trouble-interrupt"><a class="anchor" href="#sect-livemedia-trouble-interrupt"></a>Failed installation using a Virtual Machine</h4>
+<div class="paragraph">
+<p>If you were performing a virtual installation and the process was interrupted for any reason (such as hardware failure, power outage or a keyboard interrupt) during the first stage, virt-install will not be able to start again until the previously created temporary disk image and virtual machine have been removed. The following procedure explains how to do this.</p>
+</div>
+<div class="paragraph">
+<p>Not all steps might be necessary every time. For example, if you are recovering after a system crash, you will not have to stop the temporary virtual machine, instead you can just use the <code class="command">virsh undefine <em>name</em></code> command. You can also use steps 4 and 5 if you only want to clean up temporary files created by <strong class="application">livemedia-creator</strong> and nothing else.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Removing Temporary Guests And Disk Image Files</div>
+<ol class="arabic">
+<li>
+<p>Use <strong class="application">virsh</strong> to list all virtual machines (guests) currently available on the system. The output will be similar to the following:</p>
+<div class="literalblock">
+<div class="content">
+<pre><code>#</code> virsh list --all
+Id    Name                           State
+----------------------------------------------------
+93    LiveOS-2a198971-ba97-454e-a056-799f453e1bd7 running
+-     RHEL7                      shut off</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Identify the temporary virtual machine. Its name will always start with <code>LiveOS</code>, followed by a string of random numbers and characters.</p>
+</div>
+</li>
+<li>
+<p>Once you have identified the temporary virtual machine, stop it using the <code class="command">virsh destroy <em>name</em></code> command, where <em>name</em> is the virtual machine&#8217;s name:</p>
+<div class="literalblock">
+<div class="content">
+<pre><code>#</code> virsh destroy LiveOS-2a198971-ba97-454e-a056-799f453e1bd7
+Domain LiveOS-2a198971-ba97-454e-a056-799f453e1bd7 destroyed</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Delete the temporary virtual machine using <code class="command">virsh undefine <em>name</em></code>, using the same <em>name</em> as in the previous step.</p>
+<div class="literalblock">
+<div class="content">
+<pre><code>#</code> virsh undefine LiveOS-2a198971-ba97-454e-a056-799f453e1bd7
+Domain LiveOS-2a198971-ba97-454e-a056-799f453e1bd7 has been undefined</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Find the temporary file system&#8217;s mount. It will be targeted to the <code>/var/tmp/</code> directory and its name will be <code>lorax.imgutils</code> followed by six random numbers or characters.</p>
+<div class="literalblock">
+<div class="content">
+<pre><code>#</code> findmnt -T /var/tmp/lorax.imgutils*
+TARGET                         SOURCE     FSTYPE  OPTIONS
+/var/tmp/lorax.imgutils.bg6iPJ /dev/loop1 iso9660 ro,relatime</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then, unmount it using the <code class="command">umount</code> command:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre><code>#</code> umount /var/tmp/lorax.imgutils.bg6iPJ</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Find the temporary disk image created by virt-install in the <code>/var/tmp/</code> directory. The name of this file is printed to command line at the beginning of the installation process and is randomly generated, unless you specify a name using the <code class="option">--image-name</code> option. For example:</p>
+<div class="literalblock">
+<div class="content">
+<pre>2013-10-30 09:53:03,161: disk_size = 5GB
+2013-10-30 09:53:03,161: disk_img = /var/tmp/diskQBkzRz.img
+2013-10-30 09:53:03,161: install_log = /home/pbokoc/lorax/virt-install.log
+mount: /dev/loop1 is write-protected, mounting read-only</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In the above example, the temporary disk image is <code>/var/tmp/diskQBkzRz.img</code>.</p>
+</div>
+<div class="paragraph">
+<p>If you cannot find the initial messages, you can identify the temporary files manually. List all contents of the <code>/var/tmp/</code> directory using the <code class="command">ls</code> command and filter the output for files containing <code>disk</code> in their names:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre><code>#</code> ls /var/tmp/ | grep disk
+diskQBkzRz.img</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then, delete the temporary disk image:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre><code>#</code> rm -f /var/tmp/diskQBkzRz.img</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>If you followed all steps in this procedure, you are now able to start a new installation with virt-install.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="sect-livemedia-trouble-novirt"><a class="anchor" href="#sect-livemedia-trouble-novirt"></a>Failed Installation Using Anaconda</h4>
+<div class="paragraph">
+<p>Recovery from an interrupted installation using <strong class="application">Anaconda</strong> image install feature (the <code class="option">--no-virt</code> option) can be achieved by executing the <code>anaconda-cleanup</code> script, which is installed along with the <strong class="package">anaconda</strong> package. This script is located in the <code>/usr/bin/</code> directory.</p>
+</div>
+<div class="paragraph">
+<p>Use the following command to execute the cleanup script. You will need root privileges to do this.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre><code>#</code> anaconda-cleanup</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script src="../../../_/js/vendor/highlight.js"></script>
+<script>hljs.initHighlighting()</script>
+  </body>
+</html>
