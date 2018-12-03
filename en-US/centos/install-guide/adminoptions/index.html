@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boot Options :: CentOS Docs Site</title>
     <link rel="canonical" href="https://docs.centos.org/centos/install-guide/adminoptions/">
-    <meta name="generator" content="Antora 1.0.1">
+    <meta name="generator" content="Antora 1.0.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
   </head>
   <body class="article">
@@ -279,6 +279,9 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../disk-image-install/">Installing into a Disk Image</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Composer/">Building Custom System Images with Composer</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
@@ -320,6 +323,9 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../data_size_appendix/">Data Size Terminology Reference Table</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Revision_History/">Revision History</a>
   </li>
 </ul>
   </li>
@@ -366,7 +372,7 @@
     <li class="crumb"><a href="./">Boot Options</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/CentOS/docs-installation-guide/edit/7.5/modules/install-guide/pages/adminoptions.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/CentOS/docs-installation-guide/edit/7.6/modules/install-guide/pages/adminoptions.adoc">Edit this Page</a></div>
 </div>
 <article class="doc">
 <h1>Boot Options</h1>
@@ -446,7 +452,7 @@
 </div>
 </li>
 <li>
-<p>The <code>&gt;</code> prompt on BIOS-based AMD64 and Intel&#160;64 systems, accessed by highlighting an entry in the boot menu and pressing the <kbd>Tab</kbd> key. Unlike the <code>boot:</code> prompt, this prompt allows you to edit a predefined set of boot options. For example, if you highlight the entry labeled <code>Test this media &amp; install CentOS&#160;7.5.1804</code>, a full set of options used by this menu entry will be displayed on the prompt, allowing you to add your own options.</p>
+<p>The <code>&gt;</code> prompt on BIOS-based AMD64 and Intel&#160;64 systems, accessed by highlighting an entry in the boot menu and pressing the <kbd>Tab</kbd> key. Unlike the <code>boot:</code> prompt, this prompt allows you to edit a predefined set of boot options. For example, if you highlight the entry labeled <code>Test this media &amp; install CentOS&#160;7.6.1810</code>, a full set of options used by this menu entry will be displayed on the prompt, allowing you to add your own options.</p>
 <div class="paragraph">
 <p>Pressing <kbd>Enter</kbd> will start the installation using the options you specified. To cancel editing and return to the boot menu, press the <kbd>Esc</kbd> key at any time.</p>
 </div>
@@ -528,6 +534,10 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code class="option">inst.repo=hd:<em>device</em>:/<em>path</em></code></p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HMC</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code class="option">inst.repo=hmc</code></p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">HTTP Server</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code class="option">inst.repo=http://<em>host</em>/<em>path</em></code></p></td>
 </tr>
@@ -554,7 +564,7 @@
 </td>
 <td class="content">
 <div class="paragraph">
-<p>In previous releases of CentOS, there were separate options for an installable tree accessible by NFS (the <code class="option">nfs</code> option) and an ISO image located on an NFS source (the <code class="option">nfsiso</code> option). In CentOS&#160;7.5.1804, the installation program can automatically detect whether the source is an installable tree or a directory containing an ISO image, and the <code class="option">nfsiso</code> option is deprecated.</p>
+<p>In previous releases of CentOS, there were separate options for an installable tree accessible by NFS (the <code class="option">nfs</code> option) and an ISO image located on an NFS source (the <code class="option">nfsiso</code> option). In CentOS&#160;7.6.1810, the installation program can automatically detect whether the source is an installable tree or a directory containing an ISO image, and the <code class="option">nfsiso</code> option is deprecated.</p>
 </div>
 </td>
 </tr>
@@ -568,7 +578,7 @@
 <p>Kernel device name, for example <code>/dev/sda1</code> or <code>sdb2</code></p>
 </li>
 <li>
-<p>File system label, for example <code>LABEL=Flash</code> or <code>LABEL=CentOS7.5.1804</code></p>
+<p>File system label, for example <code>LABEL=Flash</code> or <code>LABEL=CentOS7.6.1810</code></p>
 </li>
 <li>
 <p>File system UUID, for example <code>UUID=8176c7bf-04ff-403a-a832-9557f94e61db</code></p>
@@ -1457,7 +1467,7 @@ Password:</pre>
 <dd>
 <div class="paragraph">
 <p>Used to indicate the delay after which the network was considered active; the system waited until either the gateway was successfully pinged, or until the amount of seconds specified in this parameter passed.
-In CentOS 7.5.1804, network devices are configured and activated during the early stage of installation by the <strong class="application">dracut</strong> modules
+In CentOS 7.6.1810, network devices are configured and activated during the early stage of installation by the <strong class="application">dracut</strong> modules
 which ensure that the gateway is accessible before proceeding. For more information about <strong class="application">dracut</strong>, see the <code>dracut.cmdline(7)</code> man page.</p>
 </div>
 </dd>
@@ -1546,7 +1556,7 @@ For more information about [application]*dracut*, see the <code>dracut.cmdline(7
 <dt class="hdlist1"><code class="option">upgradeany</code></dt>
 <dd>
 <div class="paragraph">
-<p>Upgrades are done in a different way in CentOS&#160;7.5.1804.</p>
+<p>Upgrades are done in a different way in CentOS&#160;7.6.1810.</p>
 </div>
 </dd>
 <dt class="hdlist1"><code class="option">vlanid=</code></dt>
@@ -1645,7 +1655,7 @@ For more information about [application]*dracut*, see the <code>dracut.cmdline(7
 <p>You can test the integrity of an ISO-based installation source before using it to install CentOS. These sources include DVD, and ISO images stored on a hard drive or NFS server. Verifying that the ISO images are intact before you attempt an installation helps to avoid problems that are often encountered during installation.</p>
 </div>
 <div class="paragraph">
-<p>To test the checksum integrity of an ISO image, append the <code class="option">rd.live.check</code> to the boot loader command line. Note that this option is used automatically if you select the default installation option from the boot menu (<code>Test this media &amp; install CentOS&#160;7.5.1804</code>).</p>
+<p>To test the checksum integrity of an ISO image, append the <code class="option">rd.live.check</code> to the boot loader command line. Note that this option is used automatically if you select the default installation option from the boot menu (<code>Test this media &amp; install CentOS&#160;7.6.1810</code>).</p>
 </div>
 </div>
 <div class="sect2">

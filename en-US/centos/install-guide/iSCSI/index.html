@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>iSCSI Disks :: CentOS Docs Site</title>
     <link rel="canonical" href="https://docs.centos.org/centos/install-guide/iSCSI/">
-    <meta name="generator" content="Antora 1.0.1">
+    <meta name="generator" content="Antora 1.0.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
   </head>
   <body class="article">
@@ -279,6 +279,9 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../disk-image-install/">Installing into a Disk Image</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Composer/">Building Custom System Images with Composer</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
@@ -320,6 +323,9 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../data_size_appendix/">Data Size Terminology Reference Table</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Revision_History/">Revision History</a>
   </li>
 </ul>
   </li>
@@ -366,7 +372,7 @@
     <li class="crumb"><a href="./">iSCSI Disks</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/CentOS/docs-installation-guide/edit/7.5/modules/install-guide/pages/iSCSI.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/CentOS/docs-installation-guide/edit/7.6/modules/install-guide/pages/iSCSI.adoc">Edit this Page</a></div>
 </div>
 <article class="doc">
 <h1>iSCSI Disks</h1>
@@ -420,8 +426,19 @@
 </li>
 <li>
 <p>You can discover and add iSCSI targets manually in the graphical user interface in <strong class="application">anaconda</strong>. From the main menu, the Installation Summary screen, click the Installation Destination option. Then click the <b class="button">Add a disk</b> in the <code>Specialized &amp; Network Disks</code> section of the screen. A tabbed list of available storage devices appears. In the lower right corner, click the <b class="button">Add iSCSI Target</b> button and proceed with the discovery process. See <a href="../FilterSpoke-x86/#sect-storage-device-selection-x86" class="page">The Storage Devices Selection Screen (x86)</a> for more information.</p>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
 <div class="paragraph">
-<p>The <code>/boot</code> partition cannot be placed on iSCSI targets which have been added manually using this method - an iSCSI target containing a <code>/boot</code> partition must be configured for use with iBFT.</p>
+<p>Restriction: The <code>/boot</code> partition cannot be placed on iSCSI targets which have been added manually using this method - an iSCSI target containing a <code>/boot</code> partition must be configured for use with iBFT.</p>
+</div>
+</td>
+</tr>
+</table>
 </div>
 </li>
 </ol>

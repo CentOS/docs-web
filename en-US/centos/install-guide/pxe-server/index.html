@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Preparing for a Network Installation :: CentOS Docs Site</title>
     <link rel="canonical" href="https://docs.centos.org/centos/install-guide/pxe-server/">
-    <meta name="generator" content="Antora 1.0.1">
+    <meta name="generator" content="Antora 1.0.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
   </head>
   <body class="article">
@@ -279,6 +279,9 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../disk-image-install/">Installing into a Disk Image</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Composer/">Building Custom System Images with Composer</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
@@ -320,6 +323,9 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../data_size_appendix/">Data Size Terminology Reference Table</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Revision_History/">Revision History</a>
   </li>
 </ul>
   </li>
@@ -366,7 +372,7 @@
     <li class="crumb"><a href="./">Preparing for a Network Installation</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/CentOS/docs-installation-guide/edit/7.5/modules/install-guide/pages/pxe-server.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/CentOS/docs-installation-guide/edit/7.6/modules/install-guide/pages/pxe-server.adoc">Edit this Page</a></div>
 </div>
 <article class="doc">
 <h1>Preparing for a Network Installation</h1>
@@ -459,7 +465,7 @@ Red&#160;Hat Satellite User Guide</a> for more information.</p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>The procedures in this chapter describe setting up a network boot server on a CentOS&#160;7.5.1804 system. For details about configuring network boot on earlier releases of CentOS, see the appropriate <em class="citetitle">Installation Guide</em> for that release.</p>
+<p>The procedures in this chapter describe setting up a network boot server on a CentOS&#160;7.6.1810 system. For details about configuring network boot on earlier releases of CentOS, see the appropriate <em class="citetitle">Installation Guide</em> for that release.</p>
 </div>
 </td>
 </tr>
@@ -626,16 +632,16 @@ display boot.msg
 label linux
   menu label ^Install system
   menu default
-  kernel images/CentOS-7.5.1804/vmlinuz
-  append initrd=images/CentOS-7.5.1804/initrd.img ip=dhcp inst.repo=http://10.32.5.1/mnt/archive/CentOS/7.5.1804/Server/x86_64/os/
+  kernel images/CentOS-7.6.1810/vmlinuz
+  append initrd=images/CentOS-7.6.1810/initrd.img ip=dhcp inst.repo=http://10.32.5.1/mnt/archive/CentOS/7.6.1810/Server/x86_64/os/
 label vesa
   menu label Install system with ^basic video driver
-  kernel images/CentOS-7.5.1804/vmlinuz
-  append initrd=images/CentOS-7.5.1804/initrd.img ip=dhcp inst.xdriver=vesa nomodeset inst.repo=http://10.32.5.1/mnt/archive/CentOS/7.5.1804/Server/x86_64/os/
+  kernel images/CentOS-7.6.1810/vmlinuz
+  append initrd=images/CentOS-7.6.1810/initrd.img ip=dhcp inst.xdriver=vesa nomodeset inst.repo=http://10.32.5.1/mnt/archive/CentOS/7.6.1810/Server/x86_64/os/
 label rescue
   menu label ^Rescue installed system
-  kernel images/CentOS-7.5.1804/vmlinuz
-  append initrd=images/CentOS-7.5.1804/initrd.img rescue
+  kernel images/CentOS-7.6.1810/vmlinuz
+  append initrd=images/CentOS-7.6.1810/initrd.img rescue
 label local
   menu label Boot from ^local drive
   localboot 0xffff</pre>
@@ -657,11 +663,11 @@ label local
 </div>
 </li>
 <li>
-<p>Create a subdirectory to store the boot image files within the <code>/var/lib/tftpboot/</code> directory, and copy the boot image files to it. In this example, we use the directory <code>/var/lib/tftpboot/images/CentOS-7.5.1804/</code>:</p>
+<p>Create a subdirectory to store the boot image files within the <code>/var/lib/tftpboot/</code> directory, and copy the boot image files to it. In this example, we use the directory <code>/var/lib/tftpboot/images/CentOS-7.6.1810/</code>:</p>
 <div class="literalblock">
 <div class="content">
-<pre># <code class="command">mkdir -p /var/lib/tftpboot/images/CentOS-7.5.1804/</code>
-# <code class="command">cp /path-to-x86-64-images/pxeboot/{vmlinuz,initrd.img} /var/lib/tftpboot/images/CentOS-7.5.1804/</code></pre>
+<pre># <code class="command">mkdir -p /var/lib/tftpboot/images/CentOS-7.6.1810/</code>
+# <code class="command">cp /path-to-x86-64-images/pxeboot/{vmlinuz,initrd.img} /var/lib/tftpboot/images/CentOS-7.6.1810/</code></pre>
 </div>
 </div>
 </li>
@@ -821,8 +827,8 @@ subnet 10.0.0.0 netmask 255.255.255.0 {
 <div class="content">
 <pre>set timeout=60
 menuentry 'CentOS' {
-  linuxefi images/CentOS-7.5.1804/vmlinuz ip=dhcp inst.repo=http://10.32.5.1/mnt/archive/CentOS-7.5.1804/7.5.1804/Server/x86_64/os/
-  initrdefi images/CentOS-7.5.1804/initrd.img
+  linuxefi images/CentOS-7.6.1810/vmlinuz ip=dhcp inst.repo=http://10.32.5.1/mnt/archive/CentOS-7.6.1810/7.6.1810/Server/x86_64/os/
+  initrdefi images/CentOS-7.6.1810/initrd.img
 }</pre>
 </div>
 </div>
@@ -842,11 +848,11 @@ menuentry 'CentOS' {
 </div>
 </li>
 <li>
-<p>Create a subdirectory to store the boot image files within the <code>/var/lib/tftpboot/</code> directory, and copy the boot image files to it. In this example, we use the directory <code>/var/lib/tftpboot/images/CentOS-7.5.1804/</code>:</p>
+<p>Create a subdirectory to store the boot image files within the <code>/var/lib/tftpboot/</code> directory, and copy the boot image files to it. In this example, we use the directory <code>/var/lib/tftpboot/images/CentOS-7.6.1810/</code>:</p>
 <div class="literalblock">
 <div class="content">
-<pre># <code class="command">mkdir -p /var/lib/tftpboot/images/CentOS-7.5.1804</code>
-# <code class="command">cp /path-to-x86-64-images/pxeboot/{vmlinuz,initrd.img} /var/lib/tftpboot/images/CentOS-7.5.1804/</code></pre>
+<pre># <code class="command">mkdir -p /var/lib/tftpboot/images/CentOS-7.6.1810</code>
+# <code class="command">cp /path-to-x86-64-images/pxeboot/{vmlinuz,initrd.img} /var/lib/tftpboot/images/CentOS-7.6.1810/</code></pre>
 </div>
 </div>
 </li>
@@ -938,10 +944,10 @@ Netboot directory for powerpc-ieee1275 created. Configure your DHCP server to po
 <pre>set default=0
 set timeout=5
 
-echo -e "\nWelcome to the CentOS 7.5.1804 installer!\n\n"
+echo -e "\nWelcome to the CentOS 7.6.1810 installer!\n\n"
 
-menuentry 'CentOS 7.5.1804' {
-  linux grub2-ppc64/vmlinuz ro ip=dhcp inst.repo=http://10.32.5.1/mnt/archive/CentOS/7.5.1804/Server/ppc64/os/
+menuentry 'CentOS 7.6.1810' {
+  linux grub2-ppc64/vmlinuz ro ip=dhcp inst.repo=http://10.32.5.1/mnt/archive/CentOS/7.6.1810/Server/ppc64/os/
   initrd grub2-ppc64/initrd.img
 }</pre>
 </div>

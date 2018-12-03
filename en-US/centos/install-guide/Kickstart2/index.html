@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kickstart Installations :: CentOS Docs Site</title>
     <link rel="canonical" href="https://docs.centos.org/centos/install-guide/Kickstart2/">
-    <meta name="generator" content="Antora 1.0.1">
+    <meta name="generator" content="Antora 1.0.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
   </head>
   <body class="article">
@@ -279,6 +279,9 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../disk-image-install/">Installing into a Disk Image</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Composer/">Building Custom System Images with Composer</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
@@ -320,6 +323,9 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../data_size_appendix/">Data Size Terminology Reference Table</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Revision_History/">Revision History</a>
   </li>
 </ul>
   </li>
@@ -366,7 +372,7 @@
     <li class="crumb"><a href="./">Kickstart Installations</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/CentOS/docs-installation-guide/edit/7.5/modules/install-guide/pages/Kickstart2.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/CentOS/docs-installation-guide/edit/7.6/modules/install-guide/pages/Kickstart2.adoc">Edit this Page</a></div>
 </div>
 <article class="doc">
 <h1>Kickstart Installations</h1>
@@ -538,7 +544,7 @@
 <div class="sect3">
 <h4 id="sect-kickstart-verify"><a class="anchor" href="#sect-kickstart-verify"></a>Verifying the Kickstart File</h4>
 <div class="paragraph">
-<p>When creating or customizing your Kickstart file, it is useful to verify that it is valid before attempting to use it in an installation. CentOS&#160;7.5.1804 includes the <strong class="application">ksvalidator</strong> command line utility which can be used to do this. This tool is a part of the <strong class="package">pykickstart</strong> package. To install this package, execute the following command as <code>root</code>:</p>
+<p>When creating or customizing your Kickstart file, it is useful to verify that it is valid before attempting to use it in an installation. CentOS&#160;7.6.1810 includes the <strong class="application">ksvalidator</strong> command line utility which can be used to do this. This tool is a part of the <strong class="package">pykickstart</strong> package. To install this package, execute the following command as <code>root</code>:</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -706,7 +712,7 @@
 <p>On AMD64 and Intel&#160;64 systems with <em>BIOS</em>, the file name can be either <code>default</code> or based on your system&#8217;s IP address. In this case, add the <code class="option">inst.ks=</code> option to the <code>append</code> line in the installation entry. A sample <code>append</code> line in the configuration file looks similar to the following:</p>
 <div class="literalblock">
 <div class="content">
-<pre>append initrd=initrd.img inst.ks=http://10.32.5.1/mnt/archive/CentOS/7.5.1804/Server/x86_64/kickstarts/ks.cfg</pre>
+<pre>append initrd=initrd.img inst.ks=http://10.32.5.1/mnt/archive/CentOS/7.6.1810/Server/x86_64/kickstarts/ks.cfg</pre>
 </div>
 </div>
 </li>
@@ -714,7 +720,7 @@
 <p>On systems using the <strong class="application">GRUB2</strong> boot loader (64-bit AMD, Intel, and ARM systems with UEFI firmware and IBM Power&#160;Systems servers), the file name will be <code>grub.cfg</code>. In this file, append the <code class="option">inst.ks=</code> option to the <code>kernel</code> line in the installation entry. A sample <code>kernel</code> line in the configuration file will look similar to the following:</p>
 <div class="literalblock">
 <div class="content">
-<pre>kernel vmlinuz inst.ks=http://10.32.5.1/mnt/archive/CentOS/7.5.1804/Server/x86_64/kickstarts/ks.cfg</pre>
+<pre>kernel vmlinuz inst.ks=http://10.32.5.1/mnt/archive/CentOS/7.6.1810/Server/x86_64/kickstarts/ks.cfg</pre>
 </div>
 </div>
 </li>
@@ -1076,7 +1082,7 @@
 <p><code class="option">--boot-drive=</code> - Specifies which drive the boot loader should be written to, and therefore which drive the computer will boot from. If you use a multipath device as the boot drive, specify only one member of the device.</p>
 </li>
 <li>
-<p><code class="option">--leavebootorder</code> - The installer will add CentOS&#160;7.5.1804 to the top of the list of installed systems in the boot loader, and preserve all existing entries as well as their order.</p>
+<p><code class="option">--leavebootorder</code> - The installer will add CentOS&#160;7.6.1810 to the top of the list of installed systems in the boot loader, and preserve all existing entries as well as their order.</p>
 </li>
 <li>
 <p><code class="option">--driveorder=</code> - Specifies which drive is first in the BIOS boot order. For example:</p>
@@ -1325,6 +1331,22 @@
 </td>
 </tr>
 </table>
+</div>
+</li>
+<li>
+<p><code class="option">--initlabel</code> - Initializes a disk (or disks) by creating a default disk label for all disks in their respective architecture that have been designated for formatting (for example, msdos for x86). Because <code class="option">--initlabel</code> can see all disks, it is important to ensure only those drives that are to be formatted are connected.</p>
+<div class="literalblock">
+<div class="content">
+<pre>clearpart --initlabel --drives=names_of_disks</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For example:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre><code class="command">clearpart --initlabel --drives=dasda,dasdb,dasdc</code></pre>
+</div>
 </div>
 </li>
 <li>
@@ -2670,6 +2692,101 @@ Red&#160;Hat Enterprise&#160;Linux&#160;7 Networking Guide</a> for general infor
 </ul>
 </div>
 </dd>
+<dt class="hdlist1"><code class="command">nvdimm</code> (optional)</dt>
+<dd>
+<div class="paragraph">
+<p>Performs an action on Non-Volatile Dual In-line Memory Module (NVDIMM) devices. This command uses the following format:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre><code class="command">nvdimm <em>action</em> <em>[options]</em></code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>By default, all NVDIMM devices are ignored by the installer. You must use the <code class="command">nvdimm</code> command to enable installation on these devices.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The following actions are available:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>reconfigure</code> - Reconfigure a specific NVDIMM device into a given mode. Additionally, the specified device is implicitly marked as to be used, so a subsequent <code class="command">nvdimm use</code> command for the same device is redundant. This action uses the following format:</p>
+<div class="literalblock">
+<div class="content">
+<pre><code class="command">nvdimm reconfigure [--namespace=<em>NAMESPACE</em>] [--mode=<em>MODE</em>] [--sectorsize=<em>SECTORSIZE</em>]</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code class="option">--namespace=</code> - The device specification by namespace. For example:</p>
+<div class="literalblock">
+<div class="content">
+<pre><code class="command">nvdimm reconfigure --namespace=namespace0.0 --mode=sector --sectorsize=512</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p><code class="option">--mode=</code> - The mode specification. Currently, only the value <code>sector</code> is available.</p>
+</li>
+<li>
+<p><code class="option">--sectorsize=</code> - Size of a sector for sector mode. For example:</p>
+<div class="literalblock">
+<div class="content">
+<pre><code class="command">nvdimm reconfigure --namespace=namespace0.0 --mode=sector --sectorsize=512</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The supported sector sizes are 512 and 4096 bytes.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>use</code> - Specify a NVDIMM device as a target for installation. The device must be already configured to the sector mode by the <code class="command">nvdimm reconfigure</code> command. This action uses the following format:</p>
+<div class="literalblock">
+<div class="content">
+<pre><code class="command">nvdimm use [--namespace=<em>NAMESPACE</em>|--blockdevs=<em>DEVICES</em>]</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code class="option">--namespace=</code> - Specifies the device by namespace. For example:</p>
+<div class="literalblock">
+<div class="content">
+<pre>nvdimm use --namespace=namespace0.0</pre>
+</div>
+</div>
+</li>
+<li>
+<p><code class="option">--blockdevs=</code> - Specifies a comma-separated list of block devices corresponding to the NVDIMM devices to be used. The asterisk <code>*</code> wildcard is supported. For example:</p>
+<div class="literalblock">
+<div class="content">
+<pre>nvdimm use --blockdevs=pmem0s,pmem1s
+nvdimm use --blockdevs=pmem*</pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</dd>
 <dt class="hdlist1"><code class="command">%addon org_fedora_oscap</code> (optional)</dt>
 <dd>
 <div class="paragraph">
@@ -2997,7 +3114,7 @@ fingerprint = 240f2f18222faa98856c3b4fc50c4195
 </div>
 </li>
 <li>
-<p>Forces the partition to be allocated as a <em>primary</em> partition. If the partition cannot be allocated as primary (usually due to too many primary partitions being already allocated), the partitioning process fails. This option only makes sense when the disk uses a Master Boot Record (MBR); for GUID Partition Table (GPT)-labeled disks this option has no meaning. For information about primary (and extended) partitions, see <a href="../Partitions-x86/#sect-disk-partitions-basics" class="page">Partitions: Turning One Drive Into Many</a>.</p>
+<p><code class="option">--asprimary</code> - Forces the partition to be allocated as a <em>primary</em> partition. If the partition cannot be allocated as primary (usually due to too many primary partitions being already allocated), the partitioning process fails. This option only makes sense when the disk uses a Master Boot Record (MBR); for GUID Partition Table (GPT)-labeled disks this option has no meaning. For information about primary (and extended) partitions, see <a href="../Partitions-x86/#sect-disk-partitions-basics" class="page">Partitions: Turning One Drive Into Many</a>.</p>
 </li>
 <li>
 <p><code class="option">--fsprofile=</code> - Specifies a <em>usage type</em> to be passed to the program that makes a filesystem on this partition. A usage type defines a variety of tuning parameters to be used when making a filesystem. For this option to work, the filesystem must support the concept of usage types and there must be a configuration file that lists valid types. For <code>ext2</code>, <code>ext3</code>, <code>ext4</code>, this configuration file is <code>/etc/mke2fs.conf</code>.</p>
@@ -3196,7 +3313,7 @@ fingerprint = 240f2f18222faa98856c3b4fc50c4195
 <p>On IBM Power&#160;Systems, if a RAID device has been prepared and has not been reformatted during the installation, ensure that the RAID metadata version is <code>0.90</code> if you intend to put the <code>/boot</code> and <code>PReP</code> partitions on the RAID device.</p>
 </div>
 <div class="paragraph">
-<p>The default CentOS&#160;7.5.1804 <strong class="application">mdadm</strong> metadata version is not supported for the boot device.</p>
+<p>The default CentOS&#160;7.6.1810 <strong class="application">mdadm</strong> metadata version is not supported for the boot device.</p>
 </div>
 </td>
 </tr>
@@ -3381,7 +3498,7 @@ fingerprint = 240f2f18222faa98856c3b4fc50c4195
 <div class="ulist">
 <ul>
 <li>
-<p><code class="command">--eject</code> - Attempt to eject the installation DVD (if installing from a DVD) before rebooting.</p>
+<p><code class="command">--eject</code> - Attempt to eject the bootable media (DVD, USB, or other media) before rebooting.</p>
 </li>
 <li>
 <p><code class="command">--kexec</code> - Uses the <strong class="application">kexec</strong> system call instead of performing a full reboot, which immediately loads the installed system into memory, bypassing the hardware initialization normally performed by the BIOS or firmware.</p>
@@ -4094,7 +4211,7 @@ sshpw --username=root example_password --lock</pre>
 <p>Use the <code class="command">%packages</code> command to begin a Kickstart section which describes the software packages to be installed.</p>
 </div>
 <div class="paragraph">
-<p>You can specify packages by <em>environment</em>, <em>group</em>, or by their package names. Several environments and groups that contain related packages are defined. See the <code>repodata/*-comps-<em>variant</em>.<em>architecture</em>.xml</code> file on the CentOS&#160;7.5.1804 Installation DVD for a list of environments and groups.</p>
+<p>You can specify packages by <em>environment</em>, <em>group</em>, or by their package names. Several environments and groups that contain related packages are defined. See the <code>repodata/*-comps-<em>variant</em>.<em>architecture</em>.xml</code> file on the CentOS&#160;7.6.1810 Installation DVD for a list of environments and groups.</p>
 </div>
 <div class="paragraph">
 <p>The <code>*-comps-<em>variant</em>.<em>architecture</em>.xml</code> file contains a structure describing available environments (marked by the <code>&lt;environment&gt;</code> tag) and groups (the <code>&lt;group&gt;</code> tag). Each entry has an ID, user visibility value, name, description, and package list. If the group is selected for installation, the packages marked <code>mandatory</code> in the package list are always installed, the packages marked <code>default</code> are installed if they are not specifically excluded elsewhere, and the packages marked <code>optional</code> must be specifically included elsewhere even when the group is selected.</p>
@@ -4110,7 +4227,7 @@ sshpw --username=root example_password --lock</pre>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>If you are not sure what packages should be installed, select the <code>Minimal Install</code> environment. <code>Minimal install</code> provides only the packages which are essential for running CentOS&#160;7.5.1804. This will substantially reduce the chance of the system being affected by a vulnerability. If necessary, additional packages can be added later after the installation. For more details on <code>Minimal install</code>, see the <a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Security_Guide/sec-Installing_the_Minimum_Amount_of_Packages_Required.html">Installing the Minimum Amount of Packages Required</a> section of the Red&#160;Hat Enterprise&#160;Linux&#160;7 Security Guide.</p>
+<p>If you are not sure what packages should be installed, select the <code>Minimal Install</code> environment. <code>Minimal install</code> provides only the packages which are essential for running CentOS&#160;7.6.1810. This will substantially reduce the chance of the system being affected by a vulnerability. If necessary, additional packages can be added later after the installation. For more details on <code>Minimal install</code>, see the <a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Security_Guide/sec-Installing_the_Minimum_Amount_of_Packages_Required.html">Installing the Minimum Amount of Packages Required</a> section of the Red&#160;Hat Enterprise&#160;Linux&#160;7 Security Guide.</p>
 </div>
 </td>
 </tr>
@@ -4162,7 +4279,7 @@ sshpw --username=root example_password --lock</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>This command installs all packages which are part of the <code>Infrastracture Server</code> environment. All available environments are described in the <code>repodata/*-comps-<em>variant</em>.<em>architecture</em>.xml</code> file on the CentOS&#160;7.5.1804 Installation DVD. Only a single environment can be specified in the Kickstart file.</p>
+<p>This command installs all packages which are part of the <code>Infrastracture Server</code> environment. All available environments are described in the <code>repodata/*-comps-<em>variant</em>.<em>architecture</em>.xml</code> file on the CentOS&#160;7.6.1810 Installation DVD. Only a single environment can be specified in the Kickstart file.</p>
 </div>
 </dd>
 <dt class="hdlist1">Specifying Groups</dt>

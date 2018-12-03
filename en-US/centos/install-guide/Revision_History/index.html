@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Installation Source :: CentOS Docs Site</title>
-    <link rel="canonical" href="https://docs.centos.org/centos/install-guide/SourceSpoke-x86/">
+    <title>Revision History :: CentOS Docs Site</title>
+    <link rel="canonical" href="https://docs.centos.org/centos/install-guide/Revision_History/">
     <meta name="generator" content="Antora 1.0.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
   </head>
@@ -127,8 +127,8 @@
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../SecurityPolicySpoke-x86/">Security Policy</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="3">
-    <a class="nav-link" href="./">Installation Source</a>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../SourceSpoke-x86/">Installation Source</a>
   </li>
   <li class="nav-item" data-depth="3">
     <a class="nav-link" href="../NetworkSpoke-x86/">Network &amp; Hostname</a>
@@ -324,8 +324,8 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../data_size_appendix/">Data Size Terminology Reference Table</a>
   </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../Revision_History/">Revision History</a>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="./">Revision History</a>
   </li>
 </ul>
   </li>
@@ -368,104 +368,51 @@
 <nav class="crumbs" aria-label="breadcrumbs">
   <ul>
     <li class="crumb"><a href="../">Installation Guide</a></li>
-    <li class="crumb"><a href="../Part_Install_x86/">Installing on x86_64 and ARM 64</a></li>
-    <li class="crumb"><a href="../Graphical_Installation-x86/">Installing Using Anaconda</a></li>
-    <li class="crumb"><a href="./">Installation Source</a></li>
+    <li class="crumb"><a href="../Part_Appendixes/">Technical Appendixes</a></li>
+    <li class="crumb"><a href="./">Revision History</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/CentOS/docs-installation-guide/edit/7.6/modules/install-guide/pages/SourceSpoke-x86.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/CentOS/docs-installation-guide/edit/7.6/modules/install-guide/pages/Revision_History.adoc">Edit this Page</a></div>
 </div>
 <article class="doc">
-<h1>Installation Source</h1>
+<h1>Revision History</h1>
 <div class="paragraph">
-<p>To specify a file or a location to install CentOS from, select <code>Installation Source</code> from the <code>Installation Summary</code> screen. On this screen, you can choose between locally available installation media, such as a DVD or an ISO file, or a network location.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../_images/installationsource/installationsource.png" alt="Installation source screen">
-</div>
-<div class="title">Figure 1. Installation Source Screen</div>
-</div>
-<div class="paragraph">
-<p>Select one of the following options:</p>
+<p>Note that revision numbers relate to the edition of this manual, not to version numbers of CentOS.</p>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">Auto-detected installation media</dt>
+<dt class="hdlist1"><code>1.1</code></dt>
 <dd>
-<div class="paragraph">
-<p>If you started the installation using the full installation DVD or USB drive, the installation program will detect it and display basic information under this option. Click the <b class="button">Verify</b> button to ensure that the media is suitable for installation. This integrity test is the same as the one performed if you selected <code>Test this media &amp; Install CentOS</code> in the boot menu, or if you used the <code class="option">rd.live.check</code> boot option.</p>
-</div>
-</dd>
-<dt class="hdlist1">ISO file</dt>
-<dd>
-<div class="paragraph">
-<p>This option will appear if the installation program detected a partitioned hard drive with mountable file systems. Select this option, click the <b class="button">Choose an ISO</b> button, and browse to the installation ISO file&#8217;s location on your system. Then click <b class="button">Verify</b> to ensure that the file is suitable for installation.</p>
-</div>
-</dd>
-<dt class="hdlist1">On the network</dt>
-<dd>
-<div class="paragraph">
-<p>To specify a network location, select this option and choose from the following options in the drop-down menu:</p>
-</div>
+<p>Tue Nov 20 2018, Petr Bokoč (<a href="mailto:pbokoc@redhat.com">pbokoc@redhat.com</a>)</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>http://</code></p>
+<p>Update for CentOS 7.6.1810, based on the Red Hat Enterprise Linux 7.6 Installation Guide</p>
 </li>
 <li>
-<p><code>https://</code></p>
+<p>Added NVDIMM support in Kickstart and GUI installer</p>
 </li>
 <li>
-<p><code>ftp://</code></p>
+<p>Added a chapter on Composer</p>
 </li>
 <li>
-<p><code>nfs</code></p>
-<div class="paragraph">
-<p>Using your selection as the start of the location URL, type the rest into the address box. If you choose NFS, another box will appear for you to specify any NFS mount options.</p>
+<p>Added a Revision History</p>
+</li>
+</ul>
 </div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>When selecting an NFS-based installation source, you must specify the address with a colon (<code>:</code>) character separating the host name from the path. For example:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre><code><em>server.example.com</em>:<em>/path/to/directory</em></code></pre>
-</div>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>To configure a proxy for an HTTP or HTTPS source, click the <b class="button">Proxy setup</b> button. Check <code>Enable HTTP proxy</code> and type the URL into the <code>Proxy URL</code> box. If your proxy requires authentication, check <code>Use Authentication</code> and enter a user name and password. Click <b class="button">Add</b>.</p>
-</div>
-<div class="paragraph">
-<p>If your HTTP or HTTPS URL refers to a repository mirror list, mark the check box under the input field.</p>
-</div>
+</dd>
+<dt class="hdlist1"><code>1.0</code></dt>
+<dd>
+<p>Thu Oct 11 2018, Petr Bokoč (<a href="mailto:pbokoc@redhat.com">pbokoc@redhat.com</a>)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Initial release of the new CentOS Installation Guide, based on Red Hat Enterprise Linux 7.5 Installation Guide and converted for the Antora toolchain</p>
 </li>
 </ul>
 </div>
 </dd>
 </dl>
-</div>
-<div class="paragraph">
-<p>You can also specify additional repositories to gain access to more installation environments and software add-ons. See <a href="../SoftwareSpoke-x86/#sect-package-selection-x86" class="page">Software Selection (x86)</a> for more information.</p>
-</div>
-<div class="paragraph">
-<p>To add a repository, click the <b class="button">+</b> button. To delete a repository, click the <b class="button">-</b> button. Click the arrow icon to revert to the previous list of repositories, that is, to replace current entries with those that were present at the time you entered the <code>Installation Source</code> screen. To activate or deactivate a repository, click the check box in the <code>Enabled</code> column at each entry in the list.</p>
-</div>
-<div class="paragraph">
-<p>In the right part of the form, you can name your additional repository and configure it the same way as the primary repository on the network.</p>
-</div>
-<div class="paragraph">
-<p>Once you have selected your installation source, click <b class="button">Done</b> to return to the <code>Installation Summary</code> screen.</p>
 </div>
 </article>
   </main>

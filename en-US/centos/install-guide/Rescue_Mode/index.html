@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Basic System Recovery :: CentOS Docs Site</title>
     <link rel="canonical" href="https://docs.centos.org/centos/install-guide/Rescue_Mode/">
-    <meta name="generator" content="Antora 1.0.1">
+    <meta name="generator" content="Antora 1.0.3">
     <link rel="stylesheet" href="../../../_/css/site.css">
   </head>
   <body class="article">
@@ -279,6 +279,9 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../disk-image-install/">Installing into a Disk Image</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Composer/">Building Custom System Images with Composer</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
@@ -320,6 +323,9 @@
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../data_size_appendix/">Data Size Terminology Reference Table</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Revision_History/">Revision History</a>
   </li>
 </ul>
   </li>
@@ -366,7 +372,7 @@
     <li class="crumb"><a href="./">Basic System Recovery</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/CentOS/docs-installation-guide/edit/7.5/modules/install-guide/pages/Rescue_Mode.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/CentOS/docs-installation-guide/edit/7.6/modules/install-guide/pages/Rescue_Mode.adoc">Edit this Page</a></div>
 </div>
 <article class="doc">
 <h1>Basic System Recovery</h1>
@@ -441,7 +447,7 @@
 <h2 id="sect-rescue-mode"><a class="anchor" href="#sect-rescue-mode"></a>Anaconda Rescue Mode</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <strong class="application">Anaconda</strong> installation program&#8217;s rescue mode is a minimal Linux environment that can be booted from the CentOS&#160;7.5.1804 DVD or other boot media. It contains command-line utilities for repairing a wide variety of issues. This rescue mode can be accessed from the Troubleshooting submenu of the boot menu. In this mode, you can mount file systems as read-only or even to not mount them at all, blacklist or add a driver provided on a driver disc, install or upgrade system packages, or manage partitions.</p>
+<p>The <strong class="application">Anaconda</strong> installation program&#8217;s rescue mode is a minimal Linux environment that can be booted from the CentOS&#160;7.6.1810 DVD or other boot media. It contains command-line utilities for repairing a wide variety of issues. This rescue mode can be accessed from the Troubleshooting submenu of the boot menu. In this mode, you can mount file systems as read-only or even to not mount them at all, blacklist or add a driver provided on a driver disc, install or upgrade system packages, or manage partitions.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -511,7 +517,7 @@
 </div>
 </li>
 <li>
-<p>If a driver that is part of the CentOS&#160;7.5.1804 distribution prevents the system from booting, append the <code class="option">modprobe.blacklist=</code> option to the boot command line:</p>
+<p>If a driver that is part of the CentOS&#160;7.6.1810 distribution prevents the system from booting, append the <code class="option">modprobe.blacklist=</code> option to the boot command line:</p>
 <div class="literalblock">
 <div class="content">
 <pre>inst.rescue modprobe.blacklist=driver_name</pre>
