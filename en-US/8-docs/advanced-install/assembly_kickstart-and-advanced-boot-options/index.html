@@ -1,0 +1,2495 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Boot options :: CentOS Docs Site</title>
+    <link rel="canonical" href="https://docs.centos.org/8-docs/advanced-install/assembly_kickstart-and-advanced-boot-options/">
+    <meta name="generator" content="Antora 2.0.0">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://docs.centos.org"><img src="https://docs.centos.org/_images/logo_small.png"></a>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="https://www.centos.org/download/">Download CentOS</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="8-docs" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../">CentOS 8 Documentation</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../standard-install/">Performing a standard installation</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../standard-install/assembly_installation-introduction/">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../standard-install/con_installation-methods/">Installation methods</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../standard-install/proc_performing-a-quick-install-with-gui/">Quick install on AMD64, Intel 64, and 64-bit ARM</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Installing on AMD64, Intel 64, and 64-bit ARM</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../standard-install/con_installation-workflow/">Installation workflow</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../standard-install/assembly_preparing-for-your-installation/">Preparing for your installation</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../standard-install/assembly_preparing-for-your-installation/#preparing-for-your-installation-workflow_preparing-for-your-installation">Recommended steps</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../standard-install/assembly_preparing-for-your-installation/#check-system-requirements_preparing-for-your-installation">Check system requirements</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../standard-install/assembly_preparing-for-your-installation/#choose-an-installation-boot-method_preparing-for-your-installation">Choose an installation boot method</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../standard-install/assembly_preparing-for-your-installation/#types-of-installation-media_preparing-for-your-installation">Select the required installation image</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../standard-install/assembly_preparing-for-your-installation/#downloading-beta-installation-images_preparing-for-your-installation">Downloading the installation ISO image</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../standard-install/assembly_preparing-for-your-installation/#making-media_preparing-for-your-installation">Creating installation media</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../standard-install/assembly_preparing-for-your-installation/#making-an-installation-cd-or-dvd_preparing-for-your-installation">Creating a bootable DVD or CD</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../standard-install/assembly_preparing-for-your-installation/#create-bootable-usb-linux_preparing-for-your-installation">Creating a bootable USB device on Linux</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../standard-install/assembly_preparing-for-your-installation/#creating-a-bootable-usb-windows_preparing-for-your-installation">Creating a bootable USB device on Windows</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../standard-install/assembly_preparing-for-your-installation/#creating-a-bootable-usb-mac_preparing-for-your-installation">Creating a bootable USB device on Mac OS X</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../standard-install/assembly_preparing-for-your-installation/#prepare-installation-source_preparing-for-your-installation">Preparing an installation source</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../standard-install/assembly_preparing-for-your-installation/#types-of-installation-source_prepare-installation-source">Types of installation source</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../standard-install/assembly_preparing-for-your-installation/#specify-an-installation-source_prepare-installation-source">Specify the installation source</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../standard-install/assembly_preparing-for-your-installation/#ports-for-network-based-installation_prepare-installation-source">Ports for network-based installation</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../standard-install/assembly_preparing-for-your-installation/#creating-an-installation-source_prepare-installation-source">Creating an installation source on an NFS server</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../standard-install/assembly_preparing-for-your-installation/#creating-an-installation-source-on-http_prepare-installation-source">Creating an installation source using HTTP or HTTPS</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../standard-install/assembly_preparing-for-your-installation/#creating-an-installation-source-on-ftp_prepare-installation-source">Creating an installation source using FTP</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../standard-install/assembly_booting-installer/">Booting the installation</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../standard-install/assembly_booting-installer/#types-of-boot-options_booting-the-installer">Types of boot options</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../standard-install/assembly_booting-installer/#editing-boot-options_booting-the-installer">Editing boot options</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../standard-install/assembly_booting-installer/#booting-the-installer-from-local-media_booting-the-installer">Booting the installation from a USB, CD, or DVD</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../standard-install/assembly_booting-installer/#booting-the-installation-using-pxe_booting-the-installer">Booting the installation from a network using PXE</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../standard-install/assembly_graphical-installation/">Installing using the Graphical User Interface</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../standard-install/assembly_graphical-installation/#graphical-installation-workflow_graphical-installation">Graphical installation workflow</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../standard-install/assembly_graphical-installation/#installing-rhel-using-anaconda_graphical-installation">Configuring language and location settings</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../standard-install/assembly_graphical-installation/#installation-summary_graphical-installation">The Installation Summary window</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../standard-install/assembly_graphical-installation/#configuring-localization-settings_graphical-installation">Configuring localization options</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../standard-install/assembly_graphical-installation/#_configuring_keyboard_language_and_time_and_date_settings">Configuring keyboard, language, and time and date settings</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../standard-install/assembly_graphical-installation/#configuring-software-settings_graphical-installation">Configuring software options</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../standard-install/assembly_graphical-installation/#configuring-installation-source_configuring-software-settings">Configuring installation source</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../standard-install/assembly_graphical-installation/#configuring-software-selection_configuring-software-settings">Configuring software selection</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../standard-install/assembly_graphical-installation/#configuring-system-settings_graphical-installation">Configuring system options</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../standard-install/assembly_graphical-installation/#configuring-system-settings_configuring-system-settings">Configuring installation destination</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../standard-install/assembly_graphical-installation/#configuring-kdump_configuring-system-settings">Configuring Kdump</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../standard-install/assembly_graphical-installation/#network-hostname_configuring-system-settings">Configuring network and host name options</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../standard-install/assembly_graphical-installation/#security-policy_configuring-system-settings">Configuring security policy</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../standard-install/assembly_graphical-installation/#configuring-system-purpose-standard_configuring-system-settings">Configuring System Purpose</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../standard-install/assembly_graphical-installation/#storage-devices_graphical-installation">Configuring storage devices</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../standard-install/assembly_graphical-installation/#storage-devices-selection_storage-devices">Storage device selection</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../standard-install/assembly_graphical-installation/#configuring-storage-options_storage-devices">Filtering storage devices</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../standard-install/assembly_graphical-installation/#configuring-advanced-storage-options_storage-devices">Using advanced storage options</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../standard-install/assembly_graphical-installation/#installing-to-a-nvdimm-device_storage-devices">Installing to an NVDIMM device</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../standard-install/assembly_graphical-installation/#manual-partitioning_graphical-installation">Configuring manual partitioning</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../standard-install/assembly_graphical-installation/#starting-manual-partitioning_manual-partitioning">Starting manual partitioning</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../standard-install/assembly_graphical-installation/#adding-a-mount-point_manual-partitioning">Adding a mount point file system</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../standard-install/assembly_graphical-installation/#configuring-a-mount-point-file-system_manual-partitioning">Configuring a mount point file system</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../standard-install/assembly_graphical-installation/#customizing-a-partition-or-volume_manual-partitioning">Customizing a partition or volume</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../standard-install/assembly_graphical-installation/#preserving-the-home-directory_manual-partitioning">Preserving the /home directory</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../standard-install/assembly_graphical-installation/#creating-software-raid_manual-partitioning">Creating software RAID</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../standard-install/assembly_graphical-installation/#creating-lvm-logical-volume_manual-partitioning">Creating an LVM logical volume</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../standard-install/assembly_graphical-installation/#configuring-lvm-logical-volume_manual-partitioning">Configuring an LVM logical volume</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../standard-install/assembly_graphical-installation/#final-installer-configuration_graphical-installation">Starting the installation program</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../standard-install/assembly_graphical-installation/#beginning-installation_final-installer-configuration">Beginning installation</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../standard-install/assembly_graphical-installation/#configuring-a-root-password_final-installer-configuration">Configuring a root password</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../standard-install/assembly_graphical-installation/#creating-a-user-account_final-installer-configuration">Creating a user account</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../../standard-install/assembly_graphical-installation/#installation-complete_final-installer-configuration">Graphical installation complete</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../standard-install/assembly_post-installation-tasks/">Completing post-installation tasks</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../standard-install/assembly_post-installation-tasks/#completing-initial-setup_post-installation-tasks">Completing initial setup</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../standard-install/assembly_post-installation-tasks/#securing_post-installation-tasks">Securing your system</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../standard-install/assembly_troubleshooting-installation/">Troubleshooting</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../standard-install/assembly_troubleshooting-installation/#consoles-logging-during-install_installer-troubleshooting">Consoles and logging during installation</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../standard-install/assembly_troubleshooting-installation/#saving-screenshots_installer-troubleshooting">Saving screenshots</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../standard-install/assembly_troubleshooting-installation/#resuming-an-interrupted-download-attempt_installer-troubleshooting">Resuming an interrupted download attempt</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../standard-install/assembly_system-requirements-reference/">System requirements reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../standard-install/assembly_system-requirements-reference/#is-your-hardware-compatible_system-requirements-reference">Hardware compatibility</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../standard-install/assembly_system-requirements-reference/#supported-installation-targets_system-requirements-reference">Supported installation targets</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../standard-install/assembly_system-requirements-reference/#record-system-specifications_system-requirements-reference">System specifications</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../standard-install/assembly_system-requirements-reference/#check-disk-and-memory-requirements_system-requirements-reference">Disk and memory requirements</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../standard-install/assembly_system-requirements-reference/#raid-and-other-disk-devices-x86_system-requirements-reference">RAID requirements</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../standard-install/assembly_partitioning-reference/">Partitioning reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../standard-install/assembly_partitioning-reference/#supported-device-types_partitioning-reference">Supported device types</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../standard-install/assembly_partitioning-reference/#supported-file-systems_partitioning-reference">Supported file systems</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../standard-install/assembly_partitioning-reference/#supported-raid-types_partitioning-reference">Supported RAID types</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../standard-install/assembly_partitioning-reference/#recommended-partitioning-scheme_partitioning-reference">Recommended partitioning scheme</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../standard-install/assembly_partitioning-reference/#advice-on-partitions_partitioning-reference">Advice on partitions</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../standard-install/assembly_custom-boot-options/">Boot options reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../standard-install/assembly_custom-boot-options/#installation-source-boot-options_custom-boot-options">Installation source boot options</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../standard-install/assembly_custom-boot-options/#network-boot-options_custom-boot-options">Network boot options</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../standard-install/assembly_custom-boot-options/#console-environment-and-display-boot-options_custom-boot-options">Console boot options</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../standard-install/assembly_custom-boot-options/#debug-boot-options_custom-boot-options">Debug boot options</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../standard-install/assembly_custom-boot-options/#storage-boot-options_custom-boot-options">Storage boot options</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../standard-install/assembly_custom-boot-options/#deprecated-boot-options_custom-boot-options">Deprecated boot options</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../standard-install/assembly_custom-boot-options/#removed-boot-options_custom-boot-options">Removed boot options</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../standard-install/assembly_custom-boot-options/#related-information-custom-boot-options">Related information</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../standard-install/assembly_installing-red-hat-enterprise-linux-on-ibm-power-system-lc-servers/">Installing on IBM Power System LC servers</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../standard-install/assembly_installing-red-hat-enterprise-linux-on-ibm-power-system-lc-servers/#preparation-for-ibm-power-systems-servers_installing-red-hat-enterprise-linux-on-ibm-power-system-lc-servers">Overview</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../standard-install/assembly_installing-red-hat-enterprise-linux-on-ibm-power-system-lc-servers/#create-bootable-usb-linux_installing-red-hat-enterprise-linux-on-ibm-power-system-lc-servers">Creating a bootable USB device on Linux</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../standard-install/assembly_installing-red-hat-enterprise-linux-on-ibm-power-system-lc-servers/#creating-a-bootable-usb-windows_installing-red-hat-enterprise-linux-on-ibm-power-system-lc-servers">Creating a bootable USB device on Windows</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../standard-install/assembly_installing-red-hat-enterprise-linux-on-ibm-power-system-lc-servers/#creating-a-bootable-usb-mac_installing-red-hat-enterprise-linux-on-ibm-power-system-lc-servers">Creating a bootable USB device on Mac OS X</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../standard-install/assembly_installing-red-hat-enterprise-linux-on-ibm-power-system-lc-servers/#completing-the-prerequisites-and-booting-your-firmware-on-ibm-power_installing-red-hat-enterprise-linux-on-ibm-power-system-lc-servers">Completing the prerequisites and booting your firmware</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../standard-install/assembly_installing-red-hat-enterprise-linux-on-ibm-power-system-lc-servers/#configuring-the-ip-address-ibm-power_installing-red-hat-enterprise-linux-on-ibm-power-system-lc-servers">Configuring the IP address IBM Power</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../standard-install/assembly_installing-red-hat-enterprise-linux-on-ibm-power-system-lc-servers/#powering-on-your-server-with-ipmi_installing-red-hat-enterprise-linux-on-ibm-power-system-lc-servers">Powering on your server with IPMI</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../standard-install/assembly_installing-red-hat-enterprise-linux-on-ibm-power-system-lc-servers/#choose-your-installation-method-on-ibm-lc-servers_installing-red-hat-enterprise-linux-on-ibm-power-system-lc-servers">Choose your installation method on IBM LC servers</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../standard-install/assembly_installing-red-hat-enterprise-linux-on-ibm-power-system-lc-servers/#configuring-petitboot-for-installation-with-usb-device_installing-red-hat-enterprise-linux-on-ibm-power-system-lc-servers">Configuring Petitboot for installation with USB device</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../standard-install/assembly_installing-red-hat-enterprise-linux-on-ibm-power-system-lc-servers/#access-bmc-advanced-system-management-interface-to-configure-virtual-media_installing-red-hat-enterprise-linux-on-ibm-power-system-lc-servers">Access BMC Advanced System Management interface to configure virtual media</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../standard-install/assembly_installing-red-hat-enterprise-linux-on-ibm-power-system-lc-servers/#completing-your-lc-server-installation_installing-red-hat-enterprise-linux-on-ibm-power-system-lc-servers">Completing your LC server installation</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../standard-install/assembly_installing-on-ibm-power-system-accelerated-servers/">Installing on IBM Power System AC servers</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../standard-install/assembly_installing-on-ibm-power-system-accelerated-servers/#installing-red-hat-enterprise-linux-on-ibm-power-system-accelerated-servers_installing-on-ibm-power-system-accelerated-servers">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../standard-install/assembly_installing-on-ibm-power-system-accelerated-servers/#completing-the-prerequisites-and-booting-your-firmware_installing-on-ibm-power-system-accelerated-servers">Completing the prerequisites and booting your firmware</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../standard-install/assembly_installing-on-ibm-power-system-accelerated-servers/#configuring-the-firmware-ip-address_installing-on-ibm-power-system-accelerated-servers">Configuring the firmware IP address</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../standard-install/assembly_installing-on-ibm-power-system-accelerated-servers/#powering-on-your-server-with-openbmc-commands_installing-on-ibm-power-system-accelerated-servers">Powering on your server with OpenBMC commands</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../standard-install/assembly_installing-on-ibm-power-system-accelerated-servers/#choose-your-installation-method-on-ibm-accelerated-servers_installing-on-ibm-power-system-accelerated-servers">Choose your installation method on IBM accelerated servers</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../standard-install/assembly_installing-on-ibm-power-system-accelerated-servers/#configuring-petitboot-for-network-installation_installing-on-ibm-power-system-accelerated-servers">Configuring Petitboot for network installation</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../../standard-install/assembly_installing-on-ibm-power-system-accelerated-servers/#configuring-petitboot-for-installation-with-usb-device-on-accelerated-servers_installing-on-ibm-power-system-accelerated-servers">Configuring Petitboot for installation with USB device on accelerated servers</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../standard-install/assembly_installing-on-ibm-power-system-accelerated-servers/#completing-your-accelerated-server-installation_installing-on-ibm-power-system-accelerated-servers">Completing your accelerated server installation</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../standard-install/assembly_installing-red-hat-enterprise-linux-on-ibm-power-system-l-server/">Installing on IBM Power System L servers</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../standard-install/assembly_installing-red-hat-enterprise-linux-on-ibm-power-system-l-server/#installing-red-hat-enterprise-linux-on-ibm-power-system-l-server_installing-red-hat-enterprise-linux-on-ibm-power-system-l-server">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../standard-install/assembly_installing-red-hat-enterprise-linux-on-ibm-power-system-l-server/#completing-the-prerequisites-and-booting-your-firmware-on-l-server_installing-red-hat-enterprise-linux-on-ibm-power-system-l-server">Completing the prerequisites and booting your firmware on L server</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../standard-install/assembly_installing-red-hat-enterprise-linux-on-ibm-power-system-l-server/#connecting-to-asmi-with-dhcp_installing-red-hat-enterprise-linux-on-ibm-power-system-l-server">Connecting to ASMI with DHCP</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../standard-install/assembly_installing-red-hat-enterprise-linux-on-ibm-power-system-l-server/#connecting-to-asmi-with-static-ip-address_installing-red-hat-enterprise-linux-on-ibm-power-system-l-server">Connecting to ASMI with static IP address</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../standard-install/assembly_installing-red-hat-enterprise-linux-on-ibm-power-system-l-server/#enabling-ipmi_installing-red-hat-enterprise-linux-on-ibm-power-system-l-server">Enabling IPMI</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../standard-install/assembly_installing-red-hat-enterprise-linux-on-ibm-power-system-l-server/#powering-on-your-l-server-with-ipmi_installing-red-hat-enterprise-linux-on-ibm-power-system-l-server">Powering on your L server with IPMI</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../standard-install/assembly_installing-red-hat-enterprise-linux-on-ibm-power-system-l-server/#powering-on-your-system-from-a-notebook-or-pc-running-linux_installing-red-hat-enterprise-linux-on-ibm-power-system-l-server">Powering on your system from a notebook or PC running Linux</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../standard-install/assembly_installing-red-hat-enterprise-linux-on-ibm-power-system-l-server/#powering-on-your-system-from-a-notebook-or-pc-running-windows_installing-red-hat-enterprise-linux-on-ibm-power-system-l-server">Powering on your system from a notebook or PC running Windows</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../standard-install/assembly_installing-red-hat-enterprise-linux-on-ibm-power-system-l-server/#configuring-petitboot-and-installing-red-hat-enterprise-linux_installing-red-hat-enterprise-linux-on-ibm-power-system-l-server">Configuring Petitboot and installing CentOS</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../">Performing an advanced installation</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Performing an automated installation using Kickstart</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../assembly_installation-introduction-experienced/">Introduction</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../assembly_kickstart-installation-basics/">Kickstart installation basics</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../assembly_kickstart-installation-basics/#what-are-kickstart-installations_kickstart-installation-basics">What are Kickstart installations</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../assembly_kickstart-installation-basics/#automated-installation-workflow_kickstart-installation-basics">Automated installation workflow</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../assembly_creating-kickstart-files/">Creating Kickstart files</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../assembly_creating-kickstart-files/#creating-a-kickstart-file-by-performing-a-manual-installation_creating-kickstart-files">Creating a Kickstart file by performing a manual installation</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../assembly_creating-kickstart-files/#creating-a-kickstart-file-with-the-kickstart-configuration-tool_creating-kickstart-files">Creating a Kickstart file with the Kickstart configuration tool</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../assembly_making-kickstart-files-available-to-the-installation-program/">Making Kickstart files available to the installation program</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../assembly_making-kickstart-files-available-to-the-installation-program/#ports-for-network-based-installation_making-kickstart-files-available-to-the-installation-program">Ports for network-based installation</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../assembly_making-kickstart-files-available-to-the-installation-program/#making-a-kickstart-file-available-on-an-nfs-server_making-kickstart-files-available-to-the-installation-program">Making a Kickstart file available on an NFS server</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../assembly_making-kickstart-files-available-to-the-installation-program/#making-a-kickstart-file-available-on-an-http-or-https-server_making-kickstart-files-available-to-the-installation-program">Making a Kickstart file available on an HTTP or HTTPS server</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../assembly_making-kickstart-files-available-to-the-installation-program/#making-a-kickstart-file-available-on-an-ftp-server_making-kickstart-files-available-to-the-installation-program">Making a Kickstart file available on an FTP server</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../assembly_making-kickstart-files-available-to-the-installation-program/#making-a-kickstart-file-available-on-a-local-volume_making-kickstart-files-available-to-the-installation-program">Making a Kickstart file available on a local volume</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../assembly_making-kickstart-files-available-to-the-installation-program/#making-a-kickstart-file-available-on-a-local-volume-for-automatic-loading_making-kickstart-files-available-to-the-installation-program">Making a Kickstart file available on a local volume for automatic loading</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../assembly_creating-installation-sources-for-kickstart-installations/">Creating installation sources for Kickstart installations</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../assembly_creating-installation-sources-for-kickstart-installations/#types-of-installation-source_creating-installation-sources-for-kickstart-installations">Types of installation source</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../assembly_creating-installation-sources-for-kickstart-installations/#ports-for-network-based-installation_creating-installation-sources-for-kickstart-installations">Ports for network-based installation</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../assembly_creating-installation-sources-for-kickstart-installations/#creating-an-installation-source_creating-installation-sources-for-kickstart-installations">Creating an installation source on an NFS server</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../assembly_creating-installation-sources-for-kickstart-installations/#creating-an-installation-source-on-http_creating-installation-sources-for-kickstart-installations">Creating an installation source using HTTP or HTTPS</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../assembly_creating-installation-sources-for-kickstart-installations/#creating-an-installation-source-on-ftp_creating-installation-sources-for-kickstart-installations">Creating an installation source using FTP</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../assembly_starting-kickstart-installations/">Starting Kickstart installations</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../assembly_starting-kickstart-installations/#starting-a-kickstart-installation-manually_starting-kickstart-installations">Starting a Kickstart installation manually</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../assembly_starting-kickstart-installations/#starting-a-kickstart-installation-automatically-using-pxe_starting-kickstart-installations">Starting a Kickstart installation automatically using PXE</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../assembly_starting-kickstart-installations/#starting-a-kickstart-installation-automatically-using-a-local-volume_starting-kickstart-installations">Starting a Kickstart installation automatically using a local volume</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../con_consoles-logging-during-installation/">Consoles and logging during installation</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../assembly_maintaining-kickstart-files/">Maintaining Kickstart files</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../assembly_maintaining-kickstart-files/#installing-kickstart-maintenance-tools_maintaining-kickstart-files">Installing Kickstart maintenance tools</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../assembly_maintaining-kickstart-files/#verifying-a-kickstart-file_maintaining-kickstart-files">Verifying a Kickstart file</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../assembly_performing-a-remote-installation-using-vnc/">Performing a remote installation using VNC</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../assembly_performing-a-remote-installation-using-vnc/#vnc-overview_performing-a-remote-installation-using-vnc">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../assembly_performing-a-remote-installation-using-vnc/#vnc-considerations_performing-a-remote-installation-using-vnc">Considerations</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../assembly_performing-a-remote-installation-using-vnc/#performing-a-rhel-install-in-vnc-direct-mode_performing-a-remote-installation-using-vnc">Performing a remote installation in VNC Direct mode</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../assembly_performing-a-remote-installation-using-vnc/#performing-a-rhel-installation-in-vnc-connect-mode_performing-a-remote-installation-using-vnc">Performing a remote installation in VNC Connect mode</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Advanced configuration options</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../assembly_updating-drivers-during-installation/">Updating drivers during installation</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../assembly_updating-drivers-during-installation/#driver-overview_updating-drivers-during-installation">Overview</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../assembly_updating-drivers-during-installation/#types-of-driver-update_updating-drivers-during-installation">Types of driver update</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../assembly_updating-drivers-during-installation/#preparing-a-driver-update-disc_updating-drivers-during-installation">Preparing a driver update</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../assembly_updating-drivers-during-installation/#performing-an-automatic-driver-update_updating-drivers-during-installation">Performing an automatic driver update</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../assembly_updating-drivers-during-installation/#performing-an-assisted-driver-update_updating-drivers-during-installation">Performing an assisted driver update</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../assembly_updating-drivers-during-installation/#performing-a-manual-driver-update_updating-drivers-during-installation">Performing a manual driver update</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../assembly_updating-drivers-during-installation/#disabling-a-driver_updating-drivers-during-installation">Disabling a driver</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../assembly_preparing-for-a-network-install/">Preparing to install from the network using PXE</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../assembly_preparing-for-a-network-install/#network-install-overview_preparing-for-a-network-install">Network install overview</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../assembly_preparing-for-a-network-install/#configuring-a-tftp-server-for-bios-based-clients_preparing-for-a-network-install">Configuring a TFTP server for BIOS-based clients</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../assembly_preparing-for-a-network-install/#configuring-a-tftp-server-for-uefi-based-clients_preparing-for-a-network-install">Configuring a TFTP server for UEFI-based clients</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../assembly_preparing-for-a-network-install/#configuring-a-network-server-for-ibm-power_preparing-for-a-network-install">Configuring a network server for IBM Power systems</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">References</span>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="./">Boot options</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="#types-of-boot-options_kickstart-and-advanced-boot-options">Types of boot options</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="#editing-boot-options_kickstart-and-advanced-boot-options">Editing boot options</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="#installation-source-boot-options_kickstart-and-advanced-boot-options">Installation source boot options</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="#network-boot-options_kickstart-and-advanced-boot-options">Network boot options</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="#console-environment-and-display-boot-options_kickstart-and-advanced-boot-options">Console boot options</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="#debug-boot-options_kickstart-and-advanced-boot-options">Debug boot options</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="#storage-boot-options_kickstart-and-advanced-boot-options">Storage boot options</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="#kickstart-boot-options_kickstart-and-advanced-boot-options">Kickstart boot options</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="#advanced-installation-boot-options_kickstart-and-advanced-boot-options">Advanced installation boot options</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="#deprecated-boot-options_kickstart-and-advanced-boot-options">Deprecated boot options</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="#removed-boot-options_kickstart-and-advanced-boot-options">Removed boot options</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../assembly_kickstart-script-file-format-reference/">Kickstart script file format reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../assembly_kickstart-script-file-format-reference/#kickstart-file-format_kickstart-script-file-format-reference">Kickstart file format</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../assembly_kickstart-script-file-format-reference/#package-selection-in-kickstart_kickstart-script-file-format-reference">Package selection in Kickstart</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-script-file-format-reference/#package-selection-section_package-selection-in-kickstart">Package selection section</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-script-file-format-reference/#package-selection-commands_package-selection-in-kickstart">Package selection commands</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-script-file-format-reference/#common-package-selection-options_package-selection-in-kickstart">Common package selection options</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-script-file-format-reference/#options-for-specific-package-groups_package-selection-in-kickstart">Options for specific package groups</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../assembly_kickstart-script-file-format-reference/#pre-installation-scripts-in-kickstart_kickstart-script-file-format-reference">Pre-installation scripts in Kickstart</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-script-file-format-reference/#pre-installation-script-section_pre-installation-scripts-in-kickstart">Pre-installation script section</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-script-file-format-reference/#pre-installation-kickstart-section-options_pre-installation-scripts-in-kickstart">Pre-installation Kickstart section options</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../assembly_kickstart-script-file-format-reference/#post-installation-scripts-in-kickstart_kickstart-script-file-format-reference">Post-installation scripts in Kickstart</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-script-file-format-reference/#post-installation-script-section_post-installation-scripts-in-kickstart">Post-installation script section</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-script-file-format-reference/#post-installation-kickstart-section-options_post-installation-scripts-in-kickstart">Post-installation Kickstart section options</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-script-file-format-reference/#example-mounting-nfs-in-a-post-install-script_post-installation-scripts-in-kickstart">Example: Mounting NFS in a post-install script</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../assembly_kickstart-script-file-format-reference/#anaconda-configuration-section_kickstart-script-file-format-reference">Anaconda configuration section</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../assembly_kickstart-script-file-format-reference/#kickstart-error-handling-section_kickstart-script-file-format-reference">Kickstart error handling section</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../assembly_kickstart-script-file-format-reference/#kickstart-add-on-sections_kickstart-script-file-format-reference">Kickstart add-on sections</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/">Kickstart commands and options reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#kickstart-changes_kickstart-commands-and-options-reference">Kickstart changes</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#_auth_or_authconfig_is_deprecated_in_rhel_8">auth or authconfig is deprecated</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#_kickstart_no_longer_supports_btrfs">Kickstart no longer supports Btrfs</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#_using_kickstart_files_from_previous_rhel_releases">Using Kickstart files from previous releases</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#deprecated-kickstart-comands-and-options_kickstart-changes">Deprecated Kickstart commands and options</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#removed-kickstart-comands-and-options_kickstart-changes">Removed Kickstart comands and options</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#new-kickstart-comands-and-options_kickstart-changes">New Kickstart comands and options</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#kickstart-commands-for-installation-program-configuration-and-flow-control_kickstart-commands-and-options-reference">Kickstart commands for installation program configuration and flow control</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#autostep_kickstart-commands-for-installation-program-configuration-and-flow-control">autostep</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#cdrom_kickstart-commands-for-installation-program-configuration-and-flow-control">cdrom</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#cmdline_kickstart-commands-for-installation-program-configuration-and-flow-control">cmdline</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#driverdisk_kickstart-commands-for-installation-program-configuration-and-flow-control">driverdisk</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#eula_kickstart-commands-for-installation-program-configuration-and-flow-control">eula</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#firstboot_kickstart-commands-for-installation-program-configuration-and-flow-control">firstboot</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#graphical_kickstart-commands-for-installation-program-configuration-and-flow-control">graphical</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#halt_kickstart-commands-for-installation-program-configuration-and-flow-control">halt</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#harddrive_kickstart-commands-for-installation-program-configuration-and-flow-control">harddrive</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#install_kickstart-commands-for-installation-program-configuration-and-flow-control">install (deprecated)</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#liveimg_kickstart-commands-for-installation-program-configuration-and-flow-control">liveimg</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#logging_kickstart-commands-for-installation-program-configuration-and-flow-control">logging</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#mediacheck_kickstart-commands-for-installation-program-configuration-and-flow-control">mediacheck</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#nfs_kickstart-commands-for-installation-program-configuration-and-flow-control">nfs</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#ostreesetup_kickstart-commands-for-installation-program-configuration-and-flow-control">ostreesetup</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#poweroff_kickstart-commands-for-installation-program-configuration-and-flow-control">poweroff</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#reboot_kickstart-commands-for-installation-program-configuration-and-flow-control">reboot</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#rescue_kickstart-commands-for-installation-program-configuration-and-flow-control">rescue</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#shutdown_kickstart-commands-for-installation-program-configuration-and-flow-control">shutdown</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#sshpw_kickstart-commands-for-installation-program-configuration-and-flow-control">sshpw</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#text_kickstart-commands-for-installation-program-configuration-and-flow-control">text</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#url_kickstart-commands-for-installation-program-configuration-and-flow-control">url</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#vnc_kickstart-commands-for-installation-program-configuration-and-flow-control">vnc</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#include_kickstart-commands-for-installation-program-configuration-and-flow-control">%include</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#ksappend_kickstart-commands-for-installation-program-configuration-and-flow-control">%ksappend</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#kickstart-commands-for-system-configuration_kickstart-commands-and-options-reference">Kickstart commands for system configuration</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#auth-or-authconfig-deprecated_kickstart-commands-for-system-configuration">auth or authconfig (deprecated)</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#authselect_kickstart-commands-for-system-configuration">authselect</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#firewall_kickstart-commands-for-system-configuration">firewall</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#group_kickstart-commands-for-system-configuration">group</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#keyboard-required_kickstart-commands-for-system-configuration">keyboard (required)</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#lang-required_kickstart-commands-for-system-configuration">lang (required)</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#module_kickstart-commands-for-system-configuration">module</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#pwpolicy_kickstart-commands-for-system-configuration">pwpolicy</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#repo_kickstart-commands-for-system-configuration">repo</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#rootpw-required_kickstart-commands-for-system-configuration">rootpw (required)</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#selinux_kickstart-commands-for-system-configuration">selinux</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#services_kickstart-commands-for-system-configuration">services</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#skipx_kickstart-commands-for-system-configuration">skipx</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#sshkey_kickstart-commands-for-system-configuration">sshkey</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#syspurpose_kickstart-commands-for-system-configuration">syspurpose</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#timezone-required_kickstart-commands-for-system-configuration">timezone (required)</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#user_kickstart-commands-for-system-configuration">user</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#xconfig_kickstart-commands-for-system-configuration">xconfig</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#kickstart-commands-for-network-configuration_kickstart-commands-and-options-reference">Kickstart commands for network configuration</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#network_kickstart-commands-for-network-configuration">network</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#realm_kickstart-commands-for-network-configuration">realm</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#kickstart-commands-for-handling-storage_kickstart-commands-and-options-reference">Kickstart commands for handling storage</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#device_kickstart-commands-for-handling-storage">device (deprecated)</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#autopart_kickstart-commands-for-handling-storage">autopart</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#bootloader-required_kickstart-commands-for-handling-storage">bootloader (required)</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#clearpart_kickstart-commands-for-handling-storage">clearpart</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#fcoe_kickstart-commands-for-handling-storage">fcoe</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#ignoredisk_kickstart-commands-for-handling-storage">ignoredisk</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#iscsi_kickstart-commands-for-handling-storage">iscsi</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#iscsiname_kickstart-commands-for-handling-storage">iscsiname</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#logvol_kickstart-commands-for-handling-storage">logvol</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#mount_kickstart-commands-for-handling-storage">mount</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#nvdimm_kickstart-commands-for-handling-storage">nvdimm</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#part-or-partition_kickstart-commands-for-handling-storage">part or partition</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#raid_kickstart-commands-for-handling-storage">raid</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#reqpart_kickstart-commands-for-handling-storage">reqpart</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#snapshot_kickstart-commands-for-handling-storage">snapshot</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#volgroup_kickstart-commands-for-handling-storage">volgroup</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#zerombr_kickstart-commands-for-handling-storage">zerombr</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#zfcp_kickstart-commands-for-handling-storage">zfcp</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#kickstart-commands-for-addons-supplied-with-the-rhel-installation-program_kickstart-commands-and-options-reference">Kickstart commands for default addons</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#addon-com_redhat_kdump_kickstart-commands-for-addons-supplied-with-the-rhel-installation-program">%addon com_redhat_kdump</a>
+  </li>
+  <li class="nav-item" data-depth="5">
+    <a class="nav-link" href="../assembly_kickstart-commands-and-options-reference/#addon-org_fedora_oscap_kickstart-commands-for-addons-supplied-with-the-rhel-installation-program">%addon org_fedora_oscap</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../assembly_partitioning-reference/">Partitioning reference</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../assembly_partitioning-reference/#supported-device-types_partitioning-reference">Supported device types</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../assembly_partitioning-reference/#supported-file-systems_partitioning-reference">Supported file systems</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../assembly_partitioning-reference/#supported-raid-types_partitioning-reference">Supported RAID types</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../assembly_partitioning-reference/#recommended-partitioning-scheme_partitioning-reference">Recommended partitioning scheme</a>
+  </li>
+  <li class="nav-item" data-depth="4">
+    <a class="nav-link" href="../assembly_partitioning-reference/#advice-on-partitions_partitioning-reference">Advice on partitions</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../managing-userspace-components/">Installing, managing, and removing user space components</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../managing-userspace-components/assembly_using-appstream/">Using AppStream</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../managing-userspace-components/assembly_using-appstream/#distribution-of-content-in-rhel8_using-appstream">Distribution of content</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../managing-userspace-components/assembly_using-appstream/#application-streams_using-appstream">Application Streams</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../managing-userspace-components/assembly_using-appstream/#packaging-methods-in-rhel-8_using-appstream">Packaging methods</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../managing-userspace-components/assembly_using-appstream/#package-management-using-yum-in-rhel-8_using-appstream">Package management using YUM</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../managing-userspace-components/assembly_introduction-to-modules/">Introduction to modules</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../managing-userspace-components/assembly_introduction-to-modules/#module-streams_introduction-to-modules">Module streams</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../managing-userspace-components/assembly_introduction-to-modules/#module-profiles_introduction-to-modules">Module profiles</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../managing-userspace-components/assembly_finding-rhel-8-content/">Finding content</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../managing-userspace-components/assembly_finding-rhel-8-content/#searching-for-package_finding-rhel-8-content">Searching for a package</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../managing-userspace-components/assembly_finding-rhel-8-content/#listing-available-modules_finding-rhel-8-content">Listing available modules</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../managing-userspace-components/assembly_finding-rhel-8-content/#example-finding-out-details-about-a-module_finding-rhel-8-content">Example: Finding out details about a module</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../managing-userspace-components/assembly_finding-rhel-8-content/#commands-for-listing-content_finding-rhel-8-content">Commands for listing content</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../managing-userspace-components/assembly_installing-rhel-8-content/">Installing content</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../managing-userspace-components/assembly_installing-rhel-8-content/#installing-a-package_installing-rhel-8-content">Installing a package</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../managing-userspace-components/assembly_installing-rhel-8-content/#selecting-a-stream-before-installation-of-packages_installing-rhel-8-content">Selecting a stream before installation of packages</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../managing-userspace-components/assembly_installing-rhel-8-content/#installing-a-module-stream_installing-rhel-8-content">Installing a module stream</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../managing-userspace-components/assembly_installing-rhel-8-content/#example-installing-a-non-default-stream-of-an-application_installing-rhel-8-content">Example: Installing a non-default stream of an application</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../managing-userspace-components/assembly_installing-rhel-8-content/#running-installed-content_installing-rhel-8-content">Running installed content</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../managing-userspace-components/assembly_installing-rhel-8-content/#commands-for-installing-rhel-8-content_installing-rhel-8-content">Commands for installing content</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../managing-userspace-components/assembly_removing-rhel-8-content/">Removing content</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../managing-userspace-components/assembly_removing-rhel-8-content/#removing-installed-packages_removing-rhel-8-content">Removing installed packages</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../managing-userspace-components/assembly_removing-rhel-8-content/#removing-installed-modules_removing-rhel-8-content">Removing installed modules</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../managing-userspace-components/assembly_removing-rhel-8-content/#resetting-module-streams_removing-rhel-8-content">Resetting module streams</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../managing-userspace-components/assembly_removing-rhel-8-content/#commands-for-removing-content_removing-rhel-8-content">Commands for removing content</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../../managing-userspace-components/assembly_managing-versions-of-appstream-content/">Managing versions of Application Stream content</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../managing-userspace-components/assembly_managing-versions-of-appstream-content/#modular-dependencies-and-stream-changes_managing-versions-of-appstream-content">Modular dependencies and stream changes</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../managing-userspace-components/assembly_managing-versions-of-appstream-content/#interaction-of-modular-and-non-modular-dependencies_managing-versions-of-appstream-content">Interaction of modular and non-modular dependencies</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../managing-userspace-components/assembly_managing-versions-of-appstream-content/#resetting-module-streams_managing-versions-of-appstream-content">Resetting module streams</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../managing-userspace-components/assembly_managing-versions-of-appstream-content/#disabling-all-streams-of-a-module_managing-versions-of-appstream-content">Disabling all streams of a module</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="../../managing-userspace-components/assembly_managing-versions-of-appstream-content/#switching-to-a-later-stream_managing-versions-of-appstream-content">Switching to a later stream</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">CentOS 8 Documentation</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <span class="title">CentOS 8 Documentation</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">CentOS Documentation</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../docs/">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Installation Guide</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../centos/install-guide/">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main role="main">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../../docs/" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../">CentOS 8 Documentation</a></li>
+    <li><a href="../">Performing an advanced installation</a></li>
+    <li>References</li>
+    <li><a href="./">Boot options</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/CentOS/8docs/edit/8.0/modules/advanced-install/pages/assembly_kickstart-and-advanced-boot-options.adoc">Edit this Page</a></div>
+</div>
+<article class="doc">
+<h1 class="page">Boot options</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section contains information about some of the boot options that you can use to modify the default behavior of the installation program.
+For a full list of boot options, see the <a href="https://github.com/rhinstaller/anaconda/blob/rhel-8.0/docs/boot-options.rst">upstream boot option</a> content.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="types-of-boot-options_kickstart-and-advanced-boot-options"><a class="anchor" href="#types-of-boot-options_kickstart-and-advanced-boot-options"></a>Types of boot options</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>There are two types of boot options; those with an equals "=" sign, and those without an equals "=" sign. Boot options are appended to the boot command line and multiple options must be separated by a single space. Boot options that are specific to the installation program always start with <code>inst</code>.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Options with an equals "=" sign</dt>
+<dd>
+<p>You must specify a value for boot options that use the <code>=</code> symbol. For example, the <code>inst.vncpassword=</code> option must contain a value, in this case, a password. The correct syntax for this example is <code>inst.vncpassword=password</code>.</p>
+</dd>
+<dt class="hdlist1">Options without an equals "=" sign</dt>
+<dd>
+<p>This boot option does not accept any values or parameters. For example, the <code>rd.live.check</code> option forces the installation program to verify the installation media before starting the installation. If this boot option is present, the verification is performed; if the boot option is not present, the verification is skipped.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="editing-boot-options_kickstart-and-advanced-boot-options"><a class="anchor" href="#editing-boot-options_kickstart-and-advanced-boot-options"></a>Editing boot options</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section contains information about the different ways that you can edit boot options from the boot menu. The boot menu opens after you boot the installation media.</p>
+</div>
+<h3 id="_editing_the_boot_prompt_in_bios" class="discrete">Editing the boot: prompt in BIOS</h3>
+<div class="paragraph">
+<p>When using the <code>boot:</code> prompt, the first option must always specify the installation program image file that you want to load. In most cases, you can specify the image using the keyword. You can specify additional options according to your requirements.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You have created bootable installation media (USB, CD or DVD).</p>
+</li>
+<li>
+<p>You have booted the installation from the media, and the installation boot menu is open.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>With the boot menu open, press the <strong>Esc</strong> key on your keyboard.</p>
+</li>
+<li>
+<p>The <code>boot:</code> prompt is now accessible.</p>
+</li>
+<li>
+<p>Press the <strong>Tab</strong> key on your keyboard to display the help commands.</p>
+</li>
+<li>
+<p>Press the <strong>Enter</strong> key on your keyboard to start the installation with your options. To return from the <code>boot:</code> prompt to the boot menu, restart the system and boot from the installation media again.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The <code>boot:</code> prompt also accepts <code>dracut</code> kernel options. A list of options is available in the <code>dracut.cmdline(7)</code> man page.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<h3 id="_editing_the_prompt" class="discrete">Editing the &gt; prompt</h3>
+<div class="paragraph">
+<p>You can use the <code>&gt;</code> prompt to edit predefined boot options. For example, select <strong>Test this media and install CentOS&#160;8.0.1905</strong> from the boot menu to display a full set of options.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>This procedure is for BIOS-based AMD64 and Intel 64 systems.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You have created bootable installation media (USB, CD or DVD).</p>
+</li>
+<li>
+<p>You have booted the installation from the media, and the installation boot menu is open.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>From the boot menu, select an option and press the <strong>Tab</strong> key on your keyboard. The <code>&gt;</code> prompt is accessible and displays the available options.</p>
+</li>
+<li>
+<p>Append the options that you require to the <code>&gt;</code> prompt.</p>
+</li>
+<li>
+<p>Press the <strong>Enter</strong> key on your keyboard to start the installation.</p>
+</li>
+<li>
+<p>Press the <strong>Esc</strong> key on your keyboard to cancel editing and return to the boot menu.</p>
+</li>
+</ol>
+</div>
+<h3 id="_editing_the_grub2_menu" class="discrete">Editing the GRUB2 menu</h3>
+<div class="paragraph">
+<p>The GRUB2 menu is available on UEFI-based AMD64, Intel 64, and 64-bit ARM systems.</p>
+</div>
+<div class="ulist">
+<div class="title">Prerequisites</div>
+<ul>
+<li>
+<p>You have created bootable installation media (USB, CD or DVD).</p>
+</li>
+<li>
+<p>You have booted the installation from the media, and the installation boot menu is open.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Procedure</div>
+<ol class="arabic">
+<li>
+<p>From the boot menu window, select an option and press the <strong>e</strong> key on your keyboard.</p>
+</li>
+<li>
+<p>When you finish editing, press <strong>F10</strong> or <strong>Ctrl+X</strong> on your keyboard to start the installation using the specified options.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="installation-source-boot-options_kickstart-and-advanced-boot-options"><a class="anchor" href="#installation-source-boot-options_kickstart-and-advanced-boot-options"></a>Installation source boot options</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section contains information about the various installation source boot options.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">inst.repo=</dt>
+<dd>
+<p>The <code>inst.repo=</code> boot option specifies the installation source, that is, the location providing the package repositories and a valid <code>.treeinfo</code> file that describes them. For example: <code>inst.repo=cdrom</code>.
+The target of the <code>inst.repo=</code> option must be one of the following installation media:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>an installable tree, which is a directory structure containing the installation program images, packages, and repository data as well as a valid <code>.treeinfo</code> file</p>
+</li>
+<li>
+<p>a DVD (a physical disk present in the system DVD drive)</p>
+</li>
+<li>
+<p>an ISO image of the full CentOS&#160;8 installation DVD, placed on a hard drive or a network location accessible to the system.</p>
+<div class="paragraph">
+<p>You can use the <code>inst.repo=</code> boot option to configure different installation methods using different formats. The following table contains details of the <code>inst.repo=</code> boot option syntax:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. inst.repo= installation source boot options</caption>
+<colgroup>
+<col style="width: 16.6666%;">
+<col style="width: 50%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Source type</th>
+<th class="tableblock halign-left valign-top">Boot option format</th>
+<th class="tableblock halign-left valign-top">Source format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CD/DVD drive</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>inst.repo=cdrom&#91;:<em>device</em>&#93;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Installation DVD as a physical disk. <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Installable tree</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>inst.repo=hd:<em>device</em>:<em>/path</em></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Image file of the installation DVD, or an installation tree, which is a complete copy of the directories and files on the installation DVD.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NFS Server</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>inst.repo=nfs:&#91;<em>options</em>:&#93;<em>server</em>:<em>/path</em></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Image file of the installation DVD. <sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTTP Server</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>inst.repo=http://<em>host/path</em></code></p></td>
+<td class="tableblock halign-left valign-top" rowspan="3"><p class="tableblock">Installation tree, which is a complete copy of the directories and files on the installation DVD.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTTPS Server</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>inst.repo=https://<em>host/path</em></code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FTP Server</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>inst.repo=ftp://<em>username</em>:<em>password</em>@<em>host</em>/<em>path</em></code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HMC</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>inst.repo=hmc</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The NFS Server option uses NFS protocol version 3 by default. To use a different version, add <code>+nfsvers=X</code> to the option.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>You can set disk device names with the following formats:</p>
+</div>
+</li>
+<li>
+<p>Kernel device name, for example <code>/dev/sda1</code> or <code>sdb2</code></p>
+</li>
+<li>
+<p>File system label, for example <code>LABEL=Flash</code> or <code>LABEL=CENTOS8</code></p>
+</li>
+<li>
+<p>File system UUID, for example <code>UUID=8176c7bf-04ff-403a-a832-9557f94e61db</code></p>
+<div class="paragraph">
+<p>Non-alphanumeric characters must be represented as <code>\xNN</code>, where <em>NN</em> is the hexadecimal representation of the character. For example, <code>\x20</code> is a white space <code>(" ")</code>.</p>
+</div>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">inst.addrepo=</dt>
+<dd>
+<p>Use the <code>inst.addrepo=</code> boot option to add an additional repository that can be used as another installation source along with the main repository (<code>inst.repo=</code>). You can use the <code>inst.addrepo=</code> boot option multip
+le times during one boot. The following table contains details of the <code>inst.addrepo=</code> boot option syntax.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The <code>REPO_NAME</code> is the name of the repository and is required in the installation process. These repositories are only used during the installation process; they are not installed on the installed system.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. inst.addrepo installation source boot options</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Installation source</th>
+<th class="tableblock halign-left valign-top">Boot option format</th>
+<th class="tableblock halign-left valign-top">Additional information</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Installable tree at a URL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>inst.addrepo=REPO_NAME,[http,https,ftp]://&lt;host&gt;/&lt;path&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Looks for the installable tree at a given URL.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Installable tree at an NFS path</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>inst.addrepo=REPO_NAME,nfs://&lt;server&gt;:/&lt;path&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Looks for the installable tree at a given NFS path. A colon is required after the host. The installation program passes every
+thing after <code>nfs://</code> directly to the mount command instead of parsing URLs according to RFC 2224.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Installable tree in the installation environment</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>inst.addrepo=REPO_NAME,file://&lt;path&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Looks for the installable tree at the given location in the installation environment. To use this option, the repositor
+y must be mounted before the installation program attempts to load the available software groups. The benefit of this option is that you can have multiple repositories on one bootable ISO, and you can install both
+ the main repository and additional repositories from the ISO. The path to the additional repositories is <code>/run/install/source/REPO_ISO_PATH</code>. Additional, you can mount the repository directory in the <code>%pre</code> secti
+on in the Kickstart file. The path must be absolute and start with <code>/</code>, for example <code>inst.addrepo=REPO_NAME,file:///&lt;path&gt;</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hard Drive</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>inst.addrepo=REPO_NAME,hd:&lt;device&gt;:&lt;path&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mounts the given <em>&lt;device&gt;</em> partition and installs from the ISO that is specified by the <em>&lt;path&gt;</em>. If the <em>&lt;path&gt;</em> is not specified, the installation p
+rogram looks for a valid installation ISO on the <em>&lt;device&gt;</em>. This installation method requires an ISO with a valid installable tree.</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt class="hdlist1">inst.noverifyssl=</dt>
+<dd>
+<p>The <code>noverifyssl=</code> boot option prevents the installation program from verifying the SSL certificate for all HTTPS connections with the exception of the additional Kickstart repositories, where <code>--noverifyssl</code> can
+be set per repository.</p>
+</dd>
+<dt class="hdlist1">inst.stage2=</dt>
+<dd>
+<p>Use the <code>inst.stage2=</code> boot option to specify the location of the installation program runtime image. This option expects a path to a directory containing a valid <code>.treeinfo</code> file. The location of the runtime image is read from the <code>.treeinfo</code> file. If the <code>.treeinfo</code> file is not available, the installation program attempts to load the image from <code>LiveOS/squashfs.img</code>.</p>
+<div class="paragraph">
+<p>When the <code>inst.stage2</code> option is not specified, the installation program attempts to use the location specified with <code>inst.repo</code> option.</p>
+</div>
+<div class="paragraph">
+<p>You should specify this option only for PXE boot. The installation DVD and Boot ISO already contain a correct <code>inst.stage2</code> option to boot the installation program from themselves.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>By default, the <code>inst.stage2=</code> boot option is used on the installation media and is set to a specific label, for example, <code>inst.stage2=hd:LABEL=CentOS-8.0.1905-BaseOS-x86_64</code>. If you modify the default label of the file system containing the runtime image, or if you use a customized procedure to boot the installation system, you must verify that the <code>inst.stage2=</code> boot option is set to the correct value.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</dd>
+<dt class="hdlist1">inst.stage2.all</dt>
+<dd>
+<p>The <code>inst.stage2.all</code> boot option is used to specify several HTTP, HTTPS, or FTP sources. You can use the <code>inst.stage2=</code> boot option multiple times with the <code>inst.stage2.all</code> option to fetch the image from the sources sequentially until one succeeds.
+For example:</p>
+<div class="listingblock">
+<div class="content">
+<pre>inst.stage2.all
+inst.stage2=http://hostname1/path_to_install_tree/
+inst.stage2=http://hostname2/path_to_install_tree/
+inst.stage2=http://hostname3/path_to_install_tree/</pre>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">inst.dd=</dt>
+<dd>
+<p>The <code>inst.dd=</code> boot option is used to perform a driver update during the installation. See the <a href="../" class="page"><em>Performing an advanced installation</em></a> document for information on how to update drivers during installation.</p>
+</dd>
+<dt class="hdlist1">inst.repo=hmc</dt>
+<dd>
+<p>When booting from a Binary DVD, the installation program prompts you to enter additional kernel parameters. To set the DVD as an installation source, append <code>inst.repo=hmc</code> to the kernel parameters. The installation program then enables <code>SE</code> and <code>HMC</code> file access, fetches the images for stage2 from the DVD, and provides access to the packages on the DVD for software selection. This option eliminates the requirement of an external network setup and expands the installation options.</p>
+</dd>
+<dt class="hdlist1">inst.proxy</dt>
+<dd>
+<p>The <code>inst.proxy</code> boot option is used when performing an installation from a HTTP, HTTPS, FTP source. For example:</p>
+<div class="listingblock">
+<div class="content">
+<pre>[PROTOCOL://][USERNAME[:PASSWORD]@]HOST[:PORT]</pre>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">inst.nosave</dt>
+<dd>
+<p>Use the <code>inst.nosave</code> boot option to control which installation logs and related files are not saved to the installed system, for example <code>input_ks</code>, <code>output_ks</code>, <code>all_ks</code>, <code>logs</code> and <code>all</code>.
+Multiple values can be combined as a comma-separated list, for example: <code>input_ks,logs</code>.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The <code>inst.nosave</code> boot option is used for excluding files from the installed system that can&#8217;t be removed by a Kickstart %post script, such as logs and input/output Kickstart results.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 3. inst.nosave boot options</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Option</th>
+<th class="tableblock halign-left valign-top">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">input_ks</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Disables the ability to save the input Kickstart results.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">output_ks</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Disables the ability to save the output Kickstart results generated by the installation program.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">all_ks</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Disables the ability to save the input and output Kickstart results.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">logs</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Disables the ability to save all installation logs.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">all</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Disables the ability to save all Kickstart results, and all logs.</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt class="hdlist1">inst.multilib</dt>
+<dd>
+<p>Use the <code>inst.multilib</code> boot option to set DNF&#8217;s <code>multilib_policy</code> to <strong>all</strong>, instead of <strong>best</strong>.</p>
+</dd>
+<dt class="hdlist1">memcheck</dt>
+<dd>
+<p>The <code>memcheck</code> boot option performs a check to verify that the system has enough RAM to complete the installation. If there isn&#8217;t enough RAM, the installation process is stopped. The system check is approximate and memory usage during installation depends on the package selection, user interface, for example graphical or text, and other parameters.</p>
+</dd>
+<dt class="hdlist1">nomemcheck</dt>
+<dd>
+<p>The <code>nomemcheck</code> boot option does not perform a check to verify if the system has enough RAM to complete the installation. Any attempt to perform the installation with less than the recommended minimum amount of memory is unsupported, and might result in the installation process failing.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="network-boot-options_kickstart-and-advanced-boot-options"><a class="anchor" href="#network-boot-options_kickstart-and-advanced-boot-options"></a>Network boot options</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section contains information about commonly used network boot options.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Initial network initialization is handled by <code>dracut</code>. For a complete list, see the <code>dracut.cmdline(7)</code> man page.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">ip=</dt>
+<dd>
+<p>Use the <code>ip=</code> boot option to configure one or more network interfaces. To configure multiple interfaces, you can use the <code>ip</code> option multiple times, once for each interface; to do so, you must use the <code>rd.neednet=1</code> option, and you must specify a primary boot interface using the <code>bootdev</code> option. Alternatively, you can use the <code>ip</code> option once, and then use Kickstart to set up further interfaces. This option accepts several different formats. The following tables contain information about the most common options.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>In the following tables:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>ip</code> parameter specifies the client IP address. You can specify IPv6 addresses in square brackets, for example, [2001:DB8::1].</p>
+</li>
+<li>
+<p>The <code>gateway</code> parameter is the default gateway. IPv6 addresses are also accepted.</p>
+</li>
+<li>
+<p>The <code>netmask</code> parameter is the netmask to be used. This can be either a full netmask (for example, 255.255.255.0) or a prefix (for example, 64).</p>
+</li>
+<li>
+<p>The <code>hostname</code> parameter is the host name of the client system. This parameter is optional.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 4. Network interface configuration boot option formats</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Configuration method</th>
+<th class="tableblock halign-left valign-top">Boot option format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Automatic configuration of any interface</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ip=method</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Automatic configuration of a specific interface</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ip=interface:method</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Static configuration</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ip=ip::gateway:netmask:hostname:interface:none</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Automatic configuration of a specific interface with an override</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ip=ip::gateway:netmask:hostname:interface:method:mtu</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The method <code>automatic configuration of a specific interface with an override</code> brings up the interface using the specified method of automatic configuration, such as <code>dhcp</code>, but overrides the automatically-obtained IP address, gateway, netmask, host name or other specified parameters. All parameters are optional, so specify only the parameters that you want to override.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The <code>method</code> parameter can be any of the following:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 5. Automatic interface configuration methods</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Automatic configuration method</th>
+<th class="tableblock halign-left valign-top">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DHCP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dhcp</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IPv6 DHCP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dhcp6</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IPv6 automatic configuration</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>auto6</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iSCSI Boot Firmware Table (iBFT)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ibft</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>If you use a boot option that requires network access, such as <code>inst.ks=http://host:/path</code>, without specifying the ip option, the installation program uses <code>ip=dhcp</code>.</p>
+</li>
+<li>
+<p>To connect to an iSCSI target automatically, you must activate a network device for accessing the target. The recommended way to activate a network is to use the <code>ip=ibft</code> boot option.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</dd>
+<dt class="hdlist1">nameserver=</dt>
+<dd>
+<p>The <code>nameserver=</code> option specifies the address of the name server. You can use this option multiple times.</p>
+</dd>
+<dt class="hdlist1">bootdev=</dt>
+<dd>
+<p>The <code>bootdev=</code> option specifies the boot interface. This option is mandatory if you use more than one <code>ip</code> option.</p>
+</dd>
+<dt class="hdlist1">ifname=</dt>
+<dd>
+<p>The <code>ifname=</code> options assigns an interface name to a network device with a given MAC address. You can use this option multiple times. The syntax is <code>ifname=interface:MAC</code>. For example:</p>
+<div class="listingblock">
+<div class="content">
+<pre>ifname=eth0:01:23:45:67:89:ab</pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The <code>ifname=</code> option is the only supported way to set custom network interface names during installation.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</dd>
+<dt class="hdlist1">inst.dhcpclass=</dt>
+<dd>
+<p>The <code>inst.dhcpclass=</code> option specifies the DHCP vendor class identifier. The <code>dhcpd</code> service sees this value as <code>vendor-class-identifier</code>. The default value is <code>anaconda-$(uname -srm)</code>.</p>
+</dd>
+<dt class="hdlist1">inst.waitfornet=</dt>
+<dd>
+<p>Using the <code>inst.waitfornet=SECONDS</code> boot option causes the installation system to wait for network connectivity before installation. The value given in the <code>SECONDS</code> argument specifies the maximum amount of time to wait for network connectivity before timing out and continuing the installation process even if network connectivity is not present.</p>
+</dd>
+</dl>
+</div>
+<h3 id="_additional_resources" class="discrete">Additional resources</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>For more information about networking, see the <a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/configuring_and_managing_networking/index/"><em>Configuring and managing networking in RHEL 8</em></a> document.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="console-environment-and-display-boot-options_kickstart-and-advanced-boot-options"><a class="anchor" href="#console-environment-and-display-boot-options_kickstart-and-advanced-boot-options"></a>Console boot options</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section contains information about configuring boot options for your console, monitor display, and keyboard.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">console=</dt>
+<dd>
+<p>Use the <code>console=</code> option to specify a device that you want to use as the primary console. For example, to use a console on the first serial port, use <code>console=ttyS0</code>. Use this option in conjunction with the <code>inst.text</code> option. You can use the <code>console=</code> option multiple times. If you do, the boot message is displayed on all specified consoles, but only the last one is used by the installation program. For example, if you specify <code>console=ttyS0 console=ttyS1</code>, the installation program uses <code>ttyS1</code>.</p>
+</dd>
+<dt class="hdlist1">inst.lang=</dt>
+<dd>
+<p>Use the <code>inst.lang=</code> option to set the language that you want to use during the installation. The <code>locale -a | grep _</code> or <code>localectl list-locales | grep _</code> options return a list of locales.</p>
+</dd>
+<dt class="hdlist1">inst.singlelang</dt>
+<dd>
+<p>Use the <code>inst.singlelang</code> option to install in single language mode, which results in no available interactive options for the installation language and language support configuration. If a language is specified using the <code>inst.lang</code> boot option or the <code>lang</code> Kickstart command, then it is used. If no language is specified, the installation program defaults to <code>en_US.UTF-8</code>.</p>
+</dd>
+<dt class="hdlist1">inst.geoloc=</dt>
+<dd>
+<p>Use the <code>inst.geoloc=</code> option to configure geolocation usage in the installation program. Geolocation is used to preset the language and time zone, and uses the following syntax: <code>inst.geoloc=value</code>. The <code>value</code> can be any of the following parameters:</p>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 6. Values for the inst.geoloc boot option</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Value</th>
+<th class="tableblock halign-left valign-top">Boot option format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Disable geolocation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>inst.geoloc=0</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use the Fedora GeoIP API</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>inst.geoloc=provider_fedora_geoip</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use the Hostip.info GeoIP API</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>inst.geoloc=provider_hostip</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>If you do not specify the <code>inst.geoloc=</code> option, the installation program uses <code>provider_fedora_geoip</code>.</p>
+</div>
+</dd>
+<dt class="hdlist1">inst.keymap=</dt>
+<dd>
+<p>Use the <code>inst.keymap=</code> option to specify the keyboard layout that you want to use for the installation.</p>
+</dd>
+<dt class="hdlist1">inst.cmdline</dt>
+<dd>
+<p>Use the <code>inst.cmdline</code> option to force the installation program to run in command-line mode. This mode does not allow any interaction, and you must specify all options in a Kickstart file or on the command line.</p>
+</dd>
+<dt class="hdlist1">inst.graphical</dt>
+<dd>
+<p>Use the <code>inst.graphical</code> option to force the installation program to run in graphical mode. This mode is the default.</p>
+</dd>
+<dt class="hdlist1">inst.text</dt>
+<dd>
+<p>Use the <code>inst.text</code> option to force the installation program to run in text mode instead of graphical mode.</p>
+</dd>
+<dt class="hdlist1">inst.noninteractive</dt>
+<dd>
+<p>Use the <code>inst.noninteractive</code> boot option to run the installation program in a non-interactive mode. User interaction is not permitted in the non-interactive mode, and <code>inst.noninteractive</code> can be used with a graphical or text installation. When the <code>inst.noninteractive</code> option is used in text mode it behaves the same as the <code>inst.cmdline</code> option.</p>
+</dd>
+<dt class="hdlist1">inst.resolution=</dt>
+<dd>
+<p>Use the <code>inst.resolution=</code> option to specify the screen resolution in graphical mode. The format is <code>NxM</code>, where <em>N</em> is the screen width and <em>M</em> is the screen height (in pixels). The lowest supported resolution is 1024x768.</p>
+</dd>
+<dt class="hdlist1">inst.vnc=</dt>
+<dd>
+<p>Use the <code>inst.vnc=</code> option to run the graphical installation using VNC. You must use a VNC client application to interact with the installation program. When VNC sharing is enabled, multiple clients can connect. A system installed using VNC starts in text mode.</p>
+</dd>
+<dt class="hdlist1">inst.vncpassword=</dt>
+<dd>
+<p>Use the <code>inst.vncpassword=</code> option to set a password on the VNC server that is used by the installation program.</p>
+</dd>
+<dt class="hdlist1">inst.vncconnect=</dt>
+<dd>
+<p>Use the <code>inst.vncconnect=</code> option to connect to a listening VNC client at the given host location. For example <code>inst.vncconnect=&lt;host&gt;[:&lt;port&gt;]</code>
+The default port is 5900. This option can be used with <code>vncviewer -listen</code>.</p>
+</dd>
+<dt class="hdlist1">inst.xdriver=</dt>
+<dd>
+<p>Use the <code>inst.xdriver=</code> option to specify the name of the X driver that you want to use both during installation and on the installed system.</p>
+</dd>
+<dt class="hdlist1">inst.usefbx=</dt>
+<dd>
+<p>Use the <code>inst.usefbx</code> option to prompt the installation program to use the frame buffer X driver instead of a hardware-specific driver. This option is equivalent to <code>inst.xdriver=fbdev</code>.</p>
+</dd>
+<dt class="hdlist1">modprobe.blacklist=</dt>
+<dd>
+<p>Use the <code>modprobe.blacklist=</code> option to blacklist or completely disable one or more drivers. Drivers (mods) that you disable using this option cannot load when the installation starts, and after the installation finishes, the installed system retains these settings. You can find a list of the blacklisted drivers in the <code>/etc/modprobe.d/</code> directory. Use a comma-separated list to disable multiple drivers. For example:</p>
+<div class="listingblock">
+<div class="content">
+<pre>modprobe.blacklist=ahci,firewire_ohci</pre>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">inst.xtimeout=</dt>
+<dd>
+<p>Use the <code>inst.xtimeout=</code> option to specify the timeout in seconds for starting X server.</p>
+</dd>
+<dt class="hdlist1">inst.sshd</dt>
+<dd>
+<p>Use the <code>inst.sshd</code> option to start the <code>sshd</code> service during installation, so that you can connect to the system during the installation using SSH, and monitor the installation progress. For more information about SSH, see the <code>ssh(1)</code> man page. By default, <code>sshd</code> is not started unless you use the <code>inst.sshd</code> option.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>During installation, the root account has no password by default. You can set a root password during installation with the <code>sshpw</code> Kickstart command.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</dd>
+<dt class="hdlist1">inst.kdump_addon=</dt>
+<dd>
+<p>Use the <code>inst.kdump_addon=</code> option to enable or disable the Kdump configuration screen (add-on) in the installation program. This screen is enabled by default; use <code>inst.kdump_addon=off</code> to disable it. Disabling the add-on disables the Kdump screens in both the graphical and text-based interface as well as the <code>%addon com_redhat_kdump</code> Kickstart command.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="debug-boot-options_kickstart-and-advanced-boot-options"><a class="anchor" href="#debug-boot-options_kickstart-and-advanced-boot-options"></a>Debug boot options</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section contains information about the options that you can use when debugging issues.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">inst.rescue=</dt>
+<dd>
+<p>Use the <code>inst.rescue=</code> option to run the rescue environment. The option is useful for trying to diagnose and fix systems.</p>
+</dd>
+<dt class="hdlist1">inst.updates=</dt>
+<dd>
+<p>Use the <code>inst.updates=</code> option to specify the location of the <code>updates.img</code> file that you want to apply during installation. There are a number of sources for the updates.</p>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 7. inst.updates= source updates</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Source</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Updates from a network</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The easiest way to use <code>inst.updates=</code> is to specify the network location of <code>updates.img</code>. This does not require any modification to the installation tree. To use this method, edit the kernel command line to include <code>inst.updates</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>inst.updates=http://some.website.com/path/to/updates.img</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Updates from a disk image</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">You can save an <code>updates.img</code> on a floppy drive or a USB key. This can be done only with an <code>ext2</code> filesystem type of <code>updates.img</code>. To save the contents of the image on your floppy drive, insert the floppy disc and run the command.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dd if=updates.img of=/dev/fd0 bs=72k count=20</code>. To use a USB key or flash media, replace <code>/dev/fd0</code> with the device name of your USB key.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Updates from an installation tree</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you are using a CD, hard drive, HTTP, or FTP install, you can save the <code>updates.img</code> in the installation tree so that all installations can detect the .img file. Save the file in the <code>images/</code> directory. The file name must be <code>updates.img</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">For NFS installs, there are two options: You can either save the image in the <code>images/</code> directory, or in the <code>RHupdates/</code> directory in the installation tree.</p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+<dt class="hdlist1">inst.loglevel=</dt>
+<dd>
+<p>Use the <code>inst.loglevel=</code> option to specify the minimum level of messages logged on a terminal. This concerns only terminal logging; log files always contain messages of all levels.
+Possible values for this option from the lowest to highest level are: <code>debug</code>, <code>info</code>, <code>warning</code>, <code>error</code> and <code>critical</code>. The default value is <code>info</code>, which means that by default, the logging terminal displays messages ranging from <code>info</code> to <code>critical</code>.</p>
+</dd>
+<dt class="hdlist1">inst.syslog=</dt>
+<dd>
+<p>When installation starts, the <code>inst.syslog=</code> option sends log messages to the <code>syslog</code> process on the specified host. The remote <code>syslog</code> process must be configured to accept incoming connections.</p>
+</dd>
+<dt class="hdlist1">inst.virtiolog=</dt>
+<dd>
+<p>Use the <code>inst.virtiolog=</code> option to specify the virtio port (a character device at <code>/dev/virtio-ports/name</code>) that you want to use for forwarding logs. The default value is <code>org.fedoraproject.anaconda.log.0</code>; if this port is present, it is used.</p>
+</dd>
+<dt class="hdlist1">inst.zram</dt>
+<dd>
+<p>The <code>inst.zram</code> option controls the usage of zRAM swap during installation. The option creates a compressed block device inside the system RAM and uses it for swap space instead of the hard drive. This allows the installation program to run with less available memory than is possible without compression, and it might also make the installation faster.
+By default, swap on zRAM is enabled on systems with 2 GiB or less RAM, and disabled on systems with more than 2 GiB of memory. You can use this option to change this behavior; on a system with more than 2 GiB RAM, use <code>inst.zram=1</code> to enable the feature, and on systems with 2 GiB or less memory, use <code>inst.zram=0</code> to disable the feature.</p>
+</dd>
+<dt class="hdlist1">rd.live.ram</dt>
+<dd>
+<p>If the <code>rd.live.ram</code> option is specified, the <code>stage 2</code> image is copied into RAM. Using this option when the <code>stage 2</code> image is on an NFS server increases the minimum required memory by the size of the image by roughly 500 MiB.</p>
+</dd>
+<dt class="hdlist1">inst.nokill</dt>
+<dd>
+<p>The <code>inst.nokill</code> option is a debugging option that prevents the installation program from rebooting when a fatal error occurs, or at the end of the installation process. Use the <code>inst.nokill</code> option to capture installation logs which would be lost upon reboot.</p>
+</dd>
+<dt class="hdlist1">inst.noshell</dt>
+<dd>
+<p>Use <code>inst.noshell</code> option if you do not want a shell on terminal session 2 (tty2) during installation.</p>
+</dd>
+<dt class="hdlist1">inst.notmux</dt>
+<dd>
+<p>Use <code>inst.notmux</code> option if you do not want to use tmux during installation. The output is generated without terminal control characters and is meant for non-interactive uses.</p>
+</dd>
+<dt class="hdlist1">remotelog</dt>
+<dd>
+<p>You can use the <code>remotelog</code> option to send all of the logs to a remote <code>host:port</code> using a TCP connection. The connection is retired if there is no listener and the installation proceeds as normal.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="storage-boot-options_kickstart-and-advanced-boot-options"><a class="anchor" href="#storage-boot-options_kickstart-and-advanced-boot-options"></a>Storage boot options</h2>
+<div class="sectionbody">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">inst.nodmraid=</dt>
+<dd>
+<p>Use the <code>inst.nodmraid=</code> option to disable <code>dmraid</code> support.</p>
+</dd>
+</dl>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Use this option with caution. If you have a disk that is incorrectly identified as part of a firmware RAID array, it might have some stale RAID metadata on it that must be removed using the appropriate tool, for example, <code>dmraid</code> or <code>wipefs</code>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">inst.nompath=</dt>
+<dd>
+<p>Use the <code>inst.nompath=</code> option to disable support for multipath devices. This option can be used for systems on which a false-positive is encountered which incorrectly identifies a normal block device as a multipath device. There is no other reason to use this option.</p>
+</dd>
+</dl>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Use this option with caution. You should not use this option with multipath hardware. Using this option to attempt to install to a single path of a multipath is not supported.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">inst.gpt</dt>
+<dd>
+<p>The <code>inst.gpt</code> boot option forces the installation program to install partition information to a GUID Partition Table (GPT) instead of a Master Boot Record (MBR). This option is not valid on UEFI-based systems, unless they are in BIOS compatibility mode. Normally, BIOS-based systems and UEFI-based systems in BIOS compatibility mode attempt to use the MBR schema for storing partitioning information, unless the disk is 232 sectors in size or larger. Disk sectors are typically 512 bytes in size, meaning that this is usually equivalent to 2 TiB. Using the <code>inst.gpt</code> boot option changes this behavior, allowing a GPT to be written to smaller disks.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="kickstart-boot-options_kickstart-and-advanced-boot-options"><a class="anchor" href="#kickstart-boot-options_kickstart-and-advanced-boot-options"></a>Kickstart boot options</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section contains information about the Kickstart boot options.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">inst.ks=</dt>
+<dd>
+<p>Use the <code>inst.ks=</code> boot option to define the location of a Kickstart file that you want to use to automate the installation. You can then specify locations using any of the <code>inst.repo</code> formats.
+If you specify a device and not a path, the installation program looks for the Kickstart file in <code>/ks.cfg</code> on the device that you specify. If you use this option without specifying a device, the installation program uses the following option:</p>
+<div class="listingblock">
+<div class="content">
+<pre>inst.ks=nfs:next-server:/filename</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In the previous example, <em>next-server</em> is the DHCP next-server option or the IP address of the DHCP server itself, and <em>filename</em> is the DHCP filename option, or <em>/kickstart/</em>. If the given file name ends with the <code>/</code> character, <code>ip-kickstart</code> is appended. The following table contains an example.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 8. Default Kickstart file location</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">DHCP server address</th>
+<th class="tableblock halign-left valign-top">Client address</th>
+<th class="tableblock halign-left valign-top">Kickstart file location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">192.168.122.1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">192.168.122.100</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">192.168.122.1:/kickstart/192.168.122.100-kickstart</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>If a volume with a label of <code>OEMDRV</code> is present, the installation program attempts to load a Kickstart file named <code>ks.cfg</code>. If your Kickstart file is in this location, you do not need to use the <code>inst.ks=</code> boot option.</p>
+</div>
+</dd>
+<dt class="hdlist1">inst.ks.all</dt>
+<dd>
+<p>Specify this option to sequentially try multiple Kickstart file locations provided by multiple <code>inst.ks</code> options. The first successful location is used. This applies only to locations of type <code>http</code>, <code>https</code> or <code>ftp</code>, other locations are ignored.</p>
+</dd>
+<dt class="hdlist1">inst.ks.sendmac</dt>
+<dd>
+<p>Use the <code>inst.ks.sendmac</code> option to add headers to outgoing HTTP requests that contain the MAC addresses of all network interfaces. For example:</p>
+<div class="listingblock">
+<div class="content">
+<pre>X-RHN-Provisioning-MAC-0: eth0 01:23:45:67:89:ab</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This can be useful when using <code>inst.ks=http</code> to provision systems.</p>
+</div>
+</dd>
+<dt class="hdlist1">inst.ks.sendsn</dt>
+<dd>
+<p>Use the <code>inst.ks.sendsn</code> option to add a header to outgoing HTTP requests. This header contains the system serial number, read from <code>/sys/class/dmi/id/product_serial</code>. The header has the following syntax:</p>
+<div class="listingblock">
+<div class="content">
+<pre>X-System-Serial-Number: R8VA23D</pre>
+</div>
+</div>
+</dd>
+</dl>
+</div>
+<h3 id="_additional_resources_2" class="discrete">Additional resources</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>For a full list of boot options, see the <a href="https://github.com/rhinstaller/anaconda/blob/rhel-8.0/docs/boot-options.rst">upstream boot option</a> content.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="advanced-installation-boot-options_kickstart-and-advanced-boot-options"><a class="anchor" href="#advanced-installation-boot-options_kickstart-and-advanced-boot-options"></a>Advanced installation boot options</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section contains information about advanced installation boot options.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">inst.kexec</dt>
+<dd>
+<p>The <code>inst.kexec</code> option allows the installation program to use the <code>kexec</code> system call at the end of the installation, instead of performing a reboot. The <code>inst.kexec</code> option loads the new system immediately, and bypasses the hardware initialization normally performed by the BIOS or firmware.</p>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>This option is deprecated and available as a Technology Preview only.</p>
+</div>
+<div class="paragraph">
+<p>When <code>kexec</code> is used, device registers which would normally be cleared during a full system reboot, might stay filled with data, which could potentially create issues for some device drivers.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</dd>
+<dt class="hdlist1">inst.multilib</dt>
+<dd>
+<p>Use the <code>inst.multilib</code> boot option to configure the system for multilib packages, that is, to allow installing 32-bit packages on a 64-bit AMD64 or Intel 64 system. Normally, on an AMD64 or Intel 64 system, only packages for this architecture (marked as x86_64) and packages for all architectures (marked as noarch) are installed. When you use the <code>inst.multilib</code> boot option, packages for 32-bit AMD or Intel systems (marked as i686) are automatically installed.</p>
+<div class="paragraph">
+<p>This applies only to packages directly specified in the <code>%packages</code> section. If a package is installed as a dependency, only the exact specified dependency is installed. For example, if you are installing the <code>bash</code> package which depends on the <code>glibc</code> package, the former is installed in multiple variants, while the latter is installed only in variants that the bash package requires.</p>
+</div>
+</dd>
+<dt class="hdlist1">selinux=0</dt>
+<dd>
+<p>By default, the <code>selinux=0</code> boot option operates in permissive mode in the installation program, and in enforcing mode in the installed system. The <code>selinux=0</code> boot option disables the use of SELinux in the installation program and the installed system.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The <code>selinux=0</code> and <code>inst.selinux=0</code> options are not the same. The <code>selinux=0</code> option disables the use of SELinux in the installation program and the installed system. The <code>inst.selinux=0</code> option disables SELinux only in the installation program. By default, SELinux operates in permissive mode in the installation program, so disabling SELinux has little effect.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</dd>
+<dt class="hdlist1">inst.nonibftiscsiboot=</dt>
+<dd>
+<p>Use the <code>inst.nonibftiscsiboot=</code> boot option to place the boot loader on iSCSI devices that were not configured in the iSCSI Boot Firmware Table (iBFT).</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="deprecated-boot-options_kickstart-and-advanced-boot-options"><a class="anchor" href="#deprecated-boot-options_kickstart-and-advanced-boot-options"></a>Deprecated boot options</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section contains information about deprecated boot options. These options are still accepted by the installation program but they are deprecated and are scheduled to be removed in a future release of CentOS.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">method</dt>
+<dd>
+<p>The <code>method</code> option is an alias for <code>inst.repo</code>.</p>
+</dd>
+<dt class="hdlist1">repo=nfsiso</dt>
+<dd>
+<p>The <code>repo=nfsiso:</code> option is the same as <code>inst.repo=nfs:</code>.</p>
+</dd>
+<dt class="hdlist1">dns</dt>
+<dd>
+<p>Use <code>nameserver</code> instead of <code>dns</code>. Note that nameserver does not accept comma-separated lists; use multiple nameserver options instead.</p>
+</dd>
+<dt class="hdlist1">netmask, gateway, hostname</dt>
+<dd>
+<p>The <code>netmask</code>, <code>gateway</code>, and <code>hostname</code> options are provided as part of the <code>ip</code> option.</p>
+</dd>
+<dt class="hdlist1">ip=bootif</dt>
+<dd>
+<p>A PXE-supplied <code>BOOTIF</code> option is used automatically, so there is no requirement to use <code>ip=bootif</code>.</p>
+</dd>
+<dt class="hdlist1">ksdevice</dt>
+<dd>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 9. Values for the ksdevice boot option</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Value</th>
+<th class="tableblock halign-left valign-top">Information</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not present</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N/A</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ksdevice=link</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ignored as this option is the same as the default behavior</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ksdevice=bootif</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ignored as this option is the default if <code>BOOTIF=</code> is present</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ksdevice=ibft</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Replaced with <code>ip=ibft</code>. See <code>ip</code> for details</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ksdevice=&lt;MAC&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Replaced with <code>BOOTIF=${MAC/:/-}</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ksdevice=&lt;DEV&gt;</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Replaced with <code>bootdev</code></p></td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="removed-boot-options_kickstart-and-advanced-boot-options"><a class="anchor" href="#removed-boot-options_kickstart-and-advanced-boot-options"></a>Removed boot options</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section contains the boot options that have been removed from CentOS.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p><code>dracut</code> provides advanced boot options. For more information about <code>dracut</code>, see the <code>dracut.cmdline(7)</code> man page.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">askmethod, asknetwork</dt>
+<dd>
+<p><code>initramfs</code> is completely non-interactive, so the <code>askmethod</code> and <code>asknetwork</code> options have been removed.
+Instead, use <code>inst.repo</code> or specify the appropriate network options.</p>
+</dd>
+<dt class="hdlist1">blacklist, nofirewire</dt>
+<dd>
+<p>The <code>modprobe</code> option handles blacklisting kernel modules; use <code>modprobe.blacklist=&lt;mod1&gt;,&lt;mod2&gt;</code>.
+You can blacklist the firewire module by using <code>modprobe.blacklist=firewire_ohci</code>.</p>
+</dd>
+<dt class="hdlist1">inst.headless=</dt>
+<dd>
+<p>The <code>headless=</code> option specified that the system that is being installed to does not have any display hardware, and that the installation program is not required to look for any display hardware.</p>
+</dd>
+<dt class="hdlist1">inst.decorated</dt>
+<dd>
+<p>The <code>inst.decorated</code> option was used to specify the graphical installation in a decorated window. By default, the window is not decorated, so it doesn&#8217;t have a title bar, resize controls, and so on. This option was no longer required.</p>
+</dd>
+<dt class="hdlist1">serial</dt>
+<dd>
+<p>Use the <code>console=ttyS0</code> option.</p>
+</dd>
+<dt class="hdlist1">updates</dt>
+<dd>
+<p>Use the <code>inst.updates</code> option.</p>
+</dd>
+<dt class="hdlist1">essid, wepkey, wpakey</dt>
+<dd>
+<p>Dracut does not support wireless networking.</p>
+</dd>
+<dt class="hdlist1">ethtool</dt>
+<dd>
+<p>This option was no longer required.</p>
+</dd>
+<dt class="hdlist1">gdb</dt>
+<dd>
+<p>This option was removed as there are many options available for debugging dracut-based <code>initramfs</code>.</p>
+</dd>
+<dt class="hdlist1">inst.mediacheck</dt>
+<dd>
+<p>Use the <code>dracut option rd.live.check</code> option.</p>
+</dd>
+<dt class="hdlist1">ks=floppy</dt>
+<dd>
+<p>Use the <code>inst.ks=hd:&lt;device&gt;</code> option.</p>
+</dd>
+<dt class="hdlist1">display</dt>
+<dd>
+<p>For a remote display of the UI, use the <code>inst.vnc</code> option.</p>
+</dd>
+<dt class="hdlist1">utf8</dt>
+<dd>
+<p>This option was no longer required as the default TERM setting behaves as expected.</p>
+</dd>
+<dt class="hdlist1">noipv6</dt>
+<dd>
+<p>ipv6 is built into the kernel and cannot be removed by the installation program.
+You can disable ipv6 using <code>ipv6.disable=1</code>. This setting is used by the installed system.</p>
+</dd>
+<dt class="hdlist1">upgradeany</dt>
+<dd>
+<p>This option was no longer required as the installation program no longer handles upgrades.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. If <em>device</em> is left out, installation program automatically searches for a drive containing the installation DVD.
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. The NFS Server option uses NFS protocol version 3 by default. To use a different version <em>X</em>, add <code>+nfsvers=<em>X</em></code> to <em>options</em>.
+</div>
+</div>
+</article>
+</main>
+</div>
+<footer class="footer">
+  <p>All CentOS Documentation content available under <a href="http://creativecommons.org/licenses/by-sa/3.0/legalcode">CC-BY-SA 3.0.</a>
+  <p>This page was built using a modified version of the Antora default UI. The source code for this UI is licensed under the terms of the <a href="https://www.mozilla.org/en-US/MPL/2.0/">MPL-2.0</a> license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
