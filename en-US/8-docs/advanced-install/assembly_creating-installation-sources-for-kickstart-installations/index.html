@@ -1224,7 +1224,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>This section describes how to create an installation source for the Boot ISO image using the Binary DVD ISO image that contains the required repositories and software packages.</p>
+<p>This section describes how to create an installation source for the Boot ISO image using the DVD1 ISO image that contains the required repositories and software packages.</p>
 </div>
 </div>
 </div>
@@ -1237,16 +1237,16 @@
 <div class="ulist">
 <ul>
 <li>
-<p><strong>DVD:</strong> Burn the Binary DVD ISO image to a DVD. The installation program will automatically install the software packages from the DVD.</p>
+<p><strong>DVD:</strong> Burn the DVD1 ISO image to a DVD. The installation program will automatically install the software packages from the DVD.</p>
 </li>
 <li>
-<p><strong>Hard drive or USB drive:</strong> Copy the Binary DVD ISO image to the drive and configure the installation program to install the software packages from the drive. If you use a USB drive, verify that it is connected to the system before the installation begins. The installation program cannot detect media after the installation begins.</p>
+<p><strong>Hard drive or USB drive:</strong> Copy the DVD1 ISO image to the drive and configure the installation program to install the software packages from the drive. If you use a USB drive, verify that it is connected to the system before the installation begins. The installation program cannot detect media after the installation begins.</p>
 <div class="exampleblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Hard drive limitation</strong>: The Binary DVD ISO image on the hard drive must be on a partition with a file system that the installation program can mount. The supported file systems are <code>xfs</code>, <code>ext2</code>, <code>ext3</code>, <code>ext4</code>, and <code>vfat (FAT32)</code>.</p>
+<p><strong>Hard drive limitation</strong>: The DVD1 ISO image on the hard drive must be on a partition with a file system that the installation program can mount. The supported file systems are <code>xfs</code>, <code>ext2</code>, <code>ext3</code>, <code>ext4</code>, and <code>vfat (FAT32)</code>.</p>
 </li>
 </ul>
 </div>
@@ -1272,11 +1272,11 @@
 </div>
 </li>
 <li>
-<p><strong>Network location:</strong> Copy the Binary DVD ISO image or the installation tree (extracted contents of the Binary DVD ISO image) to a network location and perform the installation over the network using the following protocols:</p>
+<p><strong>Network location:</strong> Copy the DVD1 ISO image or the installation tree (extracted contents of the DVD1 ISO image) to a network location and perform the installation over the network using the following protocols:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>NFS:</strong> The Binary DVD ISO image is in a Network File System (NFS) share.</p>
+<p><strong>NFS:</strong> The DVD1 ISO image is in a Network File System (NFS) share.</p>
 </li>
 <li>
 <p><strong>HTTPS, HTTP or FTP:</strong> The installation tree is on a network location that is accessible over HTTP, HTTPS or FTP.</p>
@@ -1352,7 +1352,7 @@
 <p>You have administor level access to a server with CentOS&#160;8, and this server is on the same network as the system to be installed.</p>
 </li>
 <li>
-<p>You have downloaded a Binary DVD ISO image. See <a href="../../standard-install/assembly_preparing-for-your-installation/#downloading-beta-installation-images_preparing-for-your-installation" class="page">Downloading the installation ISO image</a> for more information.</p>
+<p>You have downloaded a DVD1 ISO image. See <a href="../../standard-install/assembly_preparing-for-your-installation/#downloading-beta-installation-images_preparing-for-your-installation" class="page">Downloading the installation ISO image</a> for more information.</p>
 </li>
 <li>
 <p>You have created a bootable CD, DVD, or USB device from the image file. See <a href="../../standard-install/assembly_preparing-for-your-installation/#making-media_preparing-for-your-installation" class="page">Creating installation media</a> for more information.</p>
@@ -1374,7 +1374,7 @@
 </div>
 </li>
 <li>
-<p>Copy the Binary DVD ISO image to a directory on the NFS server.</p>
+<p>Copy the DVD1 ISO image to a directory on the NFS server.</p>
 </li>
 <li>
 <p>Open the <code class="filename">/etc/exports</code> file using a text editor and add a line with the following syntax:</p>
@@ -1439,7 +1439,7 @@
 <h2 id="creating-an-installation-source-on-http_creating-installation-sources-for-kickstart-installations"><a class="anchor" href="#creating-an-installation-source-on-http_creating-installation-sources-for-kickstart-installations"></a>Creating an installation source using HTTP or HTTPS</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Follow the steps in this procedure to create an installation source for a network-based installation using an installation tree, which is a directory containing extracted contents of the Binary DVD ISO image and a valid <code class="filename">.treeinfo</code> file. The installation source is accessed over HTTP or HTTPS.</p>
+<p>Follow the steps in this procedure to create an installation source for a network-based installation using an installation tree, which is a directory containing extracted contents of the DVD1 ISO image and a valid <code class="filename">.treeinfo</code> file. The installation source is accessed over HTTP or HTTPS.</p>
 </div>
 <h3 id="_prerequisites_2" class="discrete">Prerequisites</h3>
 <div class="ulist">
@@ -1448,7 +1448,7 @@
 <p>You have administor level access to a server with CentOS&#160;8, and this server is on the same network as the system to be installed.</p>
 </li>
 <li>
-<p>You have downloaded a Binary DVD ISO image. See <a href="../../standard-install/assembly_preparing-for-your-installation/#downloading-beta-installation-images_preparing-for-your-installation" class="page">Downloading the installation ISO image</a> for more information.</p>
+<p>You have downloaded a DVD1 ISO image. See <a href="../../standard-install/assembly_preparing-for-your-installation/#downloading-beta-installation-images_preparing-for-your-installation" class="page">Downloading the installation ISO image</a> for more information.</p>
 </li>
 <li>
 <p>You have created a bootable CD, DVD, or USB device from the image file. See <a href="../../standard-install/assembly_preparing-for-your-installation/#making-media_preparing-for-your-installation" class="page">Creating installation media</a> for more information.</p>
@@ -1498,10 +1498,10 @@
 </div>
 </li>
 <li>
-<p>Copy the Binary DVD ISO image to the HTTP(S) server.</p>
+<p>Copy the DVD1 ISO image to the HTTP(S) server.</p>
 </li>
 <li>
-<p>Mount the Binary DVD ISO image, using the <code class="command">mount</code> command, to a suitable directory:</p>
+<p>Mount the DVD1 ISO image, using the <code class="command">mount</code> command, to a suitable directory:</p>
 <div class="listingblock">
 <div class="content">
 <pre># mkdir /mnt/centos8-install/
@@ -1509,7 +1509,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p>Replace <em>/image_directory/image.iso</em> with the path to the Binary DVD ISO image.</p>
+<p>Replace <em>/image_directory/image.iso</em> with the path to the DVD1 ISO image.</p>
 </div>
 </li>
 <li>
@@ -1564,7 +1564,7 @@
 <h2 id="creating-an-installation-source-on-ftp_creating-installation-sources-for-kickstart-installations"><a class="anchor" href="#creating-an-installation-source-on-ftp_creating-installation-sources-for-kickstart-installations"></a>Creating an installation source using FTP</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Follow the steps in this procedure to create an installation source for a network-based installation using an installation tree, which is a directory containing extracted contents of the Binary DVD ISO image and a valid <code class="filename">.treeinfo</code> file. The installation source is accessed over FTP.</p>
+<p>Follow the steps in this procedure to create an installation source for a network-based installation using an installation tree, which is a directory containing extracted contents of the DVD1 ISO image and a valid <code class="filename">.treeinfo</code> file. The installation source is accessed over FTP.</p>
 </div>
 <h3 id="_prerequisites_3" class="discrete">Prerequisites</h3>
 <div class="ulist">
@@ -1573,7 +1573,7 @@
 <p>You have administor level access to a server with CentOS&#160;8, and this server is on the same network as the system to be installed.</p>
 </li>
 <li>
-<p>You have downloaded a Binary DVD ISO image. See <a href="../../standard-install/assembly_preparing-for-your-installation/#downloading-beta-installation-images_preparing-for-your-installation" class="page">Downloading the installation ISO image</a> for more information.</p>
+<p>You have downloaded a DVD1 ISO image. See <a href="../../standard-install/assembly_preparing-for-your-installation/#downloading-beta-installation-images_preparing-for-your-installation" class="page">Downloading the installation ISO image</a> for more information.</p>
 </li>
 <li>
 <p>You have created a bootable CD, DVD, or USB device from the image file. See <a href="../../standard-install/assembly_preparing-for-your-installation/#making-media_preparing-for-your-installation" class="page">Creating installation media</a> for more information.</p>
@@ -1660,10 +1660,10 @@
 </div>
 </li>
 <li>
-<p>Copy the Binary DVD ISO image to the FTP server.</p>
+<p>Copy the DVD1 ISO image to the FTP server.</p>
 </li>
 <li>
-<p>Mount the Binary DVD ISO image, using the mount command, to a suitable directory:</p>
+<p>Mount the DVD1 ISO image, using the mount command, to a suitable directory:</p>
 <div class="listingblock">
 <div class="content">
 <pre># mkdir /mnt/centos8-install
@@ -1671,7 +1671,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p>Replace <em>/image-directory/image.iso</em> with the path to the Binary DVD ISO image.</p>
+<p>Replace <em>/image-directory/image.iso</em> with the path to the DVD1 ISO image.</p>
 </div>
 </li>
 <li>

@@ -279,9 +279,6 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../disk-image-install/">Installing into a Disk Image</a>
   </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../Composer/">Building Custom System Images with Composer</a>
-  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
@@ -380,7 +377,7 @@
     <li><a href="./">Planning for Installation</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/CentOS/docs-installation-guide/edit/7.6/modules/install-guide/pages/Steps-ppc.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/CentOS/docs-installation-guide/edit/7.7/modules/install-guide/pages/Steps-ppc.adoc">Edit this Page</a></div>
 </div>
 <article class="doc">
 <h1 class="page">Planning for Installation on IBM Power&#160;Systems</h1>
@@ -585,7 +582,7 @@
 <li>
 <p>Information about the partitions used on the system. This information can include file system types, device node names, file system labels, and sizes. This will allow you to identify specific partitions during the partitioning process. Remember that different operating systems identify partitions and drives differently, therefore even if the other operating system is a Unix operating system, the device names can be reported by CentOS differently. This information can usually be found by executing the equivalent of the <code class="command">mount</code> command and <code class="command">blkid</code> command and in the <code>/etc/fstab</code> file.</p>
 <div class="paragraph">
-<p>If you have other operating systems already installed, the CentOS&#160;7.6.1810 installation program attempts to automatically detect and configure to boot them. You can manually configure any additional operating systems if they are not detected properly. For more information, see <a href="../StorageSpoke-ppc64/#sect-bootloader-ppc" class="page">Boot Loader Installation (ppc)</a>.</p>
+<p>If you have other operating systems already installed, the CentOS&#160;7.7.1908 installation program attempts to automatically detect and configure to boot them. You can manually configure any additional operating systems if they are not detected properly. For more information, see <a href="../StorageSpoke-ppc64/#sect-bootloader-ppc" class="page">Boot Loader Installation (ppc)</a>.</p>
 </div>
 </li>
 </ul>
@@ -760,7 +757,7 @@
 <h2 id="sect-installation-planning-boot-method-ppc"><a class="anchor" href="#sect-installation-planning-boot-method-ppc"></a>Choose an Installation Boot Method</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You can use several methods to boot the CentOS&#160;7.6.1810 installation program. The method you choose depends upon your installation media.</p>
+<p>You can use several methods to boot the CentOS&#160;7.7.1908 installation program. The method you choose depends upon your installation media.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -804,7 +801,7 @@
 <h2 id="sect-installation-planning-kickstart-ppc"><a class="anchor" href="#sect-installation-planning-kickstart-ppc"></a>Automating the Installation with Kickstart</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>CentOS&#160;7.6.1810 offers a way to partially or fully automate the installation process using a <em>Kickstart file</em>. Kickstart files contain answers to all questions normally asked by the installation program, such as what time zone do you want the system to use, how should the drives be partitioned or which packages should be installed. Providing a prepared Kickstart file at the beginning of the installation therefore allows you to perform the entire installation (or parts of it) automatically, without need for any intervention from the user. This is especially useful when deploying CentOS on a large number of systems at once.</p>
+<p>CentOS&#160;7.7.1908 offers a way to partially or fully automate the installation process using a <em>Kickstart file</em>. Kickstart files contain answers to all questions normally asked by the installation program, such as what time zone do you want the system to use, how should the drives be partitioned or which packages should be installed. Providing a prepared Kickstart file at the beginning of the installation therefore allows you to perform the entire installation (or parts of it) automatically, without need for any intervention from the user. This is especially useful when deploying CentOS on a large number of systems at once.</p>
 </div>
 <div class="paragraph">
 <p>In addition to allowing you to automate the installation, Kickstart files also provide more options regarding software selection. When installing CentOS manually using the graphical installation interface, your software selection is limited to pre-defined environments and add-ons. A Kickstart file allows you to install or remove individual packages as well.</p>

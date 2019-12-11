@@ -1370,7 +1370,7 @@ subnet 10.0.0.0 netmask 255.255.255.0 {
 </div>
 </li>
 <li>
-<p>Access the <code>pxelinux.0</code> file from the <code>SYSLINUX</code> package in the Binary DVD ISO image file:</p>
+<p>Access the <code>pxelinux.0</code> file from the <code>SYSLINUX</code> package in the DVD1 ISO image file:</p>
 <div class="listingblock">
 <div class="content">
 <pre># mount -t iso9660 /path_to_image/name_of_image.iso /mount_point -o loop,ro</pre>
@@ -1572,7 +1572,7 @@ subnet 10.0.0.0 netmask 255.255.255.0 {
 </div>
 </li>
 <li>
-<p>Access the <code>shim.efi</code> file from the <code>shim</code> package, and the <code>grubx64.efi</code> file from the <code>grub2-efi</code> package in the Binary DVD ISO image file:</p>
+<p>Access the <code>shim.efi</code> file from the <code>shim</code> package, and the <code>grubx64.efi</code> file from the <code>grub2-efi</code> package in the DVD1 ISO image file:</p>
 <div class="listingblock">
 <div class="content">
 <pre># mount -t iso9660 /path_to_image/name_of_image.iso /mount_point -o loop,ro</pre>
@@ -1827,7 +1827,7 @@ menuentry 'CentOS 8.0.1905' {
 </div>
 </li>
 <li>
-<p>Mount the Binary DVD ISO image using the command:</p>
+<p>Mount the DVD1 ISO image using the command:</p>
 <div class="listingblock">
 <div class="content">
 <pre># mount -t iso9660 /path_to_image/name_of_iso/ /mount_point -o loop,ro</pre>
@@ -1835,7 +1835,7 @@ menuentry 'CentOS 8.0.1905' {
 </div>
 </li>
 <li>
-<p>Create a directory and copy the <code>initrd.img</code> and <code>vmlinuz</code> files from Binary DVD ISO image into it, for example:</p>
+<p>Create a directory and copy the <code>initrd.img</code> and <code>vmlinuz</code> files from DVD1 ISO image into it, for example:</p>
 <div class="listingblock">
 <div class="content">
 <pre># cp /mount_point/ppc/ppc64/{initrd.img,vmlinuz} /var/lib/tftpboot/grub2-ppc64/</pre>

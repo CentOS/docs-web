@@ -1303,7 +1303,7 @@ See <a href="../assembly_system-requirements-reference/" class="page">System req
 <dl>
 <dt class="hdlist1">Full installation DVD or USB flash drive</dt>
 <dd>
-<p>Create a full installation DVD or USB flash drive using the <strong>Binary DVD ISO</strong> image. The DVD or USB flash drive can be used as a boot device and as an installation source for installing software packages. Due to the size of the Binary DVD ISO image, a DVD or USB flash drive are the recommended media types.</p>
+<p>Create a full installation DVD or USB flash drive using the <strong>DVD1 ISO</strong> image. The DVD or USB flash drive can be used as a boot device and as an installation source for installing software packages. Due to the size of the DVD1 ISO image, a DVD or USB flash drive are the recommended media types.</p>
 </dd>
 <dt class="hdlist1">Minimal installation DVD, CD, or USB flash drive</dt>
 <dd>
@@ -1339,10 +1339,10 @@ See <a href="../assembly_system-requirements-reference/" class="page">System req
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">Everything DVD ISO image file</dt>
+<dt class="hdlist1">DVD1 ISO image file</dt>
 <dd>
 <div class="paragraph">
-<p>A full installation program that contains the BaseOS and AppStream repositories and allows you to complete the installation without additional repositories. Installing CentOS from the Everything DVD ISO is the easiest and the recommended method of performing a standard CentOS&#160;8 installation.</p>
+<p>A full installation program that contains the BaseOS and AppStream repositories and allows you to complete the installation without additional repositories. Installing CentOS from the DVD1 ISO is the easiest and the recommended method of performing a standard CentOS&#160;8 installation.</p>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -1354,7 +1354,7 @@ See <a href="../assembly_system-requirements-reference/" class="page">System req
 <div class="ulist">
 <ul>
 <li>
-<p>It is <strong>recommended</strong> that you use the Everything DVD ISO image file to install CentOS&#160;8.</p>
+<p>It is <strong>recommended</strong> that you use the DVD1 ISO image file to install CentOS&#160;8.</p>
 </li>
 </ul>
 </div>
@@ -1366,7 +1366,7 @@ See <a href="../assembly_system-requirements-reference/" class="page">System req
 <dt class="hdlist1">Boot ISO image file</dt>
 <dd>
 <div class="paragraph">
-<p>The Boot ISO image is a minimal installation that requires access to the BaseOS and AppStream repositories to install software packages. The repositories are part of the Everything DVD ISO image that is available for download from <a href="https://wiki.centos.org/Download" class="bare">https://wiki.centos.org/Download</a>. Download and unpack the Everything DVD ISO image to access the repositories.</p>
+<p>The Boot ISO image is a minimal installation that requires access to the BaseOS and AppStream repositories to install software packages. The repositories are part of the DVD1 ISO image that is available for download from <a href="https://wiki.centos.org/Download" class="bare">https://wiki.centos.org/Download</a>. Download and unpack the DVD1 ISO image to access the repositories.</p>
 </div>
 </dd>
 </dl>
@@ -1391,17 +1391,17 @@ See <a href="../assembly_system-requirements-reference/" class="page">System req
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">AMD64 and Intel 64</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">x86_64 Everything DVD ISO image file</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">x86_64 DVD1 ISO image file</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">x86_64 Boot ISO image file</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ARM 64</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">AArch64 Everything DVD ISO image file</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AArch64 DVD1 ISO image file</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">AArch64 Boot ISO image file</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">IBM POWER</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ppc64le Everything DVD ISO image file</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ppc64le DVD1 ISO image file</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ppc64le Boot ISO image file</p></td>
 </tr>
 </tbody>
@@ -1410,7 +1410,7 @@ See <a href="../assembly_system-requirements-reference/" class="page">System req
 <div class="ulist">
 <ul>
 <li>
-<p>For instructions on how to access the Everything DVD ISO image repositories, see <a href="#prepare-installation-source_preparing-for-your-installation">Preparing an installation source</a> for more information.</p>
+<p>For instructions on how to access the DVD1 ISO image repositories, see <a href="#prepare-installation-source_preparing-for-your-installation">Preparing an installation source</a> for more information.</p>
 </li>
 </ul>
 </div>
@@ -1424,30 +1424,23 @@ See <a href="../assembly_system-requirements-reference/" class="page">System req
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">DVD ISO</dt>
+<dt class="hdlist1">DVD1 ISO</dt>
 <dd>
-<p>This image contains the installer as well as a set of all packages that can be installed during an interactive installation. This is the recommended download for most users.</p>
+<p>This image contains the installer as well as a set of all packages that can be installed during an interactive installation. Also sometimes referred to as the "Binary DVD" or "Binary ISO image". This is the recommended download for most users.</p>
 </dd>
-<dt class="hdlist1">Everything ISO</dt>
+<dt class="hdlist1">Boot ISO</dt>
 <dd>
-<p>Contains the installer and all packages available for CentOS&#160;8. This ISO image can be used to install the system with extra packages (using a Kickstart file and specifying extra packages in the <code class="command">%packages</code> section); it can also be used to set up a local mirror for downloading packages. Note that this image is very large and requires an at least 16 GB flash drive or other storage.</p>
-</dd>
-<dt class="hdlist1">Minimal ISO</dt>
-<dd>
-<p>Contains the installer and a minimal set of packages which can be used to install a very basic CentOS&#160;8 system. You can then use <strong class="application">Yum</strong> to download additional packages from update repositories.</p>
+<p>Contains only the installer, but not any installable packages. This image will allow you to start the installation, but you must <a href="#prepare-installation-source_preparing-for-your-installation">prepare a package source</a> and enter its URL in the <a href="../assembly_graphical-installation/#configuring-installation-source_configuring-software-settings" class="page">Package Selection screen</a>, using a <a href="../assembly_custom-boot-options/#installation-source-boot-options_custom-boot-options" class="page">boot option</a>, or using a <a href="../../advanced-install/assembly_kickstart-commands-and-options-reference/#repo_kickstart-commands-for-system-configuration" class="page">Kickstart command</a> in order to finish the installation.</p>
 </dd>
 </dl>
-</div>
-<div class="paragraph">
-<p>The images listed on the page linked above are for the AMD64/Intel&nbsp;64 (<code>x86_64</code>) architecture, which is the CentOS&#160;8 basic distribution. Images for additional architectures are available for download from the <a href="https://wiki.centos.org/Download">CentOS Wiki download page</a>.</p>
 </div>
 <div class="paragraph">
 <p>Optionally, you can use a checksum utility such as <strong class="application">sha256sum</strong> to verify the integrity of the image file after the download finishes. All downloads are provided with their checksums for reference:</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>$ sha256sum CentOS-server-8.0.1905-x86_64-dvd.iso
-<code>85a...46c  CentOS-server-8.0.1905-x86_64-dvd.iso</code></pre>
+<pre>$ sha256sum CentOS-8-x86_64-dvd.iso
+<code>85a...46c  CentOS-8-x86_64-dvd.iso</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1514,7 +1507,7 @@ to create bootable physical installation media, such as a USB, DVD, or CD.</p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>You can create a bootable DVD or CD using either the Binary DVD ISO image (full install), or the Boot ISO image (minimal install). However, the Binary DVD ISO image is larger than 4.7&#160;GB, and as a result, it might not fit on a single-layer DVD. A dual-layer DVD or USB key is recommended when using the Binary DVD ISO image to create bootable installation media.</p>
+<p>You can create a bootable DVD or CD using either the DVD1 ISO image (contains installer and packages), or the Boot ISO image (only contains the installer, requires an additional package source). However, the DVD1 ISO image is larger than 4.7&#160;GB, and as a result, it might not fit on a single-layer DVD. A dual-layer DVD or USB key is recommended when using the DVD1 ISO image to create bootable installation media.</p>
 </div>
 </td>
 </tr>
@@ -1533,7 +1526,7 @@ to create bootable physical installation media, such as a USB, DVD, or CD.</p>
 <p>You have downloaded an installation ISO image as described in <a href="#downloading-beta-installation-images_preparing-for-your-installation">Downloading the installation ISO image</a>.</p>
 </li>
 <li>
-<p>The <strong>Binary DVD</strong> ISO image is larger than 4.7 GB, so you must have a USB flash drive that is large enough to hold the ISO image.</p>
+<p>The <strong>DVD1</strong> ISO image is larger than 4.7 GB, so you must have a USB flash drive that is large enough to hold the ISO image.</p>
 </li>
 </ul>
 </div>
@@ -1659,7 +1652,7 @@ to create bootable physical installation media, such as a USB, DVD, or CD.</p>
 <p>You have downloaded an installation ISO image as described in <a href="#downloading-beta-installation-images_preparing-for-your-installation">Downloading the installation ISO image</a>.</p>
 </li>
 <li>
-<p>The <strong>Binary DVD</strong> ISO image is larger than 4.7 GB, so you must have a USB flash drive that is large enough to hold the ISO image.</p>
+<p>The <strong>DVD1</strong> ISO image is larger than 4.7 GB, so you must have a USB flash drive that is large enough to hold the ISO image.</p>
 </li>
 </ul>
 </div>
@@ -1730,7 +1723,7 @@ to create bootable physical installation media, such as a USB, DVD, or CD.</p>
 <p>You have downloaded an installation ISO image as described in <a href="#downloading-beta-installation-images_preparing-for-your-installation">Downloading the installation ISO image</a>.</p>
 </li>
 <li>
-<p>The <strong>Binary DVD</strong> ISO image is larger than 4.7 GB, so you must have a USB flash drive that is large enough to hold the ISO image.</p>
+<p>The <strong>DVD1</strong> ISO image is larger than 4.7 GB, so you must have a USB flash drive that is large enough to hold the ISO image.</p>
 </li>
 </ul>
 </div>
@@ -1848,7 +1841,7 @@ Unmount of all volumes on disknumber was successful</pre>
 <h2 id="prepare-installation-source_preparing-for-your-installation"><a class="anchor" href="#prepare-installation-source_preparing-for-your-installation"></a>Preparing an installation source</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The Boot ISO image file does not include any repositories or software packages; it contains only the installation program and the tools required to boot the system and start the installation. This section contains information about creating an installation source for the Boot ISO image using the Binary DVD ISO image that contains the required repositories and software packages.</p>
+<p>The Boot ISO image file does not include any repositories or software packages; it contains only the installation program and the tools required to boot the system and start the installation. This section contains information about creating an installation source for the Boot ISO image using the DVD1 ISO image that contains the required repositories and software packages.</p>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -1858,7 +1851,7 @@ Unmount of all volumes on disknumber was successful</pre>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Creating an installation source is required only for the Boot ISO image. CentOS Project recommends the <strong>Binary DVD</strong> ISO image as the preferred method to install CentOS.</p>
+<p>Creating an installation source is required only for the Boot ISO image. CentOS Project recommends the <strong>DVD1</strong> ISO image as the preferred method to install CentOS.</p>
 </div>
 </td>
 </tr>
@@ -1872,16 +1865,16 @@ Unmount of all volumes on disknumber was successful</pre>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>DVD:</strong> Burn the Binary DVD ISO image to a DVD. The installation program will automatically install the software packages from the DVD.</p>
+<p><strong>DVD:</strong> Burn the DVD1 ISO image to a DVD. The installation program will automatically install the software packages from the DVD.</p>
 </li>
 <li>
-<p><strong>Hard drive or USB drive:</strong> Copy the Binary DVD ISO image to the drive and configure the installation program to install the software packages from the drive. If you use a USB drive, verify that it is connected to the system before the installation begins. The installation program cannot detect media after the installation begins.</p>
+<p><strong>Hard drive or USB drive:</strong> Copy the DVD1 ISO image to the drive and configure the installation program to install the software packages from the drive. If you use a USB drive, verify that it is connected to the system before the installation begins. The installation program cannot detect media after the installation begins.</p>
 <div class="exampleblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Hard drive limitation</strong>: The Binary DVD ISO image on the hard drive must be on a partition with a file system that the installation program can mount. The supported file systems are <code>xfs</code>, <code>ext2</code>, <code>ext3</code>, <code>ext4</code>, and <code>vfat (FAT32)</code>.</p>
+<p><strong>Hard drive limitation</strong>: The DVD1 ISO image on the hard drive must be on a partition with a file system that the installation program can mount. The supported file systems are <code>xfs</code>, <code>ext2</code>, <code>ext3</code>, <code>ext4</code>, and <code>vfat (FAT32)</code>.</p>
 </li>
 </ul>
 </div>
@@ -1907,11 +1900,11 @@ Unmount of all volumes on disknumber was successful</pre>
 </div>
 </li>
 <li>
-<p><strong>Network location:</strong> Copy the Binary DVD ISO image or the installation tree (extracted contents of the Binary DVD ISO image) to a network location and perform the installation over the network using the following protocols:</p>
+<p><strong>Network location:</strong> Copy the DVD1 ISO image or the installation tree (extracted contents of the DVD1 ISO image) to a network location and perform the installation over the network using the following protocols:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>NFS:</strong> The Binary DVD ISO image is in a Network File System (NFS) share.</p>
+<p><strong>NFS:</strong> The DVD1 ISO image is in a Network File System (NFS) share.</p>
 </li>
 <li>
 <p><strong>HTTPS, HTTP or FTP:</strong> The installation tree is on a network location that is accessible over HTTP, HTTPS or FTP.</p>
@@ -2002,7 +1995,7 @@ Unmount of all volumes on disknumber was successful</pre>
 <p>You have administor level access to a server with CentOS&#160;8, and this server is on the same network as the system to be installed.</p>
 </li>
 <li>
-<p>You have downloaded a Binary DVD ISO image. See <a href="#downloading-beta-installation-images_preparing-for-your-installation">Downloading the installation ISO image</a> for more information.</p>
+<p>You have downloaded a DVD1 ISO image. See <a href="#downloading-beta-installation-images_preparing-for-your-installation">Downloading the installation ISO image</a> for more information.</p>
 </li>
 <li>
 <p>You have created a bootable CD, DVD, or USB device from the image file. See <a href="#making-media_preparing-for-your-installation">Creating installation media</a> for more information.</p>
@@ -2024,7 +2017,7 @@ Unmount of all volumes on disknumber was successful</pre>
 </div>
 </li>
 <li>
-<p>Copy the Binary DVD ISO image to a directory on the NFS server.</p>
+<p>Copy the DVD1 ISO image to a directory on the NFS server.</p>
 </li>
 <li>
 <p>Open the <code class="filename">/etc/exports</code> file using a text editor and add a line with the following syntax:</p>
@@ -2087,7 +2080,7 @@ Unmount of all volumes on disknumber was successful</pre>
 <div class="sect2">
 <h3 id="creating-an-installation-source-on-http_prepare-installation-source"><a class="anchor" href="#creating-an-installation-source-on-http_prepare-installation-source"></a>Creating an installation source using HTTP or HTTPS</h3>
 <div class="paragraph">
-<p>Follow the steps in this procedure to create an installation source for a network-based installation using an installation tree, which is a directory containing extracted contents of the Binary DVD ISO image and a valid <code class="filename">.treeinfo</code> file. The installation source is accessed over HTTP or HTTPS.</p>
+<p>Follow the steps in this procedure to create an installation source for a network-based installation using an installation tree, which is a directory containing extracted contents of the DVD1 ISO image and a valid <code class="filename">.treeinfo</code> file. The installation source is accessed over HTTP or HTTPS.</p>
 </div>
 <h4 id="_prerequisites_5" class="discrete">Prerequisites</h4>
 <div class="ulist">
@@ -2096,7 +2089,7 @@ Unmount of all volumes on disknumber was successful</pre>
 <p>You have administor level access to a server with CentOS&#160;8, and this server is on the same network as the system to be installed.</p>
 </li>
 <li>
-<p>You have downloaded a Binary DVD ISO image. See <a href="#downloading-beta-installation-images_preparing-for-your-installation">Downloading the installation ISO image</a> for more information.</p>
+<p>You have downloaded a DVD1 ISO image. See <a href="#downloading-beta-installation-images_preparing-for-your-installation">Downloading the installation ISO image</a> for more information.</p>
 </li>
 <li>
 <p>You have created a bootable CD, DVD, or USB device from the image file. See <a href="#making-media_preparing-for-your-installation">Creating installation media</a> for more information.</p>
@@ -2146,10 +2139,10 @@ Unmount of all volumes on disknumber was successful</pre>
 </div>
 </li>
 <li>
-<p>Copy the Binary DVD ISO image to the HTTP(S) server.</p>
+<p>Copy the DVD1 ISO image to the HTTP(S) server.</p>
 </li>
 <li>
-<p>Mount the Binary DVD ISO image, using the <code class="command">mount</code> command, to a suitable directory:</p>
+<p>Mount the DVD1 ISO image, using the <code class="command">mount</code> command, to a suitable directory:</p>
 <div class="listingblock">
 <div class="content">
 <pre># mkdir /mnt/centos8-install/
@@ -2157,7 +2150,7 @@ Unmount of all volumes on disknumber was successful</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Replace <em>/image_directory/image.iso</em> with the path to the Binary DVD ISO image.</p>
+<p>Replace <em>/image_directory/image.iso</em> with the path to the DVD1 ISO image.</p>
 </div>
 </li>
 <li>
@@ -2210,7 +2203,7 @@ Unmount of all volumes on disknumber was successful</pre>
 <div class="sect2">
 <h3 id="creating-an-installation-source-on-ftp_prepare-installation-source"><a class="anchor" href="#creating-an-installation-source-on-ftp_prepare-installation-source"></a>Creating an installation source using FTP</h3>
 <div class="paragraph">
-<p>Follow the steps in this procedure to create an installation source for a network-based installation using an installation tree, which is a directory containing extracted contents of the Binary DVD ISO image and a valid <code class="filename">.treeinfo</code> file. The installation source is accessed over FTP.</p>
+<p>Follow the steps in this procedure to create an installation source for a network-based installation using an installation tree, which is a directory containing extracted contents of the DVD1 ISO image and a valid <code class="filename">.treeinfo</code> file. The installation source is accessed over FTP.</p>
 </div>
 <h4 id="_prerequisites_6" class="discrete">Prerequisites</h4>
 <div class="ulist">
@@ -2219,7 +2212,7 @@ Unmount of all volumes on disknumber was successful</pre>
 <p>You have administor level access to a server with CentOS&#160;8, and this server is on the same network as the system to be installed.</p>
 </li>
 <li>
-<p>You have downloaded a Binary DVD ISO image. See <a href="#downloading-beta-installation-images_preparing-for-your-installation">Downloading the installation ISO image</a> for more information.</p>
+<p>You have downloaded a DVD1 ISO image. See <a href="#downloading-beta-installation-images_preparing-for-your-installation">Downloading the installation ISO image</a> for more information.</p>
 </li>
 <li>
 <p>You have created a bootable CD, DVD, or USB device from the image file. See <a href="#making-media_preparing-for-your-installation">Creating installation media</a> for more information.</p>
@@ -2306,10 +2299,10 @@ Unmount of all volumes on disknumber was successful</pre>
 </div>
 </li>
 <li>
-<p>Copy the Binary DVD ISO image to the FTP server.</p>
+<p>Copy the DVD1 ISO image to the FTP server.</p>
 </li>
 <li>
-<p>Mount the Binary DVD ISO image, using the mount command, to a suitable directory:</p>
+<p>Mount the DVD1 ISO image, using the mount command, to a suitable directory:</p>
 <div class="listingblock">
 <div class="content">
 <pre># mkdir /mnt/centos8-install
@@ -2317,7 +2310,7 @@ Unmount of all volumes on disknumber was successful</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Replace <em>/image-directory/image.iso</em> with the path to the Binary DVD ISO image.</p>
+<p>Replace <em>/image-directory/image.iso</em> with the path to the DVD1 ISO image.</p>
 </div>
 </li>
 <li>

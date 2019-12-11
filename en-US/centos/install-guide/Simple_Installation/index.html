@@ -279,9 +279,6 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../disk-image-install/">Installing into a Disk Image</a>
   </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../Composer/">Building Custom System Images with Composer</a>
-  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
@@ -380,7 +377,7 @@
     <li><a href="./">Quick Installation Guide</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/CentOS/docs-installation-guide/edit/7.6/modules/install-guide/pages/Simple_Installation.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/CentOS/docs-installation-guide/edit/7.7/modules/install-guide/pages/Simple_Installation.adoc">Edit this Page</a></div>
 </div>
 <article class="doc">
 <h1 class="page">Quick Installation Guide</h1>
@@ -665,7 +662,7 @@
 <p>Mount the installation ISO file to the <code>/mnt/</code> directory. For example:</p>
 <div class="literalblock">
 <div class="content">
-<pre># mount -o loop /tmp/CentOS-server-7.6.1810-x86_64-dvd.iso /mnt/</pre>
+<pre># mount -o loop /tmp/CentOS-server-7.7.1908-x86_64-dvd.iso /mnt/</pre>
 </div>
 </div>
 </li>
@@ -699,9 +696,9 @@
 <p>Display the installation DVD volume name:</p>
 <div class="literalblock">
 <div class="content">
-<pre><code>#</code> <code>isoinfo -d -i CentOS-server-7.6.1810-x86_64-dvd.iso | grep "Volume id" | \
+<pre><code>#</code> <code>isoinfo -d -i CentOS-server-7.7.1908-x86_64-dvd.iso | grep "Volume id" | \
 sed -e 's/Volume id: //' -e 's/ /\\x20/g'
-CentOS-7.6.1810\x20Server.x86_64</code></pre>
+CentOS-7.7.1908\x20Server.x86_64</code></pre>
 </div>
 </div>
 </li>
@@ -711,9 +708,9 @@ CentOS-7.6.1810\x20Server.x86_64</code></pre>
 <div class="content">
 <pre><mark><mark></mark><mark></mark></mark><mark><mark></mark><mark></mark></mark><mark><mark></mark><mark></mark></mark><mark><mark></mark><mark></mark>#
 label kickstart
-menu label ^Kickstart Installation of CentOS 7.6.1810
+menu label ^Kickstart Installation of CentOS 7.7.1908
 kernel vmlinuz
-append initrd=initrd.img inst.stage2=hd:LABEL=CentOS-7.6.1810\x20Server.x86_64 inst.ks=cdrom:/anaconda-ks.cfg
+append initrd=initrd.img inst.stage2=hd:LABEL=CentOS-7.7.1908\x20Server.x86_64 inst.ks=cdrom:/anaconda-ks.cfg
 </mark><mark><mark></mark><mark></mark></mark><mark><mark></mark><mark></mark></mark><mark><mark></mark><mark></mark></mark><mark><mark></mark></mark>#</pre>
 </div>
 </div>
@@ -738,7 +735,7 @@ append initrd=initrd.img inst.stage2=hd:LABEL=CentOS-7.6.1810\x20Server.x86_64 i
 <div class="content">
 <pre># mkisofs -J -T -o /root/CentOS-ks.iso -b isolinux/isolinux.bin \
 -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table \
--R -m TRANS.TBL -graft-points -V "CentOS-7.6.1810 Server.x86_64" \
+-R -m TRANS.TBL -graft-points -V "CentOS-7.7.1908 Server.x86_64" \
 /root/CentOS-install/</pre>
 </div>
 </div>

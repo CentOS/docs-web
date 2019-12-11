@@ -4239,7 +4239,7 @@ That disables only the <code>auditd</code> service. To disable all four services
 <div class="title">Notes</div>
 <ul>
 <li>
-<p>Do not use the dash (<code>-</code>) character in logical volume and volume group names when installing CentOS using Kickstart. If this character is used, the installation finishes normally, but the <code class="filename">/dev/mapper/</code> directory will list these volumes and volume groups with every dash doubled. For example, a volume group named <code>volgrp-01</code> containing a logical volume named <code>logvol-01</code> will be listed as <code class="filename">/dev/mapper/volgrp&#8212;&#8203;01-logvol&#8212;&#8203;01</code>.</p>
+<p>Do not use the dash (<code>-</code>) character in logical volume and volume group names when installing CentOS using Kickstart. If this character is used, the installation finishes normally, but the <code class="filename">/dev/mapper/</code> directory will list these volumes and volume groups with every dash doubled. For example, a volume group named <code>volgrp-01</code> containing a logical volume named <code>logvol-01</code> will be listed as <code class="filename">/dev/mapper/volgrp--01-logvol--01</code>.</p>
 <div class="paragraph">
 <p>This limitation only applies to newly created logical volume and volume group names. If you are reusing existing ones using the <code class="option">--noformat</code> option, their names will not be changed.</p>
 </div>
@@ -5014,7 +5014,7 @@ That disables only the <code>auditd</code> service. To disable all four services
 </div>
 </li>
 <li>
-<p>Do not use the dash (<code>-</code>) character in logical volume and volume group names when installing CentOS using Kickstart. If this character is used, the installation finishes normally, but the <code class="filename">/dev/mapper/</code> directory will list these volumes and volume groups with every dash doubled. For example, a volume group named <code>volgrp-01</code> containing a logical volume named <code>logvol-01</code> will be listed as <code class="filename">/dev/mapper/volgrp&#8212;&#8203;01-logvol&#8212;&#8203;01</code>.</p>
+<p>Do not use the dash (<code>-</code>) character in logical volume and volume group names when installing CentOS using Kickstart. If this character is used, the installation finishes normally, but the <code class="filename">/dev/mapper/</code> directory will list these volumes and volume groups with every dash doubled. For example, a volume group named <code>volgrp-01</code> containing a logical volume named <code>logvol-01</code> will be listed as <code class="filename">/dev/mapper/volgrp--01-logvol--01</code>.</p>
 <div class="paragraph">
 <p>This limitation only applies to newly created logical volume and volume group names. If you are reusing existing ones using the <code class="option">--noformat</code> option, their names will not be changed.</p>
 </div>

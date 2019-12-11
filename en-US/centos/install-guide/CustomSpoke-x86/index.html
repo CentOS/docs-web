@@ -279,9 +279,6 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../disk-image-install/">Installing into a Disk Image</a>
   </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../Composer/">Building Custom System Images with Composer</a>
-  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
@@ -381,7 +378,7 @@
     <li><a href="./">Manual Partitioning</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/CentOS/docs-installation-guide/edit/7.6/modules/install-guide/pages/CustomSpoke-x86.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/CentOS/docs-installation-guide/edit/7.7/modules/install-guide/pages/CustomSpoke-x86.adoc">Edit this Page</a></div>
 </div>
 <article class="doc">
 <h1 class="page">Manual Partitioning</h1>
@@ -591,6 +588,20 @@
 </li>
 <li>
 <p><code>LVM thin provisioning</code> - Using thin provisioning, you can manage a storage pool of free space, known as a thin pool, which can be allocated to an arbitrary number of devices when needed by applications. The thin pool can be expanded dynamically when needed for cost-effective allocation of storage space. For more information regarding LVM, see the <a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Logical_Volume_Manager_Administration/index.html">Red&#160;Hat Enterprise&#160;Linux&#160;7 Logical Volume Manager Administration</a> guide.</p>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Anaconda does not support overprovisioned LVM thin pools.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
 <div class="admonitionblock note">
 <table>
 <tr>

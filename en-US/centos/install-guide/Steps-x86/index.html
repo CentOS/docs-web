@@ -279,9 +279,6 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../disk-image-install/">Installing into a Disk Image</a>
   </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../Composer/">Building Custom System Images with Composer</a>
-  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
@@ -380,7 +377,7 @@
     <li><a href="./">Planning for Installation</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/CentOS/docs-installation-guide/edit/7.6/modules/install-guide/pages/Steps-x86.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/CentOS/docs-installation-guide/edit/7.7/modules/install-guide/pages/Steps-x86.adoc">Edit this Page</a></div>
 </div>
 <article class="doc">
 <h1 class="page">Planning for Installation on 64-bit AMD, Intel, and ARM Systems</h1>
@@ -425,7 +422,7 @@
 <h2 id="sect-installation-planning-hardware-compatibility-x86"><a class="anchor" href="#sect-installation-planning-hardware-compatibility-x86"></a>Is Your Hardware Compatible?</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>CentOS&#160;7.6.1810 should be compatible with most hardware in systems that were factory built within the last two years. Hardware compatibility is a particularly important concern if you have an older or custom-built system. Because hardware specifications change almost daily, it is recommended that all systems be checked for compatibility.</p>
+<p>CentOS&#160;7.7.1908 should be compatible with most hardware in systems that were factory built within the last two years. Hardware compatibility is a particularly important concern if you have an older or custom-built system. Because hardware specifications change almost daily, it is recommended that all systems be checked for compatibility.</p>
 </div>
 <div class="paragraph">
 <p>The most recent list of supported hardware can be found in the <em class="citetitle">Red&#160;Hat Hardware Compatibility List</em>, available online at <a href="https://access.redhat.com/ecosystem/search/#/category/Server" class="bare">https://access.redhat.com/ecosystem/search/#/category/Server</a>. Also see <a href="https://access.redhat.com/site/articles/rhel-limits">CentOS technology capabilities and limits</a> for general information about system requirements.</p>
@@ -490,7 +487,7 @@
 <li>
 <p>Information about the partitions used on the system. This information can include file system types, device node names, file system labels, and sizes. This will allow you to identify specific partitions during the partitioning process. Remember that different operating systems identify partitions and drives differently, therefore even if the other operating system is a Unix operating system, the device names can be reported by CentOS differently. This information can usually be found by executing the equivalent of the <code class="command">mount</code> command and <code class="command">blkid</code> command and in the <code>/etc/fstab</code> file.</p>
 <div class="paragraph">
-<p>If you have other operating systems already installed, the CentOS&#160;7.6.1810 installation program attempts to automatically detect and configure to boot them. You can manually configure any additional operating systems if they are not detected properly. For more information, see <a href="../StorageSpoke-x86/#sect-bootloader-x86" class="page">Boot Loader Installation (x86)</a>.</p>
+<p>If you have other operating systems already installed, the CentOS&#160;7.7.1908 installation program attempts to automatically detect and configure to boot them. You can manually configure any additional operating systems if they are not detected properly. For more information, see <a href="../StorageSpoke-x86/#sect-bootloader-x86" class="page">Boot Loader Installation (x86)</a>.</p>
 </div>
 </li>
 </ul>
@@ -717,7 +714,7 @@
 <div class="sect2">
 <h3 id="sect-installation-planning-intel-bios-raid-sets-x86"><a class="anchor" href="#sect-installation-planning-intel-bios-raid-sets-x86"></a>Considerations for Intel BIOS RAID Sets</h3>
 <div class="paragraph">
-<p>CentOS&#160;7.6.1810 uses <strong class="application">mdraid</strong> for installation onto Intel BIOS RAID sets. These sets are detected automatically during the boot process and their device node paths can change from boot to boot. For this reason, local modifications to <code>/etc/fstab</code>, <code>/etc/crypttab</code> or other configuration files which refer to devices by their device node paths might not work in CentOS&#160;7.6.1810. Therefore, you should replace device node paths (such as <code>/dev/sda</code>) with file system labels or device UUIDs instead. You can find the file system labels and device UUIDs using the <code class="command">blkid</code> command.</p>
+<p>CentOS&#160;7.7.1908 uses <strong class="application">mdraid</strong> for installation onto Intel BIOS RAID sets. These sets are detected automatically during the boot process and their device node paths can change from boot to boot. For this reason, local modifications to <code>/etc/fstab</code>, <code>/etc/crypttab</code> or other configuration files which refer to devices by their device node paths might not work in CentOS&#160;7.7.1908. Therefore, you should replace device node paths (such as <code>/dev/sda</code>) with file system labels or device UUIDs instead. You can find the file system labels and device UUIDs using the <code class="command">blkid</code> command.</p>
 </div>
 </div>
 <div class="sect2">
@@ -732,7 +729,7 @@
 <h2 id="sect-installation-planning-boot-method-x86"><a class="anchor" href="#sect-installation-planning-boot-method-x86"></a>Choose an Installation Boot Method</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You can use several methods to boot the CentOS&#160;7.6.1810 installation program. The method you choose depends upon your installation media.</p>
+<p>You can use several methods to boot the CentOS&#160;7.7.1908 installation program. The method you choose depends upon your installation media.</p>
 </div>
 <div class="paragraph">
 <p>Your system&#8217;s firmware (BIOS of UEFI) settings might need to be changed to allow booting from removable media such as a DVD or a USB flash drive. See <a href="../Boot_x86/#sect-installation-booting-x86" class="page">Booting from Physical Media (x86)</a> for information.</p>
@@ -779,7 +776,7 @@
 <h2 id="sect-installation-planning-kickstart-x86"><a class="anchor" href="#sect-installation-planning-kickstart-x86"></a>Automating the Installation with Kickstart</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>CentOS&#160;7.6.1810 offers a way to partially or fully automate the installation process using a <em>Kickstart file</em>. Kickstart files contain answers to all questions normally asked by the installation program, such as what time zone do you want the system to use, how should the drives be partitioned or which packages should be installed. Providing a prepared Kickstart file at the beginning of the installation therefore allows you to perform the entire installation (or parts of it) automatically, without need for any intervention from the user. This is especially useful when deploying CentOS on a large number of systems at once.</p>
+<p>CentOS&#160;7.7.1908 offers a way to partially or fully automate the installation process using a <em>Kickstart file</em>. Kickstart files contain answers to all questions normally asked by the installation program, such as what time zone do you want the system to use, how should the drives be partitioned or which packages should be installed. Providing a prepared Kickstart file at the beginning of the installation therefore allows you to perform the entire installation (or parts of it) automatically, without need for any intervention from the user. This is especially useful when deploying CentOS on a large number of systems at once.</p>
 </div>
 <div class="paragraph">
 <p>In addition to allowing you to automate the installation, Kickstart files also provide more options regarding software selection. When installing CentOS manually using the graphical installation interface, your software selection is limited to pre-defined environments and add-ons. A Kickstart file allows you to install or remove individual packages as well.</p>

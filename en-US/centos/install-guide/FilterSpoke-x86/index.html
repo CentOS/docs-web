@@ -279,9 +279,6 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../disk-image-install/">Installing into a Disk Image</a>
   </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../Composer/">Building Custom System Images with Composer</a>
-  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
@@ -381,7 +378,7 @@
     <li><a href="./">Storage Devices</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/CentOS/docs-installation-guide/edit/7.6/modules/install-guide/pages/FilterSpoke-x86.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/CentOS/docs-installation-guide/edit/7.7/modules/install-guide/pages/FilterSpoke-x86.adoc">Edit this Page</a></div>
 </div>
 <article class="doc">
 <h1 class="page">Storage Devices</h1>
@@ -688,11 +685,14 @@
 <div class="sect2">
 <h3 id="sect-advanced-storage-nvdimm-x86"><a class="anchor" href="#sect-advanced-storage-nvdimm-x86"></a>Configuring NVDIMM Devices</h3>
 <div class="paragraph">
-<p>When you click the <code>Reconfigure NVDIMM</code> button, a dialog appears for you to reconfigure the selected NVDIMM devices into sector mode. The reconfiguration lets you use this NVDIMM device as an installation destination.</p>
+<p>Click the <b class="button">Reconfigure NVDIMM</b> button to reconfigure the selected NVDIMM device into sector mode and use it as an installation destination. The <b class="button">Sector size</b> drop-down list contains the supported sector sizes of <code>512</code> and <code>4096</code>.</p>
+</div>
+<div class="paragraph">
+<p>From the <b class="button">Sector size</b> drop-down list, select the sector size and click the <b class="button">Start Reconfiguration</b> button.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../_images/diskpartadvanced/nvdimm-reconfigure.png" alt="Reconfigure NVDIMM">
+<img src="../_images/diskpartadvanced/nvdimm-reconfigure2.png" alt="Reconfigure NVDIMM">
 </div>
 <div class="title">Figure 8. Reconfigure NVDIMM</div>
 </div>
@@ -711,19 +711,16 @@
 </table>
 </div>
 <div class="paragraph">
-<p>Select the sector size and press the <b class="button">Start reconfiguration</b> button. The supported sector sizes are 512 and 4096 bytes.</p>
-</div>
-<div class="paragraph">
-<p>Once the device is configured, press <b class="button">OK</b> to return to the Installation Destination screen.</p>
+<p>When the device is configured, press <b class="button">OK</b> to return to the Installation Destination screen.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../_images/diskpartadvanced/nvdimm-reconfigure-success.png" alt="Successfully reconfigured NVDIMM">
+<img src="../_images/diskpartadvanced/nvdimm-reconfigure-success2.png" alt="Successfully reconfigured NVDIMM">
 </div>
 <div class="title">Figure 9. Successfully reconfigured NVDIMM</div>
 </div>
 <div class="paragraph">
-<p>NVDIMM devices in sector mode will be displayed under the <code>NVDIMM Devices</code> tab in the Installation Destination screen and can now be selected for installation.</p>
+<p>NVDIMM devices in sector mode are displayed under the <b class="button">NVDIMM Devices</b> tab in the <b class="button">Installation Destination</b> window and are available for installation.</p>
 </div>
 </div>
 </div>
