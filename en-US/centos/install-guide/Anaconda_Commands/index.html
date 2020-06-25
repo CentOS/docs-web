@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>IBM Power Systems - Installation and Booting :: CentOS Docs Site</title>
-    <link rel="canonical" href="https://docs.centos.org/centos/install-guide/Part_Install_ppc/">
+    <title>Anaconda UI specific commands :: CentOS Docs Site</title>
+    <link rel="canonical" href="https://docs.centos.org/centos/install-guide/Anaconda_Commands/">
     <meta name="generator" content="Antora 2.0.0">
     <link rel="stylesheet" href="../../../_/css/site.css">
   </head>
@@ -170,9 +170,9 @@
   </li>
 </ul>
   </li>
-  <li class="nav-item is-current-page" data-depth="1">
+  <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="./">Installing on IBM Power Systems</a>
+    <a class="nav-link" href="../Part_Install_ppc/">Installing on IBM Power Systems</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../Steps-ppc/">Planning for Installation</a>
@@ -309,8 +309,8 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../iSCSI/">iSCSI Disks</a>
   </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../Anaconda_Commands/">Anaconda UI Specific Commands</a>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="./">Anaconda UI Specific Commands</a>
   </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../Understanding_LVM/">Understanding LVM</a>
@@ -376,15 +376,84 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../">Installation Guide</a></li>
-    <li><a href="./">Installing on IBM Power Systems</a></li>
+    <li><a href="../Part_Appendixes/">Technical Appendixes</a></li>
+    <li><a href="./">Anaconda UI Specific Commands</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/CentOS/docs-installation-guide/edit/7.8/modules/install-guide/pages/Part_Install_ppc.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/CentOS/docs-installation-guide/edit/7.8/modules/install-guide/pages/Anaconda_Commands.adoc">Edit this Page</a></div>
 </div>
 <article class="doc">
-<h1 class="page">IBM Power Systems - Installation and Booting</h1>
+<h1 class="page">Anaconda UI specific commands</h1>
+<div class="sect1">
+<h2 id="command-anaconda"><a class="anchor" href="#command-anaconda"></a>Commands used in Anaconda</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>This part of the CentOS Installation Guide includes information about installation and basic post-installation troubleshooting for IBM Power Systems servers. IBM Power Systems servers include IBM PowerLinux servers and POWER7, POWER8, and POWER9 Power Systems servers running Linux. For advanced installation options, see <a href="../Part_Install_Advanced/#part-advanced-installation-options" class="page">Advanced Installation Options</a>.</p>
+<p>The <code>pwpolicy</code> command is an Anaconda UI specific command that can be used only in the <code>%anaconda</code> section of the kickstart file.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1"><code class="command">pwpolicy</code> (optional)</dt>
+<dd>
+<div class="paragraph">
+<p>This command can be used to enforce a custom password policy, which specifies requirements for passwords created during installation, based on factors such as password length and strength.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre><code class="command">pwpolicy <em>name</em> [--minlen=<em>length</em>] [--minquality=<em>quality</em>] [--strict|--nostrict] [--emptyok|--noempty] [--changesok|--nochanges]</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Replace <em>name</em> with either <code>root</code>, <code>user</code> or <code>luks</code> to enforce the policy for the <code>root</code> password, user passwords, or LUKS passphrase, respectively.</p>
+</div>
+<div class="paragraph">
+<p>The <code>libpwquality</code> library is used to check minimum password requirements (length and quality). You can use the <code class="command">pwscore</code> and <code class="command">pwmake</code> commands provided by the <strong class="package">libpwquality</strong> package to check the quality score of a password, or to create a random password with a given score. See the <code>pwscore(1)</code> and <code>pwmake(1)</code> man page for details about these commands.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>This command can only be used inside the <code class="command">%anaconda</code> section.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code class="option">--minlen=</code> - Sets the minimum allowed password length, in characters. The default is <code>6</code>.</p>
+</li>
+<li>
+<p><code class="option">--minquality=</code> - Sets the minimum allowed password quality as defined by the <code>libpwquality</code> library. The default value is <code>1</code>.</p>
+</li>
+<li>
+<p><code class="option">--strict</code> - Enables strict password enforcement. Passwords which do not meet the requirements specified in <code class="option">--minquality=</code> and <code class="option">--minlen=</code> will not be accepted. This option is disabled by default.</p>
+</li>
+<li>
+<p><code class="option">--notstrict</code> - Passwords which do <em>not</em> meet the minimum quality requirements specified by the <code class="option">--minquality=</code> and <code class="option">-minlen=</code> options will be allowed, after <code>Done</code> is clicked twice.</p>
+</li>
+<li>
+<p><code class="option">--emptyok</code> - Allows the use of empty passwords. Enabled by default for user passwords.</p>
+</li>
+<li>
+<p><code class="option">--notempty</code> - Disallows the use of empty passwords. Enabled by default for the root password and the LUKS passphrase.</p>
+</li>
+<li>
+<p><code class="option">--changesok</code> - Allows changing the password in the user interface, even if the Kickstart file already specifies a password. Disabled by default.</p>
+</li>
+<li>
+<p><code class="option">--nochanges</code> - Disallows changing passwords which are already set in the Kickstart file. Enabled by default.</p>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
 </div>
 </article>
 </main>

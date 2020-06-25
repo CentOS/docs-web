@@ -310,6 +310,9 @@
     <a class="nav-link" href="../iSCSI/">iSCSI Disks</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Anaconda_Commands/">Anaconda UI Specific Commands</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../Understanding_LVM/">Understanding LVM</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -377,7 +380,7 @@
     <li><a href="./">Kickstart Installations</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/CentOS/docs-installation-guide/edit/7.7/modules/install-guide/pages/Kickstart2.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/CentOS/docs-installation-guide/edit/7.8/modules/install-guide/pages/Kickstart2.adoc">Edit this Page</a></div>
 </div>
 <article class="doc">
 <h1 class="page">Kickstart Installations</h1>
@@ -549,7 +552,7 @@
 <div class="sect3">
 <h4 id="sect-kickstart-verify"><a class="anchor" href="#sect-kickstart-verify"></a>Verifying the Kickstart File</h4>
 <div class="paragraph">
-<p>When creating or customizing your Kickstart file, it is useful to verify that it is valid before attempting to use it in an installation. CentOS&#160;7.7.1908 includes the <strong class="application">ksvalidator</strong> command line utility which can be used to do this. This tool is a part of the <strong class="package">pykickstart</strong> package. To install this package, execute the following command as <code>root</code>:</p>
+<p>When creating or customizing your Kickstart file, it is useful to verify that it is valid before attempting to use it in an installation. CentOS&#160;7.8.2003 includes the <strong class="application">ksvalidator</strong> command line utility which can be used to do this. This tool is a part of the <strong class="package">pykickstart</strong> package. To install this package, execute the following command as <code>root</code>:</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -717,7 +720,7 @@
 <p>On AMD64 and Intel&#160;64 systems with <em>BIOS</em>, the file name can be either <code>default</code> or based on your system&#8217;s IP address. In this case, add the <code class="option">inst.ks=</code> option to the <code>append</code> line in the installation entry. A sample <code>append</code> line in the configuration file looks similar to the following:</p>
 <div class="literalblock">
 <div class="content">
-<pre>append initrd=initrd.img inst.ks=http://10.32.5.1/mnt/archive/CentOS/7.7.1908/Server/x86_64/kickstarts/ks.cfg</pre>
+<pre>append initrd=initrd.img inst.ks=http://10.32.5.1/mnt/archive/CentOS/7.8.2003/Server/x86_64/kickstarts/ks.cfg</pre>
 </div>
 </div>
 </li>
@@ -725,7 +728,7 @@
 <p>On systems using the <strong class="application">GRUB2</strong> boot loader (64-bit AMD, Intel, and ARM systems with UEFI firmware and IBM Power&#160;Systems servers), the file name will be <code>grub.cfg</code>. In this file, append the <code class="option">inst.ks=</code> option to the <code>kernel</code> line in the installation entry. A sample <code>kernel</code> line in the configuration file will look similar to the following:</p>
 <div class="literalblock">
 <div class="content">
-<pre>kernel vmlinuz inst.ks=http://10.32.5.1/mnt/archive/CentOS/7.7.1908/Server/x86_64/kickstarts/ks.cfg</pre>
+<pre>kernel vmlinuz inst.ks=http://10.32.5.1/mnt/archive/CentOS/7.8.2003/Server/x86_64/kickstarts/ks.cfg</pre>
 </div>
 </div>
 </li>
@@ -1084,10 +1087,10 @@
 </div>
 </li>
 <li>
-<p><code class="option">--boot-drive=</code> - Specifies which drive the boot loader should be written to, and therefore which drive the computer will boot from. If you use a multipath device as the boot drive, specify only one member of the device.</p>
+<p><code class="option">--boot-drive=</code> - Specifies which drive the boot loader should be written to, and therefore which drive the computer will boot from. If you use a multipath device as the boot drive, specify the device using its <code>disk/by-id/dm-uuid-mpath-WWID</code> name.</p>
 </li>
 <li>
-<p><code class="option">--leavebootorder</code> - The installer will add CentOS&#160;7.7.1908 to the top of the list of installed systems in the boot loader, and preserve all existing entries as well as their order.</p>
+<p><code class="option">--leavebootorder</code> - The installer will add CentOS&#160;7.8.2003 to the top of the list of installed systems in the boot loader, and preserve all existing entries as well as their order.</p>
 </li>
 <li>
 <p><code class="option">--driveorder=</code> - Specifies which drive is first in the BIOS boot order. For example:</p>
@@ -1542,6 +1545,9 @@
 <p><code class="option">--enabled</code> or <code class="option">--enable</code> - Reject incoming connections that are not in response to outbound requests, such as DNS replies or DHCP requests. If access to services running on this machine is needed, you can choose to allow specific services through the firewall.</p>
 </li>
 <li>
+<p><code class="option">--remove-service</code> - Do not allow services through the firewall.</p>
+</li>
+<li>
 <p><code class="option">--disabled</code> or <code class="option">--disable</code> - Do not configure any iptables rules.</p>
 </li>
 <li>
@@ -1706,14 +1712,6 @@
 <pre><code class="command">ignoredisk --drives=disk/by-id/dm-uuid-mpath-2416CD96995134CA5D787F00A5AA11017</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p>Multipath devices that use LVM are not assembled until after <strong class="application">Anaconda</strong> has parsed the Kickstart file. Therefore, you cannot specify these devices in the format <code>dm-uuid-mpath</code>. Instead, to ignore a multipath device that uses LVM, use the format <code>disk/by-id/scsi-<em>WWID</em></code>, where <em>WWID</em> is the <em>world-wide identifier</em> for the device. For example, to ignore a disk with WWID <code>58095BEC5510947BE8C0360F604351918</code>, use:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre><code class="command">ignoredisk --drives=disk/by-id/scsi-58095BEC5510947BE8C0360F604351918</code></pre>
-</div>
-</div>
 <div class="admonitionblock warning">
 <table>
 <tr>
@@ -1750,7 +1748,8 @@
 </div>
 <div class="literalblock">
 <div class="content">
-<pre><code class="command">ignoredisk --only-use=disk/by-id/scsi-58095BEC5510947BE8C0360F604351918</code></pre>
+<pre><code class="command">ignoredisk --only-use=/dev/disk/by-id/dm-uuid-mpath-2416CD96995134CA5D787F00A5AA11017</code>
+<code class="command">bootloader --location=mbr</code></pre>
 </div>
 </div>
 </li>
@@ -2215,6 +2214,20 @@
 </li>
 <li>
 <p><code class="option">--grow</code> - Tells the logical volume to grow to fill available space (if any), or up to the maximum size setting, if one is specified. A minimum size must be given, using either the <code class="option">--percent=</code> option or the <code class="option">--size=</code> option.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>For more information about allocating space when writing to an image file, see section <strong>Host Storage</strong> describing <strong>Image files</strong> in the <a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/virtualization_getting_started_guide/sec-virtualization_getting_started-products-storage">Red&nbsp;Hat Enterprise&nbsp;Linux&nbsp;7 Storage Administration Guide</a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
 </li>
 <li>
 <p><code class="option">--size=</code> - The size of the logical volume in MiB. This option cannot be used together with the <code class="option">--percent=</code> option.</p>
@@ -3038,7 +3051,7 @@ fingerprint = 240f2f18222faa98856c3b4fc50c4195
 </div>
 </li>
 <li>
-<p><code class="option">--grow</code> - Tells the logical volume to grow to fill available space (if any), or up to the maximum size setting, if one is specified.</p>
+<p><code class="option">--grow</code> - Tells the partition to grow to fill available space (if any), or up to the maximum size setting, if one is specified.</p>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -3061,7 +3074,7 @@ fingerprint = 240f2f18222faa98856c3b4fc50c4195
 <p><code class="option">--noformat</code> - Specifies that the partition should not be formatted, for use with the <code class="option">--onpart</code> command.</p>
 </li>
 <li>
-<p><code class="option">--onpart=</code> or <code class="option">--usepart=</code> - Specifies the device on which to place the partition. For example:</p>
+<p><code class="option">--onpart=</code> or <code class="option">--usepart=</code> -  Uses existing blank device and format it to the new specified type. For example:</p>
 <div class="literalblock">
 <div class="content">
 <pre><code class="command">partition /home --onpart=hda1</code></pre>
@@ -3086,21 +3099,13 @@ fingerprint = 240f2f18222faa98856c3b4fc50c4195
 </div>
 </li>
 <li>
-<p><code class="option">--ondisk=</code> or <code class="option">--ondrive=</code> - Forces the partition to be created on a particular disk. For example, <code class="option">--ondisk=sdb</code> puts the partition on the second SCSI disk on the system.</p>
+<p><code class="option">--ondisk=</code> or <code class="option">--ondrive=</code> - Creates a partition (specified by the part command) on an existing disk. This command always creates a partition. For example, <code class="option">--ondisk=sdb</code> puts the partition on the second SCSI disk on the system.</p>
 <div class="paragraph">
 <p>To specify a multipath device that does not use <em>logical volume management</em> (LVM), use the format <code>disk/by-id/dm-uuid-mpath-<em>WWID</em></code>, where <em>WWID</em> is the <em>world-wide identifier</em> for the device. For example, to specify a disk with WWID <code>2416CD96995134CA5D787F00A5AA11017</code>, use:</p>
 </div>
 <div class="literalblock">
 <div class="content">
 <pre><code class="command">part / --fstype=xfs --grow --asprimary --size=8192 --ondisk=disk/by-id/dm-uuid-mpath-2416CD96995134CA5D787F00A5AA11017</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Multipath devices that use LVM are not assembled until after <strong class="application">Anaconda</strong> has parsed the Kickstart file. Therefore, you cannot specify these devices in the format <code>dm-uuid-mpath</code>. Instead, to specify a multipath device that uses LVM, use the format <code>disk/by-id/scsi-<em>WWID</em></code>, where <em>WWID</em> is the <em>world-wide identifier</em> for the device. For example, to specify a disk with WWID <code>58095BEC5510947BE8C0360F604351918</code>, use:</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre><code class="command">part / --fstype=xfs --grow --asprimary --size=8192 --ondisk=disk/by-id/scsi-58095BEC5510947BE8C0360F604351918</code></pre>
 </div>
 </div>
 <div class="admonitionblock warning">
@@ -3208,65 +3213,6 @@ fingerprint = 240f2f18222faa98856c3b4fc50c4195
 </ul>
 </div>
 </dd>
-<dt class="hdlist1"><code class="command">pwpolicy</code> (optional)</dt>
-<dd>
-<div class="paragraph">
-<p>This command can be used to enforce a custom password policy, which specifies requirements for passwords created during installation, based on factors such as password length and strength.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre><code class="command">pwpolicy <em>name</em> [--minlen=<em>length</em>] [--minquality=<em>quality</em>] [--strict|--nostrict] [--emptyok|--noempty] [--changesok|--nochanges]</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Replace <em>name</em> with either <code>root</code>, <code>user</code> or <code>luks</code> to enforce the policy for the <code>root</code> password, user passwords, or LUKS passphrase, respectively.</p>
-</div>
-<div class="paragraph">
-<p>The <code>libpwquality</code> library is used to check minimum password requirements (length and quality). You can use the <code class="command">pwscore</code> and <code class="command">pwmake</code> commands provided by the <strong class="package">libpwquality</strong> package to check the quality score of a password, or to create a random password with a given score. See the <code>pwscore(1)</code> and <code>pwmake(1)</code> man page for details about these commands.</p>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>This command can only be used inside the <code class="command">%anaconda</code> section.</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code class="option">--minlen=</code> - Sets the minimum allowed password length, in characters. The default is <code>6</code>.</p>
-</li>
-<li>
-<p><code class="option">--minquality=</code> - Sets the minimum allowed password quality as defined by the <code>libpwquality</code> library. The default value is <code>1</code>.</p>
-</li>
-<li>
-<p><code class="option">--strict</code> - Enables strict password enforcement. Passwords which do not meet the requirements specified in <code class="option">--minquality=</code> and <code class="option">--minlen=</code> will not be accepted. This option is disabled by default.</p>
-</li>
-<li>
-<p><code class="option">--notstrict</code> - Passwords which do <em>not</em> meet the minimum quality requirements specified by the <code class="option">--minquality=</code> and <code class="option">-minlen=</code> options will be allowed, after <code>Done</code> is clicked twice.</p>
-</li>
-<li>
-<p><code class="option">--emptyok</code> - Allows the use of empty passwords. Enabled by default for user passwords.</p>
-</li>
-<li>
-<p><code class="option">--notempty</code> - Disallows the use of empty passwords. Enabled by default for the root password and the LUKS passphrase.</p>
-</li>
-<li>
-<p><code class="option">--changesok</code> - Allows changing the password in the user interface, even if the Kickstart file already specifies a password. Disabled by default.</p>
-</li>
-<li>
-<p><code class="option">--nochanges</code> - Disallows changing passwords which are already set in the Kickstart file. Enabled by default.</p>
-</li>
-</ul>
-</div>
-</dd>
 <dt class="hdlist1"><code class="command">poweroff</code> (optional)</dt>
 <dd>
 <div class="paragraph">
@@ -3318,7 +3264,7 @@ fingerprint = 240f2f18222faa98856c3b4fc50c4195
 <p>On IBM Power&#160;Systems, if a RAID device has been prepared and has not been reformatted during the installation, ensure that the RAID metadata version is <code>0.90</code> if you intend to put the <code>/boot</code> and <code>PReP</code> partitions on the RAID device.</p>
 </div>
 <div class="paragraph">
-<p>The default CentOS&#160;7.7.1908 <strong class="application">mdadm</strong> metadata version is not supported for the boot device.</p>
+<p>The default CentOS&#160;7.8.2003 <strong class="application">mdadm</strong> metadata version is not supported for the boot device.</p>
 </div>
 </td>
 </tr>
@@ -3834,6 +3780,9 @@ fingerprint = 240f2f18222faa98856c3b4fc50c4195
 </li>
 <li>
 <p><code class="option">--lock</code> - If this option is present, this account is locked by default. This means that the user will not be able to log in from the console.</p>
+</li>
+<li>
+<p><code class="option">--ssh</code> - If this is option is present, then the <em>password</em> string is interpreted as an ssh key value.</p>
 <div class="admonitionblock important">
 <table>
 <tr>
@@ -3869,7 +3818,7 @@ sshpw --username=root example_password --lock</pre>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre><code class="command">sshpw --username=root --lock</code></pre>
+<pre><code class="command">sshpw --username=root example_password --lock</code></pre>
 </div>
 </div>
 </td>
@@ -4166,7 +4115,7 @@ sshpw --username=root example_password --lock</pre>
 <dt class="hdlist1"><code class="command">zerombr</code> (optional)</dt>
 <dd>
 <div class="paragraph">
-<p>If <code class="command">zerombr</code> is specified, any invalid partition tables found on disks are initialized. This destroys all of the contents of disks with invalid partition tables. This command is required when performing an unattended installation on a system with previously initialized disks.</p>
+<p>The <code class="command">zerombr</code> initializes any invalid partition tables that are found on disks and destroys all of the contents of disks with invalid partition tables.  This command is required when performing an installation on an IBM Z system with unformatted Direct Access Storage Device (DASD) disks, otherwise the unformatted  disks are not formatted and used during the installation.</p>
 </div>
 </dd>
 <dt class="hdlist1"><code class="command">zfcp</code> (optional)</dt>
@@ -4216,7 +4165,7 @@ sshpw --username=root example_password --lock</pre>
 <p>Use the <code class="command">%packages</code> command to begin a Kickstart section which describes the software packages to be installed.</p>
 </div>
 <div class="paragraph">
-<p>You can specify packages by <em>environment</em>, <em>group</em>, or by their package names. Several environments and groups that contain related packages are defined. See the <code>repodata/*-comps-<em>variant</em>.<em>architecture</em>.xml</code> file on the CentOS&#160;7.7.1908 Installation DVD for a list of environments and groups.</p>
+<p>You can specify packages by <em>environment</em>, <em>group</em>, or by their package names. Several environments and groups that contain related packages are defined. See the <code>repodata/*-comps-<em>variant</em>.<em>architecture</em>.xml</code> file on the CentOS&#160;7.8.2003 Installation DVD for a list of environments and groups.</p>
 </div>
 <div class="paragraph">
 <p>The <code>*-comps-<em>variant</em>.<em>architecture</em>.xml</code> file contains a structure describing available environments (marked by the <code>&lt;environment&gt;</code> tag) and groups (the <code>&lt;group&gt;</code> tag). Each entry has an ID, user visibility value, name, description, and package list. If the group is selected for installation, the packages marked <code>mandatory</code> in the package list are always installed, the packages marked <code>default</code> are installed if they are not specifically excluded elsewhere, and the packages marked <code>optional</code> must be specifically included elsewhere even when the group is selected.</p>
@@ -4232,7 +4181,7 @@ sshpw --username=root example_password --lock</pre>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>If you are not sure what packages should be installed, select the <code>Minimal Install</code> environment. <code>Minimal install</code> provides only the packages which are essential for running CentOS&#160;7.7.1908. This will substantially reduce the chance of the system being affected by a vulnerability. If necessary, additional packages can be added later after the installation. For more details on <code>Minimal install</code>, see the <a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Security_Guide/sec-Installing_the_Minimum_Amount_of_Packages_Required.html">Installing the Minimum Amount of Packages Required</a> section of the Red&#160;Hat Enterprise&#160;Linux&#160;7 Security Guide.</p>
+<p>If you are not sure what packages should be installed, select the <code>Minimal Install</code> environment. <code>Minimal install</code> provides only the packages which are essential for running CentOS&#160;7.8.2003. This will substantially reduce the chance of the system being affected by a vulnerability. If necessary, additional packages can be added later after the installation. For more details on <code>Minimal install</code>, see the <a href="https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Security_Guide/sec-Installing_the_Minimum_Amount_of_Packages_Required.html">Installing the Minimum Amount of Packages Required</a> section of the Red&#160;Hat Enterprise&#160;Linux&#160;7 Security Guide.</p>
 </div>
 </td>
 </tr>
@@ -4284,7 +4233,7 @@ sshpw --username=root example_password --lock</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>This command installs all packages which are part of the <code>Infrastracture Server</code> environment. All available environments are described in the <code>repodata/*-comps-<em>variant</em>.<em>architecture</em>.xml</code> file on the CentOS&#160;7.7.1908 Installation DVD. Only a single environment can be specified in the Kickstart file.</p>
+<p>This command installs all packages which are part of the <code>Infrastracture Server</code> environment. All available environments are described in the <code>repodata/*-comps-<em>variant</em>.<em>architecture</em>.xml</code> file on the CentOS&#160;7.8.2003 Installation DVD. Only a single environment can be specified in the Kickstart file.</p>
 </div>
 </dd>
 <dt class="hdlist1">Specifying Groups</dt>
@@ -4399,19 +4348,22 @@ docbook*
 <dt class="hdlist1"><code class="option">--multilib</code></dt>
 <dd>
 <div class="paragraph">
-<p>Configure the installed system for multilib packages (that is, to allow installing 32-bit packages on a 64-bit system) and install packages specified in this section as such.</p>
+<p>Configure the installed system for multilib packages, to allow installing 32-bit packages on a 64-bit system, and install packages specified in this section as such.</p>
 </div>
 <div class="paragraph">
-<p>Normally, on an AMD64 and Intel 64 system, only packages for this architecture (marked as <code>x86_64</code>) and packages for all architectures (marked as <code>noarch</code>) would be installed. When you use this option, packages for 32-bit AMD and Intel systems (marked as <code>i686</code>) are automatically installed as well, if available.</p>
+<p>Normally, on an AMD64 and Intel 64 system, only packages for this aNormally, on an AMD64 and Intel 64 system, you can install only the <code>x86_64</code> and the <code>noarch</code> packages. However, with the <code>--multilib</code> option, you can automatically install the 32-bit AMD and the i686 Intel system packages available, if any.</p>
 </div>
 <div class="paragraph">
 <p>This only applies to packages explicitly specified in the <code class="command">%packages</code> section. Packages which are only being installed as dependencies without being specified in the Kickstart file are only installed in architecture versions in which they are needed, even if they are available for more architectures.</p>
+</div>
+<div class="paragraph">
+<p>This option only works during the installation. Already installed systems are not configured for <code>multilib</code> packages installation using the <code>dnf</code> command.</p>
 </div>
 </dd>
 <dt class="hdlist1"><code class="option">--nocore</code></dt>
 <dd>
 <div class="paragraph">
-<p>Disables installation of the <code>@Core</code> package group which is otherwise always installed by default. Disabling the <code>@Core</code> package group should be only used for creating lightweight containers; installing a desktop or server system with <code class="option">--nocore</code> will result in an unusable system.</p>
+<p>Disables installation of the <code>@Core</code> package group which is otherwise always installed by default. Disabling the <code>@Core</code> package group with <code class="option">--nocore</code> should be only used for creating lightweight containers; installing a desktop or server system will result in an unusable system.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -4420,8 +4372,15 @@ docbook*
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-<div class="paragraph">
-<p>Using <code>-@Core</code> to exclude packages in the <code>@Core</code> package group does not work. The only way to exclude the <code>@Core</code> package group is with the <code class="option">--nocore</code> option.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Using <code>-@Core</code> to exclude packages in the <code>@Core</code> package group does not work. The only way to exclude the <code>@Core</code> package group is with the <code>--nocore</code> option.</p>
+</li>
+<li>
+<p>The <code>@Core</code> package group is defined as a minimal set of packages needed for installing a working system. It is not related in any way to core packages as defined in the <a href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/package_manifest/package_lists_base_repository#Base-Server">Package Manifest</a> and <a href="https://access.redhat.com/support/offerings/production/scope_moredetail">Scope of Coverage Details</a>.</p>
+</li>
+</ul>
 </div>
 </td>
 </tr>
@@ -4878,7 +4837,8 @@ logvol /usr/local     --vgname=sysvg --size=1 --grow --name=usrlocal</pre>
 <div class="content">
 <div class="literalblock">
 <div class="content">
-<pre><code class="command">exec &lt; /dev/tty6 &gt; /dev/tty6 2&gt; /dev/tty6</code>
+<pre><code class="command">%pre</code>
+<code class="command">exec &lt; /dev/tty6 &gt; /dev/tty6 2&gt; /dev/tty6</code>
 <code class="command">chvt 6</code>
 <code class="command">IFS=$'\n'</code>
 <code class="command">echo -n "Enter input: "</code>
@@ -4887,7 +4847,8 @@ logvol /usr/local     --vgname=sysvg --size=1 --grow --name=usrlocal</pre>
 <code class="command">echo -n "You entered:" "$USERINPUT"</code>
 <code class="command">echo</code>
 <code class="command">chvt 1</code>
-<code class="command">exec &lt; /dev/tty1 &gt; /dev/tty1 2&gt; /dev/tty1</code></pre>
+<code class="command">exec &lt; /dev/tty1 &gt; /dev/tty1 2&gt; /dev/tty1</code>
+<code class="command">%end</code></pre>
 </div>
 </div>
 <div class="paragraph">

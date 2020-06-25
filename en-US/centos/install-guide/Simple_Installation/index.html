@@ -310,6 +310,9 @@
     <a class="nav-link" href="../iSCSI/">iSCSI Disks</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Anaconda_Commands/">Anaconda UI Specific Commands</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../Understanding_LVM/">Understanding LVM</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -377,7 +380,7 @@
     <li><a href="./">Quick Installation Guide</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/CentOS/docs-installation-guide/edit/7.7/modules/install-guide/pages/Simple_Installation.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/CentOS/docs-installation-guide/edit/7.8/modules/install-guide/pages/Simple_Installation.adoc">Edit this Page</a></div>
 </div>
 <article class="doc">
 <h1 class="page">Quick Installation Guide</h1>
@@ -662,7 +665,7 @@
 <p>Mount the installation ISO file to the <code>/mnt/</code> directory. For example:</p>
 <div class="literalblock">
 <div class="content">
-<pre># mount -o loop /tmp/CentOS-server-7.7.1908-x86_64-dvd.iso /mnt/</pre>
+<pre><code>mount -o loop /tmp/CentOS-server-7.8.2003-x86_64-dvd.iso /mnt/</code></pre>
 </div>
 </div>
 </li>
@@ -670,9 +673,9 @@
 <p>Create a working directory and copy the DVD content to it. For example:</p>
 <div class="literalblock">
 <div class="content">
-<pre># mkdir /root/CentOS-install/
-# shopt -s dotglob
-# cp -avRf /mnt/* /root/CentOS-install/</pre>
+<pre><code>mkdir /root/CentOS-install/</code>
+<code>shopt -s dotglob</code>
+<code>cp -avRf /mnt/* /root/CentOS-install/</code></pre>
 </div>
 </div>
 </li>
@@ -680,7 +683,7 @@
 <p>Unmount the ISO file:</p>
 <div class="literalblock">
 <div class="content">
-<pre># umount /mnt/</pre>
+<pre><code>umount /mnt/</code></pre>
 </div>
 </div>
 </li>
@@ -688,7 +691,7 @@
 <p>Copy the Kickstart file generated during the installation to the working directory:</p>
 <div class="literalblock">
 <div class="content">
-<pre># cp /root/anaconda-ks.cfg /root/CentOS-install/</pre>
+<pre><code>cp /root/anaconda-ks.cfg /root/CentOS-install/</code></pre>
 </div>
 </div>
 </li>
@@ -696,9 +699,9 @@
 <p>Display the installation DVD volume name:</p>
 <div class="literalblock">
 <div class="content">
-<pre><code>#</code> <code>isoinfo -d -i CentOS-server-7.7.1908-x86_64-dvd.iso | grep "Volume id" | \
+<pre><code>isoinfo -d -i CentOS-server-7.8.2003-x86_64-dvd.iso | grep "Volume id" | \
 sed -e 's/Volume id: //' -e 's/ /\\x20/g'
-CentOS-7.7.1908\x20Server.x86_64</code></pre>
+CentOS-7.8.2003\x20Server.x86_64</code></pre>
 </div>
 </div>
 </li>
@@ -706,12 +709,10 @@ CentOS-7.7.1908\x20Server.x86_64</code></pre>
 <p>Add a new menu entry to the boot <code>/root/CentOS-install/isolinux/isolinux.cfg</code> file that uses the Kickstart file. For example:</p>
 <div class="literalblock">
 <div class="content">
-<pre><mark><mark></mark><mark></mark></mark><mark><mark></mark><mark></mark></mark><mark><mark></mark><mark></mark></mark><mark><mark></mark><mark></mark>#
-label kickstart
-menu label ^Kickstart Installation of CentOS 7.7.1908
+<pre>label kickstart
+menu label ^Kickstart Installation of CentOS 7.8.2003
 kernel vmlinuz
-append initrd=initrd.img inst.stage2=hd:LABEL=CentOS-7.7.1908\x20Server.x86_64 inst.ks=cdrom:/anaconda-ks.cfg
-</mark><mark><mark></mark><mark></mark></mark><mark><mark></mark><mark></mark></mark><mark><mark></mark><mark></mark></mark><mark><mark></mark></mark>#</pre>
+append initrd=initrd.img inst.stage2=hd:LABEL=CentOS-7.8.2003\x20Server.x86_64 inst.ks=hd:LABEL=CentOS-7.8.2003\x20Server.x86_64:/anaconda-ks.cfg</pre>
 </div>
 </div>
 <div class="admonitionblock note">
@@ -722,7 +723,7 @@ append initrd=initrd.img inst.stage2=hd:LABEL=CentOS-7.7.1908\x20Server.x86_64 i
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Set the <code class="option">inst.stage2=hd:LABEL=</code> option to the DVD volume name retrieved in the previous step.</p>
+<p>Set the <code class="option">inst.stage2=hd:LABEL=</code> option and <code class="option">inst.ks=hd:LABEL=</code> options to the DVD volume name retrieved in the previous step</p>
 </div>
 </td>
 </tr>
@@ -730,13 +731,78 @@ append initrd=initrd.img inst.stage2=hd:LABEL=CentOS-7.7.1908\x20Server.x86_64 i
 </div>
 </li>
 <li>
+<p>Before you create the <code>/root/CentOS-ks.iso</code> file from the working directory, execute the following steps for a <strong>USB UEFI boot</strong> or for a <strong>CDROM UEFI boot</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>For a <strong>USB UEFI boot</strong>, follow the steps:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Mount the volume:</p>
+<div class="literalblock">
+<div class="content">
+<pre><code>mount /root/centos-install/images/efiboot.img /mnt/</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Edit the file <code>/mnt/EFI/BOOT/grub</code>:</p>
+</div>
+</li>
+<li>
+<p>Add a new menu entry:</p>
+<div class="literalblock">
+<div class="content">
+<pre>'Kickstart Installation of CentOS-7.8.2003' --class fedora --class gnu-linux --class gnu --class os {
+        linuxefi /images/pxeboot/vmlinuz inst.stage2=hd:LABEL=CentOS-7.8.2003\x20Server.x86_64 inst.ks=hd:LABEL=CentOS-7.8.2003\x20Server.x86_64:/anaconda-ks.cfg
+        initrdefi /images/pxeboot/initrd.img
+}</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Unmount the volume:</p>
+<div class="literalblock">
+<div class="content">
+<pre><code>umount /mnt</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>For a <strong>CDROM UEFI boot</strong>, follow the steps:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Edit the file <code>/root/rhel-install/EFI/BOOT/grub.cfg</code>:</p>
+</li>
+<li>
+<p>Add a new menu entry to the file:</p>
+<div class="literalblock">
+<div class="content">
+<pre>'Kickstart Installation of CentOS-7.8.2003' --class fedora --class gnu-linux --class gnu --class os {
+        linuxefi /images/pxeboot/vmlinuz inst.stage2=hd:LABEL=CentOS-7.8.2003\x20Server.x86_64 inst.ks=hd:LABEL=CentOS-7.8.2003\x20Server.x86_64:/anaconda-ks.cfg
+        initrdefi /images/pxeboot/initrd.img
+}</pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
 <p>Create the <code>/root/CentOS-ks.iso</code> file from the working directory:</p>
 <div class="literalblock">
 <div class="content">
-<pre># mkisofs -J -T -o /root/CentOS-ks.iso -b isolinux/isolinux.bin \
+<pre><code>mkisofs -J -T -o /root/CentOS-ks.iso -b isolinux/isolinux.bin \
 -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table \
--R -m TRANS.TBL -graft-points -V "CentOS-7.7.1908 Server.x86_64" \
-/root/CentOS-install/</pre>
+-R -m TRANS.TBL -graft-points -V "CentOS-7.8.2003 Server.x86_64" \
+/root/CentOS-install/</code></pre>
 </div>
 </div>
 <div class="admonitionblock note">
@@ -755,6 +821,14 @@ append initrd=initrd.img inst.stage2=hd:LABEL=CentOS-7.7.1908\x20Server.x86_64 i
 </div>
 </li>
 <li>
+<p>Make the ISO image created by the command <code>mkisofs</code> bootable:</p>
+<div class="literalblock">
+<div class="content">
+<pre><code>isohybrid --uefi /root/rhel-ks.iso</code></pre>
+</div>
+</div>
+</li>
+<li>
 <p>Create an installation USB drive. For details, see <a href="../Making_Media_USB_Linux/#sect-making-usb-media-linux" class="page">Making Installation USB Media on Linux</a>.</p>
 </li>
 </ol>
@@ -766,7 +840,7 @@ append initrd=initrd.img inst.stage2=hd:LABEL=CentOS-7.7.1908\x20Server.x86_64 i
 <p>Boot the installation USB drive. See <a href="../Boot_x86/#chap-booting-installer-x86" class="page">Booting the Installation on 64-bit AMD, Intel, and ARM systems</a>.</p>
 </li>
 <li>
-<p>Select the entry, that contains the Kickstart configuration, you created in <a href="#bridgehead.gen-usb-media">Generating the USB Boot Media</a>.</p>
+<p>Select the entry with the Kickstart configuration that you created in <a href="#sect-simple-install-kickstart">Generating the USB Boot Media</a>.</p>
 </li>
 </ol>
 </div>

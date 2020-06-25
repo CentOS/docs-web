@@ -310,6 +310,9 @@
     <a class="nav-link" href="../iSCSI/">iSCSI Disks</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Anaconda_Commands/">Anaconda UI Specific Commands</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../Understanding_LVM/">Understanding LVM</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -378,7 +381,7 @@
     <li><a href="./">Manual Partitioning</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/CentOS/docs-installation-guide/edit/7.7/modules/install-guide/pages/CustomSpoke-x86.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/CentOS/docs-installation-guide/edit/7.8/modules/install-guide/pages/CustomSpoke-x86.adoc">Edit this Page</a></div>
 </div>
 <article class="doc">
 <h1 class="page">Manual Partitioning</h1>
@@ -938,7 +941,40 @@
 <p>Consider encrypting any partitions that might contain sensitive data. Encryption prevents unauthorized people from accessing the data on the partitions, even if they have access to the physical storage device. In most cases, you should at least encrypt the <code>/home</code> partition.</p>
 </li>
 <li>
-<p>Each kernel installed on your system requires approximately 20&#160;MiB on the <code>/boot</code> partition. The default partition size of 1&#160;GiB for <code>/boot</code> should suffice for most common uses; increase the size of this partition if you plan to keep many kernels installed at the same time.</p>
+<p>Each kernel installed on your system requires approximately 56 MB on the <code>/boot</code> partition.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>32 MB <code>initramfs</code></p>
+</li>
+<li>
+<p>14 MB <code>kdump</code> <code>initramfs</code></p>
+</li>
+<li>
+<p>3.5 MB system map</p>
+</li>
+<li>
+<p>6.6 MB <code>vmlinuz</code></p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>For rescue mode, <code>initramfs</code> and <code>vmlinuz</code> require 80 MB.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The default partition size for <code>/boot</code> should suffice for most common uses. However, it is recommended that you increase the size of this partition if you are planning on retaining multiple kernel releases or errata kernels.</p>
+</div>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p>The <code>/var</code> directory holds content for a number of applications, including the <strong class="application">Apache</strong> web server. It also is used to store downloaded update packages on a temporary basis. Ensure that the partition containing the <code>/var</code> directory has enough space to download pending updates and hold your other content.</p>

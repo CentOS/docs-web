@@ -310,6 +310,9 @@
     <a class="nav-link" href="../iSCSI/">iSCSI Disks</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Anaconda_Commands/">Anaconda UI Specific Commands</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../Understanding_LVM/">Understanding LVM</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -378,7 +381,7 @@
     <li><a href="./">Making an Installation USB Drive on Linux</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/CentOS/docs-installation-guide/edit/7.7/modules/install-guide/pages/Making_Media_USB_Linux.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/CentOS/docs-installation-guide/edit/7.8/modules/install-guide/pages/Making_Media_USB_Linux.adoc">Edit this Page</a></div>
 </div>
 <article class="doc">
 <h1 class="page">Making Installation USB Media on Linux</h1>
@@ -457,7 +460,7 @@ TARGET   SOURCE   FSTYPE  OPTIONS
 <p>Use the <code class="command">dd</code> command to write the installation ISO image directly to the USB device:</p>
 <div class="literalblock">
 <div class="content">
-<pre><code># dd if=/image_directory/image.iso of=/dev/device bs=blocksize</code></pre>
+<pre><code># dd if=/image_directory/image.iso of=/dev/device bs=blocksize status=progress</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -482,7 +485,7 @@ TARGET   SOURCE   FSTYPE  OPTIONS
 </div>
 <div class="literalblock">
 <div class="content">
-<pre><code># dd if=/home/testuser/Downloads/CentOS-server-x86_64-boot.iso of=/dev/sdb bs=512k</code></pre>
+<pre><code># dd if=/home/testuser/Downloads/CentOS-server-x86_64-boot.iso of=/dev/sdb bs=512k status=progress</code></pre>
 </div>
 </div>
 </li>

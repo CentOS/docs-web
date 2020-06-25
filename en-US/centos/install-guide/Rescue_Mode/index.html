@@ -310,6 +310,9 @@
     <a class="nav-link" href="../iSCSI/">iSCSI Disks</a>
   </li>
   <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../Anaconda_Commands/">Anaconda UI Specific Commands</a>
+  </li>
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../Understanding_LVM/">Understanding LVM</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -377,7 +380,7 @@
     <li><a href="./">Basic System Recovery</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/CentOS/docs-installation-guide/edit/7.7/modules/install-guide/pages/Rescue_Mode.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/CentOS/docs-installation-guide/edit/7.8/modules/install-guide/pages/Rescue_Mode.adoc">Edit this Page</a></div>
 </div>
 <article class="doc">
 <h1 class="page">Basic System Recovery</h1>
@@ -452,7 +455,7 @@
 <h2 id="sect-rescue-mode"><a class="anchor" href="#sect-rescue-mode"></a>Anaconda Rescue Mode</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The <strong class="application">Anaconda</strong> installation program&#8217;s rescue mode is a minimal Linux environment that can be booted from the CentOS&#160;7.7.1908 DVD or other boot media. It contains command-line utilities for repairing a wide variety of issues. This rescue mode can be accessed from the Troubleshooting submenu of the boot menu. In this mode, you can mount file systems as read-only or even to not mount them at all, blacklist or add a driver provided on a driver disc, install or upgrade system packages, or manage partitions.</p>
+<p>The <strong class="application">Anaconda</strong> installation program&#8217;s rescue mode is a minimal Linux environment that can be booted from the CentOS&#160;7.8.2003 DVD or other boot media. It contains command-line utilities for repairing a wide variety of issues. This rescue mode can be accessed from the Troubleshooting submenu of the boot menu. In this mode, you can mount file systems as read-only or even to not mount them at all, blacklist or add a driver provided on a driver disc, install or upgrade system packages, or manage partitions.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -522,7 +525,7 @@
 </div>
 </li>
 <li>
-<p>If a driver that is part of the CentOS&#160;7.7.1908 distribution prevents the system from booting, append the <code class="option">modprobe.blacklist=</code> option to the boot command line:</p>
+<p>If a driver that is part of the CentOS&#160;7.8.2003 distribution prevents the system from booting, append the <code class="option">modprobe.blacklist=</code> option to the boot command line:</p>
 <div class="literalblock">
 <div class="content">
 <pre>inst.rescue modprobe.blacklist=driver_name</pre>
