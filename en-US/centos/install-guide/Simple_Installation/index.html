@@ -356,6 +356,14 @@
         </li>
       </ul>
     </li>
+    <li class="component">
+      <span class="title">Contributor's Guide</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../stream-contrib/">master</a>
+        </li>
+      </ul>
+    </li>
     <li class="component is-current">
       <span class="title">Installation Guide</span>
       <ul class="versions">
@@ -665,7 +673,7 @@
 <p>Mount the installation ISO file to the <code>/mnt/</code> directory. For example:</p>
 <div class="literalblock">
 <div class="content">
-<pre><code>mount -o loop /tmp/CentOS-server-7.8.2003-x86_64-dvd.iso /mnt/</code></pre>
+<pre><code>mount -o loop /tmp/CentOS-server-7-x86_64-dvd.iso /mnt/</code></pre>
 </div>
 </div>
 </li>
@@ -699,9 +707,9 @@
 <p>Display the installation DVD volume name:</p>
 <div class="literalblock">
 <div class="content">
-<pre><code>isoinfo -d -i CentOS-server-7.8.2003-x86_64-dvd.iso | grep "Volume id" | \
+<pre><code>isoinfo -d -i CentOS-server-7-x86_64-dvd.iso | grep "Volume id" | \
 sed -e 's/Volume id: //' -e 's/ /\\x20/g'
-CentOS-7.8.2003\x20Server.x86_64</code></pre>
+CentOS-7\x20Server.x86_64</code></pre>
 </div>
 </div>
 </li>
@@ -710,9 +718,9 @@ CentOS-7.8.2003\x20Server.x86_64</code></pre>
 <div class="literalblock">
 <div class="content">
 <pre>label kickstart
-menu label ^Kickstart Installation of CentOS 7.8.2003
+menu label ^Kickstart Installation of CentOS 7
 kernel vmlinuz
-append initrd=initrd.img inst.stage2=hd:LABEL=CentOS-7.8.2003\x20Server.x86_64 inst.ks=hd:LABEL=CentOS-7.8.2003\x20Server.x86_64:/anaconda-ks.cfg</pre>
+append initrd=initrd.img inst.stage2=hd:LABEL=CentOS-7\x20Server.x86_64 inst.ks=hd:LABEL=CentOS-7\x20Server.x86_64:/anaconda-ks.cfg</pre>
 </div>
 </div>
 <div class="admonitionblock note">
@@ -742,19 +750,19 @@ append initrd=initrd.img inst.stage2=hd:LABEL=CentOS-7.8.2003\x20Server.x86_64 i
 <p>Mount the volume:</p>
 <div class="literalblock">
 <div class="content">
-<pre><code>mount /root/centos-install/images/efiboot.img /mnt/</code></pre>
+<pre><code>mount /root/CentOS-install/images/efiboot.img /mnt/</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Edit the file <code>/mnt/EFI/BOOT/grub</code>:</p>
+<p>Edit the file <code>/mnt/EFI/BOOT/grub.cfg</code>:</p>
 </div>
 </li>
 <li>
 <p>Add a new menu entry:</p>
 <div class="literalblock">
 <div class="content">
-<pre>'Kickstart Installation of CentOS-7.8.2003' --class fedora --class gnu-linux --class gnu --class os {
-        linuxefi /images/pxeboot/vmlinuz inst.stage2=hd:LABEL=CentOS-7.8.2003\x20Server.x86_64 inst.ks=hd:LABEL=CentOS-7.8.2003\x20Server.x86_64:/anaconda-ks.cfg
+<pre>'Kickstart Installation of CentOS-7' --class fedora --class gnu-linux --class gnu --class os {
+        linuxefi /images/pxeboot/vmlinuz inst.stage2=hd:LABEL=CentOS-7\x20Server.x86_64 inst.ks=hd:LABEL=CentOS-7\x20Server.x86_64:/anaconda-ks.cfg
         initrdefi /images/pxeboot/initrd.img
 }</pre>
 </div>
@@ -776,14 +784,14 @@ append initrd=initrd.img inst.stage2=hd:LABEL=CentOS-7.8.2003\x20Server.x86_64 i
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Edit the file <code>/root/rhel-install/EFI/BOOT/grub.cfg</code>:</p>
+<p>Edit the file <code>/root/CentOS-install/EFI/BOOT/grub.cfg</code>:</p>
 </li>
 <li>
 <p>Add a new menu entry to the file:</p>
 <div class="literalblock">
 <div class="content">
-<pre>'Kickstart Installation of CentOS-7.8.2003' --class fedora --class gnu-linux --class gnu --class os {
-        linuxefi /images/pxeboot/vmlinuz inst.stage2=hd:LABEL=CentOS-7.8.2003\x20Server.x86_64 inst.ks=hd:LABEL=CentOS-7.8.2003\x20Server.x86_64:/anaconda-ks.cfg
+<pre>'Kickstart Installation of CentOS-7' --class fedora --class gnu-linux --class gnu --class os {
+        linuxefi /images/pxeboot/vmlinuz inst.stage2=hd:LABEL=CentOS-7\x20Server.x86_64 inst.ks=hd:LABEL=CentOS-7\x20Server.x86_64:/anaconda-ks.cfg
         initrdefi /images/pxeboot/initrd.img
 }</pre>
 </div>
@@ -801,7 +809,7 @@ append initrd=initrd.img inst.stage2=hd:LABEL=CentOS-7.8.2003\x20Server.x86_64 i
 <div class="content">
 <pre><code>mkisofs -J -T -o /root/CentOS-ks.iso -b isolinux/isolinux.bin \
 -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table \
--R -m TRANS.TBL -graft-points -V "CentOS-7.8.2003 Server.x86_64" \
+-R -m TRANS.TBL -graft-points -V "CentOS-7 Server.x86_64" \
 /root/CentOS-install/</code></pre>
 </div>
 </div>

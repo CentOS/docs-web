@@ -1193,6 +1193,14 @@
       </ul>
     </li>
     <li class="component">
+      <span class="title">Contributor's Guide</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../stream-contrib/">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
       <span class="title">Installation Guide</span>
       <ul class="versions">
         <li class="version is-latest">
@@ -1335,7 +1343,7 @@ See <a href="../assembly_system-requirements-reference/" class="page">System req
 <h2 id="types-of-installation-media_preparing-for-your-installation"><a class="anchor" href="#types-of-installation-media_preparing-for-your-installation"></a>Select the required installation image</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Two CentOS 8.0.1905 installation images are available from the Downloads page.</p>
+<p>Two CentOS 8 installation images are available from the Downloads page.</p>
 </div>
 <div class="dlist">
 <dl>
@@ -1598,11 +1606,11 @@ to create bootable physical installation media, such as a USB, DVD, or CD.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Replace <em>/image_directory/image.iso</em> with the full path to the ISO image file that you downloaded, and replace <em>device</em> with the device name that you retrieved with the <code>dmesg</code> command. In this example, the full path to the ISO image is <code>/home/testuser/Downloads/CentOS-8.0.1905-x86_64-boot.iso</code>, and the device name is <code>sdd</code>:</p>
+<p>Replace <em>/image_directory/image.iso</em> with the full path to the ISO image file that you downloaded, and replace <em>device</em> with the device name that you retrieved with the <code>dmesg</code> command. In this example, the full path to the ISO image is <code>/home/testuser/Downloads/CentOS-8-x86_64-boot.iso</code>, and the device name is <code>sdd</code>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre># <span class="command">dd</span> if=/home/testuser/Downloads/CentOS-8.0.1905-x86_64-boot.iso of=/dev/sdd</pre>
+<pre># <span class="command">dd</span> if=/home/testuser/Downloads/CentOS-8-x86_64-boot.iso of=/dev/sdd</pre>
 </div>
 </div>
 <div class="admonitionblock note">

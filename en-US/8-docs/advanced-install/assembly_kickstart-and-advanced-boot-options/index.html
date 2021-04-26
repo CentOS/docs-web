@@ -1193,6 +1193,14 @@
       </ul>
     </li>
     <li class="component">
+      <span class="title">Contributor's Guide</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../stream-contrib/">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
       <span class="title">Installation Guide</span>
       <ul class="versions">
         <li class="version is-latest">
@@ -1303,7 +1311,7 @@ For a full list of boot options, see the <a href="https://github.com/rhinstaller
 </div>
 <h3 id="_editing_the_prompt" class="discrete">Editing the &gt; prompt</h3>
 <div class="paragraph">
-<p>You can use the <code>&gt;</code> prompt to edit predefined boot options. For example, select <strong>Test this media and install CentOS&#160;8.0.1905</strong> from the boot menu to display a full set of options.</p>
+<p>You can use the <code>&gt;</code> prompt to edit predefined boot options. For example, select <strong>Test this media and install CentOS&#160;8</strong> from the boot menu to display a full set of options.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1566,7 +1574,7 @@ be set per repository.</p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>By default, the <code>inst.stage2=</code> boot option is used on the installation media and is set to a specific label, for example, <code>inst.stage2=hd:LABEL=CentOS-8.0.1905-BaseOS-x86_64</code>. If you modify the default label of the file system containing the runtime image, or if you use a customized procedure to boot the installation system, you must verify that the <code>inst.stage2=</code> boot option is set to the correct value.</p>
+<p>By default, the <code>inst.stage2=</code> boot option is used on the installation media and is set to a specific label, for example, <code>inst.stage2=hd:LABEL=CentOS-8-BaseOS-x86_64</code>. If you modify the default label of the file system containing the runtime image, or if you use a customized procedure to boot the installation system, you must verify that the <code>inst.stage2=</code> boot option is set to the correct value.</p>
 </div>
 </td>
 </tr>
@@ -2159,7 +2167,7 @@ By default, swap on zRAM is enabled on systems with 2 GiB or less RAM, and disab
 <dl>
 <dt class="hdlist1">inst.gpt</dt>
 <dd>
-<p>The <code>inst.gpt</code> boot option forces the installation program to install partition information to a GUID Partition Table (GPT) instead of a Master Boot Record (MBR). This option is not valid on UEFI-based systems, unless they are in BIOS compatibility mode. Normally, BIOS-based systems and UEFI-based systems in BIOS compatibility mode attempt to use the MBR schema for storing partitioning information, unless the disk is 232 sectors in size or larger. Disk sectors are typically 512 bytes in size, meaning that this is usually equivalent to 2 TiB. Using the <code>inst.gpt</code> boot option changes this behavior, allowing a GPT to be written to smaller disks.</p>
+<p>The <code>inst.gpt</code> boot option forces the installation program to install partition information to a GUID Partition Table (GPT) instead of a Master Boot Record (MBR). This option is not valid on UEFI-based systems, unless they are in BIOS compatibility mode. Normally, BIOS-based systems and UEFI-based systems in BIOS compatibility mode attempt to use the MBR schema for storing partitioning information, unless the disk is 2^32 sectors in size or larger. Disk sectors are typically 512 bytes in size, meaning that this is usually equivalent to 2 TiB. Using the <code>inst.gpt</code> boot option changes this behavior, allowing a GPT to be written to smaller disks.</p>
 </dd>
 </dl>
 </div>

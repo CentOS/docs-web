@@ -9,4 +9,7 @@
 <sitemap>
 <loc>https://docs.centos.org/sitemap-docs.xml</loc>
 </sitemap>
+<sitemap>
+<loc>https://docs.centos.org/sitemap-stream-contrib.xml</loc>
+</sitemap>
 </sitemapindex>

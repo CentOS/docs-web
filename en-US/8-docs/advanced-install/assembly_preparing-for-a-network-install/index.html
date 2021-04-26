@@ -1193,6 +1193,14 @@
       </ul>
     </li>
     <li class="component">
+      <span class="title">Contributor's Guide</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../stream-contrib/">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
       <span class="title">Installation Guide</span>
       <ul class="versions">
         <li class="version is-latest">
@@ -1429,16 +1437,16 @@ display boot.msg
 label linux
   menu label ^Install system
   menu default
-  kernel images/CentOS-8.0.1905/vmlinuz
-  append initrd=images/CentOS-8.0.1905/initrd.img ip=dhcp inst.repo=http://10.32.5.1/CentOS-8.0.1905/x86_64/iso-contents-root/
+  kernel images/CentOS-8/vmlinuz
+  append initrd=images/CentOS-8/initrd.img ip=dhcp inst.repo=http://10.32.5.1/CentOS-8/x86_64/iso-contents-root/
 label vesa
   menu label Install system with ^basic video driver
-  kernel images/CentOS-8.0.1905/vmlinuz
-  append initrd=images/CentOS-8.0.1905/initrd.img ip=dhcp inst.xdriver=vesa nomodeset inst.repo=http://10.32.5.1/CentOS-8.0.1905/x86_64/iso-contents-root/
+  kernel images/CentOS-8/vmlinuz
+  append initrd=images/CentOS-8/initrd.img ip=dhcp inst.xdriver=vesa nomodeset inst.repo=http://10.32.5.1/CentOS-8/x86_64/iso-contents-root/
 label rescue
   menu label ^Rescue installed system
-  kernel images/CentOS-8.0.1905/vmlinuz
-  append initrd=images/CentOS-8.0.1905/initrd.img rescue
+  kernel images/CentOS-8/vmlinuz
+  append initrd=images/CentOS-8/initrd.img rescue
 label local
   menu label Boot from ^local drive
   localboot 0xffff</pre>
@@ -1470,11 +1478,11 @@ label local
 </div>
 </li>
 <li>
-<p>Create a subdirectory to store the boot image files in the <code>/var/lib/tftpboot/</code> directory, and copy the boot image files to the directory. In this example, we use the directory <code>/var/lib/tftpboot/pxelinux/images/CentOS-8.0.1905/</code>:</p>
+<p>Create a subdirectory to store the boot image files in the <code>/var/lib/tftpboot/</code> directory, and copy the boot image files to the directory. In this example, we use the directory <code>/var/lib/tftpboot/pxelinux/images/CentOS-8/</code>:</p>
 <div class="listingblock">
 <div class="content">
-<pre># mkdir -p /var/lib/tftpboot/pxelinux/images/CentOS-8.0.1905/
-# cp /path_to_x86_64_images/pxeboot/{vmlinuz,initrd.img} /var/lib/tftpboot/pxelinux/images/CentOS-8.0.1905/</pre>
+<pre># mkdir -p /var/lib/tftpboot/pxelinux/images/CentOS-8/
+# cp /path_to_x86_64_images/pxeboot/{vmlinuz,initrd.img} /var/lib/tftpboot/pxelinux/images/CentOS-8/</pre>
 </div>
 </div>
 </li>
@@ -1640,8 +1648,8 @@ subnet 10.0.0.0 netmask 255.255.255.0 {
 <div class="content">
 <pre>set timeout=60
 menuentry 'CentOS&#160;8' {
-  linuxefi images/CentOS-8.0.1905/vmlinuz ip=dhcp inst.repo=http://10.32.5.1/CentOS-8.0.1905/x86_64/iso-contents-root/
-  initrdefi images/CentOS-8.0.1905/initrd.img
+  linuxefi images/CentOS-8/vmlinuz ip=dhcp inst.repo=http://10.32.5.1/CentOS-8/x86_64/iso-contents-root/
+  initrdefi images/CentOS-8/initrd.img
 }</pre>
 </div>
 </div>
@@ -1671,11 +1679,11 @@ menuentry 'CentOS&#160;8' {
 </div>
 </li>
 <li>
-<p>Create a subdirectory to store the boot image files in the <code>/var/lib/tftpboot/</code> directory, and copy the boot image files to the directory. In this example, we use the directory <code>/var/lib/tftpboot/images/CentOS-8.0.1905/</code>:</p>
+<p>Create a subdirectory to store the boot image files in the <code>/var/lib/tftpboot/</code> directory, and copy the boot image files to the directory. In this example, we use the directory <code>/var/lib/tftpboot/images/CentOS-8/</code>:</p>
 <div class="listingblock">
 <div class="content">
-<pre># mkdir -p /var/lib/tftpboot/images/CentOS-8.0.1905/
-# cp /path_to_x86_64_images/pxeboot/{vmlinuz,initrd.img} /var/lib/tftpboot/images/CentOS-8.0.1905/</pre>
+<pre># mkdir -p /var/lib/tftpboot/images/CentOS-8/
+# cp /path_to_x86_64_images/pxeboot/{vmlinuz,initrd.img} /var/lib/tftpboot/images/CentOS-8/</pre>
 </div>
 </div>
 </li>
@@ -1795,8 +1803,8 @@ set timeout=5
 
 echo -e "\nWelcome to the CentOS&#160;8 installer!\n\n"
 
-menuentry 'CentOS 8.0.1905' {
-  linux grub2-ppc64/vmlinuz ro ip=dhcp inst.repo=http://10.32.5.1/CentOS-8.0.1905/x86_64/iso-contents-root/
+menuentry 'CentOS 8' {
+  linux grub2-ppc64/vmlinuz ro ip=dhcp inst.repo=http://10.32.5.1/CentOS-8/x86_64/iso-contents-root/
   initrd grub2-ppc64/initrd.img
 }</pre>
 </div>
