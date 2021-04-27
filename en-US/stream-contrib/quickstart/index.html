@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Contributing to CentOS Stream - Quickstart :: CentOS Docs Site</title>
+    <link rel="canonical" href="https://docs.centos.org/stream-contrib/quickstart/">
+    <meta name="generator" content="Antora 2.0.0">
+    <link rel="stylesheet" href="../../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://docs.centos.org"><img src="https://docs.centos.org/_images/logo_small.png"></a>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="https://www.centos.org/download/">Download CentOS</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="stream-contrib" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../">Contributor&#x27;s Guide</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../">Index</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="./">Quick start guide for new contributors</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Contributing</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../contributing/roles/">Roles and responsibilities</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../contributing/sigs/">Special interest groups (SIGs)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../contributing/reporting-bugs/">Reporting bugs</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../contributing/feature-requests/">Feature requests</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Technical information</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../techinfo/submitting-patches/">Submitting patches</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../techinfo/testing/">Testing</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../techinfo/buildsystem/">The build system</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../techinfo/ci-cd/">CI/CD</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../techinfo/releng/">Release engineering</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../techinfo/packaging-guidelines/">Packaging guidelines</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../glossary/">Glossary of terms</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Contributor&#x27;s Guide</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <span class="title">CentOS 8 Documentation</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../8-docs/">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">CentOS Documentation</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../docs/">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <span class="title">Contributor's Guide</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Installation Guide</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../centos/install-guide/">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main role="main">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../docs/" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../">Contributor's Guide</a></li>
+    <li><a href="./">Quick start guide for new contributors</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/CentOS/docs-contributors-guide/edit/master/modules/ROOT/pages/quickstart.adoc">Edit this Page</a></div>
+</div>
+<article class="doc">
+<h1 class="page">Contributing to CentOS Stream - Quickstart</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_contributor_onboarding">Contributor Onboarding</a>
+<ul class="sectlevel2">
+<li><a href="#_accounts">Accounts</a></li>
+<li><a href="#_tools_and_workstation_setup">Tools and workstation setup</a></li>
+</ul>
+</li>
+<li><a href="#_what_you_do_what_the_rhel_maintainer_takes_care_of">What you do, what the RHEL maintainer takes care of</a>
+<ul class="sectlevel2">
+<li><a href="#_1_file_a_bugzilla">1.) File a bugzilla!</a></li>
+<li><a href="#_2_develop_your_patch">2.) Develop your patch</a></li>
+<li><a href="#_3_reference_the_bugzilla_you_filed_in_your_commits">3.) Reference the bugzilla you filed in your commits</a></li>
+<li><a href="#_4_open_a_merge_request">4.) Open a Merge Request</a></li>
+<li><a href="#_5_work_with_the_rhel_package_maintainer">5.) Work with the RHEL package maintainer</a></li>
+</ul>
+</li>
+<li><a href="#_good_patch_bad_patch">Good Patch / Bad Patch</a></li>
+<li><a href="#_release_engineering_pipelines_and_package_state">Release Engineering, pipelines, and package state</a>
+<ul class="sectlevel2">
+<li><a href="#_whats_going_on_with_package_x">What’s going on with package X?</a></li>
+<li><a href="#_pungi_and_the_compose_configs">Pungi and the Compose Configs</a></li>
+<li><a href="#_the_comps">The Comps</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="_contributor_onboarding"><a class="anchor" href="#_contributor_onboarding"></a>Contributor Onboarding</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_accounts"><a class="anchor" href="#_accounts"></a>Accounts</h3>
+<div class="paragraph">
+<p>To start making contributions you’ll need to log in to the following places:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Gitlab - <a href="https://gitlab.com/users/sign_up">Sign Up</a></p>
+</li>
+<li>
+<p>CentOS Account System - <a href="https://accounts.centos.org/">Sign Up</a></p>
+</li>
+<li>
+<p>Bugzilla - <a href="https://bugzilla.redhat.com/saml2_login.cgi?idp=Fedora%20Account%20System&amp;target=enter_bug.cgi">Sign In</a> using the link for the Fedora Account System using your CentOS Account (CentOS and Fedora now share an authentication system, so your password works in both places)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_tools_and_workstation_setup"><a class="anchor" href="#_tools_and_workstation_setup"></a>Tools and workstation setup</h3>
+<div class="paragraph">
+<p>To work with dist-git repositories and inspect artifacts or logs in the buildsystem, you need <code>centpkg</code> installed on your workstation:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>If you have a Fedora workstation: <code>dnf install centpkg</code></p>
+</li>
+<li>
+<p>If you have a CentOS Linux/Stream or RHEL workstation: <code>dnf install epel-release &amp;&amp; dnf --enablerepo=epel-testing install centpkg</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_what_you_do_what_the_rhel_maintainer_takes_care_of"><a class="anchor" href="#_what_you_do_what_the_rhel_maintainer_takes_care_of"></a>What you do, what the RHEL maintainer takes care of</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_1_file_a_bugzilla"><a class="anchor" href="#_1_file_a_bugzilla"></a>1.) File a bugzilla!</h3>
+<div class="paragraph">
+<p>CentOS Stream bugs are filed under the Red Hat Enterprise Linux products in bugzilla, <a href="https://bugzilla.redhat.com/enter_bug.cgi?product=Red%20Hat%20Enterprise%20Linux%209&amp;version=CentOS%20Stream">File a bug against CentOS Stream / RHEL 9</a></p>
+</div>
+<div class="paragraph">
+<p>The <code>Component</code> is the name of the package that you want to patch</p>
+</div>
+<div class="paragraph">
+<p>Describe the change that you’d like to make, be sure to double-check for existing bugs that describe the feature request or issue that you’re seeing</p>
+</div>
+<div class="paragraph">
+<p>RHEL developers use bugzillas to coordinate with RHEL QE, schedule work with other maintainers, and track progress against development milestones. RHEL maintainers need to get a bugzilla <code>approved</code> for a release before they can merge your change, but don’t worry, this is something they take care of for you. You just need to file the bug and reference it.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_2_develop_your_patch"><a class="anchor" href="#_2_develop_your_patch"></a>2.) Develop your patch</h3>
+<div class="paragraph">
+<p>There are 2 ways to contribute, <strong>Source Git</strong> is in use by developers of packages that want to accept contributions directly to the source code and the package specs in the same place.</p>
+</div>
+<div class="paragraph">
+<p><strong>Dist-Git</strong> is a familiar packaging format for folks who have done packaging in Fedora. The package specs are stored in git, and archives of the actual source code are located in the <strong>lookaside</strong>.</p>
+</div>
+<div class="paragraph">
+<p>In the Gitlab repository you want to change, click the <code>Fork</code> button on the front page to create your own fork.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_3_reference_the_bugzilla_you_filed_in_your_commits"><a class="anchor" href="#_3_reference_the_bugzilla_you_filed_in_your_commits"></a>3.) Reference the bugzilla you filed in your commits</h3>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>git commit --signoff -m 'This is my awesome patch, Related: rhbz#123456</code></p>
+</li>
+<li>
+<p><code>git commit --signoff -m 'This is another patch to the same bug, Fixes: #123456 (The checkers let me leave off the rhbz prefix)'</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Every commit made during your contribution MUST come with a Bugzilla referenced in the commit message.</p>
+</div>
+<div class="paragraph">
+<p>Once the commits are how you like them, push to your fork in Gitlab.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_4_open_a_merge_request"><a class="anchor" href="#_4_open_a_merge_request"></a>4.) Open a Merge Request</h3>
+<div class="paragraph">
+<p>The easiest way to open a merge request is to visit the target repository under the <a href="https://gitlab.com/redhat/centos-stream" class="bare">https://gitlab.com/redhat/centos-stream</a> namespace and click the <code>New Merge Request</code> button on the <code>Merge Requests</code> tab.</p>
+</div>
+<div class="paragraph">
+<p>TODO: Image of the merge-requests tab</p>
+</div>
+<div class="paragraph">
+<p>Make sure to choose your fork and branch under the <code>Source Branch</code>. And the CentOS Stream repository + branch in <code>Target Branch</code></p>
+</div>
+<div class="paragraph">
+<p>TODO: Image of Source branch / Target Branch</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_5_work_with_the_rhel_package_maintainer"><a class="anchor" href="#_5_work_with_the_rhel_package_maintainer"></a>5.) Work with the RHEL package maintainer</h3>
+<div class="paragraph">
+<p>RHEL maintainers will work with you to evaluate your patch, review any needed changes, and potentially merge your request. If your patch is accepted for inclusion in CentOS Stream and RHEL, the RHEL maintainer will perform a package build and RPMs will show up in the buildsystem: <a href="https://kojihub.stream.centos.org/" class="bare">https://kojihub.stream.centos.org/</a></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_good_patch_bad_patch"><a class="anchor" href="#_good_patch_bad_patch"></a>Good Patch / Bad Patch</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>TODO Couple of examples</p>
+</div>
+<div class="paragraph">
+<p><a href="">TODO Link to longer policies</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_release_engineering_pipelines_and_package_state"><a class="anchor" href="#_release_engineering_pipelines_and_package_state"></a>Release Engineering, pipelines, and package state</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_whats_going_on_with_package_x"><a class="anchor" href="#_whats_going_on_with_package_x"></a>What’s going on with package X?</h3>
+<div class="paragraph">
+<p>Packages follow a regular process from build to release, all managed by tags in the buildsystem. Here’s a list of important koji tags and what they mean:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 53%;">
+<col style="width: 47%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Koji Tag</th>
+<th class="tableblock halign-left valign-top">Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">c9s-gate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This is where packages first land immediately after they build</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">c9s-pending</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">These packages have passed RHEL CI testing and CentOS Stream CI Testing (coming soon), these packages are also added to the buildroot when tagged here</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">c9s-build</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This is a tag that includes all of the right inheritance to generate the buildroots</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">c9s-candidate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TODO</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>For example, if you see a package that is listed in the <code>-gate</code> tag but not the <code>-pending</code> tag you know that it hasn’t passed its tests yet, and won’t make it into a compose until those are fixed.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_pungi_and_the_compose_configs"><a class="anchor" href="#_pungi_and_the_compose_configs"></a>Pungi and the Compose Configs</h3>
+<div class="paragraph">
+<p>If you want to make changes to the overall distribution itself, or the artifacts produced by composes, or you’ll want to refer to the <code>Distribution</code> component in Bugzilla. Please file an appropriate bugzilla describing the change you’d like to make.</p>
+</div>
+<div class="paragraph">
+<p>If you’re familiar with Pungi, you’ll recognize the configs in <a href="https://gitlab.com/redhat/centos-stream/release-engineering/pungi-centos" class="bare">https://gitlab.com/redhat/centos-stream/release-engineering/pungi-centos</a></p>
+</div>
+<div class="paragraph">
+<p>These configs follow a Fork/Merge-Request workflow and require review from CentOS Stream release engineers to be merged</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_the_comps"><a class="anchor" href="#_the_comps"></a>The Comps</h3>
+<div class="paragraph">
+<p>Comps control package groups, and repository split configurations. Changes here most likely require a <code>Distribution</code> component bug in bugzilla.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://gitlab.com/redhat/centos-stream/release-engineering/comps" class="bare">https://gitlab.com/redhat/centos-stream/release-engineering/comps</a></p>
+</div>
+</div>
+</div>
+</div>
+</article>
+</main>
+</div>
+<footer class="footer">
+  <p>All CentOS Documentation content available under <a href="http://creativecommons.org/licenses/by-sa/3.0/legalcode">CC-BY-SA 3.0.</a>
+  <p>This page was built using a modified version of the Antora default UI. The source code for this UI is licensed under the terms of the <a href="https://www.mozilla.org/en-US/MPL/2.0/">MPL-2.0</a> license.</p>
+</footer>
+<script src="../../_/js/site.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
