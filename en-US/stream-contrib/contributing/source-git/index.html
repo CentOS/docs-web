@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Source-git :: CentOS Docs Site</title>
+    <link rel="canonical" href="https://docs.centos.org/stream-contrib/contributing/source-git/">
+    <meta name="generator" content="Antora 2.0.0">
+    <link rel="stylesheet" href="../../../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://docs.centos.org"><img src="https://docs.centos.org/_images/logo_small.png"></a>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="https://www.centos.org/download/">Download CentOS</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="stream-contrib" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../../">Contributor&#x27;s Guide</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../">Index</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../quickstart/">Quick start guide for new contributors</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Contributing</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../roles/">Roles and responsibilities</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../sigs/">Special interest groups (SIGs)</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../reporting-bugs/">Reporting bugs</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../feature-requests/">Feature requests</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="./">Source-git</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <span class="nav-text">Technical information</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../techinfo/submitting-patches/">Submitting patches</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../techinfo/testing/">Testing</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../techinfo/buildsystem/">The build system</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../techinfo/ci-cd/">CI/CD</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../techinfo/releng/">Release engineering</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../../techinfo/packaging-guidelines/">Packaging guidelines</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../../glossary/">Glossary of terms</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">Contributor&#x27;s Guide</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component">
+      <span class="title">CentOS 8 Documentation</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../8-docs/">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">CentOS Documentation</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../docs/">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component is-current">
+      <span class="title">Contributor's Guide</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../../">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Installation Guide</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../../../centos/install-guide/">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main role="main">
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+  <a href="../../../docs/" class="home-link"></a>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../../">Contributor's Guide</a></li>
+    <li>Contributing</li>
+    <li><a href="./">Source-git</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/CentOS/docs-contributors-guide/edit/master/modules/ROOT/pages/contributing/source-git.adoc">Edit this Page</a></div>
+</div>
+<article class="doc">
+<h1 class="page">Source-git</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_submitting_a_change_in_a_source_git_repo">Submitting a change in a source-git repo</a>
+<ul class="sectlevel2">
+<li><a href="#_changing_source_code_by_defining_the_patch_in_a_spec_file">Changing source code by defining the patch in a spec file</a></li>
+<li><a href="#_changing_source_code_packit_takes_care_of_patches">Changing source code: packit takes care of patches</a></li>
+</ul>
+</li>
+<li><a href="#_after_a_merge_request_is_created">After a merge request is created</a></li>
+</ul>
+</div>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you’re familiar with how packaging is done in CentOS and Fedora, you may know dist-git repositories: each repository represents a source RPM package and contains all the RPM source files (RPM spec file, upstream tarball checksum and optionally patch files and other files).
+But the repository itself doesn&#8217;t contain source code - you need to execute <code>%prep</code> phase to retrieve it from the cache.</p>
+</div>
+<div class="paragraph">
+<p>CentOS Stream 8 and CentOS Stream 9 have orthogonal relationship with Red Hat Enterprise Linux and because of this fact, source-git repositories work differently for both <code>c8s</code> and <code>c9s</code>.</p>
+</div>
+<div class="paragraph">
+<p>With CentOS Stream 8 source-git, the sources are unpacked and downstream code changes are layered on top as additional commits. The repositories don&#8217;t contain upstream git history, instead we are unpacking an archive for the corresponding upstream release and this is the first commit. These are tracked as <code>c8s</code>, are updated continuously from <a href="https://git.centos.org/rpms">git.centos.org</a>. This means that merge requests cannot be merged here and contirubtions need to go through bugzilla and processed internally first.</p>
+</div>
+<div class="paragraph">
+<p>CentOS Stream 9 is in a completely different position: Red Hat that want to use a source-based workflow will be working here and MRs will be merged to the <code>c9s</code> branches and synchronized to dist-git.</p>
+</div>
+<div class="paragraph">
+<p>For more details on how to work in a source-git repository, please head on to <a href="https://packit.dev/docs/source-git/work-with-source-git/">packit&#8217;s documentation</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_submitting_a_change_in_a_source_git_repo"><a class="anchor" href="#_submitting_a_change_in_a_source_git_repo"></a>Submitting a change in a source-git repo</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you want to update packaging files (in SPECS directory), you can go ahead and change them - no special care is needed.</p>
+</div>
+<div class="sect2">
+<h3 id="_changing_source_code_by_defining_the_patch_in_a_spec_file"><a class="anchor" href="#_changing_source_code_by_defining_the_patch_in_a_spec_file"></a>Changing source code by defining the patch in a spec file</h3>
+<div class="paragraph">
+<p>Creating source code changes needs a bit more work. Packages are modified in CentOS Stream 8 traditional dist-git workflow by creating patch files and defining those patches in a spec file. The patches are then applied during a build process in a <code>%prep</code> section.</p>
+</div>
+<div class="paragraph">
+<p>If you are changing source code and you know that a patch in the spec is needed, add the patch to the spec file with a name of your choice:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>Patch123: my-special-change.patch</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now you need to annotate commit message with the respective change</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>We need this change in CentOS Stream
+
+patch_name: my-special-change.patch
+present_in_specfile: true
+
+Signed-off-by: Tomas Tomecek &lt;ttomecek@redhat.com&gt;
+---
+ src/code.c | 17 +++++++++--------
+ 1 file changed, 9 insertions(+), 8 deletions(-)</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The automation, packit, then reads the commit message, knows that the patch is already defined in the spec and creates a patch file with the name set in <code>patch_name</code> from the respective commit when creating a SRPM.</p>
+</div>
+<div class="paragraph">
+<p>This is the preferred way of changing source code since you are in full control of the process.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_changing_source_code_packit_takes_care_of_patches"><a class="anchor" href="#_changing_source_code_packit_takes_care_of_patches"></a>Changing source code: packit takes care of patches</h3>
+<div class="paragraph">
+<p>If packit does not find such metadata as defined above in a commit message:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>it adds a new patch entry in the spec file</p>
+</li>
+<li>
+<p>and generates a patch file from the respective commit</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>This is convenient but prone to errors. In case this method does not work, please set the metadata as described in the method above.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_after_a_merge_request_is_created"><a class="anchor" href="#_after_a_merge_request_is_created"></a>After a merge request is created</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When you submit a merge request for source-git, automation will pick up the change and build it - there will be RPMs with your change available so you can try them out or just make sure it builds fine.</p>
+</div>
+<div class="paragraph">
+<p>When you create a merge request, our automation will create a corresponding bugzilla with the patch attached. It’s up to the RHEL maintainer to pick up your contribution and assess it.If the change is accepted, the Red Hat maintainer has to commit and build the change internally so that it can land back into CentOS Stream 8 - this process can take some time, so please be patient.</p>
+</div>
+</div>
+</div>
+</article>
+</main>
+</div>
+<footer class="footer">
+  <p>All CentOS Documentation content available under <a href="http://creativecommons.org/licenses/by-sa/3.0/legalcode">CC-BY-SA 3.0.</a>
+  <p>This page was built using a modified version of the Antora default UI. The source code for this UI is licensed under the terms of the <a href="https://www.mozilla.org/en-US/MPL/2.0/">MPL-2.0</a> license.</p>
+</footer>
+<script src="../../../_/js/site.js"></script>
+<script async src="../../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
