@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Your Next Steps :: CentOS Docs Site</title>
     <link rel="canonical" href="https://docs.centos.org/centos/install-guide/nextsteps/">
-    <meta name="generator" content="Antora 2.0.0">
+    <meta name="generator" content="Antora 3.0.1">
     <link rel="stylesheet" href="../../../_/css/site.css">
   </head>
   <body class="article">
@@ -31,7 +31,7 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="../">Installation Guide</a></h3>
+    <h3 class="title"><a href="../../">Installation Guide</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
@@ -82,7 +82,7 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../Part_Install_x86/">Installing on x86_64 and ARM 64</a>
+    <a class="nav-link" href="#Part_Install_x86.adoc.adoc">Installing on x86_64 and ARM 64</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../Simple_Installation/">Quick Installation Guide</a>
@@ -343,7 +343,7 @@
     <li class="component">
       <span class="title">CentOS 8 Documentation</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../8-docs/">master</a>
         </li>
       </ul>
@@ -351,7 +351,7 @@
     <li class="component">
       <span class="title">CentOS Documentation</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../docs/">master</a>
         </li>
       </ul>
@@ -359,16 +359,16 @@
     <li class="component">
       <span class="title">Contributor's Guide</span>
       <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../stream-contrib/">master</a>
+        <li class="version">
+          <a href="../../../stream-contrib/">default</a>
         </li>
       </ul>
     </li>
     <li class="component is-current">
       <span class="title">Installation Guide</span>
       <ul class="versions">
-        <li class="version is-current is-latest">
-          <a href="../">master</a>
+        <li class="version is-current">
+          <a href="../../">master</a>
         </li>
       </ul>
     </li>
@@ -383,7 +383,7 @@
   <a href="../../../docs/" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="../">Installation Guide</a></li>
+    <li><a href="../../">Installation Guide</a></li>
     <li><a href="../Part_After_Install/">After Installation</a></li>
     <li><a href="./">Your Next Steps</a></li>
   </ul>
@@ -400,7 +400,7 @@
 <dt class="hdlist1">Recover a lost root password</dt>
 <dd>
 <div class="paragraph">
-<p>The root password, which is configured during the installation, is required for accessing the system as the root user. Without the root password you will not be able to configure your system or install additional software. If you lost or forgot your root password, you can reset it by following the steps described in <a href="../Rescue_Mode/#sect-rescue-mode-reset-root-password" class="page">Resetting the Root Password</a>.</p>
+<p>The root password, which is configured during the installation, is required for accessing the system as the root user. Without the root password you will not be able to configure your system or install additional software. If you lost or forgot your root password, you can reset it by following the steps described in <a href="../Rescue_Mode/#sect-rescue-mode-reset-root-password" class="xref page">Resetting the Root Password</a>.</p>
 </div>
 </dd>
 <dt class="hdlist1">Install driver updates</dt>
@@ -425,7 +425,7 @@ Red&#160;Hat Enterprise&#160;Linux&#160;7 Networking Guide</a>.</p>
 <p><strong class="application">Kdump</strong> is a kernel crash dumping mechanism. If your system encounters a significant error, <strong class="application">Kdump</strong> can save the contents of the system&#8217;s memory into a <em>kernel crash dump</em>, which can then be analyzed to find the cause of the error.</p>
 </div>
 <div class="paragraph">
-<p><strong class="application">Kdump</strong> can be enabled during the installation process (see <a href="../KdumpSpoke-x86/#sect-kdump-x86" class="page">Kdump (x86)</a>). It can also be configured at any time afterwards. <a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Kernel_Crash_Dump_Guide/index.html">
+<p><strong class="application">Kdump</strong> can be enabled during the installation process (see <a href="../KdumpSpoke-x86/#sect-kdump-x86" class="xref page">Kdump (x86)</a>). It can also be configured at any time afterwards. <a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Kernel_Crash_Dump_Guide/index.html">
 Red&#160;Hat Enterprise&#160;Linux&#160;7 Kernel Crash Dump Guide</a> provides all information necessary to understand how <strong class="application">Kdump</strong> works and how to configure it on your system.</p>
 </div>
 </dd>
@@ -505,7 +505,7 @@ Red&#160;Hat Enterprise&#160;Linux&#160;7 Kernel Crash Dump Guide</a> provides a
 <p>Depending on the options you chose during the installation process, it is possible that your system does not have a graphical interface, instead offering only a text-based prompt. If this is the case and you want to enable a graphical desktop after the installation, you must install the <strong class="application">X Window System</strong> and your preferred desktop environment (either <strong class="application">GNOME</strong> or <strong class="application">KDE</strong>).</p>
 </div>
 <div class="paragraph">
-<p>As with all other software, these packages can be installed using the <strong class="application">Yum</strong> package manager. For information about using <strong class="application">Yum</strong> to install new packages, see the <a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/System_Administrators_Guide/index.html">Red&#160;Hat Enterprise&#160;Linux&#160;7 System Administrator&#8217;s Guide</a>. For information on how to enable graphical login by default, see <a href="../Trouble-x86/#sect-trouble-after-graphical-login-x86" class="page">Booting into a Graphical Environment</a>.</p>
+<p>As with all other software, these packages can be installed using the <strong class="application">Yum</strong> package manager. For information about using <strong class="application">Yum</strong> to install new packages, see the <a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/System_Administrators_Guide/index.html">Red&#160;Hat Enterprise&#160;Linux&#160;7 System Administrator&#8217;s Guide</a>. For information on how to enable graphical login by default, see <a href="../Trouble-x86/#sect-trouble-after-graphical-login-x86" class="xref page">Booting into a Graphical Environment</a>.</p>
 </div>
 </dd>
 <dt class="hdlist1">Enable or disable <strong class="application">GNOME</strong> 3 extensions</dt>

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Updating Drivers During Installation on IBM Power&#160;Systems :: CentOS Docs Site</title>
     <link rel="canonical" href="https://docs.centos.org/centos/install-guide/DU-Updating_drivers_during_installation_ppc/">
-    <meta name="generator" content="Antora 2.0.0">
+    <meta name="generator" content="Antora 3.0.1">
     <link rel="stylesheet" href="../../../_/css/site.css">
   </head>
   <body class="article">
@@ -31,7 +31,7 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="../">Installation Guide</a></h3>
+    <h3 class="title"><a href="../../">Installation Guide</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
@@ -82,7 +82,7 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../Part_Install_x86/">Installing on x86_64 and ARM 64</a>
+    <a class="nav-link" href="#Part_Install_x86.adoc.adoc">Installing on x86_64 and ARM 64</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../Simple_Installation/">Quick Installation Guide</a>
@@ -343,7 +343,7 @@
     <li class="component">
       <span class="title">CentOS 8 Documentation</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../8-docs/">master</a>
         </li>
       </ul>
@@ -351,7 +351,7 @@
     <li class="component">
       <span class="title">CentOS Documentation</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../docs/">master</a>
         </li>
       </ul>
@@ -359,16 +359,16 @@
     <li class="component">
       <span class="title">Contributor's Guide</span>
       <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../stream-contrib/">master</a>
+        <li class="version">
+          <a href="../../../stream-contrib/">default</a>
         </li>
       </ul>
     </li>
     <li class="component is-current">
       <span class="title">Installation Guide</span>
       <ul class="versions">
-        <li class="version is-current is-latest">
-          <a href="../">master</a>
+        <li class="version is-current">
+          <a href="../../">master</a>
         </li>
       </ul>
     </li>
@@ -383,7 +383,7 @@
   <a href="../../../docs/" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="../">Installation Guide</a></li>
+    <li><a href="../../">Installation Guide</a></li>
     <li><a href="../Part_Install_ppc/">Installing on IBM Power Systems</a></li>
     <li><a href="./">Updating Drivers During Installation</a></li>
   </ul>
@@ -442,7 +442,7 @@
 <p>place the ISO image file of the driver disc in a location accessible to the installation program, on a local hard drive, on a USB flash drive, or on a CD or DVD.</p>
 </li>
 <li>
-<p>create a driver disc by extracting the image file onto a CD or a DVD, or a USB flash drive. See the instructions for making installation discs in <a href="../Making_Media_Optical/#sect-making-cd-dvd-media" class="page">Making an Installation CD or DVD</a> for more information on burning ISO image files to a CD or DVD, and <a href="../Making_Media_USB/#sect-making-usb-media" class="page">Making Installation USB Media</a> for instructions on writing ISO images to USB drives.</p>
+<p>create a driver disc by extracting the image file onto a CD or a DVD, or a USB flash drive. See the instructions for making installation discs in <a href="../Making_Media_Optical/#sect-making-cd-dvd-media" class="xref page">Making an Installation CD or DVD</a> for more information on burning ISO image files to a CD or DVD, and <a href="../Making_Media_USB/#sect-making-usb-media" class="xref page">Making Installation USB Media</a> for instructions on writing ISO images to USB drives.</p>
 </li>
 </ol>
 </div>
@@ -521,7 +521,7 @@
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Make sure to initialize the network using the <code class="option">ip=</code> option when loading a driver update from a network location. See <a href="../adminoptions/#sect-boot-options-installer" class="page">Configuring the Installation System at the Boot Menu</a> for details.</p>
+<p>Make sure to initialize the network using the <code class="option">ip=</code> option when loading a driver update from a network location. See <a href="../adminoptions/#sect-boot-options-installer" class="xref page">Configuring the Installation System at the Boot Menu</a> for details.</p>
 </div>
 </td>
 </tr>
@@ -546,7 +546,7 @@
 <div class="sect2">
 <h3 id="sect-driver-updates-preparing-ppc"><a class="anchor" href="#sect-driver-updates-preparing-ppc"></a>Preparing a Driver Disc</h3>
 <div class="paragraph">
-<p>You can create a driver update disc on a CD or DVD. See <a href="../Making_Media_Optical/#sect-making-cd-dvd-media" class="page">Making an Installation CD or DVD</a> to learn more about burning discs from image files.</p>
+<p>You can create a driver update disc on a CD or DVD. See <a href="../Making_Media_Optical/#sect-making-cd-dvd-media" class="xref page">Making an Installation CD or DVD</a> to learn more about burning discs from image files.</p>
 </div>
 <div class="paragraph">
 <p>After you burn a driver update disc CD or DVD, verify that the disc was created successfully by inserting it into your system and browsing to it using the file manager. You should see a single file named <code>rhdd3</code>, which is a signature file that contains the driver disc&#8217;s description, and a directory named <code>rpms</code>, which contains the RPM packages with the actual drivers for various architectures.</p>
@@ -603,7 +603,7 @@
 </td>
 <td class="content">
 <div class="paragraph">
-<p>You can also use the <code>OEMDRV</code> block device to automatically load a Kickstart file. This file must be named <code>ks.cfg</code> and placed in the root of the device to be loaded. See <a href="../Kickstart2/#chap-kickstart-installations" class="page">Kickstart Installations</a> for more information about Kickstart installations.</p>
+<p>You can also use the <code>OEMDRV</code> block device to automatically load a Kickstart file. This file must be named <code>ks.cfg</code> and placed in the root of the device to be loaded. See <a href="../Kickstart2/#chap-kickstart-installations" class="xref page">Kickstart Installations</a> for more information about Kickstart installations.</p>
 </div>
 </td>
 </tr>
@@ -612,7 +612,7 @@
 <div class="paragraph">
 <p>When the installation begins, the installation program detects all available storage connected to the system. If it finds a storage device labeled <code>OEMDRV</code>, it will treat it as a driver update disc and attempt to load driver updates from this device. You will be prompted to select which drivers to load:</p>
 </div>
-<div class="imageblock">
+<div class="imageblock unresolved">
 <div class="content">
 <img src="../_images/driverupdates/selecting_drivers.png" alt="Selecting a Driver">
 </div>
@@ -627,7 +627,7 @@
 <div class="paragraph">
 <p>It is always recommended to have a block device with the <code>OEMDRV</code> volume label available to install a driver during installation. However, if no such device is detected and the <code class="option">inst.dd</code> option was specified at the boot command line, the installation program lets you find the driver disk in interactive mode. In the first step, select a local disk partition from the list for <strong class="application">Anaconda</strong> to scan for ISO files. Then, select one of the detected ISO files. Finally, select one or more available drivers. The image below demonstrates the process in the text user interface with individual steps highlighted.</p>
 </div>
-<div class="imageblock">
+<div class="imageblock unresolved">
 <div class="content">
 <img src="../_images/driverupdates/selecting_drivers_interactive.png" alt="Selecting a Driver Interactively">
 </div>
@@ -661,7 +661,7 @@
 <div class="paragraph">
 <p>For manual driver installation, prepare an ISO image file containing your drivers to an accessible location, such a USB flash drive or a web server, and connect it to your computer. At the welcome screen, hit <kbd>Tab</kbd> to display the boot command line and append the <code class="option">inst.dd=<em>location</em></code> to it, where <em>location</em> is a path to the driver update disc:</p>
 </div>
-<div class="imageblock">
+<div class="imageblock unresolved">
 <div class="content">
 <img src="../_images/driverupdates/exampleurl.png" alt="Specifying a Path to a Driver Update">
 </div>
@@ -685,7 +685,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p>Note that the drivers blacklisted during installation using the <code class="option">modprobe.blacklist=</code> boot option will remain disabled on the installed system and appear in the <code>/etc/modprobe.d/anaconda-blacklist.conf</code> file. See <a href="../adminoptions/#chap-anaconda-boot-options" class="page">Boot Options</a> for more information about blacklisting drivers and other boot options.</p>
+<p>Note that the drivers blacklisted during installation using the <code class="option">modprobe.blacklist=</code> boot option will remain disabled on the installed system and appear in the <code>/etc/modprobe.d/anaconda-blacklist.conf</code> file. See <a href="../adminoptions/#chap-anaconda-boot-options" class="xref page">Boot Options</a> for more information about blacklisting drivers and other boot options.</p>
 </div>
 </div>
 </div>

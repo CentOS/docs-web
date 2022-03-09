@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Basic System Recovery :: CentOS Docs Site</title>
     <link rel="canonical" href="https://docs.centos.org/centos/install-guide/Rescue_Mode/">
-    <meta name="generator" content="Antora 2.0.0">
+    <meta name="generator" content="Antora 3.0.1">
     <link rel="stylesheet" href="../../../_/css/site.css">
   </head>
   <body class="article">
@@ -31,7 +31,7 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="../">Installation Guide</a></h3>
+    <h3 class="title"><a href="../../">Installation Guide</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
@@ -82,7 +82,7 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../Part_Install_x86/">Installing on x86_64 and ARM 64</a>
+    <a class="nav-link" href="#Part_Install_x86.adoc.adoc">Installing on x86_64 and ARM 64</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../Simple_Installation/">Quick Installation Guide</a>
@@ -343,7 +343,7 @@
     <li class="component">
       <span class="title">CentOS 8 Documentation</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../8-docs/">master</a>
         </li>
       </ul>
@@ -351,7 +351,7 @@
     <li class="component">
       <span class="title">CentOS Documentation</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../docs/">master</a>
         </li>
       </ul>
@@ -359,16 +359,16 @@
     <li class="component">
       <span class="title">Contributor's Guide</span>
       <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../stream-contrib/">master</a>
+        <li class="version">
+          <a href="../../../stream-contrib/">default</a>
         </li>
       </ul>
     </li>
     <li class="component is-current">
       <span class="title">Installation Guide</span>
       <ul class="versions">
-        <li class="version is-current is-latest">
-          <a href="../">master</a>
+        <li class="version is-current">
+          <a href="../../">master</a>
         </li>
       </ul>
     </li>
@@ -383,7 +383,7 @@
   <a href="../../../docs/" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="../">Installation Guide</a></li>
+    <li><a href="../../">Installation Guide</a></li>
     <li><a href="../Part_After_Install/">After Installation</a></li>
     <li><a href="./">Basic System Recovery</a></li>
   </ul>
@@ -488,10 +488,10 @@
 <div class="ulist">
 <ul>
 <li>
-<p><a href="../Boot_x86/#chap-booting-installer-x86" class="page">Booting the Installation on 64-bit AMD, Intel, and ARM systems</a> for 64-bit AMD, Intel, and ARM systems</p>
+<p><a href="../Boot_x86/#chap-booting-installer-x86" class="xref page">Booting the Installation on 64-bit AMD, Intel, and ARM systems</a> for 64-bit AMD, Intel, and ARM systems</p>
 </li>
 <li>
-<p><a href="../Boot_ppc/#chap-booting-installer-ppc" class="page">Booting the Installation on IBM Power&#160;Systems</a> for IBM Power&#160;Systems servers</p>
+<p><a href="../Boot_ppc/#chap-booting-installer-ppc" class="xref page">Booting the Installation on IBM Power&#160;Systems</a> for IBM Power&#160;Systems servers</p>
 </li>
 </ul>
 </div>
@@ -529,7 +529,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p>For more information on using a driver disc at boot time, see <a href="../DU-Updating_drivers_during_installation_x86/#sect-driver-updates-manual-x86" class="page">Manual Driver Update (x86)</a> for AMD64 and Intel&#160;64 systems or <a href="../DU-Updating_drivers_during_installation_ppc/#sect-driver-updates-manual-ppc" class="page">Manual Driver Update (ppc)</a> for IBM Power&#160;Systems servers.</p>
+<p>For more information on using a driver disc at boot time, see <a href="../DU-Updating_drivers_during_installation_x86/#sect-driver-updates-manual-x86" class="xref page">Manual Driver Update (x86)</a> for AMD64 and Intel&#160;64 systems or <a href="../DU-Updating_drivers_during_installation_ppc/#sect-driver-updates-manual-ppc" class="xref page">Manual Driver Update (ppc)</a> for IBM Power&#160;Systems servers.</p>
 </div>
 </li>
 <li>
@@ -540,7 +540,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p>For more information about blacklisting drivers, see <a href="../DU-Updating_drivers_during_installation_x86/#sect-blacklisting-a-driver-x86" class="page">Blacklisting a Driver (x86)</a>.</p>
+<p>For more information about blacklisting drivers, see <a href="../DU-Updating_drivers_during_installation_x86/#sect-blacklisting-a-driver-x86" class="xref page">Blacklisting a Driver (x86)</a>.</p>
 </div>
 </li>
 <li>
@@ -710,7 +710,7 @@
 </ol>
 </div>
 <div class="paragraph">
-<p>If you cannot remove a malfunctioning driver for some reason, you can instead <em>blacklist</em> the driver so that it does not load at boot time. See <a href="../DU-Updating_drivers_during_installation_x86/#sect-blacklisting-a-driver-x86" class="page">Blacklisting a Driver (x86)</a> and <a href="../adminoptions/#chap-anaconda-boot-options" class="page">Boot Options</a> for more information about blacklisting drivers.</p>
+<p>If you cannot remove a malfunctioning driver for some reason, you can instead <em>blacklist</em> the driver so that it does not load at boot time. See <a href="../DU-Updating_drivers_during_installation_x86/#sect-blacklisting-a-driver-x86" class="xref page">Blacklisting a Driver (x86)</a> and <a href="../adminoptions/#chap-anaconda-boot-options" class="xref page">Boot Options</a> for more information about blacklisting drivers.</p>
 </div>
 <div class="paragraph">
 <p>Installing a driver is a similar process but the RPM package must be available on the system:</p>

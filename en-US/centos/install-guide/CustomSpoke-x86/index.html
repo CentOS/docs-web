@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Manual Partitioning :: CentOS Docs Site</title>
     <link rel="canonical" href="https://docs.centos.org/centos/install-guide/CustomSpoke-x86/">
-    <meta name="generator" content="Antora 2.0.0">
+    <meta name="generator" content="Antora 3.0.1">
     <link rel="stylesheet" href="../../../_/css/site.css">
   </head>
   <body class="article">
@@ -31,7 +31,7 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="../">Installation Guide</a></h3>
+    <h3 class="title"><a href="../../">Installation Guide</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
@@ -82,7 +82,7 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../Part_Install_x86/">Installing on x86_64 and ARM 64</a>
+    <a class="nav-link" href="#Part_Install_x86.adoc.adoc">Installing on x86_64 and ARM 64</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../Simple_Installation/">Quick Installation Guide</a>
@@ -343,7 +343,7 @@
     <li class="component">
       <span class="title">CentOS 8 Documentation</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../8-docs/">master</a>
         </li>
       </ul>
@@ -351,7 +351,7 @@
     <li class="component">
       <span class="title">CentOS Documentation</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../docs/">master</a>
         </li>
       </ul>
@@ -359,16 +359,16 @@
     <li class="component">
       <span class="title">Contributor's Guide</span>
       <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../stream-contrib/">master</a>
+        <li class="version">
+          <a href="../../../stream-contrib/">default</a>
         </li>
       </ul>
     </li>
     <li class="component is-current">
       <span class="title">Installation Guide</span>
       <ul class="versions">
-        <li class="version is-current is-latest">
-          <a href="../">master</a>
+        <li class="version is-current">
+          <a href="../../">master</a>
         </li>
       </ul>
     </li>
@@ -383,8 +383,8 @@
   <a href="../../../docs/" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="../">Installation Guide</a></li>
-    <li><a href="../Part_Install_x86/">Installing on x86_64 and ARM 64</a></li>
+    <li><a href="../../">Installation Guide</a></li>
+    <li><a href="#Part_Install_x86.adoc.adoc">Installing on x86_64 and ARM 64</a></li>
     <li><a href="../Graphical_Installation-x86/">Installing Using Anaconda</a></li>
     <li><a href="./">Manual Partitioning</a></li>
   </ul>
@@ -428,7 +428,7 @@
 </tr>
 </table>
 </div>
-<div class="imageblock">
+<div class="imageblock unresolved">
 <div class="content">
 <img src="../_images/diskpartitioning/ddmain.png" alt="The Manual Partitioning Screen">
 </div>
@@ -448,7 +448,7 @@
 </td>
 <td class="content">
 <div class="paragraph">
-<p>For recommendations and additional information about disk partitions, see <a href="../Partitions-x86/#appe-disk-partitions-overview" class="page">An Introduction to Disk Partitions</a> and <a href="#sect-recommended-partitioning-scheme-x86">Recommended Partitioning Scheme (x86)</a>. At a bare minimum, you need an appropriately sized root partition, and usually a swap partition appropriate to the amount of RAM you have on your system.</p>
+<p>For recommendations and additional information about disk partitions, see <a href="../Partitions-x86/#appe-disk-partitions-overview" class="xref page">An Introduction to Disk Partitions</a> and <a href="#sect-recommended-partitioning-scheme-x86">Recommended Partitioning Scheme (x86)</a>. At a bare minimum, you need an appropriately sized root partition, and usually a swap partition appropriate to the amount of RAM you have on your system.</p>
 </div>
 </td>
 </tr>
@@ -508,7 +508,7 @@
 <div class="paragraph">
 <p>To change on which devices a single non-LVM mount point should be located, select the mount point and click the <code>Modify&#8230;&#8203;</code> button in the right pane to open the <code>Configure Mount Point</code> dialog. Select one or more devices and click <b class="button">Select</b>. After the dialog closes, note that you also need to confirm this setting by clicking the <b class="button">Update Settings</b> button on the right side of the <code>Manual Partitioning</code> screen.</p>
 </div>
-<div id="figu-disk-partitioning-mount-points-x86" class="imageblock">
+<div id="figu-disk-partitioning-mount-points-x86" class="imageblock unresolved">
 <div class="content">
 <img src="../_images/diskpartitioning/ddmain-mount-points-x86.png" alt="Configuring mount points.">
 </div>
@@ -517,19 +517,19 @@
 <div class="paragraph">
 <p>To refresh information about all local disks and partitions on them, click the <b class="button">Rescan</b> button (with the circular arrow icon on it) in the toolbar. You only need to do this action after performing advanced partition configuration outside the installation program. Note that if you click the <b class="button">Rescan Disks</b> button, all configuration changes you previously made in the installation program will be lost.</p>
 </div>
-<div id="figu-disk-partitioning-rescan-x86" class="imageblock">
+<div id="figu-disk-partitioning-rescan-x86" class="imageblock unresolved">
 <div class="content">
 <img src="../_images/diskpartitioning/ddmain-rescan.png" alt="Rescan disks dialog.">
 </div>
 <div class="title">Figure 3. Rescanning Disks</div>
 </div>
 <div class="paragraph">
-<p>At the bottom of the screen, a link states how many storage devices have been selected in <code>Installation Destination</code> (see <a href="../StorageSpoke-x86/#sect-disk-partitioning-setup-x86" class="page">Installation Destination (x86)</a>). Clicking on this link opens the <code>Selected Disks</code> dialog, where you review the information about the disks. See <a href="../StorageSpoke-x86/#sect-bootloader-x86" class="page">Boot Loader Installation (x86)</a> for more information.</p>
+<p>At the bottom of the screen, a link states how many storage devices have been selected in <code>Installation Destination</code> (see <a href="../StorageSpoke-x86/#sect-disk-partitioning-setup-x86" class="xref page">Installation Destination (x86)</a>). Clicking on this link opens the <code>Selected Disks</code> dialog, where you review the information about the disks. See <a href="../StorageSpoke-x86/#sect-bootloader-x86" class="xref page">Boot Loader Installation (x86)</a> for more information.</p>
 </div>
 <div class="paragraph">
 <p>To customize a partition or a volume, select its mount point in the left pane and the following customizable features then appear to the right:</p>
 </div>
-<div id="figu-disk-partitioning-customizing-x86" class="imageblock">
+<div id="figu-disk-partitioning-customizing-x86" class="imageblock unresolved">
 <div class="content">
 <img src="../_images/diskpartitioning/ddmain-custom.png" alt="Customizing partitions.">
 </div>
@@ -634,7 +634,7 @@
 <div class="title">File Systems</div>
 <ul>
 <li>
-<p><code>xfs</code> - XFS is a highly scalable, high-performance file system that supports file systems up to 16 EiB (approximately 16 billion GiB), files up to 8 EiB (approximately 8 billion GiB), and directory structures containing tens of millions of entries. XFS supports metadata journaling, which facilitates quicker crash recovery. The XFS file system can also be defragmented and resized while mounted and active. This file system is selected by default and is highly recommended. For information on how to translate common commands from previously used ext4 file system to XFS, see <a href="../ext4_to_xfs_command_reference_table/#appe-ext4-to-xfs-command-reference" class="page">Reference Table for ext4 and XFS Commands</a>.</p>
+<p><code>xfs</code> - XFS is a highly scalable, high-performance file system that supports file systems up to 16 EiB (approximately 16 billion GiB), files up to 8 EiB (approximately 8 billion GiB), and directory structures containing tens of millions of entries. XFS supports metadata journaling, which facilitates quicker crash recovery. The XFS file system can also be defragmented and resized while mounted and active. This file system is selected by default and is highly recommended. For information on how to translate common commands from previously used ext4 file system to XFS, see <a href="../ext4_to_xfs_command_reference_table/#appe-ext4-to-xfs-command-reference" class="xref page">Reference Table for ext4 and XFS Commands</a>.</p>
 <div class="paragraph">
 <p>The maximum supported size of an XFS file system in CentOS is currently <em>500 TiB</em>.</p>
 </div>
@@ -658,10 +658,10 @@
 <p><code>swap</code> - Swap partitions are used to support virtual memory. In other words, data is written to a swap partition when there is not enough RAM to store the data your system is processing.</p>
 </li>
 <li>
-<p><code>BIOS Boot</code> - A very small partition required for booting a device with a GUID partition table (GPT) on a BIOS system. See <a href="../StorageSpoke-x86/#sect-bootloader-x86" class="page">Boot Loader Installation (x86)</a> for details.</p>
+<p><code>BIOS Boot</code> - A very small partition required for booting a device with a GUID partition table (GPT) on a BIOS system. See <a href="../StorageSpoke-x86/#sect-bootloader-x86" class="xref page">Boot Loader Installation (x86)</a> for details.</p>
 </li>
 <li>
-<p><code>EFI System Partition</code> - A small partition required for booting a device with a GUID partition table (GPT) on a UEFI system. See <a href="../StorageSpoke-x86/#sect-bootloader-x86" class="page">Boot Loader Installation (x86)</a> for details.</p>
+<p><code>EFI System Partition</code> - A small partition required for booting a device with a GUID partition table (GPT) on a UEFI system. See <a href="../StorageSpoke-x86/#sect-bootloader-x86" class="xref page">Boot Loader Installation (x86)</a> for details.</p>
 </li>
 </ul>
 </div>
@@ -678,7 +678,7 @@
 <p><em>Logical Volume Management</em> (LVM) presents a simple logical view of underlying physical storage space, such as hard drives or LUNs. Partitions on physical storage are represented as <em>physical volumes</em> that can be grouped together into <em>volume groups</em>. Each volume group can be divided into multiple <em>logical volumes</em>, each of which is analogous to a standard disk partition. Therefore, LVM logical volumes function as partitions that can span multiple physical disks.</p>
 </div>
 <div class="paragraph">
-<p>To learn more about LVM, see <a href="../Understanding_LVM/#appe-lvm-overview" class="page">Understanding LVM</a> or read the <a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Logical_Volume_Manager_Administration/index.html">Red&#160;Hat Enterprise&#160;Linux&#160;7 Logical Volume Manager Administration</a> guide. Note that LVM configuration is only available in the graphical installation program.</p>
+<p>To learn more about LVM, see <a href="../Understanding_LVM/#appe-lvm-overview" class="xref page">Understanding LVM</a> or read the <a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Logical_Volume_Manager_Administration/index.html">Red&#160;Hat Enterprise&#160;Linux&#160;7 Logical Volume Manager Administration</a> guide. Note that LVM configuration is only available in the graphical installation program.</p>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -694,7 +694,7 @@
 </tr>
 </table>
 </div>
-<div class="imageblock">
+<div class="imageblock unresolved">
 <div class="content">
 <img src="../_images/diskpartitioning/lvm-pv.png" alt="Configuring a Logical Volume.">
 </div>
@@ -727,7 +727,7 @@
 </tr>
 </table>
 </div>
-<div class="imageblock">
+<div class="imageblock unresolved">
 <div class="content">
 <img src="../_images/diskpartitioning/lvm-volume-x86.png" alt="Customizing an LVM Volume Group.">
 </div>
@@ -929,7 +929,7 @@
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Only assign storage capacity to those partitions you require immediately. You can allocate free space at any time, to meet needs as they occur. To learn about a more flexible method for storage management, see <a href="../Understanding_LVM/#appe-lvm-overview" class="page">Understanding LVM</a>.</p>
+<p>Only assign storage capacity to those partitions you require immediately. You can allocate free space at any time, to meet needs as they occur. To learn about a more flexible method for storage management, see <a href="../Understanding_LVM/#appe-lvm-overview" class="xref page">Understanding LVM</a>.</p>
 </div>
 </td>
 </tr>
@@ -1006,7 +1006,7 @@
 <p>If you separate subdirectories into partitions, you can retain content in those subdirectories if you decide to install a new version of CentOS over your current system. For instance, if you intend to run a <strong class="application">MySQL</strong> database in <code>/var/lib/mysql/</code>, make a separate partition for that directory in case you need to reinstall later.</p>
 </li>
 <li>
-<p>On a BIOS system with its boot loader using GPT (GUID partition table), you need to create the <code>biosboot</code> partition of 1&#160;MiB in size. See <a href="../StorageSpoke-x86/#sect-bootloader-x86" class="page">Boot Loader Installation (x86)</a> for more details.</p>
+<p>On a BIOS system with its boot loader using GPT (GUID partition table), you need to create the <code>biosboot</code> partition of 1&#160;MiB in size. See <a href="../StorageSpoke-x86/#sect-bootloader-x86" class="xref page">Boot Loader Installation (x86)</a> for more details.</p>
 </li>
 <li>
 <p>UEFI systems need to contain a small partition with a mount point of <code>/boot/efi/</code> containing an EFI System Partition file system. Its recommended size is 200&#160;MiB, which is also the default value for automatic partitioning.</p>

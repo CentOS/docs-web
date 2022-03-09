@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Making Media :: CentOS Docs Site</title>
     <link rel="canonical" href="https://docs.centos.org/centos/install-guide/Making_Media/">
-    <meta name="generator" content="Antora 2.0.0">
+    <meta name="generator" content="Antora 3.0.1">
     <link rel="stylesheet" href="../../../_/css/site.css">
   </head>
   <body class="article">
@@ -31,7 +31,7 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="../">Installation Guide</a></h3>
+    <h3 class="title"><a href="../../">Installation Guide</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
@@ -82,7 +82,7 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../Part_Install_x86/">Installing on x86_64 and ARM 64</a>
+    <a class="nav-link" href="#Part_Install_x86.adoc.adoc">Installing on x86_64 and ARM 64</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../Simple_Installation/">Quick Installation Guide</a>
@@ -343,7 +343,7 @@
     <li class="component">
       <span class="title">CentOS 8 Documentation</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../8-docs/">master</a>
         </li>
       </ul>
@@ -351,7 +351,7 @@
     <li class="component">
       <span class="title">CentOS Documentation</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../docs/">master</a>
         </li>
       </ul>
@@ -359,16 +359,16 @@
     <li class="component">
       <span class="title">Contributor's Guide</span>
       <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../stream-contrib/">master</a>
+        <li class="version">
+          <a href="../../../stream-contrib/">default</a>
         </li>
       </ul>
     </li>
     <li class="component is-current">
       <span class="title">Installation Guide</span>
       <ul class="versions">
-        <li class="version is-current is-latest">
-          <a href="../">master</a>
+        <li class="version is-current">
+          <a href="../../">master</a>
         </li>
       </ul>
     </li>
@@ -383,7 +383,7 @@
   <a href="../../../docs/" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="../">Installation Guide</a></li>
+    <li><a href="../../">Installation Guide</a></li>
     <li><a href="./">Preparing Installation Media</a></li>
   </ul>
 </nav>
@@ -392,7 +392,7 @@
 <article class="doc">
 <h1 class="page">Making Media</h1>
 <div class="paragraph">
-<p>This chapter describes how to use ISO image files obtained by following the steps in <a href="../downloading/#chap-download" class="page">Downloading CentOS</a> to create bootable physical media, such as a DVD or a USB flash drive. You can then use these media to boot the installation program and start the installation. These steps only apply if you plan to install CentOS on a 64-bit AMD, Intel, or ARM system, or an IBM Power&#160;Systems server using physical boot media. For instructions on how to set up a <em>Preboot Execution Environment</em> (PXE) server to perform a PXE-based installation over a network, see <a href="../pxe-server/#chap-installation-server-setup" class="page">Preparing for a Network Installation</a>.</p>
+<p>This chapter describes how to use ISO image files obtained by following the steps in <a href="../downloading/#chap-download" class="xref page">Downloading CentOS</a> to create bootable physical media, such as a DVD or a USB flash drive. You can then use these media to boot the installation program and start the installation. These steps only apply if you plan to install CentOS on a 64-bit AMD, Intel, or ARM system, or an IBM Power&#160;Systems server using physical boot media. For instructions on how to set up a <em>Preboot Execution Environment</em> (PXE) server to perform a PXE-based installation over a network, see <a href="../pxe-server/#chap-installation-server-setup" class="xref page">Preparing for a Network Installation</a>.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -402,7 +402,7 @@
 </td>
 <td class="content">
 <div class="paragraph">
-<p>By default, the <code class="option">inst.stage2=</code> boot option is used on the installation media and set to a specific label (for example, <code class="option">inst.stage2=hd:LABEL=CentOS\x20Server.x86_64</code>). If you modify the default label of the file system containing the runtime image, or if using a customized procedure to boot the installation system, you must ensure this option is set to the correct value. See <a href="../adminoptions/#list-boot-options-sources" class="page">Specifying the Installation Source</a> for details.</p>
+<p>By default, the <code class="option">inst.stage2=</code> boot option is used on the installation media and set to a specific label (for example, <code class="option">inst.stage2=hd:LABEL=CentOS\x20Server.x86_64</code>). If you modify the default label of the file system containing the runtime image, or if using a customized procedure to boot the installation system, you must ensure this option is set to the correct value. See <a href="../adminoptions/#list-boot-options-sources" class="xref page">Specifying the Installation Source</a> for details.</p>
 </div>
 </td>
 </tr>

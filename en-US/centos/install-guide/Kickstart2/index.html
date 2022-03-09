@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Kickstart Installations :: CentOS Docs Site</title>
     <link rel="canonical" href="https://docs.centos.org/centos/install-guide/Kickstart2/">
-    <meta name="generator" content="Antora 2.0.0">
+    <meta name="generator" content="Antora 3.0.1">
     <link rel="stylesheet" href="../../../_/css/site.css">
   </head>
   <body class="article">
@@ -31,7 +31,7 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="../">Installation Guide</a></h3>
+    <h3 class="title"><a href="../../">Installation Guide</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
@@ -82,7 +82,7 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../Part_Install_x86/">Installing on x86_64 and ARM 64</a>
+    <a class="nav-link" href="#Part_Install_x86.adoc.adoc">Installing on x86_64 and ARM 64</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../Simple_Installation/">Quick Installation Guide</a>
@@ -343,7 +343,7 @@
     <li class="component">
       <span class="title">CentOS 8 Documentation</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../8-docs/">master</a>
         </li>
       </ul>
@@ -351,7 +351,7 @@
     <li class="component">
       <span class="title">CentOS Documentation</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../docs/">master</a>
         </li>
       </ul>
@@ -359,16 +359,16 @@
     <li class="component">
       <span class="title">Contributor's Guide</span>
       <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../stream-contrib/">master</a>
+        <li class="version">
+          <a href="../../../stream-contrib/">default</a>
         </li>
       </ul>
     </li>
     <li class="component is-current">
       <span class="title">Installation Guide</span>
       <ul class="versions">
-        <li class="version is-current is-latest">
-          <a href="../">master</a>
+        <li class="version is-current">
+          <a href="../../">master</a>
         </li>
       </ul>
     </li>
@@ -383,7 +383,7 @@
   <a href="../../../docs/" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="../">Installation Guide</a></li>
+    <li><a href="../../">Installation Guide</a></li>
     <li><a href="../Part_Install_Advanced/">Advanced Installation Options</a></li>
     <li><a href="./">Kickstart Installations</a></li>
   </ul>
@@ -633,7 +633,7 @@
 <p>Normally, a Kickstart file is copied to removable media or a hard drive, or made available on the network. Placing the file in a network location complements the usual approach to Kickstart installations, which is also network-based: the system is booted using a PXE server, the Kickstart file is downloaded from a network share, and software packages specified in the file are downloaded from remote repositories.</p>
 </div>
 <div class="paragraph">
-<p>Making the Kickstart file available and reachable from the installation system is exactly the same as making the installation source available, only with the Kickstart file instead of the installation ISO image or tree. For full procedures, see <a href="../Preparing_Install_Sources/#sect-making-media-additional-sources" class="page">Preparing Installation Sources</a>.</p>
+<p>Making the Kickstart file available and reachable from the installation system is exactly the same as making the installation source available, only with the Kickstart file instead of the installation ISO image or tree. For full procedures, see <a href="../Preparing_Install_Sources/#sect-making-media-additional-sources" class="xref page">Preparing Installation Sources</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -642,13 +642,13 @@
 <p>The Kickstart installation must access an installation source in order to install the packages needed by your system. The source can be either the full CentOS installation DVD ISO image, or an <em>installation tree</em>. An installation tree is a copy of the binary CentOS DVD with the same directory structure.</p>
 </div>
 <div class="paragraph">
-<p>If you are performing a DVD-based installation, insert the CentOS installation DVD into the computer before starting the Kickstart installation. See <a href="../Install_Source_DVD/#sect-making-media-sources-dvd" class="page">Installation Source on a DVD</a> for information about using a CentOS DVD as the installation source.</p>
+<p>If you are performing a DVD-based installation, insert the CentOS installation DVD into the computer before starting the Kickstart installation. See <a href="../Install_Source_DVD/#sect-making-media-sources-dvd" class="xref page">Installation Source on a DVD</a> for information about using a CentOS DVD as the installation source.</p>
 </div>
 <div class="paragraph">
-<p>If you are performing a hard drive installation (using either a hard drive or an USB flash drive), make sure the ISO images of the binary CentOS DVD are on a hard drive in the computer. See <a href="../Install_Source_HDD/#sect-making-media-sources-hdd" class="page">Installation Source on a Hard Drive</a> for details about using a hard drive as the installation source.</p>
+<p>If you are performing a hard drive installation (using either a hard drive or an USB flash drive), make sure the ISO images of the binary CentOS DVD are on a hard drive in the computer. See <a href="../Install_Source_HDD/#sect-making-media-sources-hdd" class="xref page">Installation Source on a Hard Drive</a> for details about using a hard drive as the installation source.</p>
 </div>
 <div class="paragraph">
-<p>If you are performing a network-based (NFS, FTP or HTTP) installation, you must make the installation tree or the binary DVD ISO image (depending on the protocol used) available over the network. See <a href="../Install_Source_Network/#sect-making-media-sources-network" class="page">Installation Source on a Network</a> for details.</p>
+<p>If you are performing a network-based (NFS, FTP or HTTP) installation, you must make the installation tree or the binary DVD ISO image (depending on the protocol used) available over the network. See <a href="../Install_Source_Network/#sect-making-media-sources-network" class="xref page">Installation Source on a Network</a> for details.</p>
 </div>
 </div>
 <div class="sect2">
@@ -668,10 +668,10 @@
 </table>
 </div>
 <div class="paragraph">
-<p>To start a Kickstart installation, use the boot option <code class="option">inst.ks=<em>location</em></code> when booting the installation system, replacing <em>location</em> with the location of your Kickstart file. The exact way to specify the boot option depends on your system&#8217;s architecture - see <a href="../adminoptions/#chap-anaconda-boot-options" class="page">Boot Options</a> for details.</p>
+<p>To start a Kickstart installation, use the boot option <code class="option">inst.ks=<em>location</em></code> when booting the installation system, replacing <em>location</em> with the location of your Kickstart file. The exact way to specify the boot option depends on your system&#8217;s architecture - see <a href="../adminoptions/#chap-anaconda-boot-options" class="xref page">Boot Options</a> for details.</p>
 </div>
 <div class="paragraph">
-<p>64-bit AMD, Intel and ARM systems and IBM Power&#160;Systems servers have the ability to boot using a PXE server. When you configure the PXE server, you can add the boot option into the boot loader configuration file, which in turn allows you to start the installation automatically. Using this approach, it is possible to automate the installation completely, including the boot process. For information about setting up a PXE server, see <a href="../pxe-server/#chap-installation-server-setup" class="page">Preparing for a Network Installation</a>.</p>
+<p>64-bit AMD, Intel and ARM systems and IBM Power&#160;Systems servers have the ability to boot using a PXE server. When you configure the PXE server, you can add the boot option into the boot loader configuration file, which in turn allows you to start the installation automatically. Using this approach, it is possible to automate the installation completely, including the boot process. For information about setting up a PXE server, see <a href="../pxe-server/#chap-installation-server-setup" class="xref page">Preparing for a Network Installation</a>.</p>
 </div>
 <div class="paragraph">
 <p>Procedures in this section assume that you already have a Kickstart file ready in a location accessible from the installation system, as well as boot media or a PXE server which can be used to boot the system and begin the installation. The procedures are intended as a general reference; some steps differ based on your system&#8217;s architecture, and not all options are available on all architectures.</p>
@@ -689,10 +689,10 @@
 <div class="ulist">
 <ul>
 <li>
-<p><a href="../Boot_x86/#chap-booting-installer-x86" class="page">Booting the Installation on 64-bit AMD, Intel, and ARM systems</a> for 64-bit AMD, Intel, and ARM systems</p>
+<p><a href="../Boot_x86/#chap-booting-installer-x86" class="xref page">Booting the Installation on 64-bit AMD, Intel, and ARM systems</a> for 64-bit AMD, Intel, and ARM systems</p>
 </li>
 <li>
-<p><a href="../Boot_ppc/#chap-booting-installer-ppc" class="page">Booting the Installation on IBM Power&#160;Systems</a> for IBM Power&#160;Systems servers</p>
+<p><a href="../Boot_ppc/#chap-booting-installer-ppc" class="xref page">Booting the Installation on IBM Power&#160;Systems</a> for IBM Power&#160;Systems servers</p>
 </li>
 </ul>
 </div>
@@ -700,7 +700,7 @@
 <li>
 <p>At the boot prompt, specify the <code class="option">inst.ks=</code> boot option and the location of the Kickstart file. If the Kickstart file is in a network location, you must also configure the network using the <code class="option">ip=</code> option. In some cases, the <code class="option">inst.repo=</code> option is also necessary in order to access a software source from which necessary packages will be installed.</p>
 <div class="paragraph">
-<p>For details about boot options and valid syntax, see <a href="../adminoptions/#chap-anaconda-boot-options" class="page">Boot Options</a>.</p>
+<p>For details about boot options and valid syntax, see <a href="../adminoptions/#chap-anaconda-boot-options" class="xref page">Boot Options</a>.</p>
 </div>
 </li>
 <li>
@@ -748,10 +748,10 @@
 <div class="ulist">
 <ul>
 <li>
-<p><a href="../Boot_x86/#sect-booting-from-pxe-x86" class="page">Booting from the Network Using PXE (x86)</a> for 64-bit AMD, Intel, and ARM systems</p>
+<p><a href="../Boot_x86/#sect-booting-from-pxe-x86" class="xref page">Booting from the Network Using PXE (x86)</a> for 64-bit AMD, Intel, and ARM systems</p>
 </li>
 <li>
-<p><a href="../Boot_ppc/#sect-booting-from-pxe-ppc" class="page">Booting from the Network Using PXE (ppc)</a> for IBM Power&#160;Systems servers</p>
+<p><a href="../Boot_ppc/#sect-booting-from-pxe-ppc" class="xref page">Booting from the Network Using PXE (ppc)</a> for IBM Power&#160;Systems servers</p>
 </li>
 </ul>
 </div>
@@ -916,14 +916,14 @@
 <li>
 <p><code>thinp</code>: The LVM Thin Provisioning partitioning scheme.</p>
 <div class="paragraph">
-<p>For a description of the available partition schemes, see <a href="../CustomSpoke-x86/#sect-file-system-types-x86" class="page">File System Types (x86)</a>.</p>
+<p>For a description of the available partition schemes, see <a href="../CustomSpoke-x86/#sect-file-system-types-x86" class="xref page">File System Types (x86)</a>.</p>
 </div>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><code class="option">--fstype=</code> - Selects one of the available file system types. The available values are <code>ext2</code>, <code>ext3</code>, <code>ext4</code>, <code>xfs</code>, and <code>vfat</code>. The default file system is <code>xfs</code>. For information about these file systems, see <a href="../CustomSpoke-x86/#sect-file-system-types-x86" class="page">File System Types (x86)</a>.</p>
+<p><code class="option">--fstype=</code> - Selects one of the available file system types. The available values are <code>ext2</code>, <code>ext3</code>, <code>ext4</code>, <code>xfs</code>, and <code>vfat</code>. The default file system is <code>xfs</code>. For information about these file systems, see <a href="../CustomSpoke-x86/#sect-file-system-types-x86" class="xref page">File System Types (x86)</a>.</p>
 </li>
 <li>
 <p><code class="option">--nohome</code> - Disables automatic creation of the <code>/home</code> partition.</p>
@@ -1058,7 +1058,7 @@
 </td>
 <td class="content">
 <div class="paragraph">
-<p>In some cases, a special partition is required to install the boot loader on 64-bit AMD, Intel, and ARM systems. The type and size of this partition depends on whether the disk you are installing the boot loader to uses the <em>Master Boot Record</em> (MBR) or a <em>GUID Partition Table</em> (GPT) schema. For more information, see <a href="../StorageSpoke-x86/#sect-bootloader-x86" class="page">Boot Loader Installation (x86)</a>.</p>
+<p>In some cases, a special partition is required to install the boot loader on 64-bit AMD, Intel, and ARM systems. The type and size of this partition depends on whether the disk you are installing the boot loader to uses the <em>Master Boot Record</em> (MBR) or a <em>GUID Partition Table</em> (GPT) schema. For more information, see <a href="../StorageSpoke-x86/#sect-bootloader-x86" class="xref page">Boot Loader Installation (x86)</a>.</p>
 </div>
 </td>
 </tr>
@@ -1409,7 +1409,7 @@
 </td>
 <td class="content">
 <div class="paragraph">
-<p>For a fully automatic installation, you must either specify one of the available modes (<code class="command">graphical</code>, <code class="command">text</code>, or <code class="command">cmdline</code>) in the Kickstart file, or you must use the <code class="option">console=</code> boot option as described in <a href="../adminoptions/#list-boot-options-display" class="page">Console, Environment and Display Options</a>. If no mode is specified, the system will prompt you to choose one before continuing.</p>
+<p>For a fully automatic installation, you must either specify one of the available modes (<code class="command">graphical</code>, <code class="command">text</code>, or <code class="command">cmdline</code>) in the Kickstart file, or you must use the <code class="option">console=</code> boot option as described in <a href="../adminoptions/#list-boot-options-display" class="xref page">Console, Environment and Display Options</a>. If no mode is specified, the system will prompt you to choose one before continuing.</p>
 </div>
 </td>
 </tr>
@@ -1503,7 +1503,7 @@
 <dt class="hdlist1"><code class="command">eula</code> (optional)</dt>
 <dd>
 <div class="paragraph">
-<p>Use this option to accept the <em>End User License Agreement</em> (EULA) without user interaction. Specifying this option prevents <strong class="application">Initial Setup</strong> from prompting you to accept the license agreement after you finish the installation and reboot the system for the first time. See <a href="../InitialSetupHub-common/#chap-initial-setup" class="page">Initial Setup</a> for more information.</p>
+<p>Use this option to accept the <em>End User License Agreement</em> (EULA) without user interaction. Specifying this option prevents <strong class="application">Initial Setup</strong> from prompting you to accept the license agreement after you finish the installation and reboot the system for the first time. See <a href="../InitialSetupHub-common/#chap-initial-setup" class="xref page">Initial Setup</a> for more information.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1645,7 +1645,7 @@
 </td>
 <td class="content">
 <div class="paragraph">
-<p>For a fully automatic installation, you must either specify one of the available modes (<code class="command">graphical</code>, <code class="command">text</code>, or <code class="command">cmdline</code>) in the Kickstart file, or you must use the <code class="option">console=</code> boot option as described in <a href="../adminoptions/#list-boot-options-display" class="page">Console, Environment and Display Options</a>. If no mode is specified, the system will prompt you to choose one before continuing.</p>
+<p>For a fully automatic installation, you must either specify one of the available modes (<code class="command">graphical</code>, <code class="command">text</code>, or <code class="command">cmdline</code>) in the Kickstart file, or you must use the <code class="option">console=</code> boot option as described in <a href="../adminoptions/#list-boot-options-display" class="xref page">Console, Environment and Display Options</a>. If no mode is specified, the system will prompt you to choose one before continuing.</p>
 </div>
 </td>
 </tr>
@@ -2193,7 +2193,7 @@
 <p>The size assigned will be equivalent to the swap space assigned by <code class="option">--recommended</code> plus the amount of RAM on your system.</p>
 </div>
 <div class="paragraph">
-<p>For the swap sizes assigned by these commands, see <a href="../CustomSpoke-x86/#sect-recommended-partitioning-scheme-x86" class="page">Recommended Partitioning Scheme (x86)</a> for 64-bit AMD, Intel, and ARM systems, and <a href="../CustomSpoke-ppc64/#sect-recommended-partitioning-scheme-ppc" class="page">Recommended Partitioning Scheme (ppc)</a> for IBM Power&#160;Systems servers.</p>
+<p>For the swap sizes assigned by these commands, see <a href="../CustomSpoke-x86/#sect-recommended-partitioning-scheme-x86" class="xref page">Recommended Partitioning Scheme (x86)</a> for 64-bit AMD, Intel, and ARM systems, and <a href="../CustomSpoke-ppc64/#sect-recommended-partitioning-scheme-ppc" class="xref page">Recommended Partitioning Scheme (ppc)</a> for IBM Power&#160;Systems servers.</p>
 </div>
 <div class="paragraph">
 <p>The options are as follows:</p>
@@ -2261,7 +2261,7 @@
 <p><code class="option">--maxsize=</code> - The maximum size in MiB when the logical volume is set to grow. Specify an integer value here such as <code>500</code> (do not include the unit).</p>
 </li>
 <li>
-<p><code class="option">--recommended</code> - Use this option when creating a <code>swap</code> logical volume to determine the size of this volume automatically, based on your system&#8217;s hardware. For details about the recommended scheme, see <a href="../CustomSpoke-x86/#sect-recommended-partitioning-scheme-x86" class="page">Recommended Partitioning Scheme (x86)</a> for 64-bit AMD, Intel, and ARM systems, and <a href="../CustomSpoke-ppc64/#sect-recommended-partitioning-scheme-ppc" class="page">Recommended Partitioning Scheme (ppc)</a> for IBM Power&#160;Systems.</p>
+<p><code class="option">--recommended</code> - Use this option when creating a <code>swap</code> logical volume to determine the size of this volume automatically, based on your system&#8217;s hardware. For details about the recommended scheme, see <a href="../CustomSpoke-x86/#sect-recommended-partitioning-scheme-x86" class="xref page">Recommended Partitioning Scheme (x86)</a> for 64-bit AMD, Intel, and ARM systems, and <a href="../CustomSpoke-ppc64/#sect-recommended-partitioning-scheme-ppc" class="xref page">Recommended Partitioning Scheme (ppc)</a> for IBM Power&#160;Systems.</p>
 </li>
 <li>
 <p><code class="option">--resize</code> - Resize a logical volume. If you use this option, you must also specify <code class="option">--useexisting</code> and <code class="option">--size</code>.</p>
@@ -3011,7 +3011,7 @@ fingerprint = 240f2f18222faa98856c3b4fc50c4195
 <p>The size assigned will be equivalent to the swap space assigned by <code class="option">--recommended</code> plus the amount of RAM on your system.</p>
 </div>
 <div class="paragraph">
-<p>For the swap sizes assigned by these commands, see <a href="../CustomSpoke-x86/#sect-recommended-partitioning-scheme-x86" class="page">Recommended Partitioning Scheme (x86)</a> for 64-bit AMD, Intel, and ARM systems, and <a href="../CustomSpoke-ppc64/#sect-recommended-partitioning-scheme-ppc" class="page">Recommended Partitioning Scheme (ppc)</a> for IBM Power&#160;Systems servers.</p>
+<p>For the swap sizes assigned by these commands, see <a href="../CustomSpoke-x86/#sect-recommended-partitioning-scheme-x86" class="xref page">Recommended Partitioning Scheme (x86)</a> for 64-bit AMD, Intel, and ARM systems, and <a href="../CustomSpoke-ppc64/#sect-recommended-partitioning-scheme-ppc" class="xref page">Recommended Partitioning Scheme (ppc)</a> for IBM Power&#160;Systems servers.</p>
 </div>
 </li>
 <li>
@@ -3051,7 +3051,7 @@ fingerprint = 240f2f18222faa98856c3b4fc50c4195
 </td>
 <td class="content">
 <div class="paragraph">
-<p>If the <code class="option">--size</code> value is too small, the installation fails. Set the <code class="option">--size</code> value as the minimum amount of space you require. For size recommendations, see <a href="../CustomSpoke-x86/#sect-recommended-partitioning-scheme-x86" class="page">Recommended Partitioning Scheme (x86)</a>.</p>
+<p>If the <code class="option">--size</code> value is too small, the installation fails. Set the <code class="option">--size</code> value as the minimum amount of space you require. For size recommendations, see <a href="../CustomSpoke-x86/#sect-recommended-partitioning-scheme-x86" class="xref page">Recommended Partitioning Scheme (x86)</a>.</p>
 </div>
 </td>
 </tr>
@@ -3132,7 +3132,7 @@ fingerprint = 240f2f18222faa98856c3b4fc50c4195
 </div>
 </li>
 <li>
-<p><code class="option">--asprimary</code> - Forces the partition to be allocated as a <em>primary</em> partition. If the partition cannot be allocated as primary (usually due to too many primary partitions being already allocated), the partitioning process fails. This option only makes sense when the disk uses a Master Boot Record (MBR); for GUID Partition Table (GPT)-labeled disks this option has no meaning. For information about primary (and extended) partitions, see <a href="../Partitions-x86/#sect-disk-partitions-basics" class="page">Partitions: Turning One Drive Into Many</a>.</p>
+<p><code class="option">--asprimary</code> - Forces the partition to be allocated as a <em>primary</em> partition. If the partition cannot be allocated as primary (usually due to too many primary partitions being already allocated), the partitioning process fails. This option only makes sense when the disk uses a Master Boot Record (MBR); for GUID Partition Table (GPT)-labeled disks this option has no meaning. For information about primary (and extended) partitions, see <a href="../Partitions-x86/#sect-disk-partitions-basics" class="xref page">Partitions: Turning One Drive Into Many</a>.</p>
 </li>
 <li>
 <p><code class="option">--fsprofile=</code> - Specifies a <em>usage type</em> to be passed to the program that makes a filesystem on this partition. A usage type defines a variety of tuning parameters to be used when making a filesystem. For this option to work, the filesystem must support the concept of usage types and there must be a configuration file that lists valid types. For <code>ext2</code>, <code>ext3</code>, <code>ext4</code>, this configuration file is <code>/etc/mke2fs.conf</code>.</p>
@@ -3150,7 +3150,7 @@ fingerprint = 240f2f18222faa98856c3b4fc50c4195
 <p><code class="option">--label=</code> - assign a label to an individual partition.</p>
 </li>
 <li>
-<p><code class="option">--recommended</code> - Determine the size of the partition automatically. For details about the recommended scheme, see <a href="../CustomSpoke-x86/#sect-recommended-partitioning-scheme-x86" class="page">Recommended Partitioning Scheme (x86)</a> for 64-bit AMD, Intel, and ARM, and <a href="../CustomSpoke-ppc64/#sect-recommended-partitioning-scheme-ppc" class="page">Recommended Partitioning Scheme (ppc)</a> for IBM Power&#160;Systems.</p>
+<p><code class="option">--recommended</code> - Determine the size of the partition automatically. For details about the recommended scheme, see <a href="../CustomSpoke-x86/#sect-recommended-partitioning-scheme-x86" class="xref page">Recommended Partitioning Scheme (x86)</a> for 64-bit AMD, Intel, and ARM, and <a href="../CustomSpoke-ppc64/#sect-recommended-partitioning-scheme-ppc" class="xref page">Recommended Partitioning Scheme (ppc)</a> for IBM Power&#160;Systems.</p>
 <div class="admonitionblock important">
 <table>
 <tr>
@@ -3799,7 +3799,7 @@ fingerprint = 240f2f18222faa98856c3b4fc50c4195
 </td>
 <td class="content">
 <div class="paragraph">
-<p>By default, the <code>ssh</code> server is not started during the installation. To make <code>ssh</code> available during the installation, boot the system with the kernel boot option <code class="option">inst.sshd</code>. See <a href="../adminoptions/#list-boot-options-display" class="page">Console, Environment and Display Options</a> for details.</p>
+<p>By default, the <code>ssh</code> server is not started during the installation. To make <code>ssh</code> available during the installation, boot the system with the kernel boot option <code class="option">inst.sshd</code>. See <a href="../adminoptions/#list-boot-options-display" class="xref page">Console, Environment and Display Options</a> for details.</p>
 </div>
 </td>
 </tr>
@@ -3850,7 +3850,7 @@ sshpw --username=root example_password --lock</pre>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>For a fully automatic installation, you must either specify one of the available modes (<code class="command">graphical</code>, <code class="command">text</code>, or <code class="command">cmdline</code>) in the Kickstart file, or you must use the <code class="option">console=</code> boot option as described in <a href="../adminoptions/#list-boot-options-display" class="page">Console, Environment and Display Options</a>. If no mode is specified, the system will prompt you to choose one before continuing.</p>
+<p>For a fully automatic installation, you must either specify one of the available modes (<code class="command">graphical</code>, <code class="command">text</code>, or <code class="command">cmdline</code>) in the Kickstart file, or you must use the <code class="option">console=</code> boot option as described in <a href="../adminoptions/#list-boot-options-display" class="xref page">Console, Environment and Display Options</a>. If no mode is specified, the system will prompt you to choose one before continuing.</p>
 </div>
 </td>
 </tr>
@@ -4009,7 +4009,7 @@ sshpw --username=root example_password --lock</pre>
 <li>
 <p><code class="option">--password=</code> - Set a password which must be provided to connect to the VNC session. This is optional, but recommended.</p>
 <div class="paragraph">
-<p>For more information about VNC installations, including instructions on how to connect to the installation system, see <a href="../vnc-installations/#chap-vnc-installations" class="page">Using VNC</a>.</p>
+<p>For more information about VNC installations, including instructions on how to connect to the installation system, see <a href="../vnc-installations/#chap-vnc-installations" class="xref page">Using VNC</a>.</p>
 </div>
 </li>
 </ul>

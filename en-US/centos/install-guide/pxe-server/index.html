@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Preparing for a Network Installation :: CentOS Docs Site</title>
     <link rel="canonical" href="https://docs.centos.org/centos/install-guide/pxe-server/">
-    <meta name="generator" content="Antora 2.0.0">
+    <meta name="generator" content="Antora 3.0.1">
     <link rel="stylesheet" href="../../../_/css/site.css">
   </head>
   <body class="article">
@@ -31,7 +31,7 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="../">Installation Guide</a></h3>
+    <h3 class="title"><a href="../../">Installation Guide</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
@@ -82,7 +82,7 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../Part_Install_x86/">Installing on x86_64 and ARM 64</a>
+    <a class="nav-link" href="#Part_Install_x86.adoc.adoc">Installing on x86_64 and ARM 64</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../Simple_Installation/">Quick Installation Guide</a>
@@ -343,7 +343,7 @@
     <li class="component">
       <span class="title">CentOS 8 Documentation</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../8-docs/">master</a>
         </li>
       </ul>
@@ -351,7 +351,7 @@
     <li class="component">
       <span class="title">CentOS Documentation</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../docs/">master</a>
         </li>
       </ul>
@@ -359,16 +359,16 @@
     <li class="component">
       <span class="title">Contributor's Guide</span>
       <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../stream-contrib/">master</a>
+        <li class="version">
+          <a href="../../../stream-contrib/">default</a>
         </li>
       </ul>
     </li>
     <li class="component is-current">
       <span class="title">Installation Guide</span>
       <ul class="versions">
-        <li class="version is-current is-latest">
-          <a href="../">master</a>
+        <li class="version is-current">
+          <a href="../../">master</a>
         </li>
       </ul>
     </li>
@@ -383,7 +383,7 @@
   <a href="../../../docs/" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="../">Installation Guide</a></li>
+    <li><a href="../../">Installation Guide</a></li>
     <li><a href="../Part_Install_Advanced/">Advanced Installation Options</a></li>
     <li><a href="./">Preparing for a Network Installation</a></li>
   </ul>
@@ -446,7 +446,7 @@ Red&#160;Hat Satellite User Guide</a> for more information.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Configure the network server (<code>NFS</code>, <code>HTTPS</code>, <code>HTTP</code>, or <code>FTP</code>) to export the installation tree or the installation ISO image. For procedures describing the configuration, see <a href="../Install_Source_Network/#sect-making-media-sources-network" class="page">Installation Source on a Network</a>.</p>
+<p>Configure the network server (<code>NFS</code>, <code>HTTPS</code>, <code>HTTP</code>, or <code>FTP</code>) to export the installation tree or the installation ISO image. For procedures describing the configuration, see <a href="../Install_Source_Network/#sect-making-media-sources-network" class="xref page">Installation Source on a Network</a>.</p>
 </li>
 <li>
 <p>Configure the files on the <strong class="application">tftp</strong> server necessary for network boot, configure <code>DHCP</code>, and start the <code>tftp</code> service on the PXE server. See <a href="#sect-network-boot-setup">Configuring Network Boot Services</a> for details.</p>
@@ -513,7 +513,7 @@ Red&#160;Hat Satellite User Guide</a> for more information.</p>
 </table>
 </div>
 <div class="paragraph">
-<p>For more information on configuring a network boot server for use with headless systems (systems without a directly connected display, keyboard and mouse), see <a href="../headless-installations/#chap-headless-installations" class="page">Headless Systems</a>.</p>
+<p>For more information on configuring a network boot server for use with headless systems (systems without a directly connected display, keyboard and mouse), see <a href="../headless-installations/#chap-headless-installations" class="xref page">Headless Systems</a>.</p>
 </div>
 <div class="sect2">
 <h3 id="sect-network-boot-setup-bios"><a class="anchor" href="#sect-network-boot-setup-bios"></a>Configuring a TFTP Server for BIOS-based AMD64 and Intel&#160;64 Clients</h3>
@@ -671,7 +671,7 @@ label local
 </td>
 <td class="content">
 <div class="paragraph">
-<p>The <code class="option">inst.repo=</code> <strong class="application">Anaconda</strong> option, shown in the example above, must always be used to specify the installation program&#8217;s image as well as the installation source. Without this option, the installation program will be unable to boot. For more information about boot options for <strong class="application">Anaconda</strong>, see <a href="../adminoptions/#sect-boot-options-installer" class="page">Configuring the Installation System at the Boot Menu</a>.</p>
+<p>The <code class="option">inst.repo=</code> <strong class="application">Anaconda</strong> option, shown in the example above, must always be used to specify the installation program&#8217;s image as well as the installation source. Without this option, the installation program will be unable to boot. For more information about boot options for <strong class="application">Anaconda</strong>, see <a href="../adminoptions/#sect-boot-options-installer" class="xref page">Configuring the Installation System at the Boot Menu</a>.</p>
 </div>
 </td>
 </tr>
@@ -715,7 +715,7 @@ label local
 </ol>
 </div>
 <div class="paragraph">
-<p>After finishing this procedure, the PXE boot server is ready to serve PXE clients. You can now start the system you want to install CentOS on, select PXE Boot when prompted to specify a boot source, and start the network installation. For more information, see <a href="../Boot_x86/#sect-booting-from-pxe-x86" class="page">Booting from the Network Using PXE (x86)</a>.</p>
+<p>After finishing this procedure, the PXE boot server is ready to serve PXE clients. You can now start the system you want to install CentOS on, select PXE Boot when prompted to specify a boot source, and start the network installation. For more information, see <a href="../Boot_x86/#sect-booting-from-pxe-x86" class="xref page">Booting from the Network Using PXE (x86)</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -870,7 +870,7 @@ menuentry 'CentOS' {
 </td>
 <td class="content">
 <div class="paragraph">
-<p>The <code class="option">inst.repo=</code> <strong class="application">Anaconda</strong> option, shown in the example above, must always be used to specify the installation program&#8217;s image as well as the installation source. Without this option, the installation program will be unable to boot. For more information about boot options for <strong class="application">Anaconda</strong>, see <a href="../adminoptions/#sect-boot-options-installer" class="page">Configuring the Installation System at the Boot Menu</a>.</p>
+<p>The <code class="option">inst.repo=</code> <strong class="application">Anaconda</strong> option, shown in the example above, must always be used to specify the installation program&#8217;s image as well as the installation source. Without this option, the installation program will be unable to boot. For more information about boot options for <strong class="application">Anaconda</strong>, see <a href="../adminoptions/#sect-boot-options-installer" class="xref page">Configuring the Installation System at the Boot Menu</a>.</p>
 </div>
 </td>
 </tr>
@@ -914,7 +914,7 @@ menuentry 'CentOS' {
 </ol>
 </div>
 <div class="paragraph">
-<p>After finishing this procedure, the PXE boot server is ready to serve PXE clients. You can now start the system you want to install CentOS on, select PXE Boot when prompted to specify a boot source, and start the network installation. For more information, see <a href="../Boot_x86/#sect-booting-from-pxe-x86" class="page">Booting from the Network Using PXE (x86)</a>.</p>
+<p>After finishing this procedure, the PXE boot server is ready to serve PXE clients. You can now start the system you want to install CentOS on, select PXE Boot when prompted to specify a boot source, and start the network installation. For more information, see <a href="../Boot_x86/#sect-booting-from-pxe-x86" class="xref page">Booting from the Network Using PXE (x86)</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -990,7 +990,7 @@ menuentry 'CentOS 7' {
 </td>
 <td class="content">
 <div class="paragraph">
-<p>The <code class="option">inst.repo=</code> <strong class="application">Anaconda</strong> option, shown in the example above, must always be used to specify the installation program&#8217;s image as well as the installation source. Without this option, the installation program will be unable to boot. For more information about boot options for <strong class="application">Anaconda</strong>, see <a href="../adminoptions/#sect-boot-options-installer" class="page">Configuring the Installation System at the Boot Menu</a>.</p>
+<p>The <code class="option">inst.repo=</code> <strong class="application">Anaconda</strong> option, shown in the example above, must always be used to specify the installation program&#8217;s image as well as the installation source. Without this option, the installation program will be unable to boot. For more information about boot options for <strong class="application">Anaconda</strong>, see <a href="../adminoptions/#sect-boot-options-installer" class="xref page">Configuring the Installation System at the Boot Menu</a>.</p>
 </div>
 </td>
 </tr>
@@ -1049,7 +1049,7 @@ menuentry 'CentOS 7' {
 </ol>
 </div>
 <div class="paragraph">
-<p>After finishing this procedure, the PXE boot server is ready to serve PXE clients. You can now follow the steps described in <a href="../Boot_ppc/#chap-booting-installer-ppc" class="page">Booting the Installation on IBM Power&#160;Systems</a> to boot your Power&#160;Systems client from this server.</p>
+<p>After finishing this procedure, the PXE boot server is ready to serve PXE clients. You can now follow the steps described in <a href="../Boot_ppc/#chap-booting-installer-ppc" class="xref page">Booting the Installation on IBM Power&#160;Systems</a> to boot your Power&#160;Systems client from this server.</p>
 </div>
 <div class="paragraph">
 <p>Additional information about setting up network boot for IBM Power&#160;Systems clients can be found in the <a href="https://www.ibm.com/developerworks/community/wikis/home?lang=en#!/wiki/W51a7ffcf4dfd_4b40_9d82_446ebc23c550/page/Netbooting%20on%20POWER%20-%20An%20Introduction">Netbooting on POWER - An Introduction</a> at the IBM DeveloperWorks website.</p>

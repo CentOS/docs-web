@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Storage Devices :: CentOS Docs Site</title>
     <link rel="canonical" href="https://docs.centos.org/centos/install-guide/FilterSpoke-ppc64/">
-    <meta name="generator" content="Antora 2.0.0">
+    <meta name="generator" content="Antora 3.0.1">
     <link rel="stylesheet" href="../../../_/css/site.css">
   </head>
   <body class="article">
@@ -31,7 +31,7 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="../">Installation Guide</a></h3>
+    <h3 class="title"><a href="../../">Installation Guide</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
@@ -82,7 +82,7 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../Part_Install_x86/">Installing on x86_64 and ARM 64</a>
+    <a class="nav-link" href="#Part_Install_x86.adoc.adoc">Installing on x86_64 and ARM 64</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../Simple_Installation/">Quick Installation Guide</a>
@@ -343,7 +343,7 @@
     <li class="component">
       <span class="title">CentOS 8 Documentation</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../8-docs/">master</a>
         </li>
       </ul>
@@ -351,7 +351,7 @@
     <li class="component">
       <span class="title">CentOS Documentation</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../docs/">master</a>
         </li>
       </ul>
@@ -359,16 +359,16 @@
     <li class="component">
       <span class="title">Contributor's Guide</span>
       <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../stream-contrib/">master</a>
+        <li class="version">
+          <a href="../../../stream-contrib/">default</a>
         </li>
       </ul>
     </li>
     <li class="component is-current">
       <span class="title">Installation Guide</span>
       <ul class="versions">
-        <li class="version is-current is-latest">
-          <a href="../">master</a>
+        <li class="version is-current">
+          <a href="../../">master</a>
         </li>
       </ul>
     </li>
@@ -383,7 +383,7 @@
   <a href="../../../docs/" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="../">Installation Guide</a></li>
+    <li><a href="../../">Installation Guide</a></li>
     <li><a href="../Part_Install_ppc/">Installing on IBM Power Systems</a></li>
     <li><a href="../Graphical_Installation-ppc/">Installing Using Anaconda</a></li>
     <li><a href="./">Storage Devices</a></li>
@@ -408,9 +408,9 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>You can install CentOS on a large variety of storage devices. You can see basic, locally accessible, storage devices in the <code>Installation Destination</code> page, as described in <a href="../StorageSpoke-ppc64/#sect-disk-partitioning-setup-ppc" class="page">Installation Destination (ppc)</a>. To add a specialized storage device, click the <b class="button">Add a disk</b> button in the <code>Specialized &amp; Network Disks</code> section of the screen.</p>
+<p>You can install CentOS on a large variety of storage devices. You can see basic, locally accessible, storage devices in the <code>Installation Destination</code> page, as described in <a href="../StorageSpoke-ppc64/#sect-disk-partitioning-setup-ppc" class="xref page">Installation Destination (ppc)</a>. To add a specialized storage device, click the <b class="button">Add a disk</b> button in the <code>Specialized &amp; Network Disks</code> section of the screen.</p>
 </div>
-<div class="imageblock">
+<div class="imageblock unresolved">
 <div class="content">
 <img src="../_images/diskpartsetup/disk-setup-ppc.png" alt="Storage Space Overview.">
 </div>
@@ -452,7 +452,7 @@
 </dd>
 </dl>
 </div>
-<div class="imageblock">
+<div class="imageblock unresolved">
 <div class="content">
 <img src="../_images/storagedevices/selectstoragedevices-multipath.png" alt="Tabbed Overview of Specialized Storage Devices">
 </div>
@@ -474,7 +474,7 @@
 <div class="paragraph">
 <p>The overview page also contains the <code>Search</code> tab that allows you to filter storage devices either by their <em>World Wide Identifier</em> (WWID) or by the port, target, or <em>logical unit number</em> (LUN) at which they are accessed.</p>
 </div>
-<div class="imageblock">
+<div class="imageblock unresolved">
 <div class="content">
 <img src="../_images/storagedevices/searchstoragedevices.png" alt="The Storage Devices Search Tab">
 </div>
@@ -512,9 +512,9 @@
 <h2 id="sect-advanced-storage-options-ppc"><a class="anchor" href="#sect-advanced-storage-options-ppc"></a>Advanced Storage Options</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>To use an advanced storage device, you can configure an <em>iSCSI</em> (SCSI over TCP/IP) target or <em>FCoE</em> (Fibre Channel over Ethernet) <em>SAN</em> (Storage Area Network) by clicking the appropriate button in the lower right corner of the Installation Destination screen. See <a href="../iSCSI/#appe-iscsi-disks" class="page">iSCSI Disks</a> for an introduction to iSCSI.</p>
+<p>To use an advanced storage device, you can configure an <em>iSCSI</em> (SCSI over TCP/IP) target or <em>FCoE</em> (Fibre Channel over Ethernet) <em>SAN</em> (Storage Area Network) by clicking the appropriate button in the lower right corner of the Installation Destination screen. See <a href="../iSCSI/#appe-iscsi-disks" class="xref page">iSCSI Disks</a> for an introduction to iSCSI.</p>
 </div>
-<div class="imageblock">
+<div class="imageblock unresolved">
 <div class="content">
 <img src="../_images/storagedevices/searchstoragedevices.png" alt="Advanced Storage Options">
 </div>
@@ -525,7 +525,7 @@
 <div class="paragraph">
 <p>When you click the <code>Add iSCSI target&#8230;&#8203;</code> button, the <code>Add iSCSI Storage Target</code> dialog appears.</p>
 </div>
-<div class="imageblock">
+<div class="imageblock unresolved">
 <div class="content">
 <img src="../_images/diskpartadvanced/iscsi-discovery-reverse-pair.png" alt="The iSCSI Discovery Details dialog.">
 </div>
@@ -619,7 +619,7 @@
 </li>
 <li>
 <p>Each node is presented with a check box beside it. Click the check boxes to select the nodes to use for installation.</p>
-<div class="imageblock">
+<div class="imageblock unresolved">
 <div class="content">
 <img src="../_images/diskpartadvanced/iscsi-discovered-nodes.png" alt="The Dialog of Discovered iSCSI Nodes">
 </div>
@@ -643,7 +643,7 @@
 <div class="paragraph">
 <p>First, select a network interface that is connected to a FCoE switch in the <code>NIC</code> drop-down menu and click the <b class="button">Add FCoE disk(s)</b> button to scan the network for SAN devices.</p>
 </div>
-<div class="imageblock">
+<div class="imageblock unresolved">
 <div class="content">
 <img src="../_images/diskpartadvanced/fcoe-config.png" alt="Configure FCoE Parameters">
 </div>

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>An Introduction to Disk Partitions :: CentOS Docs Site</title>
     <link rel="canonical" href="https://docs.centos.org/centos/install-guide/Partitions-x86/">
-    <meta name="generator" content="Antora 2.0.0">
+    <meta name="generator" content="Antora 3.0.1">
     <link rel="stylesheet" href="../../../_/css/site.css">
   </head>
   <body class="article">
@@ -31,7 +31,7 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="../">Installation Guide</a></h3>
+    <h3 class="title"><a href="../../">Installation Guide</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
@@ -82,7 +82,7 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../Part_Install_x86/">Installing on x86_64 and ARM 64</a>
+    <a class="nav-link" href="#Part_Install_x86.adoc.adoc">Installing on x86_64 and ARM 64</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../Simple_Installation/">Quick Installation Guide</a>
@@ -343,7 +343,7 @@
     <li class="component">
       <span class="title">CentOS 8 Documentation</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../8-docs/">master</a>
         </li>
       </ul>
@@ -351,7 +351,7 @@
     <li class="component">
       <span class="title">CentOS Documentation</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../docs/">master</a>
         </li>
       </ul>
@@ -359,16 +359,16 @@
     <li class="component">
       <span class="title">Contributor's Guide</span>
       <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../stream-contrib/">master</a>
+        <li class="version">
+          <a href="../../../stream-contrib/">default</a>
         </li>
       </ul>
     </li>
     <li class="component is-current">
       <span class="title">Installation Guide</span>
       <ul class="versions">
-        <li class="version is-current is-latest">
-          <a href="../">master</a>
+        <li class="version is-current">
+          <a href="../../">master</a>
         </li>
       </ul>
     </li>
@@ -383,7 +383,7 @@
   <a href="../../../docs/" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="../">Installation Guide</a></li>
+    <li><a href="../../">Installation Guide</a></li>
     <li><a href="../Part_Appendixes/">Technical Appendixes</a></li>
     <li><a href="./">An Introduction to Disk Partitions</a></li>
   </ul>
@@ -455,7 +455,7 @@
 <div class="paragraph">
 <p><a href="#figu-partitions-unused-drive">An Unused Disk Drive</a>, shows a brand-new, unused disk drive.</p>
 </div>
-<div id="figu-partitions-unused-drive" class="imageblock">
+<div id="figu-partitions-unused-drive" class="imageblock unresolved">
 <div class="content">
 <img src="../_images/partitions/unused-drive.png" alt="Image of an unused disk drive.">
 </div>
@@ -466,7 +466,7 @@
 <div class="paragraph">
 <p>To store data on a disk drive, it is necessary to <em>format</em> the disk drive first. Formatting (usually known as "making a <em>file system</em>") writes information to the drive, creating order out of the empty space in an unformatted drive.</p>
 </div>
-<div id="figu-partitions-formatted-drive" class="imageblock">
+<div id="figu-partitions-formatted-drive" class="imageblock unresolved">
 <div class="content">
 <img src="../_images/partitions/formatted-drive.png" alt="Image of a formatted disk drive.">
 </div>
@@ -489,7 +489,7 @@
 <div class="paragraph">
 <p>Note that there is no single, universal file system. As the following diagram shows, a disk drive can have one of many different file systems written on it. Different file systems tend to be incompatible; that is, an operating system that supports one file system (or a handful of related file system types) might not support another. However, for example, CentOS supports a wide variety of file systems (including many commonly used by other operating systems), making data interchange between different file systems easy.</p>
 </div>
-<div id="figu-partitions-different-file-system" class="imageblock">
+<div id="figu-partitions-different-file-system" class="imageblock unresolved">
 <div class="content">
 <img src="../_images/partitions/other-formatted-drive.png" alt="Image of a disk drive with a different file system.">
 </div>
@@ -498,7 +498,7 @@
 <div class="paragraph">
 <p>Writing a file system to disk is only the first step. The goal of this process is to actually <em>store</em> and <em>retrieve</em> data. The figure below shows a drive disk after some data have been written to it:</p>
 </div>
-<div id="figu-partitions-drive-with-data" class="imageblock">
+<div id="figu-partitions-drive-with-data" class="imageblock unresolved">
 <div class="content">
 <img src="../_images/partitions/used-formatted-drive.png" alt="Image of a disk drive with data written to it.">
 </div>
@@ -549,7 +549,7 @@
 </tr>
 </table>
 </div>
-<div id="figu-partitions-partition-table" class="imageblock">
+<div id="figu-partitions-partition-table" class="imageblock unresolved">
 <div class="content">
 <img src="../_images/partitions/unused-partitioned-drive.png" alt="Image of an unused disk drive with a partition table.">
 </div>
@@ -583,7 +583,7 @@
 <div class="paragraph">
 <p>The following shows an example of a disk drive with single partition:</p>
 </div>
-<div id="figu-partitions-single-part" class="imageblock">
+<div id="figu-partitions-single-part" class="imageblock unresolved">
 <div class="content">
 <img src="../_images/partitions/dos-single-partition.png" alt="Image of a disk drive with a single partition.">
 </div>
@@ -740,7 +740,7 @@
 <div class="paragraph">
 <p>An extended partition is like a disk drive in its own right - it has its own partition table which points to one or more partitions (now called <em>logical partitions</em>, as opposed to the four <em>primary partitions</em>) contained entirely within the extended partition itself. The following diagram shows a disk drive with one primary partition and one extended partition containing two logical partitions (along with some unpartitioned free space):</p>
 </div>
-<div id="figu-partitions-extended" class="imageblock">
+<div id="figu-partitions-extended" class="imageblock unresolved">
 <div class="content">
 <img src="../_images/partitions/extended-partitions.png" alt="Image of a disk drive with an extended partition.">
 </div>
@@ -835,7 +835,7 @@
 <div class="paragraph">
 <p>In this situation, the partitions already defined do not span the entire hard disk, leaving unallocated space that is not part of any defined partition. The following diagram shows what this might look like:</p>
 </div>
-<div id="figu-partitions-unused-space" class="imageblock">
+<div id="figu-partitions-unused-space" class="imageblock unresolved">
 <div class="content">
 <img src="../_images/partitions/unpart-space.png" alt="Image of a disk drive with unpartitioned free space where 1 represents an undefined partition with unallocated space and 2 represents a defined partition with allocated space.">
 </div>
@@ -856,7 +856,7 @@
 <div class="paragraph">
 <p>In this case, maybe you have one or more partitions that you do not use any longer. The following diagram illustrates such a situation.</p>
 </div>
-<div id="figu-partitions-unused-partition" class="imageblock">
+<div id="figu-partitions-unused-partition" class="imageblock unresolved">
 <div class="content">
 <img src="../_images/partitions/unused-partition.png" alt="Image of a disk drive with an unused partition where 1 represents an unused partition and 2 represents reallocating an unused partition for Linux.">
 </div>
@@ -901,7 +901,7 @@
 <div class="paragraph">
 <p>After creating a smaller partition for your existing operating system, you can reinstall software, restore your data, and start your CentOS installation.</p>
 </div>
-<div id="figu-partitions-destructive-repartitioning" class="imageblock">
+<div id="figu-partitions-destructive-repartitioning" class="imageblock unresolved">
 <div class="content">
 <img src="../_images/partitions/dstrct-reprt.png" alt="Image of a disk drive being destructively repartitioned where 1 represents before and 2 represents after.">
 </div>
@@ -957,7 +957,7 @@
 <div class="paragraph">
 <p>As the following figure shows, the first step is to compress the data in your existing partition. The reason for doing this is to rearrange the data such that it maximizes the available free space at the "end" of the partition.</p>
 </div>
-<div id="figu-partitions-compress-data" class="imageblock">
+<div id="figu-partitions-compress-data" class="imageblock unresolved">
 <div class="content">
 <img src="../_images/partitions/compression.png" alt="Image of a disk drive being compressed where 1 represents before and 2 represents after.">
 </div>
@@ -975,7 +975,7 @@
 <div class="paragraph">
 <p><a href="#figu-partitions-resize-existing">Disk Drive with Partition Resized</a> shows the actual resizing process. While the actual result of the resizing operation varies depending on the software used, in most cases the newly freed space is used to create an unformatted partition of the same type as the original partition.</p>
 </div>
-<div id="figu-partitions-resize-existing" class="imageblock">
+<div id="figu-partitions-resize-existing" class="imageblock unresolved">
 <div class="content">
 <img src="../_images/partitions/part-resize.png" alt="Image of a disk drive with a resized partition where 1 represents before and 2 represents after.">
 </div>
@@ -993,7 +993,7 @@
 <div class="paragraph">
 <p>As the previous step implied, it might or might not be necessary to create new partitions. However, unless your resizing software supports systems with Linux installed, it is likely that you must delete the partition that was created during the resizing process.</p>
 </div>
-<div id="figu-partitions-final-configuration" class="imageblock">
+<div id="figu-partitions-final-configuration" class="imageblock unresolved">
 <div class="content">
 <img src="../_images/partitions/nondestruct-fin.png" alt="Image of a disk drive with final partition configuration where 1 represents before and 2 represents after.">
 </div>
@@ -1084,7 +1084,7 @@
 <p>Keeping this in mind, unless you have a reason for doing otherwise, you should <em>at least</em> create the following partitions: <code>swap</code>, <code>/boot/</code>, and <code>/</code> (root).</p>
 </div>
 <div class="paragraph">
-<p>For more information, see <a href="../CustomSpoke-x86/#sect-recommended-partitioning-scheme-x86" class="page">Recommended Partitioning Scheme (x86)</a> for AMD64, Intel&#160;64, and ARM systems, and <a href="../CustomSpoke-ppc64/#sect-recommended-partitioning-scheme-ppc" class="page">Recommended Partitioning Scheme (ppc)</a> for IBM Power&#160;Systems servers.</p>
+<p>For more information, see <a href="../CustomSpoke-x86/#sect-recommended-partitioning-scheme-x86" class="xref page">Recommended Partitioning Scheme (x86)</a> for AMD64, Intel&#160;64, and ARM systems, and <a href="../CustomSpoke-ppc64/#sect-recommended-partitioning-scheme-ppc" class="xref page">Recommended Partitioning Scheme (ppc)</a> for IBM Power&#160;Systems servers.</p>
 </div>
 </div>
 </div>

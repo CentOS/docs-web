@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Troubleshooting Installation on 64-bit AMD, Intel, and ARM Systems :: CentOS Docs Site</title>
     <link rel="canonical" href="https://docs.centos.org/centos/install-guide/Trouble-x86/">
-    <meta name="generator" content="Antora 2.0.0">
+    <meta name="generator" content="Antora 3.0.1">
     <link rel="stylesheet" href="../../../_/css/site.css">
   </head>
   <body class="article">
@@ -31,7 +31,7 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="../">Installation Guide</a></h3>
+    <h3 class="title"><a href="../../">Installation Guide</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
@@ -82,7 +82,7 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../Part_Install_x86/">Installing on x86_64 and ARM 64</a>
+    <a class="nav-link" href="#Part_Install_x86.adoc.adoc">Installing on x86_64 and ARM 64</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../Simple_Installation/">Quick Installation Guide</a>
@@ -343,7 +343,7 @@
     <li class="component">
       <span class="title">CentOS 8 Documentation</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../8-docs/">master</a>
         </li>
       </ul>
@@ -351,7 +351,7 @@
     <li class="component">
       <span class="title">CentOS Documentation</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../docs/">master</a>
         </li>
       </ul>
@@ -359,16 +359,16 @@
     <li class="component">
       <span class="title">Contributor's Guide</span>
       <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../stream-contrib/">master</a>
+        <li class="version">
+          <a href="../../../stream-contrib/">default</a>
         </li>
       </ul>
     </li>
     <li class="component is-current">
       <span class="title">Installation Guide</span>
       <ul class="versions">
-        <li class="version is-current is-latest">
-          <a href="../">master</a>
+        <li class="version is-current">
+          <a href="../../">master</a>
         </li>
       </ul>
     </li>
@@ -383,8 +383,8 @@
   <a href="../../../docs/" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="../">Installation Guide</a></li>
-    <li><a href="../Part_Install_x86/">Installing on x86_64 and ARM 64</a></li>
+    <li><a href="../../">Installation Guide</a></li>
+    <li><a href="#Part_Install_x86.adoc.adoc">Installing on x86_64 and ARM 64</a></li>
     <li><a href="./">Troubleshooting</a></li>
   </ul>
 </nav>
@@ -595,7 +595,7 @@
 <p>Systems with some video cards have trouble booting into the graphical installation program. If the installation program does not run using its default settings, it attempts to run in a lower resolution mode. If that still fails, the installation program attempts to run in text mode.</p>
 </div>
 <div class="paragraph">
-<p>There are several possible solutions to display issues, most of which involve specifying custom boot options. For more information, see <a href="../adminoptions/#sect-boot-options-installer" class="page">Configuring the Installation System at the Boot Menu</a>.</p>
+<p>There are several possible solutions to display issues, most of which involve specifying custom boot options. For more information, see <a href="../adminoptions/#sect-boot-options-installer" class="xref page">Configuring the Installation System at the Boot Menu</a>.</p>
 </div>
 <div class="dlist">
 <dl>
@@ -634,7 +634,7 @@
 <dt class="hdlist1">Perform the installation using VNC</dt>
 <dd>
 <div class="paragraph">
-<p>If the above options fail, you can use a separate system to access the graphical installation over the network, using the <em>Virtual Network Computing</em> (VNC) protocol. For details on installing using VNC, see <a href="../vnc-installations/#chap-vnc-installations" class="page">Using VNC</a>.</p>
+<p>If the above options fail, you can use a separate system to access the graphical installation over the network, using the <em>Virtual Network Computing</em> (VNC) protocol. For details on installing using VNC, see <a href="../vnc-installations/#chap-vnc-installations" class="xref page">Using VNC</a>.</p>
 </div>
 </dd>
 </dl>
@@ -646,7 +646,7 @@
 <p>In some cases, attempting to install in text mode using a serial console will result in no output on the console. This happens on systems which have a graphics card, but no monitor connected. If <strong class="application">Anaconda</strong> detects a graphics card, it will attempt to use it for a display, even if no display is connected.</p>
 </div>
 <div class="paragraph">
-<p>If you want to perform a text-based installation on a serial console, use the <code class="option">inst.text</code> and <code class="option">console=</code> boot options. See <a href="../adminoptions/#chap-anaconda-boot-options" class="page">Boot Options</a> for more details.</p>
+<p>If you want to perform a text-based installation on a serial console, use the <code class="option">inst.text</code> and <code class="option">console=</code> boot options. See <a href="../adminoptions/#chap-anaconda-boot-options" class="xref page">Boot Options</a> for more details.</p>
 </div>
 </div>
 </div>
@@ -666,13 +666,13 @@
 <p>If your system uses a hardware RAID controller, verify that the controller is properly configured and working. See your controller&#8217;s documentation for instructions.</p>
 </div>
 <div class="paragraph">
-<p>If you are installing into one or more iSCSI devices and there is no local storage present on the system, make sure that all required LUNs (<em>Logical Unit Numbers</em>) are being presented to the appropriate HBA (<em>Host Bus Adapter</em>). For additional information about iSCSI, see <a href="../iSCSI/#appe-iscsi-disks" class="page">iSCSI Disks</a>.</p>
+<p>If you are installing into one or more iSCSI devices and there is no local storage present on the system, make sure that all required LUNs (<em>Logical Unit Numbers</em>) are being presented to the appropriate HBA (<em>Host Bus Adapter</em>). For additional information about iSCSI, see <a href="../iSCSI/#appe-iscsi-disks" class="xref page">iSCSI Disks</a>.</p>
 </div>
 <div class="paragraph">
 <p>If you made sure you have a connected and properly configured storage device and the message still appears after you reboot the system and start the installation again, it means that the installation program failed to detect the storage. In most cases this message appears when you attempt to install on an SCSI device which has not been recognized by the installation program.</p>
 </div>
 <div class="paragraph">
-<p>In that case, you will have to perform a driver update before starting the installation. Check your hardware vendor&#8217;s website to determine if a driver update is available that fixes your problem. For more general information on driver updates, see <a href="../DU-Updating_drivers_during_installation_x86/#chap-driver-updates-x86" class="page">Updating Drivers During Installation on AMD64 and Intel&#160;64 Systems</a>.</p>
+<p>In that case, you will have to perform a driver update before starting the installation. Check your hardware vendor&#8217;s website to determine if a driver update is available that fixes your problem. For more general information on driver updates, see <a href="../DU-Updating_drivers_during_installation_x86/#chap-driver-updates-x86" class="xref page">Updating Drivers During Installation on AMD64 and Intel&#160;64 Systems</a>.</p>
 </div>
 <div class="paragraph">
 <p>You can also consult the <em class="citetitle">Red&#160;Hat Hardware Compatibility List</em>, available online at <a href="https://hardware.redhat.com" class="bare">https://hardware.redhat.com</a>.</p>
@@ -702,7 +702,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p>For further details, see <a href="../adminoptions/#chap-anaconda-boot-options" class="page">Boot Options</a>.</p>
+<p>For further details, see <a href="../adminoptions/#chap-anaconda-boot-options" class="xref page">Boot Options</a>.</p>
 </div>
 </li>
 <li>
@@ -716,7 +716,7 @@
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Switch to the console. See <a href="../Consoles_Logs_During_Install_x86/#sect-installation-consoles-x86" class="page">Accessing Consoles (x86)</a>.</p>
+<p>Switch to the console. See <a href="../Consoles_Logs_During_Install_x86/#sect-installation-consoles-x86" class="xref page">Accessing Consoles (x86)</a>.</p>
 </li>
 <li>
 <p>Change into the <code>/tmp/pre-anaconda-logs/</code> directory:</p>
@@ -743,7 +743,7 @@
 <p>Some BIOS types do not support booting from RAID cards. After you finish the installation and reboot the system for the first time, a text-based screen showing the boot loader prompt (for example, <code>grub&gt;</code>) and a flashing cursor might be all that appears. If this is the case, you must repartition your system and move your <code>/boot</code> partition and the boot loader outside the RAID array. The <code>/boot</code> partition and the boot loader must be on the same drive.</p>
 </div>
 <div class="paragraph">
-<p>Once these changes have been made, you should be able to finish your installation and boot the system properly. For more information about partitioning, see <a href="../StorageSpoke-x86/#sect-disk-partitioning-setup-x86" class="page">Installation Destination (x86)</a>.</p>
+<p>Once these changes have been made, you should be able to finish your installation and boot the system properly. For more information about partitioning, see <a href="../StorageSpoke-x86/#sect-disk-partitioning-setup-x86" class="xref page">Installation Destination (x86)</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -889,7 +889,7 @@ tmpfs                                       1.8G  2.6M  1.8G   1% /tmp
 <div class="sect2">
 <h3 id="sect-trouble-after-ram-x86"><a class="anchor" href="#sect-trouble-after-ram-x86"></a>Is Your RAM Not Being Recognized?</h3>
 <div class="paragraph">
-<p>In some cases the kernel does not recognize all of your memory (RAM), which causes the system to use less memory than is installed. You can find out how much RAM is being utilized using the <code class="command">free -m</code> command. If the displayed total amount of memory does not match your expectations, it is likely that at least one of your memory modules is faulty. On BIOS-based systems, you can use the <strong class="application">Memtest86+</strong> utility to test your system&#8217;s memory - see <a href="../adminoptions/#sect-boot-options-memtest" class="page">Loading the Memory Testing Mode</a> for details.</p>
+<p>In some cases the kernel does not recognize all of your memory (RAM), which causes the system to use less memory than is installed. You can find out how much RAM is being utilized using the <code class="command">free -m</code> command. If the displayed total amount of memory does not match your expectations, it is likely that at least one of your memory modules is faulty. On BIOS-based systems, you can use the <strong class="application">Memtest86+</strong> utility to test your system&#8217;s memory - see <a href="../adminoptions/#sect-boot-options-memtest" class="xref page">Loading the Memory Testing Mode</a> for details.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -982,10 +982,10 @@ GRUB_DISABLE_RECOVERY="true"</pre>
 <p>If you receive a fatal signal 11 error during the installation, first make sure you are using the most recent installation images, and let <strong class="application">Anaconda</strong> verify them to make sure they are not corrupted. Bad installation media (such as an improperly burned or scratched optical disk) are a common cause of signal 11 errors. Verifying the integrity of the installation media is recommended before every installation.</p>
 </div>
 <div class="paragraph">
-<p>For information about obtaining the most recent installation media, see <a href="../downloading/#chap-download" class="page">Downloading CentOS</a>. To perform a media check before the installation starts, append the <code class="option">rd.live.check</code> boot option at the boot menu. See <a href="../adminoptions/#sect-boot-options-mediacheck" class="page">Verifying Boot Media</a> for details.</p>
+<p>For information about obtaining the most recent installation media, see <a href="../downloading/#chap-download" class="xref page">Downloading CentOS</a>. To perform a media check before the installation starts, append the <code class="option">rd.live.check</code> boot option at the boot menu. See <a href="../adminoptions/#sect-boot-options-mediacheck" class="xref page">Verifying Boot Media</a> for details.</p>
 </div>
 <div class="paragraph">
-<p>If you performed a media check without any errors and you still have issues with segmentation faults, it usually means that your system encountered a hardware error. In this case, the problem is most likely in the system&#8217;s memory (RAM). This can be a problem even if you previously used a different operating system on the same computer without any errors. On BIOS-based systems, you can use the <strong class="application">Memtest86+</strong> memory testing module included on the installation media to perform a thorough test of your system&#8217;s memory. See <a href="../adminoptions/#sect-boot-options-memtest" class="page">Loading the Memory Testing Mode</a> for details.</p>
+<p>If you performed a media check without any errors and you still have issues with segmentation faults, it usually means that your system encountered a hardware error. In this case, the problem is most likely in the system&#8217;s memory (RAM). This can be a problem even if you previously used a different operating system on the same computer without any errors. On BIOS-based systems, you can use the <strong class="application">Memtest86+</strong> memory testing module included on the installation media to perform a thorough test of your system&#8217;s memory. See <a href="../adminoptions/#sect-boot-options-memtest" class="xref page">Loading the Memory Testing Mode</a> for details.</p>
 </div>
 <div class="paragraph">
 <p>Other possible causes are beyond this document&#8217;s scope. Consult your hardware manufacturer&#8217;s documentation and also see the <em class="citetitle">Red&#160;Hat Hardware Compatibility List</em>, available online at <a href="https://hardware.redhat.com" class="bare">https://hardware.redhat.com</a>.</p>

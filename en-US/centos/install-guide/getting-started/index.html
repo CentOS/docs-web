@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Getting Started :: CentOS Docs Site</title>
     <link rel="canonical" href="https://docs.centos.org/centos/install-guide/getting-started/">
-    <meta name="generator" content="Antora 2.0.0">
+    <meta name="generator" content="Antora 3.0.1">
     <link rel="stylesheet" href="../../../_/css/site.css">
   </head>
   <body class="article">
@@ -31,7 +31,7 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="../">Installation Guide</a></h3>
+    <h3 class="title"><a href="../../">Installation Guide</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
@@ -82,7 +82,7 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../Part_Install_x86/">Installing on x86_64 and ARM 64</a>
+    <a class="nav-link" href="#Part_Install_x86.adoc.adoc">Installing on x86_64 and ARM 64</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../Simple_Installation/">Quick Installation Guide</a>
@@ -343,7 +343,7 @@
     <li class="component">
       <span class="title">CentOS 8 Documentation</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../8-docs/">master</a>
         </li>
       </ul>
@@ -351,7 +351,7 @@
     <li class="component">
       <span class="title">CentOS Documentation</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../docs/">master</a>
         </li>
       </ul>
@@ -359,16 +359,16 @@
     <li class="component">
       <span class="title">Contributor's Guide</span>
       <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../stream-contrib/">master</a>
+        <li class="version">
+          <a href="../../../stream-contrib/">default</a>
         </li>
       </ul>
     </li>
     <li class="component is-current">
       <span class="title">Installation Guide</span>
       <ul class="versions">
-        <li class="version is-current is-latest">
-          <a href="../">master</a>
+        <li class="version is-current">
+          <a href="../../">master</a>
         </li>
       </ul>
     </li>
@@ -383,7 +383,7 @@
   <a href="../../../docs/" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="../">Installation Guide</a></li>
+    <li><a href="../../">Installation Guide</a></li>
     <li><a href="./">Getting Started</a></li>
   </ul>
 </nav>
@@ -394,7 +394,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>You can install CentOS with an installation utility called <strong class="application">Anaconda</strong>. Most users can simply follow the procedure outlined in <a href="../Simple_Installation/#sect-simple-install" class="page">Interactive Installation</a> to install CentOS using the graphical interface in <strong class="application">Anaconda</strong>.</p>
+<p>You can install CentOS with an installation utility called <strong class="application">Anaconda</strong>. Most users can simply follow the procedure outlined in <a href="../Simple_Installation/#sect-simple-install" class="xref page">Interactive Installation</a> to install CentOS using the graphical interface in <strong class="application">Anaconda</strong>.</p>
 </div>
 <div class="paragraph">
 <p>Users with advanced requirements can also use the graphical interface to configure many aspects of the installation, and install CentOS on a wide variety of systems. On systems without a local interface, installation can be accessed entirely remotely. Installation can also be automated by using a <strong class="application">Kickstart</strong> file, and performed with no interaction at all.</p>
@@ -420,7 +420,7 @@
 <p>Some screens will be automatically configured depending on your hardware and the type of media you used to start the installation. You can still change the detected settings in any screen. Screens which have not been automatically configured, and therefore require your attention before you begin the installation, are marked by an exclamation mark. You cannot start the actual installation process before you finish configuring these settings.</p>
 </div>
 <div class="paragraph">
-<p>Installation can also be performed in text mode, however certain options, notably including custom partitioning, are unavailable. For more information, see <a href="../Text_Installation_Intro-x86/#sect-installation-text-mode-x86" class="page">Installing in Text Mode (x86)</a> if using a AMD64/Intel 64 system or <a href="../Text_Installation_Intro-ppc/#sect-installation-text-mode-ppc" class="page">Installing in Text Mode (ppc)</a> if using an IBM Power Systems server.</p>
+<p>Installation can also be performed in text mode, however certain options, notably including custom partitioning, are unavailable. For more information, see <a href="../Text_Installation_Intro-x86/#sect-installation-text-mode-x86" class="xref page">Installing in Text Mode (x86)</a> if using a AMD64/Intel 64 system or <a href="../Text_Installation_Intro-ppc/#sect-installation-text-mode-ppc" class="xref page">Installing in Text Mode (ppc)</a> if using an IBM Power Systems server.</p>
 </div>
 </div>
 </div>
@@ -428,7 +428,7 @@
 <h2 id="sect-remote-installation"><a class="anchor" href="#sect-remote-installation"></a>Remote Installation</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You can use the graphical interface remotely to install CentOS. For headless systems, <code>Connect Mode</code> can be used to perform a graphical installation completely remotely. For systems with a display and keyboard, but without the capacity to run the graphical interface, <code>Direct Mode</code> can instead be used to facilitate setup. For more information, see the <a href="../vnc-installations/#chap-vnc-installations" class="page">Using VNC</a>.</p>
+<p>You can use the graphical interface remotely to install CentOS. For headless systems, <code>Connect Mode</code> can be used to perform a graphical installation completely remotely. For systems with a display and keyboard, but without the capacity to run the graphical interface, <code>Direct Mode</code> can instead be used to facilitate setup. For more information, see the <a href="../vnc-installations/#chap-vnc-installations" class="xref page">Using VNC</a>.</p>
 </div>
 </div>
 </div>
@@ -439,10 +439,10 @@
 <p><strong class="application">Anaconda</strong> installations can be automated through the use of a <strong class="application">Kickstart</strong> file. <strong class="application">Kickstart</strong> files can be used to configure any aspect of installation, allowing installation without user interaction, and can be used to easily automate installation of multiple instances of CentOS.</p>
 </div>
 <div class="paragraph">
-<p>In most situations, you can simply follow the procedure outlined in <a href="../Simple_Installation/#sect-simple-install-kickstart" class="page">Automatic Installation</a> to create and configure a <strong class="application">Kickstart</strong> file, which can be used to perform an arbitrary number of non-interactive installations of CentOS.</p>
+<p>In most situations, you can simply follow the procedure outlined in <a href="../Simple_Installation/#sect-simple-install-kickstart" class="xref page">Automatic Installation</a> to create and configure a <strong class="application">Kickstart</strong> file, which can be used to perform an arbitrary number of non-interactive installations of CentOS.</p>
 </div>
 <div class="paragraph">
-<p><strong class="application">Kickstart</strong> files can be automatically created based on choices made using the graphical or text mode interface, or written from scratch using any text editor. For more information, see <a href="../Kickstart2/#sect-kickstart-file-create" class="page">Creating a Kickstart File</a>.</p>
+<p><strong class="application">Kickstart</strong> files can be automatically created based on choices made using the graphical or text mode interface, or written from scratch using any text editor. For more information, see <a href="../Kickstart2/#sect-kickstart-file-create" class="xref page">Creating a Kickstart File</a>.</p>
 </div>
 </div>
 </div>

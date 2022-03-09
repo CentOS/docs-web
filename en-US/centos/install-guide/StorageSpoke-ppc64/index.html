@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Installation Destination :: CentOS Docs Site</title>
     <link rel="canonical" href="https://docs.centos.org/centos/install-guide/StorageSpoke-ppc64/">
-    <meta name="generator" content="Antora 2.0.0">
+    <meta name="generator" content="Antora 3.0.1">
     <link rel="stylesheet" href="../../../_/css/site.css">
   </head>
   <body class="article">
@@ -31,7 +31,7 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="../">Installation Guide</a></h3>
+    <h3 class="title"><a href="../../">Installation Guide</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
@@ -82,7 +82,7 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../Part_Install_x86/">Installing on x86_64 and ARM 64</a>
+    <a class="nav-link" href="#Part_Install_x86.adoc.adoc">Installing on x86_64 and ARM 64</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../Simple_Installation/">Quick Installation Guide</a>
@@ -343,7 +343,7 @@
     <li class="component">
       <span class="title">CentOS 8 Documentation</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../8-docs/">master</a>
         </li>
       </ul>
@@ -351,7 +351,7 @@
     <li class="component">
       <span class="title">CentOS Documentation</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../docs/">master</a>
         </li>
       </ul>
@@ -359,16 +359,16 @@
     <li class="component">
       <span class="title">Contributor's Guide</span>
       <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../stream-contrib/">master</a>
+        <li class="version">
+          <a href="../../../stream-contrib/">default</a>
         </li>
       </ul>
     </li>
     <li class="component is-current">
       <span class="title">Installation Guide</span>
       <ul class="versions">
-        <li class="version is-current is-latest">
-          <a href="../">master</a>
+        <li class="version is-current">
+          <a href="../../">master</a>
         </li>
       </ul>
     </li>
@@ -383,7 +383,7 @@
   <a href="../../../docs/" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="../">Installation Guide</a></li>
+    <li><a href="../../">Installation Guide</a></li>
     <li><a href="../Part_Install_ppc/">Installing on IBM Power Systems</a></li>
     <li><a href="../Graphical_Installation-ppc/">Installing Using Anaconda</a></li>
     <li><a href="./">Installation Destination</a></li>
@@ -404,7 +404,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>To select the disks and partition the storage space on which you will install CentOS, select <code>Installation Destination</code> in the <code>Installation Summary</code> screen. If you are unfamiliar with disk partitions, see <a href="../Partitions-x86/#appe-disk-partitions-overview" class="page">An Introduction to Disk Partitions</a> for more information.</p>
+<p>To select the disks and partition the storage space on which you will install CentOS, select <code>Installation Destination</code> in the <code>Installation Summary</code> screen. If you are unfamiliar with disk partitions, see <a href="../Partitions-x86/#appe-disk-partitions-overview" class="xref page">An Introduction to Disk Partitions</a> for more information.</p>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -446,7 +446,7 @@
 <ul>
 <li>
 <p>If you have a RAID card, be aware that some BIOS types do not support booting from the RAID card. In such a case, the <code>/boot</code> partition must be created on a partition outside of the RAID array, such as on a separate hard drive. It is necessary to use an internal hard drive for partition creation with problematic RAID cards. A <code>/boot</code> partition is also necessary for software RAID setups.
-If you have chosen to automatically partition your system, you should manually edit your <code>/boot</code> partition; see <a href="../CustomSpoke-ppc64/#sect-custom-partitioning-ppc" class="page">Manual Partitioning (ppc)</a> for more details.</p>
+If you have chosen to automatically partition your system, you should manually edit your <code>/boot</code> partition; see <a href="../CustomSpoke-ppc64/#sect-custom-partitioning-ppc" class="xref page">Manual Partitioning (ppc)</a> for more details.</p>
 </li>
 <li>
 <p>When you install CentOS on a system with both multipath and non-multipath storage devices, the automatic partitioning layout in the installation program might create volume groups that contain a mix of multipath and non-multipath devices. This defeats the purpose of multipath storage. We advise that you select only multipath or only non-multipath devices on the <code>Installation Destination</code> screen. Alternatively, proceed to manual partitioning.</p>
@@ -457,14 +457,14 @@ If you have chosen to automatically partition your system, you should manually e
 </tr>
 </table>
 </div>
-<div class="imageblock">
+<div class="imageblock unresolved">
 <div class="content">
 <img src="../_images/diskpartsetup/disk-setup-ppc.png" alt="Storage Space Overview.">
 </div>
 <div class="title">Figure 1. Storage Space Overview</div>
 </div>
 <div class="paragraph">
-<p>On this screen, you can see storage devices available locally on your computer. You can also add additional specialized or network devices by clicking the <b class="button">Add a disk</b> button. To learn more about these devices see <a href="../FilterSpoke-ppc64/#sect-storage-devices-ppc" class="page">Storage Devices (ppc)</a>.</p>
+<p>On this screen, you can see storage devices available locally on your computer. You can also add additional specialized or network devices by clicking the <b class="button">Add a disk</b> button. To learn more about these devices see <a href="../FilterSpoke-ppc64/#sect-storage-devices-ppc" class="xref page">Storage Devices (ppc)</a>.</p>
 </div>
 <div class="paragraph">
 <p>If you do not feel comfortable with partitioning your system, leave the default selection of the <code>Automatically configure partitioning</code> radio button to let the installation program partition the storage devices for you.</p>
@@ -482,7 +482,7 @@ If you have chosen to automatically partition your system, you should manually e
 <div class="paragraph">
 <p>For automatic partitioning, you can also select the <code>I would like to make additional space available</code> check box to choose how to reassign space from other file systems to this installation. After you click <b class="button">Done</b>, there are two dialogs that can appear. If you selected automatic partitioning but there is not enough storage space to complete the installation using the recommended partitioning configuration, a dialog will appear:</p>
 </div>
-<div class="imageblock">
+<div class="imageblock unresolved">
 <div class="content">
 <img src="../_images/diskpartsetup/install-options-reclaim.png" alt="There is not enough room to install CentOS so the Installation Options dialog asks if you want to reclaim space from other file systems.">
 </div>
@@ -498,7 +498,7 @@ If you have chosen to automatically partition your system, you should manually e
 <p>The second dialog appears if you cannot create enough free space. In this case, you have to add more disks on the initial storage screen or quit the installation.</p>
 </div>
 <div class="paragraph">
-<p>If you select the <code>I will configure partitioning</code> radio button for manual setup, you will be brought to the <code>Manual Partitioning</code> screen after clicking <b class="button">Done</b>. See <a href="../CustomSpoke-ppc64/#sect-custom-partitioning-ppc" class="page">Manual Partitioning (ppc)</a> for details.</p>
+<p>If you select the <code>I will configure partitioning</code> radio button for manual setup, you will be brought to the <code>Manual Partitioning</code> screen after clicking <b class="button">Done</b>. See <a href="../CustomSpoke-ppc64/#sect-custom-partitioning-ppc" class="xref page">Manual Partitioning (ppc)</a> for details.</p>
 </div>
 </li>
 <li>
@@ -543,7 +543,7 @@ If you have chosen to automatically partition your system, you should manually e
 <div class="paragraph">
 <p>To specify which device the boot loader should be installed on, click the <code>Full disk summary and bootloader</code> link at the bottom of the <code>Installation Destination</code> screen. The <code>Selected Disks</code> dialog will appear. If you are partitioning the drive manually, this dialog can be reached by clicking <code>Storage device/s selected</code> on the <code>Manual Partitioning</code> screen.</p>
 </div>
-<div class="imageblock">
+<div class="imageblock unresolved">
 <div class="content">
 <img src="../_images/bootloader/ppc-bootloader.png" alt="Summary of Selected Disks">
 </div>
@@ -580,7 +580,7 @@ If you have chosen to automatically partition your system, you should manually e
 <div class="paragraph">
 <p>Partitions are encrypted using the <em>Linux Unified Key Setup</em> - see the <a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Security_Guide/index.html">Red&#160;Hat Enterprise&#160;Linux&#160;7 Security Guide</a> for more information.</p>
 </div>
-<div class="imageblock">
+<div class="imageblock unresolved">
 <div class="content">
 <img src="../_images/encrypt/passphrase.png" alt="The dialog contains text boxes to enter a passphrase and to confirm it.">
 </div>
@@ -628,7 +628,7 @@ If you have chosen to automatically partition your system, you should manually e
 </tr>
 </table>
 </div>
-<div class="imageblock">
+<div class="imageblock unresolved">
 <div class="content">
 <img src="../_images/diskpartsetup/reclaim-space-ppc.png" alt="This dialog allows you to preserve / shrink / delete existing file systems to generate necessary space for the installation.">
 </div>

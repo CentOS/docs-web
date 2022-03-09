@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Kickstart commands and options reference :: CentOS Docs Site</title>
     <link rel="canonical" href="https://docs.centos.org/8-docs/advanced-install/assembly_kickstart-commands-and-options-reference/">
-    <meta name="generator" content="Antora 2.0.0">
+    <meta name="generator" content="Antora 3.0.1">
     <link rel="stylesheet" href="../../../_/css/site.css">
   </head>
   <body class="article">
@@ -1179,7 +1179,7 @@
     <li class="component is-current">
       <span class="title">CentOS 8 Documentation</span>
       <ul class="versions">
-        <li class="version is-current is-latest">
+        <li class="version is-current">
           <a href="../../">master</a>
         </li>
       </ul>
@@ -1187,7 +1187,7 @@
     <li class="component">
       <span class="title">CentOS Documentation</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../docs/">master</a>
         </li>
       </ul>
@@ -1195,16 +1195,16 @@
     <li class="component">
       <span class="title">Contributor's Guide</span>
       <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../stream-contrib/">master</a>
+        <li class="version">
+          <a href="../../../stream-contrib/">default</a>
         </li>
       </ul>
     </li>
     <li class="component">
       <span class="title">Installation Guide</span>
       <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../centos/install-guide/">master</a>
+        <li class="version">
+          <a href="../../../centos/">master</a>
         </li>
       </ul>
     </li>
@@ -1260,7 +1260,7 @@
 <div class="sect2">
 <h3 id="_using_kickstart_files_from_previous_centos_releases"><a class="anchor" href="#_using_kickstart_files_from_previous_centos_releases"></a>Using Kickstart files from previous CentOS releases</h3>
 <div class="paragraph">
-<p>If you are using Kickstart files from previous releases, see the <a href="../../managing-userspace-components/" class="page">Installing, managing, and removing user space components</a> document for more information about the CentOS 8 BaseOS and AppStream repositories.</p>
+<p>If you are using Kickstart files from previous releases, see the <a href="../../managing-userspace-components/" class="xref page">Installing, managing, and removing user space components</a> document for more information about the CentOS 8 BaseOS and AppStream repositories.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1512,7 +1512,7 @@
 <div class="sect2">
 <h3 id="eula_kickstart-commands-for-installation-program-configuration-and-flow-control"><a class="anchor" href="#eula_kickstart-commands-for-installation-program-configuration-and-flow-control"></a>eula</h3>
 <div class="paragraph">
-<p>The <code class="command">eula</code> Kickstart command is optional. Use this option to accept the End User License Agreement (EULA) without user interaction. Specifying this option prevents Initial Setup from prompting you to accept the license agreement after you finish the installation and reboot the system for the first time. See the <a href="../../standard-install/assembly_post-installation-tasks/#completing-initial-setup_post-installation-tasks" class="page">Completing initial setup</a> section of the <em>Performing a standard installation</em> document for more information.</p>
+<p>The <code class="command">eula</code> Kickstart command is optional. Use this option to accept the End User License Agreement (EULA) without user interaction. Specifying this option prevents Initial Setup from prompting you to accept the license agreement after you finish the installation and reboot the system for the first time. See the <a href="../../standard-install/assembly_post-installation-tasks/#completing-initial-setup_post-installation-tasks" class="xref page">Completing initial setup</a> section of the <em>Performing a standard installation</em> document for more information.</p>
 </div>
 <div class="ulist">
 <div class="title">Options</div>
@@ -2532,7 +2532,7 @@ Use the new <code class="command">authselect</code> command instead of the depre
 <div class="title">Additional resources</div>
 <ul>
 <li>
-<p>For more information about modules and streams, see the <a href="../../managing-userspace-components/" class="page">Installing, managing, and removing user space components</a> document.</p>
+<p>For more information about modules and streams, see the <a href="../../managing-userspace-components/" class="xref page">Installing, managing, and removing user space components</a> document.</p>
 </li>
 </ul>
 </div>
@@ -3345,7 +3345,7 @@ That disables only the <code>auditd</code> service. To disable all four services
 <p>The <code>ethN</code> device names such as <code>eth0</code> are no longer available in CentOS&#160;8 due to changes in the naming scheme. For more information about the device naming scheme, see the upstream document <a href="https://www.freedesktop.org/wiki/Software/systemd/PredictableNetworkInterfaceNames/">Predictable Network Interface Names</a>.</p>
 </li>
 <li>
-<p>If you used a Kickstart option or a boot option to specify an installation repository on a network, but no network is available at the start of the installation, the installation program displays the <strong class="GUI">Network Configuration</strong> window to set up a network connection prior to displaying the <strong class="GUI">Installation Summary</strong> window. For more details, see the <a href="../../standard-install/assembly_graphical-installation/#network-hostname_configuring-system-settings" class="page">Configuring network and host name options</a> section of the <em>Performing a standard installation</em> document.</p>
+<p>If you used a Kickstart option or a boot option to specify an installation repository on a network, but no network is available at the start of the installation, the installation program displays the <strong class="GUI">Network Configuration</strong> window to set up a network connection prior to displaying the <strong class="GUI">Installation Summary</strong> window. For more details, see the <a href="../../standard-install/assembly_graphical-installation/#network-hostname_configuring-system-settings" class="xref page">Configuring network and host name options</a> section of the <em>Performing a standard installation</em> document.</p>
 </li>
 </ul>
 </div>
@@ -3455,13 +3455,13 @@ That disables only the <code>auditd</code> service. To disable all four services
 </div>
 </div>
 <div class="paragraph">
-<p>For a description of the available partition schemes, see <a href="../assembly_partitioning-reference/#supported-device-types_partitioning-reference" class="page">Supported device types</a>.</p>
+<p>For a description of the available partition schemes, see <a href="../assembly_partitioning-reference/#supported-device-types_partitioning-reference" class="xref page">Supported device types</a>.</p>
 </div>
 </li>
 <li>
 <p><code class="option">--fstype=</code> - Selects one of the available file system types. The available values are <code>ext2</code>, <code>ext3</code>, <code>ext4</code>, <code>xfs</code>, and <code>vfat</code>. The default file system is <code>xfs</code>.</p>
 <div class="paragraph">
-<p>For information about these file systems, see <a href="../assembly_partitioning-reference/#supported-file-systems_partitioning-reference" class="page">Supported file systems</a>.</p>
+<p>For information about these file systems, see <a href="../assembly_partitioning-reference/#supported-file-systems_partitioning-reference" class="xref page">Supported file systems</a>.</p>
 </div>
 </li>
 <li>
@@ -3676,7 +3676,7 @@ That disables only the <code>auditd</code> service. To disable all four services
 <p>Red&#160;Hat recommends setting up a boot loader password on every system. An unprotected boot loader can allow a potential attacker to modify the system&#8217;s boot options and gain unauthorized access to the system.</p>
 </li>
 <li>
-<p>In some cases, a special partition is required to install the boot loader on AMD64, Intel 64, and 64-bit ARM systems. The type and size of this partition depends on whether the disk you are installing the boot loader to uses the Master Boot Record (MBR) or a GUID Partition Table (GPT) schema. For more information, see the <a href="../../standard-install/assembly_graphical-installation/#boot-loader-installation_configuring-system-settings" class="page">Configuring boot loader</a> section of the <em>Performing a standard installation</em> document.</p>
+<p>In some cases, a special partition is required to install the boot loader on AMD64, Intel 64, and 64-bit ARM systems. The type and size of this partition depends on whether the disk you are installing the boot loader to uses the Master Boot Record (MBR) or a GUID Partition Table (GPT) schema. For more information, see the <a href="../../standard-install/assembly_graphical-installation/#boot-loader-installation_configuring-system-settings" class="xref page">Configuring boot loader</a> section of the <em>Performing a standard installation</em> document.</p>
 </li>
 <li>
 <p>Device names in the <code>sd<em>X</em></code> (or <code>/dev/sd<em>X</em></code>) format are not guaranteed to be consistent across reboots, which can complicate usage of some Kickstart commands. When a command calls for a device node name, you can instead use any item from <code class="filename">/dev/disk</code>. For example, instead of:</p>
@@ -4081,7 +4081,7 @@ That disables only the <code>auditd</code> service. To disable all four services
 <p>The size assigned will be equivalent to the swap space assigned by <code class="option">--recommended</code> plus the amount of RAM on your system.</p>
 </div>
 <div class="paragraph">
-<p>For the swap sizes assigned by these commands, see <a href="../assembly_partitioning-reference/#recommended-partitioning-scheme_partitioning-reference" class="page">Recommended partitioning scheme</a> for AMD64, Intel 64, and 64-bit ARM systems.</p>
+<p>For the swap sizes assigned by these commands, see <a href="../assembly_partitioning-reference/#recommended-partitioning-scheme_partitioning-reference" class="xref page">Recommended partitioning scheme</a> for AMD64, Intel 64, and 64-bit ARM systems.</p>
 </div>
 </li>
 </ul>
@@ -4148,7 +4148,7 @@ That disables only the <code>auditd</code> service. To disable all four services
 <p><code class="option">--maxsize=</code> - The maximum size in MiB when the logical volume is set to grow. Specify an integer value here such as <code>500</code> (do not include the unit).</p>
 </li>
 <li>
-<p><code class="option">--recommended</code> - Use this option when creating a logical volume to determine the size of this volume automatically, based on your system&#8217;s hardware. For details about the recommended scheme, see <a href="../assembly_partitioning-reference/#recommended-partitioning-scheme_partitioning-reference" class="page">Recommended partitioning scheme</a> for AMD64, Intel 64, and 64-bit ARM systems.</p>
+<p><code class="option">--recommended</code> - Use this option when creating a logical volume to determine the size of this volume automatically, based on your system&#8217;s hardware. For details about the recommended scheme, see <a href="../assembly_partitioning-reference/#recommended-partitioning-scheme_partitioning-reference" class="xref page">Recommended partitioning scheme</a> for AMD64, Intel 64, and 64-bit ARM systems.</p>
 </li>
 <li>
 <p><code class="option">--resize</code> - Resize a logical volume. If you use this option, you must also specify <code class="option">--useexisting</code> and <code class="option">--size</code>.</p>
@@ -4489,7 +4489,7 @@ That disables only the <code>auditd</code> service. To disable all four services
 <p>The size assigned will be equivalent to the swap space assigned by <code class="option">--recommended</code> plus the amount of RAM on your system.</p>
 </div>
 <div class="paragraph">
-<p>For the swap sizes assigned by these commands, see <a href="../assembly_partitioning-reference/#recommended-partitioning-scheme_partitioning-reference" class="page">Recommended partitioning scheme</a> for AMD64, Intel 64, and 64-bit ARM systems.</p>
+<p>For the swap sizes assigned by these commands, see <a href="../assembly_partitioning-reference/#recommended-partitioning-scheme_partitioning-reference" class="xref page">Recommended partitioning scheme</a> for AMD64, Intel 64, and 64-bit ARM systems.</p>
 </div>
 </li>
 <li>
@@ -4531,7 +4531,7 @@ That disables only the <code>auditd</code> service. To disable all four services
 </td>
 <td class="content">
 <div class="paragraph">
-<p>If the <code class="option">--size</code> value is too small, the installation fails. Set the <code class="option">--size</code> value as the minimum amount of space you require. For size recommendations, see <a href="../assembly_partitioning-reference/#recommended-partitioning-scheme_partitioning-reference" class="page">Recommended partitioning scheme</a>.</p>
+<p>If the <code class="option">--size</code> value is too small, the installation fails. Set the <code class="option">--size</code> value as the minimum amount of space you require. For size recommendations, see <a href="../assembly_partitioning-reference/#recommended-partitioning-scheme_partitioning-reference" class="xref page">Recommended partitioning scheme</a>.</p>
 </div>
 </td>
 </tr>
@@ -4638,7 +4638,7 @@ That disables only the <code>auditd</code> service. To disable all four services
 <p><code class="option">--label=</code> - assign a label to an individual partition.</p>
 </li>
 <li>
-<p><code class="option">--recommended</code> - Determine the size of the partition automatically. For details about the recommended scheme, see <a href="../assembly_partitioning-reference/#recommended-partitioning-scheme_partitioning-reference" class="page">Recommended partitioning scheme</a> for AMD64, Intel 64, and 64-bit ARM.</p>
+<p><code class="option">--recommended</code> - Determine the size of the partition automatically. For details about the recommended scheme, see <a href="../assembly_partitioning-reference/#recommended-partitioning-scheme_partitioning-reference" class="xref page">Recommended partitioning scheme</a> for AMD64, Intel 64, and 64-bit ARM.</p>
 <div class="admonitionblock important">
 <table>
 <tr>
@@ -4789,7 +4789,7 @@ That disables only the <code>auditd</code> service. To disable all four services
 </div>
 </li>
 <li>
-<p><code class="option">--level=</code> - RAID level to use (0, 1, 4, 5, 6, or 10). See <a href="../assembly_partitioning-reference/#supported-raid-types_partitioning-reference" class="page">Supported RAID types</a> for information about various available RAID levels.</p>
+<p><code class="option">--level=</code> - RAID level to use (0, 1, 4, 5, 6, or 10). See <a href="../assembly_partitioning-reference/#supported-raid-types_partitioning-reference" class="xref page">Supported RAID types</a> for information about various available RAID levels.</p>
 </li>
 <li>
 <p><code class="option">--device=</code> - Name of the RAID device to use - for example, <code class="option">--device=root</code>.</p>

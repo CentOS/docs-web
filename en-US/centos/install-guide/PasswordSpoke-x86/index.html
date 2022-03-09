@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Set the Root Password :: CentOS Docs Site</title>
     <link rel="canonical" href="https://docs.centos.org/centos/install-guide/PasswordSpoke-x86/">
-    <meta name="generator" content="Antora 2.0.0">
+    <meta name="generator" content="Antora 3.0.1">
     <link rel="stylesheet" href="../../../_/css/site.css">
   </head>
   <body class="article">
@@ -31,7 +31,7 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="../">Installation Guide</a></h3>
+    <h3 class="title"><a href="../../">Installation Guide</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
@@ -82,7 +82,7 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../Part_Install_x86/">Installing on x86_64 and ARM 64</a>
+    <a class="nav-link" href="#Part_Install_x86.adoc.adoc">Installing on x86_64 and ARM 64</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../Simple_Installation/">Quick Installation Guide</a>
@@ -343,7 +343,7 @@
     <li class="component">
       <span class="title">CentOS 8 Documentation</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../8-docs/">master</a>
         </li>
       </ul>
@@ -351,7 +351,7 @@
     <li class="component">
       <span class="title">CentOS Documentation</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../docs/">master</a>
         </li>
       </ul>
@@ -359,16 +359,16 @@
     <li class="component">
       <span class="title">Contributor's Guide</span>
       <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../stream-contrib/">master</a>
+        <li class="version">
+          <a href="../../../stream-contrib/">default</a>
         </li>
       </ul>
     </li>
     <li class="component is-current">
       <span class="title">Installation Guide</span>
       <ul class="versions">
-        <li class="version is-current is-latest">
-          <a href="../">master</a>
+        <li class="version is-current">
+          <a href="../../">master</a>
         </li>
       </ul>
     </li>
@@ -383,8 +383,8 @@
   <a href="../../../docs/" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="../">Installation Guide</a></li>
-    <li><a href="../Part_Install_x86/">Installing on x86_64 and ARM 64</a></li>
+    <li><a href="../../">Installation Guide</a></li>
+    <li><a href="#Part_Install_x86.adoc.adoc">Installing on x86_64 and ARM 64</a></li>
     <li><a href="../Graphical_Installation-x86/">Installing Using Anaconda</a></li>
     <li><a href="./">Set the Root Password</a></li>
   </ul>
@@ -396,7 +396,7 @@
 <div class="paragraph">
 <p>Setting up a root account and password is an important step during your installation. The root account (also known as the superuser) is used to install packages, upgrade RPM packages, and perform most system maintenance. The root account gives you complete control over your system. For this reason, the root account is best used <em>only</em> to perform system maintenance or administration. See the <a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/System_Administrators_Guide/index.html">Red&#160;Hat Enterprise&#160;Linux&#160;7 System Administrator&#8217;s Guide</a> for more information about becoming root.</p>
 </div>
-<div class="imageblock">
+<div class="imageblock unresolved">
 <div class="content">
 <img src="../_images/accountconfig/rootpassword.png" alt="Root Password Screen.">
 </div>
@@ -452,7 +452,7 @@
 </td>
 <td class="content">
 <div class="paragraph">
-<p>To change your root password after you have completed the installation, run the <code class="command">passwd</code> command as <code>root</code>. If you forget the root password, see <a href="../Rescue_Mode/#sect-rescue-mode-reset-root-password" class="page">Resetting the Root Password</a> for instructions on how to use the rescue mode to set a new one.</p>
+<p>To change your root password after you have completed the installation, run the <code class="command">passwd</code> command as <code>root</code>. If you forget the root password, see <a href="../Rescue_Mode/#sect-rescue-mode-reset-root-password" class="xref page">Resetting the Root Password</a> for instructions on how to use the rescue mode to set a new one.</p>
 </div>
 </td>
 </tr>
