@@ -162,13 +162,6 @@
 <li><a href="#_after_a_merge_request_is_created">After a merge request is created</a></li>
 </ul>
 </li>
-<li><a href="#_centos_stream_8">CentOS Stream 8</a>
-<ul class="sectlevel2">
-<li><a href="#_submitting_a_change_in_a_source_git_repo_2">Submitting a change in a source-git repo</a></li>
-<li><a href="#_changing_source_code_by_defining_the_patch_in_a_spec_file_2">Changing source code by defining the patch in a spec file</a></li>
-<li><a href="#_after_a_merge_request_is_created_2">After a merge request is created</a></li>
-</ul>
-</li>
 </ul>
 </div>
 <div id="preamble">
@@ -214,9 +207,8 @@ But the repository itself doesn&#8217;t contain any source code - you need to ex
 <div class="content">
 <pre>We need this change in CentOS Stream
 
-patch_name: my-special-change.patch
-
 Signed-off-by: Tomas Tomecek &lt;ttomecek@redhat.com&gt;
+patch_name: my-special-change.patch
 
 ---
  src/code.c | 17 +++++++++--------
@@ -230,7 +222,7 @@ Signed-off-by: Tomas Tomecek &lt;ttomecek@redhat.com&gt;
 <p>This is the preferred way of changing source code since you define the name of the patch files.</p>
 </div>
 <div class="paragraph">
-<p>For more details on how to work in a source-git repository, please head on to <a href="https://packit.dev/docs/source-git/work-with-source-git/">packit&#8217;s documentation</a>.</p>
+<p>For more details on how to work in a source-git repository, please head on to <a href="https://packit.dev/source-git/work-with-source-git/">packit&#8217;s documentation</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -243,35 +235,6 @@ Signed-off-by: Tomas Tomecek &lt;ttomecek@redhat.com&gt;
 </div>
 <div class="paragraph">
 <p>When you open a source-git MR, you&#8217;ll be able to see CI checks which are coming from a mirrored MR which was automatically created in dist-git.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_centos_stream_8"><a class="anchor" href="#_centos_stream_8"></a>CentOS Stream 8</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>With CentOS Stream 8 source-git, source archives are unpacked into a single git-commit and downstream code changes are layered on top as additional commits. The repositories don&#8217;t contain upstream git history. These repositories are updated continuously from <a href="https://git.centos.org/rpms">git.centos.org</a>. This means that merge requests cannot be merged here and contributions need to go through bugzilla and processed internally first.</p>
-</div>
-<div class="sect2">
-<h3 id="_submitting_a_change_in_a_source_git_repo_2"><a class="anchor" href="#_submitting_a_change_in_a_source_git_repo_2"></a>Submitting a change in a source-git repo</h3>
-<div class="paragraph">
-<p>If you want to update packaging files (in SPECS directory), you can go ahead and change them - no special care is needed.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_changing_source_code_by_defining_the_patch_in_a_spec_file_2"><a class="anchor" href="#_changing_source_code_by_defining_the_patch_in_a_spec_file_2"></a>Changing source code by defining the patch in a spec file</h3>
-<div class="paragraph">
-<p>The same as CentOS Stream 9.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_after_a_merge_request_is_created_2"><a class="anchor" href="#_after_a_merge_request_is_created_2"></a>After a merge request is created</h3>
-<div class="paragraph">
-<p>When you submit a merge request for a CentOS Stream 8 source-git repo, automation will pick up the change and build it - there will be RPMs with your change available so you can try them out or just make sure it builds fine.</p>
-</div>
-<div class="paragraph">
-<p>When you create a merge request, our automation will create a corresponding bugzilla with the patch attached. It’s up to the RHEL maintainer to pick up your contribution and assess it.If the change is accepted, the Red Hat maintainer has to commit and build the change internally so that it can land back into CentOS Stream 8 - this process can take some time, so please be patient.</p>
 </div>
 </div>
 </div>
