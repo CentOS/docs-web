@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>System requirements reference :: CentOS Docs Site</title>
     <link rel="canonical" href="https://docs.centos.org/8-docs/standard-install/assembly_system-requirements-reference/">
-    <meta name="generator" content="Antora 2.0.0">
+    <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
   </head>
   <body class="article">
@@ -1179,7 +1179,7 @@
     <li class="component is-current">
       <span class="title">CentOS 8 Documentation</span>
       <ul class="versions">
-        <li class="version is-current is-latest">
+        <li class="version is-current">
           <a href="../../">master</a>
         </li>
       </ul>
@@ -1187,16 +1187,24 @@
     <li class="component">
       <span class="title">CentOS Documentation</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../docs/">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Contributor's Guide</span>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../../stream-contrib/">default</a>
         </li>
       </ul>
     </li>
     <li class="component">
       <span class="title">Installation Guide</span>
       <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../centos/install-guide/">master</a>
+        <li class="version">
+          <a href="../../../centos/">master</a>
         </li>
       </ul>
     </li>
@@ -1292,7 +1300,7 @@ CentOS supports the following installation targets for AMD64, Intel 64, and 64-b
 <p><strong>Record:</strong> Partitions used on the system. This information can include file system types, device node names, file system labels, and sizes, and allows you to identify specific partitions during the partitioning process. If one of the operating systems is a Unix operating system, CentOS may report the device names differently. Additional information can be found by executing the equivalent of the <strong>mount</strong> command and the <strong>blkid</strong> command, and in the <strong>/etc/fstab</strong> file.</p>
 </div>
 <div class="paragraph">
-<p>If multiple operating systems are installed, the CentOS installation program attempts to automatically detect them, and to configure boot loader to boot them. You can manually configure additional operating systems if they are not detected automatically. See <em>Configuring boot loader</em> in <a href="../assembly_graphical-installation/#configuring-software-settings_graphical-installation" class="page">Configuring software options</a> for more information.</p>
+<p>If multiple operating systems are installed, the CentOS installation program attempts to automatically detect them, and to configure boot loader to boot them. You can manually configure additional operating systems if they are not detected automatically. See <em>Configuring boot loader</em> in <a href="../assembly_graphical-installation/#configuring-software-settings_graphical-installation" class="xref page">Configuring software options</a> for more information.</p>
 </div>
 <div class="paragraph">
 <div class="title">Installing CentOS from an image on a local hard drive</div>
@@ -1362,10 +1370,10 @@ CentOS supports the following installation targets for AMD64, Intel 64, and 64-b
 </table>
 </div>
 <div class="paragraph">
-<p>You must have a minimum of 10 GiB of available disk space. See <a href="../assembly_partitioning-reference/#recommended-partitioning-scheme_partitioning-reference" class="page">Recommended partitioning scheme</a> for more information.</p>
+<p>You must have a minimum of 10 GiB of available disk space. See <a href="../assembly_partitioning-reference/#recommended-partitioning-scheme_partitioning-reference" class="xref page">Recommended partitioning scheme</a> for more information.</p>
 </div>
 <div class="paragraph">
-<p>To install CentOS, you must have a minimum of 10 GiB of space in either unpartitioned disk space or in partitions that can be deleted. See <a href="../assembly_partitioning-reference/#recommended-partitioning-scheme_partitioning-reference" class="page">Recommended partitioning scheme</a> for more information.</p>
+<p>To install CentOS, you must have a minimum of 10 GiB of space in either unpartitioned disk space or in partitions that can be deleted. See <a href="../assembly_partitioning-reference/#recommended-partitioning-scheme_partitioning-reference" class="xref page">Recommended partitioning scheme</a> for more information.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 1. Minimum RAM requirements</caption>
@@ -1402,7 +1410,7 @@ CentOS supports the following installation targets for AMD64, Intel 64, and 64-b
 </td>
 <td class="content">
 <div class="paragraph">
-<p>It is possible to complete the installation with less memory than the recommended minimum requirements. The exact requirements depend on your environment and installation path. It is recommended that you test various configurations to determine the minimum required RAM for your environment. Installing CentOS using a Kickstart file has the same recommended minimum RAM requirements as a standard installation. However, additional RAM may be required if your Kickstart file includes commands that require additional memory, or write data to the RAM disk. See the <a href="../../advanced-install/" class="page">Performing an advanced installation</a> document for more information.</p>
+<p>It is possible to complete the installation with less memory than the recommended minimum requirements. The exact requirements depend on your environment and installation path. It is recommended that you test various configurations to determine the minimum required RAM for your environment. Installing CentOS using a Kickstart file has the same recommended minimum RAM requirements as a standard installation. However, additional RAM may be required if your Kickstart file includes commands that require additional memory, or write data to the RAM disk. See the <a href="../../advanced-install/" class="xref page">Performing an advanced installation</a> document for more information.</p>
 </div>
 </td>
 </tr>

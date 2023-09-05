@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Installation Source on a Network :: CentOS Docs Site</title>
     <link rel="canonical" href="https://docs.centos.org/centos/install-guide/Install_Source_Network/">
-    <meta name="generator" content="Antora 2.0.0">
+    <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
   </head>
   <body class="article">
@@ -31,7 +31,7 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="../">Installation Guide</a></h3>
+    <h3 class="title"><a href="../../">Installation Guide</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
@@ -82,7 +82,7 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../Part_Install_x86/">Installing on x86_64 and ARM 64</a>
+    <a class="nav-link" href="#Part_Install_x86.adoc.adoc">Installing on x86_64 and ARM 64</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../Simple_Installation/">Quick Installation Guide</a>
@@ -343,7 +343,7 @@
     <li class="component">
       <span class="title">CentOS 8 Documentation</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../8-docs/">master</a>
         </li>
       </ul>
@@ -351,16 +351,24 @@
     <li class="component">
       <span class="title">CentOS Documentation</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../docs/">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Contributor's Guide</span>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../../stream-contrib/">default</a>
         </li>
       </ul>
     </li>
     <li class="component is-current">
       <span class="title">Installation Guide</span>
       <ul class="versions">
-        <li class="version is-current is-latest">
-          <a href="../">master</a>
+        <li class="version is-current">
+          <a href="../../">master</a>
         </li>
       </ul>
     </li>
@@ -375,7 +383,7 @@
   <a href="../../../docs/" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="../">Installation Guide</a></li>
+    <li><a href="../../">Installation Guide</a></li>
     <li><a href="../Making_Media/">Preparing Installation Media</a></li>
     <li><a href="../Preparing_Install_Sources/">Preparing Installation Sources</a></li>
     <li><a href="./">Installation Source on the Network</a></li>
@@ -396,7 +404,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Placing the installation source on a network has the advantage of allowing you to install multiple systems from a single source, without having to connect and disconnect any physical media. Network-based installations can be especially useful when used together with a TFTP server, which allows you to boot the installation program from the network as well. This approach completely eliminates the need for creating physical media, allowing easy deployment of CentOS on multiple systems at the same time. For further information about setting up a TFTP server, see <a href="../pxe-server/#chap-installation-server-setup" class="page">Preparing for a Network Installation</a>.</p>
+<p>Placing the installation source on a network has the advantage of allowing you to install multiple systems from a single source, without having to connect and disconnect any physical media. Network-based installations can be especially useful when used together with a TFTP server, which allows you to boot the installation program from the network as well. This approach completely eliminates the need for creating physical media, allowing easy deployment of CentOS on multiple systems at the same time. For further information about setting up a TFTP server, see <a href="../pxe-server/#chap-installation-server-setup" class="xref page">Preparing for a Network Installation</a>.</p>
 </div>
 </div>
 </div>
@@ -410,7 +418,7 @@
 <p>For more information about NFS servers, see the <a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Storage_Administration_Guide/index.html">Red&#160;Hat Enterprise&#160;Linux&#160;7 Storage Administration Guide</a>.</p>
 </div>
 <div class="paragraph">
-<p>The following procedure is only meant as a basic outline of the process. The precise steps you must take to set up an NFS server will vary based on the system&#8217;s architecture, operating system, package manager, service manager, and other factors. On CentOS&#160;7.8.2003 systems, the procedure can be followed exactly as documented. For procedures describing the installation source creation process on earlier releases of CentOS, see the appropriate <em class="citetitle">Installation Guide</em> for that release.</p>
+<p>The following procedure is only meant as a basic outline of the process. The precise steps you must take to set up an NFS server will vary based on the system&#8217;s architecture, operating system, package manager, service manager, and other factors. On CentOS&#160;7 systems, the procedure can be followed exactly as documented. For procedures describing the installation source creation process on earlier releases of CentOS, see the appropriate <em class="citetitle">Installation Guide</em> for that release.</p>
 </div>
 <div id="proc-installation-server-setup-nfs" class="olist arabic">
 <div class="title">Preparing for Installation Using NFS</div>
@@ -424,7 +432,7 @@
 </div>
 </li>
 <li>
-<p>Copy the full CentOS&#160;7.8.2003 binary DVD ISO image to a suitable directory on the NFS server. For example, you can create directory <code>/CentOS-install/</code> for this purpose and save the ISO image here.</p>
+<p>Copy the full CentOS&#160;7 binary DVD ISO image to a suitable directory on the NFS server. For example, you can create directory <code>/CentOS-install/</code> for this purpose and save the ISO image here.</p>
 </li>
 <li>
 <p>Open the <code>/etc/exports</code> file using a text editor and add a line with the following syntax:</p>
@@ -484,7 +492,7 @@
 <p>For more information about HTTP and FTP servers, see the <a href="https://access.redhat.com/site/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/System_Administrators_Guide/index.html">CentOS&#160;7 System Administrator&#8217;s Guide</a>.</p>
 </div>
 <div class="paragraph">
-<p>The following procedure is only meant as a basic outline of the process. The precise steps you must take to set up an FTP server will vary based on the system&#8217;s architecture, operating system, package manager, service manager, and other factors. On CentOS&#160;7.8.2003 systems, the procedure can be followed exactly as documented. For procedures describing the installation source creation process on earlier releases of CentOS, see the appropriate <em class="citetitle">Installation Guide</em> for that release.</p>
+<p>The following procedure is only meant as a basic outline of the process. The precise steps you must take to set up an FTP server will vary based on the system&#8217;s architecture, operating system, package manager, service manager, and other factors. On CentOS&#160;7 systems, the procedure can be followed exactly as documented. For procedures describing the installation source creation process on earlier releases of CentOS, see the appropriate <em class="citetitle">Installation Guide</em> for that release.</p>
 </div>
 <div id="proc-installation-server-setup-http" class="olist arabic">
 <div class="title">Preparing Installation Using HTTP or HTTPS</div>
@@ -529,7 +537,7 @@
 </div>
 </li>
 <li>
-<p>Copy the full CentOS&#160;7.8.2003 binary DVD ISO image to the HTTP(S) server.</p>
+<p>Copy the full CentOS&#160;7 binary DVD ISO image to the HTTP(S) server.</p>
 </li>
 <li>
 <p>Mount the binary DVD ISO image, using the <code class="command">mount</code> command, to a suitable directory:</p>
@@ -598,7 +606,7 @@
 </div>
 </li>
 <li>
-<p>Copy the full CentOS&#160;7.8.2003 binary DVD ISO image to the FTP server.</p>
+<p>Copy the full CentOS&#160;7 binary DVD ISO image to the FTP server.</p>
 </li>
 <li>
 <p>Mount the binary DVD ISO image, using the <code class="command">mount</code> command, to a suitable directory:</p>

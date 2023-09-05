@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Initial Setup :: CentOS Docs Site</title>
     <link rel="canonical" href="https://docs.centos.org/centos/install-guide/InitialSetupHub-common/">
-    <meta name="generator" content="Antora 2.0.0">
+    <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
   </head>
   <body class="article">
@@ -31,7 +31,7 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="../">Installation Guide</a></h3>
+    <h3 class="title"><a href="../../">Installation Guide</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
@@ -82,7 +82,7 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../Part_Install_x86/">Installing on x86_64 and ARM 64</a>
+    <a class="nav-link" href="#Part_Install_x86.adoc.adoc">Installing on x86_64 and ARM 64</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../Simple_Installation/">Quick Installation Guide</a>
@@ -343,7 +343,7 @@
     <li class="component">
       <span class="title">CentOS 8 Documentation</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../8-docs/">master</a>
         </li>
       </ul>
@@ -351,16 +351,24 @@
     <li class="component">
       <span class="title">CentOS Documentation</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../docs/">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Contributor's Guide</span>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../../stream-contrib/">default</a>
         </li>
       </ul>
     </li>
     <li class="component is-current">
       <span class="title">Installation Guide</span>
       <ul class="versions">
-        <li class="version is-current is-latest">
-          <a href="../">master</a>
+        <li class="version is-current">
+          <a href="../../">master</a>
         </li>
       </ul>
     </li>
@@ -375,7 +383,7 @@
   <a href="../../../docs/" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="../">Installation Guide</a></li>
+    <li><a href="../../">Installation Guide</a></li>
     <li><a href="../Part_After_Install/">After Installation</a></li>
     <li><a href="./">Initial Setup</a></li>
   </ul>
@@ -509,7 +517,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p>The <code class="option">--reconfig</code> option specifies that all options should be displayed. For further details about Kickstart installations, see <a href="../Kickstart2/#chap-kickstart-installations" class="page">Kickstart Installations</a>.</p>
+<p>The <code class="option">--reconfig</code> option specifies that all options should be displayed. For further details about Kickstart installations, see <a href="../Kickstart2/#chap-kickstart-installations" class="xref page">Kickstart Installations</a>.</p>
 </div>
 </td>
 </tr>
@@ -523,7 +531,7 @@
 <div class="paragraph">
 <p>In graphical mode, the <strong class="application">Initial Setup</strong> displays the following screen:</p>
 </div>
-<div class="imageblock">
+<div class="imageblock unresolved">
 <div class="content">
 <img src="../_images/initial-setup/is-firstscreen.png" alt="Initial Setup Screen">
 </div>
@@ -532,7 +540,7 @@
 <div class="paragraph">
 <p>The <code>License Agreement</code> screen displays the overall licensing terms for CentOS.</p>
 </div>
-<div class="imageblock">
+<div class="imageblock unresolved">
 <div class="content">
 <img src="../_images/initial-setup/is-license.png" alt="License Information Screen in Initial Setup">
 </div>
@@ -545,10 +553,10 @@
 <p>Review the license agreement. Then, select <code>I accept the license agreement.</code> and click <b class="button">Done</b> to continue.</p>
 </div>
 <div class="paragraph">
-<p>The <code>User Creation</code> screen is the same as the one used when creating an account during the installation. See <a href="../UserSpoke-x86/#sect-account-configuration-user-x86" class="page">Create a User Account (x86)</a> for detailed information.</p>
+<p>The <code>User Creation</code> screen is the same as the one used when creating an account during the installation. See <a href="../UserSpoke-x86/#sect-account-configuration-user-x86" class="xref page">Create a User Account (x86)</a> for detailed information.</p>
 </div>
 <div class="paragraph">
-<p>Similarly, the <code>Network &amp; Host Name</code> screen is the same as the one used when setting up network. See <a href="../NetworkSpoke-x86/#sect-network-hostname-configuration-x86" class="page">Network &amp; Hostname (x86)</a> for information.</p>
+<p>Similarly, the <code>Network &amp; Host Name</code> screen is the same as the one used when setting up network. See <a href="../NetworkSpoke-x86/#sect-network-hostname-configuration-x86" class="xref page">Network &amp; Hostname (x86)</a> for information.</p>
 </div>
 <div class="paragraph">
 <p>Once ready, click the <b class="button">FINISH CONFIGURATION</b> button to exit <strong class="application">Initial Setup</strong>.</p>
@@ -564,7 +572,7 @@
 <div class="paragraph">
 <p>If you installed CentOS without the <strong class="application">X Window System</strong>, the <strong class="application">Initial Setup</strong> starts in text mode:</p>
 </div>
-<div class="imageblock">
+<div class="imageblock unresolved">
 <div class="content">
 <img src="../_images/initial-setup/is-tui.png" alt="is tui">
 </div>

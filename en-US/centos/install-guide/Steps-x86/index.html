@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Planning for Installation on 64-bit AMD, Intel, and ARM Systems :: CentOS Docs Site</title>
     <link rel="canonical" href="https://docs.centos.org/centos/install-guide/Steps-x86/">
-    <meta name="generator" content="Antora 2.0.0">
+    <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
   </head>
   <body class="article">
@@ -31,7 +31,7 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="../">Installation Guide</a></h3>
+    <h3 class="title"><a href="../../">Installation Guide</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
@@ -82,7 +82,7 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../Part_Install_x86/">Installing on x86_64 and ARM 64</a>
+    <a class="nav-link" href="#Part_Install_x86.adoc.adoc">Installing on x86_64 and ARM 64</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../Simple_Installation/">Quick Installation Guide</a>
@@ -343,7 +343,7 @@
     <li class="component">
       <span class="title">CentOS 8 Documentation</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../8-docs/">master</a>
         </li>
       </ul>
@@ -351,16 +351,24 @@
     <li class="component">
       <span class="title">CentOS Documentation</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../docs/">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Contributor's Guide</span>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../../stream-contrib/">default</a>
         </li>
       </ul>
     </li>
     <li class="component is-current">
       <span class="title">Installation Guide</span>
       <ul class="versions">
-        <li class="version is-current is-latest">
-          <a href="../">master</a>
+        <li class="version is-current">
+          <a href="../../">master</a>
         </li>
       </ul>
     </li>
@@ -375,8 +383,8 @@
   <a href="../../../docs/" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="../">Installation Guide</a></li>
-    <li><a href="../Part_Install_x86/">Installing on x86_64 and ARM 64</a></li>
+    <li><a href="../../">Installation Guide</a></li>
+    <li><a href="#Part_Install_x86.adoc.adoc">Installing on x86_64 and ARM 64</a></li>
     <li><a href="./">Planning for Installation</a></li>
   </ul>
 </nav>
@@ -425,7 +433,7 @@
 <h2 id="sect-installation-planning-hardware-compatibility-x86"><a class="anchor" href="#sect-installation-planning-hardware-compatibility-x86"></a>Is Your Hardware Compatible?</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>CentOS&#160;7.8.2003 should be compatible with most hardware in systems that were factory built within the last two years. Hardware compatibility is a particularly important concern if you have an older or custom-built system. Because hardware specifications change almost daily, it is recommended that all systems be checked for compatibility.</p>
+<p>CentOS&#160;7 should be compatible with most hardware in systems that were factory built within the last two years. Hardware compatibility is a particularly important concern if you have an older or custom-built system. Because hardware specifications change almost daily, it is recommended that all systems be checked for compatibility.</p>
 </div>
 <div class="paragraph">
 <p>The most recent list of supported hardware can be found in the <em class="citetitle">Red&#160;Hat Hardware Compatibility List</em>, available online at <a href="https://access.redhat.com/ecosystem/search/#/category/Server" class="bare">https://access.redhat.com/ecosystem/search/#/category/Server</a>. Also see <a href="https://access.redhat.com/site/articles/rhel-limits">CentOS technology capabilities and limits</a> for general information about system requirements.</p>
@@ -490,7 +498,7 @@
 <li>
 <p>Information about the partitions used on the system. This information can include file system types, device node names, file system labels, and sizes. This will allow you to identify specific partitions during the partitioning process. Remember that different operating systems identify partitions and drives differently, therefore even if the other operating system is a Unix operating system, the device names can be reported by CentOS differently. This information can usually be found by executing the equivalent of the <code class="command">mount</code> command and <code class="command">blkid</code> command and in the <code>/etc/fstab</code> file.</p>
 <div class="paragraph">
-<p>If you have other operating systems already installed, the CentOS&#160;7.8.2003 installation program attempts to automatically detect and configure to boot them. You can manually configure any additional operating systems if they are not detected properly. For more information, see <a href="../StorageSpoke-x86/#sect-bootloader-x86" class="page">Boot Loader Installation (x86)</a>.</p>
+<p>If you have other operating systems already installed, the CentOS&#160;7 installation program attempts to automatically detect and configure to boot them. You can manually configure any additional operating systems if they are not detected properly. For more information, see <a href="../StorageSpoke-x86/#sect-bootloader-x86" class="xref page">Boot Loader Installation (x86)</a>.</p>
 </div>
 </li>
 </ul>
@@ -562,7 +570,7 @@
 <h2 id="sect-installation-planning-disk-space-memory-x86"><a class="anchor" href="#sect-installation-planning-disk-space-memory-x86"></a>Disk Space and Memory Requirements</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>CentOS, like most modern operating systems, uses <em>disk partitions</em>. When you install CentOS, you might have to work with disk partitions. For more information, see <a href="../Partitions-x86/#appe-disk-partitions-overview" class="page">An Introduction to Disk Partitions</a>.</p>
+<p>CentOS, like most modern operating systems, uses <em>disk partitions</em>. When you install CentOS, you might have to work with disk partitions. For more information, see <a href="../Partitions-x86/#appe-disk-partitions-overview" class="xref page">An Introduction to Disk Partitions</a>.</p>
 </div>
 <div class="paragraph">
 <p>If you have other operating systems installed on your system, the disk space they use must be separate from the disk space used by CentOS.</p>
@@ -582,7 +590,7 @@
 </table>
 </div>
 <div class="paragraph">
-<p>To install CentOS, you must have a minimum of 10 GiB of space in either unpartitioned disk space or in partitions which can be deleted. For more information on partition and disk space recommendations, see the recommended partitioning sizes discussed in <a href="../CustomSpoke-x86/#sect-recommended-partitioning-scheme-x86" class="page">Recommended Partitioning Scheme (x86)</a>.</p>
+<p>To install CentOS, you must have a minimum of 10 GiB of space in either unpartitioned disk space or in partitions which can be deleted. For more information on partition and disk space recommendations, see the recommended partitioning sizes discussed in <a href="../CustomSpoke-x86/#sect-recommended-partitioning-scheme-x86" class="xref page">Recommended Partitioning Scheme (x86)</a>.</p>
 </div>
 <div class="paragraph">
 <p>CentOS requires minimum the following amount of RAM:</p>
@@ -647,7 +655,7 @@
 <div class="sect2">
 <h3 id="sect-installation-planning-software-raid-x86"><a class="anchor" href="#sect-installation-planning-software-raid-x86"></a>Software RAID</h3>
 <div class="paragraph">
-<p>On systems with more than one hard drive, you can use the CentOS installation program to operate several of the drives as a Linux software RAID array. With a software RAID array, RAID functions are controlled by the operating system rather than dedicated hardware. These functions are explained in detail in <a href="../CustomSpoke-x86/#sect-custom-partitioning-x86" class="page">Manual Partitioning (x86)</a>.</p>
+<p>On systems with more than one hard drive, you can use the CentOS installation program to operate several of the drives as a Linux software RAID array. With a software RAID array, RAID functions are controlled by the operating system rather than dedicated hardware. These functions are explained in detail in <a href="../CustomSpoke-x86/#sect-custom-partitioning-x86" class="xref page">Manual Partitioning (x86)</a>.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -711,13 +719,13 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>To take advantage of the high performance of NVDIMM devices during booting, place the <code>/boot</code> and <code>/boot/efi</code> directories on the device. See <a href="../CustomSpoke-x86/#sect-custom-partitioning-x86" class="page">Manual Partitioning (x86_64)</a> for more information. Note that the Execute-in-place (XIP) feature of NVDIMM devices is not supported during booting and the kernel is loaded into conventional memory.</p>
+<p>To take advantage of the high performance of NVDIMM devices during booting, place the <code>/boot</code> and <code>/boot/efi</code> directories on the device. See <a href="../CustomSpoke-x86/#sect-custom-partitioning-x86" class="xref page">Manual Partitioning (x86_64)</a> for more information. Note that the Execute-in-place (XIP) feature of NVDIMM devices is not supported during booting and the kernel is loaded into conventional memory.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="sect-installation-planning-intel-bios-raid-sets-x86"><a class="anchor" href="#sect-installation-planning-intel-bios-raid-sets-x86"></a>Considerations for Intel BIOS RAID Sets</h3>
 <div class="paragraph">
-<p>CentOS&#160;7.8.2003 uses <strong class="application">mdraid</strong> for installation onto Intel BIOS RAID sets. These sets are detected automatically during the boot process and their device node paths can change from boot to boot. For this reason, local modifications to <code>/etc/fstab</code>, <code>/etc/crypttab</code> or other configuration files which refer to devices by their device node paths might not work in CentOS&#160;7.8.2003. Therefore, you should replace device node paths (such as <code>/dev/sda</code>) with file system labels or device UUIDs instead. You can find the file system labels and device UUIDs using the <code class="command">blkid</code> command.</p>
+<p>CentOS&#160;7 uses <strong class="application">mdraid</strong> for installation onto Intel BIOS RAID sets. These sets are detected automatically during the boot process and their device node paths can change from boot to boot. For this reason, local modifications to <code>/etc/fstab</code>, <code>/etc/crypttab</code> or other configuration files which refer to devices by their device node paths might not work in CentOS&#160;7. Therefore, you should replace device node paths (such as <code>/dev/sda</code>) with file system labels or device UUIDs instead. You can find the file system labels and device UUIDs using the <code class="command">blkid</code> command.</p>
 </div>
 </div>
 <div class="sect2">
@@ -732,10 +740,10 @@
 <h2 id="sect-installation-planning-boot-method-x86"><a class="anchor" href="#sect-installation-planning-boot-method-x86"></a>Choose an Installation Boot Method</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You can use several methods to boot the CentOS&#160;7.8.2003 installation program. The method you choose depends upon your installation media.</p>
+<p>You can use several methods to boot the CentOS&#160;7 installation program. The method you choose depends upon your installation media.</p>
 </div>
 <div class="paragraph">
-<p>Your system&#8217;s firmware (BIOS of UEFI) settings might need to be changed to allow booting from removable media such as a DVD or a USB flash drive. See <a href="../Boot_x86/#sect-installation-booting-x86" class="page">Booting from Physical Media (x86)</a> for information.</p>
+<p>Your system&#8217;s firmware (BIOS of UEFI) settings might need to be changed to allow booting from removable media such as a DVD or a USB flash drive. See <a href="../Boot_x86/#sect-installation-booting-x86" class="xref page">Booting from Physical Media (x86)</a> for information.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -756,19 +764,19 @@
 <dt class="hdlist1">Full installation DVD or USB drive</dt>
 <dd>
 <div class="paragraph">
-<p>You can create bootable media from the full installation DVD ISO image. In this case, a single DVD or USB drive can be used to complete the entire installation - it will serve both as a boot device and as an installation source for installing software packages. See <a href="../Making_Media/#chap-making-media" class="page">Making Media</a> for instructions on how to make a full installation DVD or USB drive.</p>
+<p>You can create bootable media from the full installation DVD ISO image. In this case, a single DVD or USB drive can be used to complete the entire installation - it will serve both as a boot device and as an installation source for installing software packages. See <a href="../Making_Media/#chap-making-media" class="xref page">Making Media</a> for instructions on how to make a full installation DVD or USB drive.</p>
 </div>
 </dd>
 <dt class="hdlist1">Minimal boot CD, DVD or USB Flash Drive</dt>
 <dd>
 <div class="paragraph">
-<p>A minimal boot CD, DVD or USB flash drive is created using a small ISO image, which only contains data necessary to boot the system and start the installation. If you use this boot media, you will need an additional installation source from which packages will be installed. See <a href="../Making_Media_USB/#sect-making-usb-media" class="page">Making Installation USB Media</a> for instructions on making boot CDs, DVDs and USB flash drives.</p>
+<p>A minimal boot CD, DVD or USB flash drive is created using a small ISO image, which only contains data necessary to boot the system and start the installation. If you use this boot media, you will need an additional installation source from which packages will be installed. See <a href="../Making_Media_USB/#sect-making-usb-media" class="xref page">Making Installation USB Media</a> for instructions on making boot CDs, DVDs and USB flash drives.</p>
 </div>
 </dd>
 <dt class="hdlist1">PXE Server</dt>
 <dd>
 <div class="paragraph">
-<p>A <em>preboot execution environment</em> (PXE) server allows the installation program to boot over the network. After you boot the system, you complete the installation from a different installation source, such as a local hard drive or a location on a network. For more information on PXE servers, see <a href="../pxe-server/#chap-installation-server-setup" class="page">Preparing for a Network Installation</a>.</p>
+<p>A <em>preboot execution environment</em> (PXE) server allows the installation program to boot over the network. After you boot the system, you complete the installation from a different installation source, such as a local hard drive or a location on a network. For more information on PXE servers, see <a href="../pxe-server/#chap-installation-server-setup" class="xref page">Preparing for a Network Installation</a>.</p>
 </div>
 </dd>
 </dl>
@@ -779,13 +787,13 @@
 <h2 id="sect-installation-planning-kickstart-x86"><a class="anchor" href="#sect-installation-planning-kickstart-x86"></a>Automating the Installation with Kickstart</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>CentOS&#160;7.8.2003 offers a way to partially or fully automate the installation process using a <em>Kickstart file</em>. Kickstart files contain answers to all questions normally asked by the installation program, such as what time zone do you want the system to use, how should the drives be partitioned or which packages should be installed. Providing a prepared Kickstart file at the beginning of the installation therefore allows you to perform the entire installation (or parts of it) automatically, without need for any intervention from the user. This is especially useful when deploying CentOS on a large number of systems at once.</p>
+<p>CentOS&#160;7 offers a way to partially or fully automate the installation process using a <em>Kickstart file</em>. Kickstart files contain answers to all questions normally asked by the installation program, such as what time zone do you want the system to use, how should the drives be partitioned or which packages should be installed. Providing a prepared Kickstart file at the beginning of the installation therefore allows you to perform the entire installation (or parts of it) automatically, without need for any intervention from the user. This is especially useful when deploying CentOS on a large number of systems at once.</p>
 </div>
 <div class="paragraph">
 <p>In addition to allowing you to automate the installation, Kickstart files also provide more options regarding software selection. When installing CentOS manually using the graphical installation interface, your software selection is limited to pre-defined environments and add-ons. A Kickstart file allows you to install or remove individual packages as well.</p>
 </div>
 <div class="paragraph">
-<p>For instructions about creating a Kickstart file and using it to automate the installation, see <a href="../Kickstart2/#chap-kickstart-installations" class="page">Kickstart Installations</a>.</p>
+<p>For instructions about creating a Kickstart file and using it to automate the installation, see <a href="../Kickstart2/#chap-kickstart-installations" class="xref page">Kickstart Installations</a>.</p>
 </div>
 </div>
 </div>

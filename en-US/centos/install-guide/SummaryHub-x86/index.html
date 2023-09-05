@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>The Installation Summary Screen :: CentOS Docs Site</title>
     <link rel="canonical" href="https://docs.centos.org/centos/install-guide/SummaryHub-x86/">
-    <meta name="generator" content="Antora 2.0.0">
+    <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
   </head>
   <body class="article">
@@ -31,7 +31,7 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="../">Installation Guide</a></h3>
+    <h3 class="title"><a href="../../">Installation Guide</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
@@ -82,7 +82,7 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../Part_Install_x86/">Installing on x86_64 and ARM 64</a>
+    <a class="nav-link" href="#Part_Install_x86.adoc.adoc">Installing on x86_64 and ARM 64</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../Simple_Installation/">Quick Installation Guide</a>
@@ -343,7 +343,7 @@
     <li class="component">
       <span class="title">CentOS 8 Documentation</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../8-docs/">master</a>
         </li>
       </ul>
@@ -351,16 +351,24 @@
     <li class="component">
       <span class="title">CentOS Documentation</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../docs/">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Contributor's Guide</span>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../../stream-contrib/">default</a>
         </li>
       </ul>
     </li>
     <li class="component is-current">
       <span class="title">Installation Guide</span>
       <ul class="versions">
-        <li class="version is-current is-latest">
-          <a href="../">master</a>
+        <li class="version is-current">
+          <a href="../../">master</a>
         </li>
       </ul>
     </li>
@@ -375,8 +383,8 @@
   <a href="../../../docs/" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="../">Installation Guide</a></li>
-    <li><a href="../Part_Install_x86/">Installing on x86_64 and ARM 64</a></li>
+    <li><a href="../../">Installation Guide</a></li>
+    <li><a href="#Part_Install_x86.adoc.adoc">Installing on x86_64 and ARM 64</a></li>
     <li><a href="../Graphical_Installation-x86/">Installing Using Anaconda</a></li>
     <li><a href="./">The Installation Summary Screen</a></li>
   </ul>
@@ -388,7 +396,7 @@
 <div class="paragraph">
 <p>The <code>Installation Summary</code> screen is the central location for setting up an installation.</p>
 </div>
-<div class="imageblock">
+<div class="imageblock unresolved">
 <div class="content">
 <img src="../_images/preinstallhub/preinstall_hub.png" alt="The Installation Summary Screen">
 </div>
@@ -404,7 +412,7 @@
 <p>Only sections marked with a warning symbol are mandatory. A note at the bottom of the screen warns you that these sections must be completed before the installation can begin. The remaining sections are optional. Beneath each section&#8217;s title, the current configuration is summarized. Using this you can determine whether you need to visit the section to configure it further.</p>
 </div>
 <div class="paragraph">
-<p>Once all required sections are complete, click the <b class="button">Begin Installation</b> button. Also see <a href="../Write_changes_to_disk_x86/#sect-write-changes-to-disk-x86" class="page">Begin Installation (x86)</a>.</p>
+<p>Once all required sections are complete, click the <b class="button">Begin Installation</b> button. Also see <a href="../Write_changes_to_disk_x86/#sect-write-changes-to-disk-x86" class="xref page">Begin Installation (x86)</a>.</p>
 </div>
 <div class="paragraph">
 <p>To cancel the installation, click the <b class="button">Quit</b> button.</p>
@@ -426,14 +434,14 @@
 <div class="paragraph">
 <p>If you used a Kickstart option or a boot command-line option to specify an installation repository on a network, but no network is available at the start of the installation, the installation program will display the configuration screen for you to set up a network connection prior to displaying the <code>Installation Summary</code> screen.</p>
 </div>
-<div class="imageblock">
+<div class="imageblock unresolved">
 <div class="content">
 <img src="../_images/preinstallhub/preinstall_no-network_no-wireless.png" alt="Network Configuration Screen When No Network Is Detected">
 </div>
 <div class="title">Figure 2. Network Configuration Screen When No Network Is Detected</div>
 </div>
 <div class="paragraph">
-<p>You can skip this step if you are installing from an installation DVD or other locally accessible media, and you are certain you will not need network to finish the installation. However, network connectivity is necessary for network installations (see <a href="../SourceSpoke-x86/#sect-installation-source-x86" class="page">Installation Source (x86)</a>) or for setting up advanced storage devices (see <a href="../FilterSpoke-x86/#sect-storage-devices-x86" class="page">Storage Devices (x86)</a>). For more details about configuring a network in the installation program, see <a href="../NetworkSpoke-x86/#sect-network-hostname-configuration-x86" class="page">Network &amp; Hostname (x86)</a>.</p>
+<p>You can skip this step if you are installing from an installation DVD or other locally accessible media, and you are certain you will not need network to finish the installation. However, network connectivity is necessary for network installations (see <a href="../SourceSpoke-x86/#sect-installation-source-x86" class="xref page">Installation Source (x86)</a>) or for setting up advanced storage devices (see <a href="../FilterSpoke-x86/#sect-storage-devices-x86" class="xref page">Storage Devices (x86)</a>). For more details about configuring a network in the installation program, see <a href="../NetworkSpoke-x86/#sect-network-hostname-configuration-x86" class="xref page">Network &amp; Hostname (x86)</a>.</p>
 </div>
 </article>
 </main>

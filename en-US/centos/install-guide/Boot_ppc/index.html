@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Booting the Installation on IBM Power&#160;Systems :: CentOS Docs Site</title>
     <link rel="canonical" href="https://docs.centos.org/centos/install-guide/Boot_ppc/">
-    <meta name="generator" content="Antora 2.0.0">
+    <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
   </head>
   <body class="article">
@@ -31,7 +31,7 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="../">Installation Guide</a></h3>
+    <h3 class="title"><a href="../../">Installation Guide</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
@@ -82,7 +82,7 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../Part_Install_x86/">Installing on x86_64 and ARM 64</a>
+    <a class="nav-link" href="#Part_Install_x86.adoc.adoc">Installing on x86_64 and ARM 64</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../Simple_Installation/">Quick Installation Guide</a>
@@ -343,7 +343,7 @@
     <li class="component">
       <span class="title">CentOS 8 Documentation</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../8-docs/">master</a>
         </li>
       </ul>
@@ -351,16 +351,24 @@
     <li class="component">
       <span class="title">CentOS Documentation</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../docs/">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Contributor's Guide</span>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../../stream-contrib/">default</a>
         </li>
       </ul>
     </li>
     <li class="component is-current">
       <span class="title">Installation Guide</span>
       <ul class="versions">
-        <li class="version is-current is-latest">
-          <a href="../">master</a>
+        <li class="version is-current">
+          <a href="../../">master</a>
         </li>
       </ul>
     </li>
@@ -375,7 +383,7 @@
   <a href="../../../docs/" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="../">Installation Guide</a></li>
+    <li><a href="../../">Installation Guide</a></li>
     <li><a href="../Part_Install_ppc/">Installing on IBM Power Systems</a></li>
     <li><a href="./">Booting the Installation</a></li>
   </ul>
@@ -403,7 +411,7 @@
 <div class="paragraph">
 <p>On a text console, press <kbd>1</kbd> when the self test is displaying the banner along with the tested components:</p>
 </div>
-<div id="figu-booting-sms-console" class="imageblock">
+<div id="figu-booting-sms-console" class="imageblock unresolved">
 <div class="content">
 <img src="../_images/pseries/sms-console.png" alt="SMS console screen">
 </div>
@@ -426,7 +434,7 @@
 <p>Because IBM Power&#160;Systems servers primarily use text consoles, <strong class="application">Anaconda</strong> will not automatically start a graphical installation. However, the graphical installation program offers more features and customization and is recommended if your system has a graphical display.</p>
 </div>
 <div class="paragraph">
-<p>To start a graphical installation, pass the <code class="option">inst.vnc</code> boot option (see <a href="../adminoptions/#list-boot-options-vnc" class="page">Enabling Remote Access</a>).</p>
+<p>To start a graphical installation, pass the <code class="option">inst.vnc</code> boot option (see <a href="../adminoptions/#list-boot-options-vnc" class="xref page">Enabling Remote Access</a>).</p>
 </div>
 </td>
 </tr>
@@ -440,7 +448,7 @@
 <div class="paragraph">
 <p>Once your system has completed loading the boot media, a boot menu is displayed using <strong class="application">GRUB2</strong> (<strong class="application">GRand Unified Bootloader</strong>, version 2). The boot menu provides several options in addition to launching the installation program. If no key is pressed within 60 seconds, the default boot option (the one highlighted in white) will be run. To choose the default, either wait for the timer to run out or press <kbd>Enter</kbd>.</p>
 </div>
-<div class="imageblock">
+<div class="imageblock unresolved">
 <div class="content">
 <img src="../_images/boot/boot_screen.png" alt="The boot screen">
 </div>
@@ -453,20 +461,20 @@
 <p>To customize the boot options for a particular menu entry, press the <kbd>e</kbd> key and add custom boot options to the command line. When ready press <span class="keyseq"><kbd>Ctrl</kbd>+<kbd>X</kbd></span> to boot the modified option.</p>
 </div>
 <div class="paragraph">
-<p>See <a href="../adminoptions/#chap-anaconda-boot-options" class="page">Boot Options</a> for more information about additional boot options.</p>
+<p>See <a href="../adminoptions/#chap-anaconda-boot-options" class="xref page">Boot Options</a> for more information about additional boot options.</p>
 </div>
 <div class="paragraph">
 <p>The boot menu options are:</p>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">Install CentOS&#160;7.8.2003</dt>
+<dt class="hdlist1">Install CentOS&#160;7</dt>
 <dd>
 <div class="paragraph">
 <p>Choose this option to install CentOS onto your computer system using the graphical installation program.</p>
 </div>
 </dd>
-<dt class="hdlist1">Test this media &amp; install CentOS&#160;7.8.2003</dt>
+<dt class="hdlist1">Test this media &amp; install CentOS&#160;7</dt>
 <dd>
 <div class="paragraph">
 <p>This option is the default. Prior to starting the installation program, a utility is launched to check the integrity of the installation media.</p>
@@ -480,7 +488,7 @@
 </dd>
 </dl>
 </div>
-<div class="imageblock">
+<div class="imageblock unresolved">
 <div class="content">
 <img src="../_images/boot/boot_screen_troubleshooting.png" alt="The troubleshooting menu">
 </div>
@@ -488,10 +496,10 @@
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">Install CentOS&#160;7.8.2003 in basic graphics mode</dt>
+<dt class="hdlist1">Install CentOS&#160;7 in basic graphics mode</dt>
 <dd>
 <div class="paragraph">
-<p>This option allows you to install CentOS in graphical mode even if the installation program is unable to load the correct driver for your video card. If your screen appears distorted or goes blank when using the <code>Install CentOS&#160;7.8.2003</code> option, restart your computer and try this option instead.</p>
+<p>This option allows you to install CentOS in graphical mode even if the installation program is unable to load the correct driver for your video card. If your screen appears distorted or goes blank when using the <code>Install CentOS&#160;7</code> option, restart your computer and try this option instead.</p>
 </div>
 </dd>
 <dt class="hdlist1">Rescue a CentOS system</dt>
@@ -503,7 +511,7 @@
 <dt class="hdlist1">Run a memory test</dt>
 <dd>
 <div class="paragraph">
-<p>This option runs a memory test on your system. For more information, see <a href="../adminoptions/#sect-boot-options-memtest" class="page">Loading the Memory Testing Mode</a>.</p>
+<p>This option runs a memory test on your system. For more information, see <a href="../adminoptions/#sect-boot-options-memtest" class="xref page">Loading the Memory Testing Mode</a>.</p>
 </div>
 </dd>
 <dt class="hdlist1">Boot from local drive</dt>
@@ -558,7 +566,7 @@
 <h2 id="sect-booting-from-pxe-ppc"><a class="anchor" href="#sect-booting-from-pxe-ppc"></a>Booting from the Network Using an Installation Server</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>For network boot, you need a properly configured server, and a network interface in your computer that can support an installation server. For information on how to configure an installation server, see <a href="../pxe-server/#sect-network-boot-setup-ppc-grub2" class="page">Configuring Network Boot for IBM Power&#160;Systems Using GRUB2</a>.</p>
+<p>For network boot, you need a properly configured server, and a network interface in your computer that can support an installation server. For information on how to configure an installation server, see <a href="../pxe-server/#sect-network-boot-setup-ppc-grub2" class="xref page">Configuring Network Boot for IBM Power&#160;Systems Using GRUB2</a>.</p>
 </div>
 <div class="paragraph">
 <p>Configure the computer to boot from the network interface by selecting <code class="option">Select Boot Options</code> in the SMS menu, then <code class="option">Select Boot/Install Device</code>. Finally, select your network device from the list of available devices.</p>

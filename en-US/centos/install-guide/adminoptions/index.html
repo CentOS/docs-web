@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Boot Options :: CentOS Docs Site</title>
     <link rel="canonical" href="https://docs.centos.org/centos/install-guide/adminoptions/">
-    <meta name="generator" content="Antora 2.0.0">
+    <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
   </head>
   <body class="article">
@@ -31,7 +31,7 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="../">Installation Guide</a></h3>
+    <h3 class="title"><a href="../../">Installation Guide</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
@@ -82,7 +82,7 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../Part_Install_x86/">Installing on x86_64 and ARM 64</a>
+    <a class="nav-link" href="#Part_Install_x86.adoc.adoc">Installing on x86_64 and ARM 64</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../Simple_Installation/">Quick Installation Guide</a>
@@ -343,7 +343,7 @@
     <li class="component">
       <span class="title">CentOS 8 Documentation</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../8-docs/">master</a>
         </li>
       </ul>
@@ -351,16 +351,24 @@
     <li class="component">
       <span class="title">CentOS Documentation</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../docs/">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Contributor's Guide</span>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../../stream-contrib/">default</a>
         </li>
       </ul>
     </li>
     <li class="component is-current">
       <span class="title">Installation Guide</span>
       <ul class="versions">
-        <li class="version is-current is-latest">
-          <a href="../">master</a>
+        <li class="version is-current">
+          <a href="../../">master</a>
         </li>
       </ul>
     </li>
@@ -375,7 +383,7 @@
   <a href="../../../docs/" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="../">Installation Guide</a></li>
+    <li><a href="../../">Installation Guide</a></li>
     <li><a href="../Part_Install_Advanced/">Advanced Installation Options</a></li>
     <li><a href="./">Boot Options</a></li>
   </ul>
@@ -437,10 +445,10 @@
 <div class="ulist">
 <ul>
 <li>
-<p><a href="../Boot_x86/#sect-boot-menu-x86" class="page">The Boot Menu (x86)</a> for 64-bit AMD, Intel and ARM systems</p>
+<p><a href="../Boot_x86/#sect-boot-menu-x86" class="xref page">The Boot Menu (x86)</a> for 64-bit AMD, Intel and ARM systems</p>
 </li>
 <li>
-<p><a href="../Boot_ppc/#sect-boot-menu-ppc" class="page">The Boot Menu (ppc)</a> for IBM Power&#160;Systems servers</p>
+<p><a href="../Boot_ppc/#sect-boot-menu-ppc" class="xref page">The Boot Menu (ppc)</a> for IBM Power&#160;Systems servers</p>
 </li>
 </ul>
 </div>
@@ -460,7 +468,7 @@
 </div>
 </li>
 <li>
-<p>The <code>&gt;</code> prompt on BIOS-based AMD64 and Intel&#160;64 systems, accessed by highlighting an entry in the boot menu and pressing the <kbd>Tab</kbd> key. Unlike the <code>boot:</code> prompt, this prompt allows you to edit a predefined set of boot options. For example, if you highlight the entry labeled <code>Test this media &amp; install CentOS&#160;7.8.2003</code>, a full set of options used by this menu entry will be displayed on the prompt, allowing you to add your own options.</p>
+<p>The <code>&gt;</code> prompt on BIOS-based AMD64 and Intel&#160;64 systems, accessed by highlighting an entry in the boot menu and pressing the <kbd>Tab</kbd> key. Unlike the <code>boot:</code> prompt, this prompt allows you to edit a predefined set of boot options. For example, if you highlight the entry labeled <code>Test this media &amp; install CentOS&#160;7</code>, a full set of options used by this menu entry will be displayed on the prompt, allowing you to add your own options.</p>
 <div class="paragraph">
 <p>Pressing <kbd>Enter</kbd> will start the installation using the options you specified. To cancel editing and return to the boot menu, press the <kbd>Esc</kbd> key at any time.</p>
 </div>
@@ -572,7 +580,7 @@
 </td>
 <td class="content">
 <div class="paragraph">
-<p>In previous releases of CentOS, there were separate options for an installable tree accessible by NFS (the <code class="option">nfs</code> option) and an ISO image located on an NFS source (the <code class="option">nfsiso</code> option). In CentOS&#160;7.8.2003, the installation program can automatically detect whether the source is an installable tree or a directory containing an ISO image, and the <code class="option">nfsiso</code> option is deprecated.</p>
+<p>In previous releases of CentOS, there were separate options for an installable tree accessible by NFS (the <code class="option">nfs</code> option) and an ISO image located on an NFS source (the <code class="option">nfsiso</code> option). In CentOS&#160;7, the installation program can automatically detect whether the source is an installable tree or a directory containing an ISO image, and the <code class="option">nfsiso</code> option is deprecated.</p>
 </div>
 </td>
 </tr>
@@ -586,7 +594,7 @@
 <p>Kernel device name, for example <code>/dev/sda1</code> or <code>sdb2</code></p>
 </li>
 <li>
-<p>File system label, for example <code>LABEL=Flash</code> or <code>LABEL=CentOS7.8.2003</code></p>
+<p>File system label, for example <code>LABEL=Flash</code> or <code>LABEL=CentOS7</code></p>
 </li>
 <li>
 <p>File system UUID, for example <code>UUID=8176c7bf-04ff-403a-a832-9557f94e61db</code></p>
@@ -663,7 +671,7 @@
 <p>Replace <em>DD</em> with a specific label and replace <em>dd.rpm</em> with a specific name. Use anything supported by the <code class="command">inst.repo</code> command instead of <em>LABEL</em> to specify your hard disk drive.</p>
 </div>
 <div class="paragraph">
-<p>For more information about driver updates during the installation, see <a href="../DU-Updating_drivers_during_installation_x86/#chap-driver-updates-x86" class="page">Updating Drivers During Installation on AMD64 and Intel&#160;64 Systems</a> for AMD64 and Intel&#160;64 systems and <a href="../DU-Updating_drivers_during_installation_ppc/#chap-driver-updates-ppc" class="page">Updating Drivers During Installation on IBM&#160;Power Systems</a> for IBM Power&#160;Systems servers.</p>
+<p>For more information about driver updates during the installation, see <a href="../DU-Updating_drivers_during_installation_x86/#chap-driver-updates-x86" class="xref page">Updating Drivers During Installation on AMD64 and Intel&#160;64 Systems</a> for AMD64 and Intel&#160;64 systems and <a href="../DU-Updating_drivers_during_installation_ppc/#chap-driver-updates-ppc" class="xref page">Updating Drivers During Installation on IBM&#160;Power Systems</a> for IBM Power&#160;Systems servers.</p>
 </div>
 </li>
 </ol>
@@ -772,7 +780,7 @@
 <dt class="hdlist1"><code class="option">inst.lang=</code></dt>
 <dd>
 <div class="paragraph">
-<p>Sets the language to be used during the installation. Language codes are the same as the ones used in the <code class="command">lang</code> Kickstart command as described in <a href="../Kickstart2/#sect-kickstart-commands" class="page">Kickstart Commands and Options</a>. On systems where the <strong class="package">system-config-language</strong> package is installed, a list of valid values can also be found in <code>/usr/share/system-config-language/locale-list</code>.</p>
+<p>Sets the language to be used during the installation. Language codes are the same as the ones used in the <code class="command">lang</code> Kickstart command as described in <a href="../Kickstart2/#sect-kickstart-commands" class="xref page">Kickstart Commands and Options</a>. On systems where the <strong class="package">system-config-language</strong> package is installed, a list of valid values can also be found in <code>/usr/share/system-config-language/locale-list</code>.</p>
 </div>
 </dd>
 <dt class="hdlist1"><code class="option">inst.geoloc=</code></dt>
@@ -811,7 +819,7 @@
 <dt class="hdlist1"><code class="option">inst.keymap=</code></dt>
 <dd>
 <div class="paragraph">
-<p>Specifies the keyboard layout to be used by the installation program. Layout codes are the same as the ones used in the <code class="command">keyboard</code> Kickstart command as described in <a href="../Kickstart2/#sect-kickstart-commands" class="page">Kickstart Commands and Options</a>.</p>
+<p>Specifies the keyboard layout to be used by the installation program. Layout codes are the same as the ones used in the <code class="command">keyboard</code> Kickstart command as described in <a href="../Kickstart2/#sect-kickstart-commands" class="xref page">Kickstart Commands and Options</a>.</p>
 </div>
 </dd>
 <dt class="hdlist1"><code class="option">inst.text</code></dt>
@@ -883,7 +891,7 @@
 </td>
 <td class="content">
 <div class="paragraph">
-<p>During the installation, the <code>root</code> account has no password by default. You can set a root password to be used during the installation with the <code class="command">sshpw</code> Kickstart command as described in <a href="../Kickstart2/#sect-kickstart-commands" class="page">Kickstart Commands and Options</a>.</p>
+<p>During the installation, the <code>root</code> account has no password by default. You can set a root password to be used during the installation with the <code class="command">sshpw</code> Kickstart command as described in <a href="../Kickstart2/#sect-kickstart-commands" class="xref page">Kickstart Commands and Options</a>.</p>
 </div>
 </td>
 </tr>
@@ -986,7 +994,7 @@
 </td>
 <td class="content">
 <div class="paragraph">
-<p>If you use a boot option which requires network access, such as <code class="option">inst.ks=http://<em>host</em>:/<em>path</em></code>, without specifying the <code class="option">ip</code> option, the installation program will use <code class="option">ip=dhcp</code>.</p>
+<p>If you use a boot option which requires network access, such as <code class="option">inst.ks=http://<em>host</em>/<em>path</em></code>, without specifying the <code class="option">ip</code> option, the installation program will use <code class="option">ip=dhcp</code>.</p>
 </div>
 </td>
 </tr>
@@ -1184,7 +1192,7 @@
 <p>Normally, BIOS-based systems and UEFI-based systems in BIOS compatibility mode will attempt to use the MBR schema for storing partitioning information, unless the disk is 2<sup>32</sup> sectors in size or larger. Most commonly, disk sectors are 512 bytes in size, meaning that this is usually equivalent to 2 TiB. Using this option will change this behavior, allowing a GPT to be written to disks smaller than this.</p>
 </div>
 <div class="paragraph">
-<p>See <a href="../StorageSpoke-x86/#sect-bootloader-mbr-gpt-x86" class="page">MBD and GPT Considerations</a> for more information about GPT and MBR, and <a href="../Partitions-x86/#sect-disk-partitioning-guid-partition-table" class="page">GUID Partition Table (GPT)</a> for more general information about GPT, MBR and disk partitioning in general.</p>
+<p>See <a href="../StorageSpoke-x86/#sect-bootloader-mbr-gpt-x86" class="xref page">MBD and GPT Considerations</a> for more information about GPT and MBR, and <a href="../Partitions-x86/#sect-disk-partitioning-guid-partition-table" class="xref page">GUID Partition Table (GPT)</a> for more general information about GPT, MBR and disk partitioning in general.</p>
 </div>
 </dd>
 <dt class="hdlist1"><code class="option">inst.multilib</code></dt>
@@ -1256,7 +1264,7 @@
 </div>
 <div id="list-boot-options-vnc" class="paragraph">
 <div class="title">Enabling Remote Access</div>
-<p>The following options are necessary to configure <strong class="application">Anaconda</strong> for remote graphical installation. See <a href="../vnc-installations/#chap-vnc-installations" class="page">Using VNC</a> for more details.</p>
+<p>The following options are necessary to configure <strong class="application">Anaconda</strong> for remote graphical installation. See <a href="../vnc-installations/#chap-vnc-installations" class="xref page">Using VNC</a> for more details.</p>
 </div>
 <div class="dlist">
 <dl>
@@ -1475,7 +1483,7 @@ Password:</pre>
 <dd>
 <div class="paragraph">
 <p>Used to indicate the delay after which the network was considered active; the system waited until either the gateway was successfully pinged, or until the amount of seconds specified in this parameter passed.
-In CentOS 7.8.2003, network devices are configured and activated during the early stage of installation by the <strong class="application">dracut</strong> modules
+In CentOS 7, network devices are configured and activated during the early stage of installation by the <strong class="application">dracut</strong> modules
 which ensure that the gateway is accessible before proceeding. For more information about <strong class="application">dracut</strong>, see the <code>dracut.cmdline(7)</code> man page.</p>
 </div>
 </dd>
@@ -1564,7 +1572,7 @@ For more information about [application]*dracut*, see the <code>dracut.cmdline(7
 <dt class="hdlist1"><code class="option">upgradeany</code></dt>
 <dd>
 <div class="paragraph">
-<p>Upgrades are done in a different way in CentOS&#160;7.8.2003.</p>
+<p>Upgrades are done in a different way in CentOS&#160;7.</p>
 </div>
 </dd>
 <dt class="hdlist1"><code class="option">vlanid=</code></dt>
@@ -1603,7 +1611,7 @@ For more information about [application]*dracut*, see the <code>dracut.cmdline(7
 </tr>
 </table>
 </div>
-<div class="imageblock">
+<div class="imageblock unresolved">
 <div class="content">
 <img src="../_images/boot/memtest86.png" alt="Memtest86+ testing the system memory">
 </div>
@@ -1663,7 +1671,7 @@ For more information about [application]*dracut*, see the <code>dracut.cmdline(7
 <p>You can test the integrity of an ISO-based installation source before using it to install CentOS. These sources include DVD, and ISO images stored on a hard drive or NFS server. Verifying that the ISO images are intact before you attempt an installation helps to avoid problems that are often encountered during installation.</p>
 </div>
 <div class="paragraph">
-<p>To test the checksum integrity of an ISO image, append the <code class="option">rd.live.check</code> to the boot loader command line. Note that this option is used automatically if you select the default installation option from the boot menu (<code>Test this media &amp; install CentOS&#160;7.8.2003</code>).</p>
+<p>To test the checksum integrity of an ISO image, append the <code class="option">rd.live.check</code> to the boot loader command line. Note that this option is used automatically if you select the default installation option from the boot menu (<code>Test this media &amp; install CentOS&#160;7</code>).</p>
 </div>
 </div>
 <div class="sect2">
@@ -1681,7 +1689,7 @@ For more information about [application]*dracut*, see the <code>dracut.cmdline(7
 <p>By default, rescue mode attaches an existing operating system to the rescue system under the directory <code>/mnt/sysimage/</code>.</p>
 </div>
 <div class="paragraph">
-<p>For additional information about rescue mode and other maintenance modes, see <a href="../Rescue_Mode/#chap-basic-system-recovery" class="page">Basic System Recovery</a>.</p>
+<p>For additional information about rescue mode and other maintenance modes, see <a href="../Rescue_Mode/#chap-basic-system-recovery" class="xref page">Basic System Recovery</a>.</p>
 </div>
 </div>
 </div>

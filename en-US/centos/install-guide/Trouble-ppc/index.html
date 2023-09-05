@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Troubleshooting Installation on IBM Power&#160;Systems :: CentOS Docs Site</title>
     <link rel="canonical" href="https://docs.centos.org/centos/install-guide/Trouble-ppc/">
-    <meta name="generator" content="Antora 2.0.0">
+    <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
   </head>
   <body class="article">
@@ -31,7 +31,7 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="../">Installation Guide</a></h3>
+    <h3 class="title"><a href="../../">Installation Guide</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
@@ -82,7 +82,7 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../Part_Install_x86/">Installing on x86_64 and ARM 64</a>
+    <a class="nav-link" href="#Part_Install_x86.adoc.adoc">Installing on x86_64 and ARM 64</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../Simple_Installation/">Quick Installation Guide</a>
@@ -343,7 +343,7 @@
     <li class="component">
       <span class="title">CentOS 8 Documentation</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../8-docs/">master</a>
         </li>
       </ul>
@@ -351,16 +351,24 @@
     <li class="component">
       <span class="title">CentOS Documentation</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../docs/">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Contributor's Guide</span>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../../stream-contrib/">default</a>
         </li>
       </ul>
     </li>
     <li class="component is-current">
       <span class="title">Installation Guide</span>
       <ul class="versions">
-        <li class="version is-current is-latest">
-          <a href="../">master</a>
+        <li class="version is-current">
+          <a href="../../">master</a>
         </li>
       </ul>
     </li>
@@ -375,7 +383,7 @@
   <a href="../../../docs/" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="../">Installation Guide</a></li>
+    <li><a href="../../">Installation Guide</a></li>
     <li><a href="../Part_Install_ppc/">Installing on IBM Power Systems</a></li>
     <li><a href="./">Troubleshooting</a></li>
   </ul>
@@ -535,7 +543,7 @@
 <p>Systems with some video cards have trouble booting into the graphical installation program. If the installation program does not run using its default settings, it attempts to run in a lower resolution mode. If that still fails, the installation program attempts to run in text mode.</p>
 </div>
 <div class="paragraph">
-<p>There are several possible solutions to display issues, most of which involve specifying custom boot options. For more information, see <a href="../adminoptions/#sect-boot-options-installer" class="page">Configuring the Installation System at the Boot Menu</a>.</p>
+<p>There are several possible solutions to display issues, most of which involve specifying custom boot options. For more information, see <a href="../adminoptions/#sect-boot-options-installer" class="xref page">Configuring the Installation System at the Boot Menu</a>.</p>
 </div>
 <div class="dlist">
 <dl>
@@ -560,7 +568,7 @@
 <p>In some cases, attempting to install in text mode using a serial console will result in no output on the console. This happens on systems which have a graphics card, but no monitor connected. If <strong class="application">Anaconda</strong> detects a graphics card, it will attempt to use it for a display, even if no display is connected.</p>
 </div>
 <div class="paragraph">
-<p>If you want to perform a text-based installation on a serial console, use the <code class="option">inst.text</code> and <code class="option">console=</code> boot options. See <a href="../adminoptions/#chap-anaconda-boot-options" class="page">Boot Options</a> for more details.</p>
+<p>If you want to perform a text-based installation on a serial console, use the <code class="option">inst.text</code> and <code class="option">console=</code> boot options. See <a href="../adminoptions/#chap-anaconda-boot-options" class="xref page">Boot Options</a> for more details.</p>
 </div>
 </div>
 </div>
@@ -580,13 +588,13 @@
 <p>If your system uses a hardware RAID controller, verify that the controller is properly configured and working. See your controller&#8217;s documentation for instructions.</p>
 </div>
 <div class="paragraph">
-<p>If you are installing into one or more iSCSI devices and there is no local storage present on the system, make sure that all required LUNs (<em>Logical Unit Numbers</em>) are being presented to the appropriate HBA (<em>Host Bus Adapter</em>). For additional information about iSCSI, see <a href="../iSCSI/#appe-iscsi-disks" class="page">iSCSI Disks</a>.</p>
+<p>If you are installing into one or more iSCSI devices and there is no local storage present on the system, make sure that all required LUNs (<em>Logical Unit Numbers</em>) are being presented to the appropriate HBA (<em>Host Bus Adapter</em>). For additional information about iSCSI, see <a href="../iSCSI/#appe-iscsi-disks" class="xref page">iSCSI Disks</a>.</p>
 </div>
 <div class="paragraph">
 <p>If you made sure you have a connected and properly configured storage device and the message still appears after you reboot the system and start the installation again, it means that the installation program failed to detect the storage. In most cases this message appears when you attempt to install on an SCSI device which has not been recognized by the installation program.</p>
 </div>
 <div class="paragraph">
-<p>In that case, you will have to perform a driver update before starting the installation. Check your hardware vendor&#8217;s website to determine if a driver update is available that fixes your problem. For more general information on driver updates, see <a href="../DU-Updating_drivers_during_installation_ppc/#chap-driver-updates-ppc" class="page">Updating Drivers During Installation on IBM&#160;Power Systems</a>.</p>
+<p>In that case, you will have to perform a driver update before starting the installation. Check your hardware vendor&#8217;s website to determine if a driver update is available that fixes your problem. For more general information on driver updates, see <a href="../DU-Updating_drivers_during_installation_ppc/#chap-driver-updates-ppc" class="xref page">Updating Drivers During Installation on IBM&#160;Power Systems</a>.</p>
 </div>
 <div class="paragraph">
 <p>You can also consult the <em class="citetitle">Red&#160;Hat Hardware Compatibility List</em>, available online at <a href="https://hardware.redhat.com" class="bare">https://hardware.redhat.com</a>.</p>
@@ -603,7 +611,7 @@
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Select the <code>Install CentOS&#160;7.8.2003</code> entry.</p>
+<p>Select the <code>Install CentOS&#160;7</code> entry.</p>
 </li>
 <li>
 <p>Press the <kbd>Tab</kbd> key to edit the boot options.</p>
@@ -616,7 +624,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p>For further details, see <a href="../adminoptions/#chap-anaconda-boot-options" class="page">Boot Options</a>.</p>
+<p>For further details, see <a href="../adminoptions/#chap-anaconda-boot-options" class="xref page">Boot Options</a>.</p>
 </div>
 </li>
 <li>
@@ -630,7 +638,7 @@
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Switch to the console. See <a href="../Consoles_Logs_During_Install_x86/#sect-installation-consoles-x86" class="page">Accessing Consoles (x86)</a>.</p>
+<p>Switch to the console. See <a href="../Consoles_Logs_During_Install_x86/#sect-installation-consoles-x86" class="xref page">Accessing Consoles (x86)</a>.</p>
 </li>
 <li>
 <p>Change into the <code>/tmp/pre-anaconda-logs/</code> directory:</p>
@@ -665,7 +673,7 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>See <a href="../CustomSpoke-ppc64/#sect-recommended-partitioning-scheme-ppc" class="page">Recommended Partitioning Scheme (ppc)</a> for more information.</p>
+<p>See <a href="../CustomSpoke-ppc64/#sect-recommended-partitioning-scheme-ppc" class="xref page">Recommended Partitioning Scheme (ppc)</a> for more information.</p>
 </div>
 </div>
 </div>
@@ -822,7 +830,7 @@ tmpfs                                       1.8G  2.6M  1.8G   1% /tmp
 <p>If you receive a fatal signal 11 error during the installation, first make sure you are using the most recent installation images, and let <strong class="application">Anaconda</strong> verify them to make sure they are not corrupted. Bad installation media (such as an improperly burned or scratched optical disk) are a common cause of signal 11 errors. Verifying the integrity of the installation media is recommended before every installation.</p>
 </div>
 <div class="paragraph">
-<p>For information about obtaining the most recent installation media, see <a href="../downloading/#chap-download" class="page">Downloading CentOS</a>. To perform a media check before the installation starts, append the <code class="option">rd.live.check</code> boot option at the boot menu. See <a href="../adminoptions/#sect-boot-options-mediacheck" class="page">Verifying Boot Media</a> for details.</p>
+<p>For information about obtaining the most recent installation media, see <a href="../downloading/#chap-download" class="xref page">Downloading CentOS</a>. To perform a media check before the installation starts, append the <code class="option">rd.live.check</code> boot option at the boot menu. See <a href="../adminoptions/#sect-boot-options-mediacheck" class="xref page">Verifying Boot Media</a> for details.</p>
 </div>
 <div class="paragraph">
 <p>Other possible causes are beyond this document&#8217;s scope. Consult your hardware manufacturer&#8217;s documentation for more information.</p>

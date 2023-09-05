@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Software Selection :: CentOS Docs Site</title>
     <link rel="canonical" href="https://docs.centos.org/centos/install-guide/SoftwareSpoke-x86/">
-    <meta name="generator" content="Antora 2.0.0">
+    <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
   </head>
   <body class="article">
@@ -31,7 +31,7 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="../">Installation Guide</a></h3>
+    <h3 class="title"><a href="../../">Installation Guide</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
@@ -82,7 +82,7 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../Part_Install_x86/">Installing on x86_64 and ARM 64</a>
+    <a class="nav-link" href="#Part_Install_x86.adoc.adoc">Installing on x86_64 and ARM 64</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../Simple_Installation/">Quick Installation Guide</a>
@@ -343,7 +343,7 @@
     <li class="component">
       <span class="title">CentOS 8 Documentation</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../8-docs/">master</a>
         </li>
       </ul>
@@ -351,16 +351,24 @@
     <li class="component">
       <span class="title">CentOS Documentation</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../docs/">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Contributor's Guide</span>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../../stream-contrib/">default</a>
         </li>
       </ul>
     </li>
     <li class="component is-current">
       <span class="title">Installation Guide</span>
       <ul class="versions">
-        <li class="version is-current is-latest">
-          <a href="../">master</a>
+        <li class="version is-current">
+          <a href="../../">master</a>
         </li>
       </ul>
     </li>
@@ -375,8 +383,8 @@
   <a href="../../../docs/" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="../">Installation Guide</a></li>
-    <li><a href="../Part_Install_x86/">Installing on x86_64 and ARM 64</a></li>
+    <li><a href="../../">Installation Guide</a></li>
+    <li><a href="#Part_Install_x86.adoc.adoc">Installing on x86_64 and ARM 64</a></li>
     <li><a href="../Graphical_Installation-x86/">Installing Using Anaconda</a></li>
     <li><a href="./">Software Selection</a></li>
   </ul>
@@ -412,7 +420,7 @@
 </li>
 </ul>
 </div>
-<div class="imageblock">
+<div class="imageblock unresolved">
 <div class="content">
 <img src="../_images/pkgselection/pkg-group.png" alt="Example of a Software Selection for a Server Installation">
 </div>
@@ -439,7 +447,7 @@
 </table>
 </div>
 <div class="paragraph">
-<p>Alternatively, automating the installation with a Kickstart file allows for a much higher degree of control over installed packages. You can specify environments, groups and individual packages in the <code class="command">%packages</code> section of the Kickstart file. See <a href="../Kickstart2/#sect-kickstart-packages" class="page">Package Selection</a> for instructions on selecting packages to install in a Kickstart file, and <a href="../Kickstart2/#chap-kickstart-installations" class="page">Kickstart Installations</a> for general information about automating the installation with Kickstart.</p>
+<p>Alternatively, automating the installation with a Kickstart file allows for a much higher degree of control over installed packages. You can specify environments, groups and individual packages in the <code class="command">%packages</code> section of the Kickstart file. See <a href="../Kickstart2/#sect-kickstart-packages" class="xref page">Package Selection</a> for instructions on selecting packages to install in a Kickstart file, and <a href="../Kickstart2/#chap-kickstart-installations" class="xref page">Kickstart Installations</a> for general information about automating the installation with Kickstart.</p>
 </div>
 <div class="paragraph">
 <p>Once you have selected an environment and add-ons to be installed, click <b class="button">Done</b> to return to the <code>Installation Summary</code> screen.</p>

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Partitioning reference :: CentOS Docs Site</title>
     <link rel="canonical" href="https://docs.centos.org/8-docs/advanced-install/assembly_partitioning-reference/">
-    <meta name="generator" content="Antora 2.0.0">
+    <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
   </head>
   <body class="article">
@@ -1179,7 +1179,7 @@
     <li class="component is-current">
       <span class="title">CentOS 8 Documentation</span>
       <ul class="versions">
-        <li class="version is-current is-latest">
+        <li class="version is-current">
           <a href="../../">master</a>
         </li>
       </ul>
@@ -1187,16 +1187,24 @@
     <li class="component">
       <span class="title">CentOS Documentation</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../docs/">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Contributor's Guide</span>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../../stream-contrib/">default</a>
         </li>
       </ul>
     </li>
     <li class="component">
       <span class="title">Installation Guide</span>
       <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../centos/install-guide/">master</a>
+        <li class="version">
+          <a href="../../../centos/">master</a>
         </li>
       </ul>
     </li>
@@ -1377,7 +1385,7 @@
 <dt class="hdlist1"><code>/boot</code> partition - recommended size at least 1 GiB</dt>
 <dd>
 <div class="paragraph">
-<p>The partition mounted on <code>/boot</code> contains the operating system kernel, which allows your system to boot CentOS 8.0.1905, along with files used during the bootstrap process. Due to the limitations of most firmwares, creating a small partition to hold these is recommended. In most scenarios, a 1 GiB boot partition is adequate. Unlike other mount points, using an LVM volume for <code>/boot</code> is not possible - <code>/boot</code> must be located on a separate disk partition.</p>
+<p>The partition mounted on <code>/boot</code> contains the operating system kernel, which allows your system to boot CentOS 8, along with files used during the bootstrap process. Due to the limitations of most firmwares, creating a small partition to hold these is recommended. In most scenarios, a 1 GiB boot partition is adequate. Unlike other mount points, using an LVM volume for <code>/boot</code> is not possible - <code>/boot</code> must be located on a separate disk partition.</p>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -1428,7 +1436,7 @@ Do not confuse the <code>/</code> directory with the <code>/root</code> director
 <dt class="hdlist1"><code>/home</code> - recommended size at least 1 GiB</dt>
 <dd>
 <div class="paragraph">
-<p>To store user data separately from system data, create a dedicated file system for the <code>/home</code> directory. Base the file system size on the amount of data that is stored locally, number of users, and so on. You can upgrade or reinstall CentOS 8.0.1905 without erasing user data files. If you select automatic partitioning, it is recommended to have at least 55 GiB of disk space available for the installation, to ensure that the <code>/home</code> file system is created.</p>
+<p>To store user data separately from system data, create a dedicated file system for the <code>/home</code> directory. Base the file system size on the amount of data that is stored locally, number of users, and so on. You can upgrade or reinstall CentOS 8 without erasing user data files. If you select automatic partitioning, it is recommended to have at least 55 GiB of disk space available for the installation, to ensure that the <code>/home</code> file system is created.</p>
 </div>
 </dd>
 <dt class="hdlist1"><code>swap</code> partition - recommended size at least 1 GB</dt>
@@ -1498,7 +1506,7 @@ BIOS systems do not require an EFI system partition.</p>
 </div>
 <div class="paragraph">
 <p>Many systems have more partitions and volumes than the minimum required. Choose partitions based on your particular system needs.
-See <a href="../../standard-install/assembly_partitioning-reference/#recommended-partitioning-scheme_partitioning-reference" class="page">Recommended partitioning scheme</a> for more information.</p>
+See <a href="../../standard-install/assembly_partitioning-reference/#recommended-partitioning-scheme_partitioning-reference" class="xref page">Recommended partitioning scheme</a> for more information.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1615,7 +1623,7 @@ See <a href="../../standard-install/assembly_partitioning-reference/#recommended
 <p>Use Logical Volume Management (LVM) if you anticipate expanding your storage by adding more hard drives or expanding virtual machine hard drives after the installation. With LVM, you can create physical volumes on the new drives, and then assign them to any volume group and logical volume as you see fit - for example, you can easily expand your system&#8217;s <code class="filename">/home</code> (or any other directory residing on a logical volume).</p>
 </li>
 <li>
-<p>Creating a BIOS Boot partition or an EFI System Partition may be necessary, depending on your system&#8217;s firmware, boot drive size, and boot drive disk label. See <a href="../../standard-install/assembly_partitioning-reference/#recommended-partitioning-scheme_partitioning-reference" class="page">Recommended partitioning scheme</a> for information about these partitions. Note that graphical installation will not let you create a BIOS Boot or EFI System Partition if your system does <strong>not</strong> require one - in that case, they will be hidden from the menu.</p>
+<p>Creating a BIOS Boot partition or an EFI System Partition may be necessary, depending on your system&#8217;s firmware, boot drive size, and boot drive disk label. See <a href="../../standard-install/assembly_partitioning-reference/#recommended-partitioning-scheme_partitioning-reference" class="xref page">Recommended partitioning scheme</a> for information about these partitions. Note that graphical installation will not let you create a BIOS Boot or EFI System Partition if your system does <strong>not</strong> require one - in that case, they will be hidden from the menu.</p>
 </li>
 <li>
 <p>If you need to make any changes to your storage configuration after the installation, CentOS repositories offer several different tools which can help you do this. If you prefer a command line tool, try <strong class="package">system-storage-manager</strong>.</p>

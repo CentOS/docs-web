@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Boot options reference :: CentOS Docs Site</title>
     <link rel="canonical" href="https://docs.centos.org/8-docs/standard-install/assembly_custom-boot-options/">
-    <meta name="generator" content="Antora 2.0.0">
+    <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
   </head>
   <body class="article">
@@ -1179,7 +1179,7 @@
     <li class="component is-current">
       <span class="title">CentOS 8 Documentation</span>
       <ul class="versions">
-        <li class="version is-current is-latest">
+        <li class="version is-current">
           <a href="../../">master</a>
         </li>
       </ul>
@@ -1187,16 +1187,24 @@
     <li class="component">
       <span class="title">CentOS Documentation</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../docs/">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Contributor's Guide</span>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../../stream-contrib/">default</a>
         </li>
       </ul>
     </li>
     <li class="component">
       <span class="title">Installation Guide</span>
       <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../centos/install-guide/">master</a>
+        <li class="version">
+          <a href="../../../centos/">master</a>
         </li>
       </ul>
     </li>
@@ -1224,7 +1232,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>This section contains information about some of the boot options that you can use to modify the default behavior of the installation program. For Kickstart and advanced boot options, see <em>References</em> section of the <a href="../../advanced-install/" class="page"><em>Performing an advanced installation</em></a> document.</p>
+<p>This section contains information about some of the boot options that you can use to modify the default behavior of the installation program. For Kickstart and advanced boot options, see <em>References</em> section of the <a href="../../advanced-install/" class="xref page"><em>Performing an advanced installation</em></a> document.</p>
 </div>
 </div>
 </div>
@@ -1419,7 +1427,7 @@ be set per repository.</p>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>By default, the <code>inst.stage2=</code> boot option is used on the installation media and is set to a specific label, for example, <code>inst.stage2=hd:LABEL=CentOS-8.0.1905-BaseOS-x86_64</code>. If you modify the default label of the file system containing the runtime image, or if you use a customized procedure to boot the installation system, you must verify that the <code>inst.stage2=</code> boot option is set to the correct value.</p>
+<p>By default, the <code>inst.stage2=</code> boot option is used on the installation media and is set to a specific label, for example, <code>inst.stage2=hd:LABEL=CentOS-8-BaseOS-x86_64</code>. If you modify the default label of the file system containing the runtime image, or if you use a customized procedure to boot the installation system, you must verify that the <code>inst.stage2=</code> boot option is set to the correct value.</p>
 </div>
 </td>
 </tr>
@@ -1441,7 +1449,7 @@ inst.stage2=http://hostname3/path_to_install_tree/</pre>
 </dd>
 <dt class="hdlist1">inst.dd=</dt>
 <dd>
-<p>The <code>inst.dd=</code> boot option is used to perform a driver update during the installation. See the <a href="../../advanced-install/" class="page"><em>Performing an advanced installation</em></a> document for information on how to update drivers during installation.</p>
+<p>The <code>inst.dd=</code> boot option is used to perform a driver update during the installation. See the <a href="../../advanced-install/" class="xref page"><em>Performing an advanced installation</em></a> document for information on how to update drivers during installation.</p>
 </dd>
 <dt class="hdlist1">inst.repo=hmc</dt>
 <dd>
@@ -2012,7 +2020,7 @@ By default, swap on zRAM is enabled on systems with 2 GiB or less RAM, and disab
 <dl>
 <dt class="hdlist1">inst.gpt</dt>
 <dd>
-<p>The <code>inst.gpt</code> boot option forces the installation program to install partition information to a GUID Partition Table (GPT) instead of a Master Boot Record (MBR). This option is not valid on UEFI-based systems, unless they are in BIOS compatibility mode. Normally, BIOS-based systems and UEFI-based systems in BIOS compatibility mode attempt to use the MBR schema for storing partitioning information, unless the disk is 232 sectors in size or larger. Disk sectors are typically 512 bytes in size, meaning that this is usually equivalent to 2 TiB. Using the <code>inst.gpt</code> boot option changes this behavior, allowing a GPT to be written to smaller disks.</p>
+<p>The <code>inst.gpt</code> boot option forces the installation program to install partition information to a GUID Partition Table (GPT) instead of a Master Boot Record (MBR). This option is not valid on UEFI-based systems, unless they are in BIOS compatibility mode. Normally, BIOS-based systems and UEFI-based systems in BIOS compatibility mode attempt to use the MBR schema for storing partitioning information, unless the disk is 2^32 sectors in size or larger. Disk sectors are typically 512 bytes in size, meaning that this is usually equivalent to 2 TiB. Using the <code>inst.gpt</code> boot option changes this behavior, allowing a GPT to be written to smaller disks.</p>
 </dd>
 </dl>
 </div>

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>The Configuration Menu and Progress Screen :: CentOS Docs Site</title>
     <link rel="canonical" href="https://docs.centos.org/centos/install-guide/ProgressHub-ppc64/">
-    <meta name="generator" content="Antora 2.0.0">
+    <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
   </head>
   <body class="article">
@@ -31,7 +31,7 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="../">Installation Guide</a></h3>
+    <h3 class="title"><a href="../../">Installation Guide</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
@@ -82,7 +82,7 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../Part_Install_x86/">Installing on x86_64 and ARM 64</a>
+    <a class="nav-link" href="#Part_Install_x86.adoc.adoc">Installing on x86_64 and ARM 64</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../Simple_Installation/">Quick Installation Guide</a>
@@ -343,7 +343,7 @@
     <li class="component">
       <span class="title">CentOS 8 Documentation</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../8-docs/">master</a>
         </li>
       </ul>
@@ -351,16 +351,24 @@
     <li class="component">
       <span class="title">CentOS Documentation</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../docs/">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Contributor's Guide</span>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../../stream-contrib/">default</a>
         </li>
       </ul>
     </li>
     <li class="component is-current">
       <span class="title">Installation Guide</span>
       <ul class="versions">
-        <li class="version is-current is-latest">
-          <a href="../">master</a>
+        <li class="version is-current">
+          <a href="../../">master</a>
         </li>
       </ul>
     </li>
@@ -375,7 +383,7 @@
   <a href="../../../docs/" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="../">Installation Guide</a></li>
+    <li><a href="../../">Installation Guide</a></li>
     <li><a href="../Part_Install_ppc/">Installing on IBM Power Systems</a></li>
     <li><a href="../Graphical_Installation-ppc/">Installing Using Anaconda</a></li>
     <li><a href="./">Installation Progress</a></li>
@@ -388,7 +396,7 @@
 <div class="paragraph">
 <p>Once you click <b class="button">Begin Installation</b> at the <code>Installation Summary</code> screen, the progress screen appears. CentOS reports the installation progress on the screen as it writes the selected packages to your system.</p>
 </div>
-<div class="imageblock">
+<div class="imageblock unresolved">
 <div class="content">
 <img src="../_images/pkgselection/installing-packages.png" alt="The Packages Completed progress bar">
 </div>
@@ -400,7 +408,7 @@
 <div class="paragraph">
 <p>If you chose to encrypt one or more partitions during partitioning setup, a dialog window with a progress bar will be displayed during the early stage of the installation process. This window informs that the installer is attempting to gather enough entropy (random data) to ensure that the encryption is secure. This window will disappear after 256 bits of entropy are gathered, or after 10 minutes. You can speed up the gathering process by moving your mouse or randomly typing on the keyboard. After the window disappears, the installation process will continue.</p>
 </div>
-<div class="imageblock">
+<div class="imageblock unresolved">
 <div class="content">
 <img src="../_images/encrypt/anaconda-entropy.png" alt="A dialog window with a progress bar while the installer gathers entropy">
 </div>
@@ -416,7 +424,7 @@
 <p>Creating a user account is optional and can be done after installation, but it is recommended to do it on this screen. A user account is used for normal work and to access the system. Best practice suggests that you always access the system through a user account, not the root account.</p>
 </div>
 <div class="paragraph">
-<p>It is possible to disable access to the <code>Root Password</code> or <code>Create User</code> screens. To do so, use a Kickstart file which includes the <code class="command">rootpw --lock</code> or <code class="command">user --lock</code> commands. See <a href="../Kickstart2/#sect-kickstart-commands" class="page">Kickstart Commands and Options</a> for more information these commands.</p>
+<p>It is possible to disable access to the <code>Root Password</code> or <code>Create User</code> screens. To do so, use a Kickstart file which includes the <code class="command">rootpw --lock</code> or <code class="command">user --lock</code> commands. See <a href="../Kickstart2/#sect-kickstart-commands" class="xref page">Kickstart Commands and Options</a> for more information these commands.</p>
 </div>
 </article>
 </main>

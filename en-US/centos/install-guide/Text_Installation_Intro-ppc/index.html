@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Installing in Text Mode :: CentOS Docs Site</title>
     <link rel="canonical" href="https://docs.centos.org/centos/install-guide/Text_Installation_Intro-ppc/">
-    <meta name="generator" content="Antora 2.0.0">
+    <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
   </head>
   <body class="article">
@@ -31,7 +31,7 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="../">Installation Guide</a></h3>
+    <h3 class="title"><a href="../../">Installation Guide</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
@@ -82,7 +82,7 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../Part_Install_x86/">Installing on x86_64 and ARM 64</a>
+    <a class="nav-link" href="#Part_Install_x86.adoc.adoc">Installing on x86_64 and ARM 64</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../Simple_Installation/">Quick Installation Guide</a>
@@ -343,7 +343,7 @@
     <li class="component">
       <span class="title">CentOS 8 Documentation</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../8-docs/">master</a>
         </li>
       </ul>
@@ -351,16 +351,24 @@
     <li class="component">
       <span class="title">CentOS Documentation</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../docs/">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Contributor's Guide</span>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../../stream-contrib/">default</a>
         </li>
       </ul>
     </li>
     <li class="component is-current">
       <span class="title">Installation Guide</span>
       <ul class="versions">
-        <li class="version is-current is-latest">
-          <a href="../">master</a>
+        <li class="version is-current">
+          <a href="../../">master</a>
         </li>
       </ul>
     </li>
@@ -375,7 +383,7 @@
   <a href="../../../docs/" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="../">Installation Guide</a></li>
+    <li><a href="../../">Installation Guide</a></li>
     <li><a href="../Part_Install_ppc/">Installing on IBM Power Systems</a></li>
     <li><a href="../Graphical_Installation-ppc/">Installing Using Anaconda</a></li>
     <li><a href="./">Installing in Text Mode</a></li>
@@ -398,19 +406,19 @@
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Installations using the graphical interface are preferred. If you are installing CentOS on a system that lacks a graphical display, consider performing the installation over a VNC connection - see <a href="../vnc-installations/#chap-vnc-installations" class="page">Using VNC</a>. The text mode installation program will prompt you to confirm the use of text mode if it detects that a VNC-based installation is possible.</p>
+<p>Installations using the graphical interface are preferred. If you are installing CentOS on a system that lacks a graphical display, consider performing the installation over a VNC connection - see <a href="../vnc-installations/#chap-vnc-installations" class="xref page">Using VNC</a>. The text mode installation program will prompt you to confirm the use of text mode if it detects that a VNC-based installation is possible.</p>
 </div>
 <div class="paragraph">
-<p>If your system has a graphical display, but graphical installation fails, try booting with the <code class="command">inst.xdriver=vesa</code> option - see <a href="../adminoptions/#chap-anaconda-boot-options" class="page">Boot Options</a>.</p>
+<p>If your system has a graphical display, but graphical installation fails, try booting with the <code class="command">inst.xdriver=vesa</code> option - see <a href="../adminoptions/#chap-anaconda-boot-options" class="xref page">Boot Options</a>.</p>
 </div>
 <div class="paragraph">
-<p>Alternatively, consider a Kickstart installation. See <a href="../Kickstart2/#chap-kickstart-installations" class="page">Kickstart Installations</a> for more information.</p>
+<p>Alternatively, consider a Kickstart installation. See <a href="../Kickstart2/#chap-kickstart-installations" class="xref page">Kickstart Installations</a> for more information.</p>
 </div>
 </td>
 </tr>
 </table>
 </div>
-<div class="imageblock">
+<div class="imageblock unresolved">
 <div class="content">
 <img src="../_images/preinstallhub/preinstall_hub_txt.png" alt="The main menu in during a text-based installation.">
 </div>
@@ -434,7 +442,7 @@
 </table>
 </div>
 <div class="paragraph">
-<p>At the bottom of the screen in text mode, a green bar is displayed showing five menu options. These options represent different screens in the <strong class="application">tmux</strong> terminal multiplexer; by default you start in screen 1, and you can use keyboard shortcuts to switch to other screens which contain logs and an interactive command prompt. For information about available screens and shortcuts to switch to them, see <a href="../Consoles_Logs_During_Install_ppc/#sect-installation-consoles-ppc" class="page">Accessing Consoles (ppc)</a>.</p>
+<p>At the bottom of the screen in text mode, a green bar is displayed showing five menu options. These options represent different screens in the <strong class="application">tmux</strong> terminal multiplexer; by default you start in screen 1, and you can use keyboard shortcuts to switch to other screens which contain logs and an interactive command prompt. For information about available screens and shortcuts to switch to them, see <a href="../Consoles_Logs_During_Install_ppc/#sect-installation-consoles-ppc" class="xref page">Accessing Consoles (ppc)</a>.</p>
 </div>
 <div class="paragraph">
 <p>Limits of interactive text mode installation include:</p>
@@ -456,7 +464,7 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>To start a text mode installation, boot the installation with the <code class="option">inst.text</code> boot option used either at the boot command line in the boot menu, or in your PXE server configuration. See <a href="../Boot_ppc/#chap-booting-installer-ppc" class="page">Booting the Installation on IBM Power&#160;Systems</a> for information about booting and using boot options.</p>
+<p>To start a text mode installation, boot the installation with the <code class="option">inst.text</code> boot option used either at the boot command line in the boot menu, or in your PXE server configuration. See <a href="../Boot_ppc/#chap-booting-installer-ppc" class="xref page">Booting the Installation on IBM Power&#160;Systems</a> for information about booting and using boot options.</p>
 </div>
 </div>
 </div>
@@ -464,7 +472,7 @@
 <h2 id="sect-using-hmc-vterm-ppc"><a class="anchor" href="#sect-using-hmc-vterm-ppc"></a>Using the HMC vterm</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The HMC vterm is the console for any partitioned IBM Power system. Open the console by right-clicking on the partition on the HMC, and then selecting <code>Open Terminal Window</code>. Only a single vterm can be connected to the console at a time and there is no console access for partitioned system besides the vterm. This often is referred to as a <em>virtual console</em>, but is different from the virtual consoles in <a href="../Consoles_Logs_During_Install_ppc/#sect-installation-consoles-ppc" class="page">Accessing Consoles (ppc)</a>.</p>
+<p>The HMC vterm is the console for any partitioned IBM Power system. Open the console by right-clicking on the partition on the HMC, and then selecting <code>Open Terminal Window</code>. Only a single vterm can be connected to the console at a time and there is no console access for partitioned system besides the vterm. This often is referred to as a <em>virtual console</em>, but is different from the virtual consoles in <a href="../Consoles_Logs_During_Install_ppc/#sect-installation-consoles-ppc" class="xref page">Accessing Consoles (ppc)</a>.</p>
 </div>
 </div>
 </div>

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Booting the Installation on 64-bit AMD, Intel, and ARM systems :: CentOS Docs Site</title>
     <link rel="canonical" href="https://docs.centos.org/centos/install-guide/Boot_x86/">
-    <meta name="generator" content="Antora 2.0.0">
+    <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
   </head>
   <body class="article">
@@ -31,7 +31,7 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="../">Installation Guide</a></h3>
+    <h3 class="title"><a href="../../">Installation Guide</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
@@ -82,7 +82,7 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../Part_Install_x86/">Installing on x86_64 and ARM 64</a>
+    <a class="nav-link" href="#Part_Install_x86.adoc.adoc">Installing on x86_64 and ARM 64</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../Simple_Installation/">Quick Installation Guide</a>
@@ -343,7 +343,7 @@
     <li class="component">
       <span class="title">CentOS 8 Documentation</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../8-docs/">master</a>
         </li>
       </ul>
@@ -351,16 +351,24 @@
     <li class="component">
       <span class="title">CentOS Documentation</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../docs/">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Contributor's Guide</span>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../../stream-contrib/">default</a>
         </li>
       </ul>
     </li>
     <li class="component is-current">
       <span class="title">Installation Guide</span>
       <ul class="versions">
-        <li class="version is-current is-latest">
-          <a href="../">master</a>
+        <li class="version is-current">
+          <a href="../../">master</a>
         </li>
       </ul>
     </li>
@@ -375,8 +383,8 @@
   <a href="../../../docs/" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="../">Installation Guide</a></li>
-    <li><a href="../Part_Install_x86/">Installing on x86_64 and ARM 64</a></li>
+    <li><a href="../../">Installation Guide</a></li>
+    <li><a href="#Part_Install_x86.adoc.adoc">Installing on x86_64 and ARM 64</a></li>
     <li><a href="./">Booting the Installation</a></li>
   </ul>
 </nav>
@@ -432,7 +440,7 @@
 </tbody>
 </table>
 <div class="paragraph">
-<p>To create a boot CD-ROM or to prepare your USB flash drive for booting or installation, see <a href="../Making_Media_USB/#sect-making-usb-media" class="page">Making Installation USB Media</a>.</p>
+<p>To create a boot CD-ROM or to prepare your USB flash drive for booting or installation, see <a href="../Making_Media_USB/#sect-making-usb-media" class="xref page">Making Installation USB Media</a>.</p>
 </div>
 <div class="paragraph">
 <p>This chapter covers the following topics:</p>
@@ -456,7 +464,7 @@
 <h2 id="sect-installation-starting-x86"><a class="anchor" href="#sect-installation-starting-x86"></a>Starting the Installation Program</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>To start, first make sure that you have all necessary resources for the installation. If you have already read through <a href="../Steps-x86/#chap-installation-planning-x86" class="page">Planning for Installation on 64-bit AMD, Intel, and ARM Systems</a>, and followed the instructions, you should be ready to start the installation process. When you have verified that you are ready to begin, boot the installation program using the CentOS DVD or any boot media that you have created.</p>
+<p>To start, first make sure that you have all necessary resources for the installation. If you have already read through <a href="../Steps-x86/#chap-installation-planning-x86" class="xref page">Planning for Installation on 64-bit AMD, Intel, and ARM Systems</a>, and followed the instructions, you should be ready to start the installation process. When you have verified that you are ready to begin, boot the installation program using the CentOS DVD or any boot media that you have created.</p>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -480,7 +488,7 @@
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Occasionally, some hardware components require a <em>driver update</em> during the installation. A driver update adds support for hardware that is not otherwise supported by the installation program. See <a href="../DU-Updating_drivers_during_installation_x86/#chap-driver-updates-x86" class="page">Updating Drivers During Installation on AMD64 and Intel&#160;64 Systems</a> for more information.</p>
+<p>Occasionally, some hardware components require a <em>driver update</em> during the installation. A driver update adds support for hardware that is not otherwise supported by the installation program. See <a href="../DU-Updating_drivers_during_installation_x86/#chap-driver-updates-x86" class="xref page">Updating Drivers During Installation on AMD64 and Intel&#160;64 Systems</a> for more information.</p>
 </div>
 </td>
 </tr>
@@ -495,7 +503,7 @@
 <div class="title">Booting the Installation from Physical Media</div>
 <ol class="arabic">
 <li>
-<p>Disconnect any drives which you do not need for the installation. See <a href="../Steps-x86/#sect-installation-planning-usb-disks-x86" class="page">USB Disks (x86)</a> for more information.</p>
+<p>Disconnect any drives which you do not need for the installation. See <a href="../Steps-x86/#sect-installation-planning-usb-disks-x86" class="xref page">USB Disks (x86)</a> for more information.</p>
 </li>
 <li>
 <p>Power on your computer system.</p>
@@ -518,7 +526,7 @@
 <div class="sect2">
 <h3 id="sect-booting-from-pxe-x86"><a class="anchor" href="#sect-booting-from-pxe-x86"></a>Booting from the Network Using PXE</h3>
 <div class="paragraph">
-<p>To boot with PXE, you need a properly configured TFTP server, and a network interface in your computer that supports PXE. For information on how to configure a PXE server, see <a href="../pxe-server/#chap-installation-server-setup" class="page">Preparing for a Network Installation</a>.</p>
+<p>To boot with PXE, you need a properly configured TFTP server, and a network interface in your computer that supports PXE. For information on how to configure a PXE server, see <a href="../pxe-server/#chap-installation-server-setup" class="xref page">Preparing for a Network Installation</a>.</p>
 </div>
 <div class="paragraph">
 <p>Configure the computer to boot from the network interface. This option is in the BIOS, and can be labeled <code class="option">Network Boot</code> or <code class="option">Boot Services</code>. Also, ensure that the BIOS is configured to boot first from the correct network interface. Some BIOS systems specify the network interface as a possible boot device, but do not support the PXE standard. See your hardware&#8217;s documentation for more information. Once you properly enable PXE booting, the computer can boot the CentOS installation system without any other media.</p>
@@ -552,7 +560,7 @@
 <div class="paragraph">
 <p>Once your system has completed loading the boot media, a boot menu is displayed using <strong class="application">GRUB2</strong> (<strong class="application">GRand Unified Bootloader</strong>, version 2). The boot menu provides several options in addition to launching the installation program. If no key is pressed within 60 seconds, the default boot option (the one highlighted in white) will be run. To choose the default, either wait for the timer to run out or press <kbd>Enter</kbd>.</p>
 </div>
-<div class="imageblock">
+<div class="imageblock unresolved">
 <div class="content">
 <img src="../_images/boot/boot_screen.png" alt="The boot screen">
 </div>
@@ -575,20 +583,20 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>See <a href="../adminoptions/#chap-anaconda-boot-options" class="page">Boot Options</a> for more information about additional boot options.</p>
+<p>See <a href="../adminoptions/#chap-anaconda-boot-options" class="xref page">Boot Options</a> for more information about additional boot options.</p>
 </div>
 <div class="paragraph">
 <p>The boot menu options are:</p>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">Install CentOS&#160;7.8.2003</dt>
+<dt class="hdlist1">Install CentOS&#160;7</dt>
 <dd>
 <div class="paragraph">
 <p>Choose this option to install CentOS onto your computer system using the graphical installation program.</p>
 </div>
 </dd>
-<dt class="hdlist1">Test this media &amp; install CentOS&#160;7.8.2003</dt>
+<dt class="hdlist1">Test this media &amp; install CentOS&#160;7</dt>
 <dd>
 <div class="paragraph">
 <p>This option is the default. Prior to starting the installation program, a utility is launched to check the integrity of the installation media.</p>
@@ -602,7 +610,7 @@
 </dd>
 </dl>
 </div>
-<div class="imageblock">
+<div class="imageblock unresolved">
 <div class="content">
 <img src="../_images/boot/boot_screen_troubleshooting.png" alt="The troubleshooting menu">
 </div>
@@ -610,10 +618,10 @@
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">Install CentOS&#160;7.8.2003 in basic graphics mode</dt>
+<dt class="hdlist1">Install CentOS&#160;7 in basic graphics mode</dt>
 <dd>
 <div class="paragraph">
-<p>This option allows you to install CentOS in graphical mode even if the installation program is unable to load the correct driver for your video card. If your screen appears distorted or goes blank when using the <code>Install CentOS&#160;7.8.2003</code> option, restart your computer and try this option instead.</p>
+<p>This option allows you to install CentOS in graphical mode even if the installation program is unable to load the correct driver for your video card. If your screen appears distorted or goes blank when using the <code>Install CentOS&#160;7</code> option, restart your computer and try this option instead.</p>
 </div>
 </dd>
 <dt class="hdlist1">Rescue a CentOS system</dt>
@@ -625,7 +633,7 @@
 <dt class="hdlist1">Run a memory test</dt>
 <dd>
 <div class="paragraph">
-<p>This option runs a memory test on your system. For more information, see <a href="../adminoptions/#sect-boot-options-memtest" class="page">Loading the Memory Testing Mode</a>.</p>
+<p>This option runs a memory test on your system. For more information, see <a href="../adminoptions/#sect-boot-options-memtest" class="xref page">Loading the Memory Testing Mode</a>.</p>
 </div>
 </dd>
 <dt class="hdlist1">Boot from local drive</dt>

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Installing into a Disk Image :: CentOS Docs Site</title>
     <link rel="canonical" href="https://docs.centos.org/centos/install-guide/disk-image-install/">
-    <meta name="generator" content="Antora 2.0.0">
+    <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
   </head>
   <body class="article">
@@ -31,7 +31,7 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="../">Installation Guide</a></h3>
+    <h3 class="title"><a href="../../">Installation Guide</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
@@ -82,7 +82,7 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../Part_Install_x86/">Installing on x86_64 and ARM 64</a>
+    <a class="nav-link" href="#Part_Install_x86.adoc.adoc">Installing on x86_64 and ARM 64</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../Simple_Installation/">Quick Installation Guide</a>
@@ -343,7 +343,7 @@
     <li class="component">
       <span class="title">CentOS 8 Documentation</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../8-docs/">master</a>
         </li>
       </ul>
@@ -351,16 +351,24 @@
     <li class="component">
       <span class="title">CentOS Documentation</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../docs/">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Contributor's Guide</span>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../../stream-contrib/">default</a>
         </li>
       </ul>
     </li>
     <li class="component is-current">
       <span class="title">Installation Guide</span>
       <ul class="versions">
-        <li class="version is-current is-latest">
-          <a href="../">master</a>
+        <li class="version is-current">
+          <a href="../../">master</a>
         </li>
       </ul>
     </li>
@@ -375,7 +383,7 @@
   <a href="../../../docs/" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="../">Installation Guide</a></li>
+    <li><a href="../../">Installation Guide</a></li>
     <li><a href="../Part_Install_Advanced/">Advanced Installation Options</a></li>
     <li><a href="./">Installing into a Disk Image</a></li>
   </ul>
@@ -420,7 +428,7 @@
 <p>Creating custom images using <strong class="application">livemedia-creator</strong> is currently supported only on AMD64 and Intel&#160;64 (x86_64) and IBM POWER (big endian) systems.</p>
 </div>
 <div class="paragraph">
-<p>Additionally, CentOS only supports creating custom images of CentOS&#160;7.8.2003.</p>
+<p>Additionally, CentOS only supports creating custom images of CentOS&#160;7.</p>
 </div>
 </td>
 </tr>
@@ -433,7 +441,7 @@
 <p>Automated disk image installations using <strong class="application">livemedia-creator</strong> are somewhat similar to Kickstart installations with network boot. To use this approach, you must prepare a valid Kickstart file, which will be used by <strong class="application">livemedia-creator</strong> to perform the installation. The disk image file will be created automatically.</p>
 </div>
 <div class="paragraph">
-<p>Both approaches to disk image installations require a separate installation source. In most cases, the best approach is to use an ISO image of the binary CentOS DVD. See <a href="../downloading/#chap-download" class="page">Downloading CentOS</a> for information about obtaining installation ISO images.</p>
+<p>Both approaches to disk image installations require a separate installation source. In most cases, the best approach is to use an ISO image of the binary CentOS DVD. See <a href="../downloading/#chap-download" class="xref page">Downloading CentOS</a> for information about obtaining installation ISO images.</p>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -443,7 +451,7 @@
 </td>
 <td class="content">
 <div class="paragraph">
-<p>It is not currently possible to use an installation ISO image of CentOS without any additional preparation. The installation source for a disk image installation must be prepared the same way it would be prepared when performing a normal installation. See <a href="../Preparing_Install_Sources/#sect-making-media-additional-sources" class="page">Preparing Installation Sources</a> for information about preparing installation sources.</p>
+<p>It is not currently possible to use an installation ISO image of CentOS without any additional preparation. The installation source for a disk image installation must be prepared the same way it would be prepared when performing a normal installation. See <a href="../Preparing_Install_Sources/#sect-making-media-additional-sources" class="xref page">Preparing Installation Sources</a> for information about preparing installation sources.</p>
 </div>
 </td>
 </tr>
@@ -512,10 +520,10 @@
 <div class="ulist">
 <ul>
 <li>
-<p><a href="../CustomSpoke-x86/#sect-recommended-partitioning-scheme-x86" class="page">Recommended Partitioning Scheme (x86)</a> for 64-bit AMD, Intel, and ARM systems</p>
+<p><a href="../CustomSpoke-x86/#sect-recommended-partitioning-scheme-x86" class="xref page">Recommended Partitioning Scheme (x86)</a> for 64-bit AMD, Intel, and ARM systems</p>
 </li>
 <li>
-<p><a href="../CustomSpoke-ppc64/#sect-recommended-partitioning-scheme-ppc" class="page">Recommended Partitioning Scheme (ppc)</a> for IBM Power Systems servers</p>
+<p><a href="../CustomSpoke-ppc64/#sect-recommended-partitioning-scheme-ppc" class="xref page">Recommended Partitioning Scheme (ppc)</a> for IBM Power Systems servers</p>
 </li>
 </ul>
 </div>
@@ -554,7 +562,7 @@
 <p>After executing this command, <strong class="application">Anaconda</strong> will start on your system. The installation interface will be the same as if you performed the installation normally (booting the system from CentOS media), but the graphical installation will start directly, skipping the boot menu. This means that boot options must be specified as additional arguments to the <code class="command">anaconda</code> command. You can view the full list of supported commands by executing <code class="command">anaconda -h</code> on a command line.</p>
 </div>
 <div class="paragraph">
-<p>One of the most important options is <code class="option">--repo=</code>, which allows you to specify an installation source. This option uses the same syntax as the <code class="option">inst.repo=</code> boot option. See <a href="../adminoptions/#sect-boot-options-installer" class="page">Configuring the Installation System at the Boot Menu</a> for more information.</p>
+<p>One of the most important options is <code class="option">--repo=</code>, which allows you to specify an installation source. This option uses the same syntax as the <code class="option">inst.repo=</code> boot option. See <a href="../adminoptions/#sect-boot-options-installer" class="xref page">Configuring the Installation System at the Boot Menu</a> for more information.</p>
 </div>
 <div class="paragraph">
 <p>When you use the <code class="option">--image=</code> option, <em>only</em> the disk image file specified will be available as the installation target. No other devices will be visible in the <code>Installation Destination</code> dialog. If you want to use multiple disk images, you must specify the <code class="option">--image=</code> option separately for each image file separately. For example:</p>
@@ -582,7 +590,7 @@
 <h2 id="sect-disk-image-installation-automatic"><a class="anchor" href="#sect-disk-image-installation-automatic"></a>Automatic Disk Image Installation</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Creation of disk images and the installation into them can be automated using <strong class="application">livemedia-creator</strong>. To perform an automatic installation, you will need an installed CentOS system and a Kickstart file. The disk images themselves do not need to be created manually. For information about creating and using Kickstart files, see <a href="../Kickstart2/#chap-kickstart-installations" class="page">Kickstart Installations</a>.</p>
+<p>Creation of disk images and the installation into them can be automated using <strong class="application">livemedia-creator</strong>. To perform an automatic installation, you will need an installed CentOS system and a Kickstart file. The disk images themselves do not need to be created manually. For information about creating and using Kickstart files, see <a href="../Kickstart2/#chap-kickstart-installations" class="xref page">Kickstart Installations</a>.</p>
 </div>
 <div class="sect2">
 <h3 id="sect-livemedia-creator-overview"><a class="anchor" href="#sect-livemedia-creator-overview"></a>Overview of livemedia-creator</h3>
@@ -645,7 +653,7 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>Both sample configurations need to be modified to use a valid location as the installation source. To do this edit the file and update the url command to refer to a valid installation source. See <a href="../Kickstart2/#chap-kickstart-installations" class="page">Kickstart Installations</a> for more information about Kickstart. No other changes are necessary for these samples to work.</p>
+<p>Both sample configurations need to be modified to use a valid location as the installation source. To do this edit the file and update the url command to refer to a valid installation source. See <a href="../Kickstart2/#chap-kickstart-installations" class="xref page">Kickstart Installations</a> for more information about Kickstart. No other changes are necessary for these samples to work.</p>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -729,7 +737,7 @@
 <div class="sect3">
 <h4 id="sect-livemedia-usage-virt"><a class="anchor" href="#sect-livemedia-usage-virt"></a>Creating a Live Image Using virt-install</h4>
 <div class="paragraph">
-<p>Perhaps the most common use of <strong class="application">livemedia-creator</strong> involves using <strong class="package">virt-install</strong> to create a temporary virtual machine to be used for the live image creation process. To create a live ISO using virt-install, you will need a valid Kickstart file and a bootable ISO image which contains the <strong class="application">Anaconda</strong> installation program. Such images are provided by Red&#160;Hat as "minimal boot media"; see <a href="../Making_Media_USB/#sect-making-usb-media" class="page">Making Installation USB Media</a> for details.</p>
+<p>Perhaps the most common use of <strong class="application">livemedia-creator</strong> involves using <strong class="package">virt-install</strong> to create a temporary virtual machine to be used for the live image creation process. To create a live ISO using virt-install, you will need a valid Kickstart file and a bootable ISO image which contains the <strong class="application">Anaconda</strong> installation program. Such images are provided by Red&#160;Hat as "minimal boot media"; see <a href="../Making_Media_USB/#sect-making-usb-media" class="xref page">Making Installation USB Media</a> for details.</p>
 </div>
 <div class="paragraph">
 <p>The following command is the bare minimum you need to create a live image using <strong class="application">virt-install</strong>:</p>
@@ -748,7 +756,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p><code class="option">--vnc vnc</code>: this option allows you to watch the installation process using a VNC client such as <strong class="application">TigerVNC</strong>. The option is passed to virt-install&#8217;s <code class="option">--graphics</code> option. See <a href="../vnc-installations/#chap-vnc-installations" class="page">Using VNC</a> for more information.</p>
+<p><code class="option">--vnc vnc</code>: this option allows you to watch the installation process using a VNC client such as <strong class="application">TigerVNC</strong>. The option is passed to virt-install&#8217;s <code class="option">--graphics</code> option. See <a href="../vnc-installations/#chap-vnc-installations" class="xref page">Using VNC</a> for more information.</p>
 </li>
 <li>
 <p><code class="option">--ram <em>x</em></code>: allows you to specify the amount of RAM for the temporary virtual machine in MiB.</p>
@@ -952,7 +960,7 @@
 <p>Another way to find and solve problems is using the <code class="option">--image-only</code> option when running the utility. This option will stop the program after the first stage, so only a disk image file will be generated instead of the final bootable ISO. You can then mount the disk image file and examine its contents without having to wait for the second stage to finish. Alternatively, you can use the <code class="option">--keep-image</code> option, which will execute both stages, but keep the temporary disk image for later analysis.</p>
 </div>
 <div class="paragraph">
-<p>Using the <code class="option">--vnc</code> option is recommended when testing changes to the Kickstart file. This option will allow you to use a VNC client to connect to the virtual machine and watch the installation progress. See <a href="../vnc-installations/#chap-vnc-installations" class="page">Using VNC</a> for details.</p>
+<p>Using the <code class="option">--vnc</code> option is recommended when testing changes to the Kickstart file. This option will allow you to use a VNC client to connect to the virtual machine and watch the installation progress. See <a href="../vnc-installations/#chap-vnc-installations" class="xref page">Using VNC</a> for details.</p>
 </div>
 <div class="sect3">
 <h4 id="sect-livemedia-trouble-hang"><a class="anchor" href="#sect-livemedia-trouble-hang"></a>Stuck Virtual Machine Installation</h4>

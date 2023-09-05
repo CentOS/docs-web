@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Preparing Installation Sources :: CentOS Docs Site</title>
     <link rel="canonical" href="https://docs.centos.org/centos/install-guide/Preparing_Install_Sources/">
-    <meta name="generator" content="Antora 2.0.0">
+    <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
   </head>
   <body class="article">
@@ -31,7 +31,7 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="../">Installation Guide</a></h3>
+    <h3 class="title"><a href="../../">Installation Guide</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
@@ -82,7 +82,7 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../Part_Install_x86/">Installing on x86_64 and ARM 64</a>
+    <a class="nav-link" href="#Part_Install_x86.adoc.adoc">Installing on x86_64 and ARM 64</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../Simple_Installation/">Quick Installation Guide</a>
@@ -343,7 +343,7 @@
     <li class="component">
       <span class="title">CentOS 8 Documentation</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../8-docs/">master</a>
         </li>
       </ul>
@@ -351,16 +351,24 @@
     <li class="component">
       <span class="title">CentOS Documentation</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../docs/">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Contributor's Guide</span>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../../stream-contrib/">default</a>
         </li>
       </ul>
     </li>
     <li class="component is-current">
       <span class="title">Installation Guide</span>
       <ul class="versions">
-        <li class="version is-current is-latest">
-          <a href="../">master</a>
+        <li class="version is-current">
+          <a href="../../">master</a>
         </li>
       </ul>
     </li>
@@ -375,7 +383,7 @@
   <a href="../../../docs/" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="../">Installation Guide</a></li>
+    <li><a href="../../">Installation Guide</a></li>
     <li><a href="../Making_Media/">Preparing Installation Media</a></li>
     <li><a href="./">Preparing Installation Sources</a></li>
   </ul>
@@ -385,7 +393,7 @@
 <article class="doc">
 <h1 class="page">Preparing Installation Sources</h1>
 <div class="paragraph">
-<p>As explained in <a href="../downloading/#chap-download" class="page">Downloading CentOS</a>, two basic types of media are available for CentOS: a minimal boot image and a full installation image (also known as a binary DVD). If you downloaded the binary DVD and created a boot DVD-ROM or USB drive from it, you can proceed with the installation immediately, as this image contains everything you need to install the system.</p>
+<p>As explained in <a href="../downloading/#chap-download" class="xref page">Downloading CentOS</a>, two basic types of media are available for CentOS: a minimal boot image and a full installation image (also known as a binary DVD). If you downloaded the binary DVD and created a boot DVD-ROM or USB drive from it, you can proceed with the installation immediately, as this image contains everything you need to install the system.</p>
 </div>
 <div class="paragraph">
 <p>However, if you use the minimal boot image, you must also configure an additional source of the installation. This is because the minimal boot image only contains the installation program itself and tools needed to boot your system and start the installation; it does not include the software packages to be installed on your system.</p>
@@ -432,19 +440,19 @@
 <div class="ulist">
 <ul>
 <li>
-<p><a href="../SourceSpoke-x86/#sect-installation-source-x86" class="page">Installation Source (x86)</a> for 64-bit AMD, Intel, and ARM systems</p>
+<p><a href="../SourceSpoke-x86/#sect-installation-source-x86" class="xref page">Installation Source (x86)</a> for 64-bit AMD, Intel, and ARM systems</p>
 </li>
 <li>
-<p><a href="../SourceSpoke-ppc64/#sect-installation-source-ppc" class="page">Installation Source (ppc)</a> for IBM Power&#160;Systems servers</p>
+<p><a href="../SourceSpoke-ppc64/#sect-installation-source-ppc" class="xref page">Installation Source (ppc)</a> for IBM Power&#160;Systems servers</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>Using a boot option: You can specify custom boot options to configure the installation program before it starts. One of these options allows you to specify the installation source to be used. See the <code class="option">inst.repo=</code> option in <a href="../adminoptions/#sect-boot-options-installer" class="page">Configuring the Installation System at the Boot Menu</a> for details.</p>
+<p>Using a boot option: You can specify custom boot options to configure the installation program before it starts. One of these options allows you to specify the installation source to be used. See the <code class="option">inst.repo=</code> option in <a href="../adminoptions/#sect-boot-options-installer" class="xref page">Configuring the Installation System at the Boot Menu</a> for details.</p>
 </li>
 <li>
-<p>Using a Kickstart file: You can use the <code class="command">install</code> command in a Kickstart file and specify an installation source. See <a href="../Kickstart2/#sect-kickstart-commands" class="page">Kickstart Commands and Options</a> for details on the <code class="command">install</code> Kickstart command, and <a href="../Kickstart2/#chap-kickstart-installations" class="page">Kickstart Installations</a> for information about Kickstart installations in general.</p>
+<p>Using a Kickstart file: You can use the <code class="command">install</code> command in a Kickstart file and specify an installation source. See <a href="../Kickstart2/#sect-kickstart-commands" class="xref page">Kickstart Commands and Options</a> for details on the <code class="command">install</code> Kickstart command, and <a href="../Kickstart2/#chap-kickstart-installations" class="xref page">Kickstart Installations</a> for information about Kickstart installations in general.</p>
 </li>
 </ul>
 </div>

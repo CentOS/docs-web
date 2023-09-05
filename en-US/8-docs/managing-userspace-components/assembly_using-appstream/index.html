@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Using AppStream :: CentOS Docs Site</title>
     <link rel="canonical" href="https://docs.centos.org/8-docs/managing-userspace-components/assembly_using-appstream/">
-    <meta name="generator" content="Antora 2.0.0">
+    <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
   </head>
   <body class="article">
@@ -1179,7 +1179,7 @@
     <li class="component is-current">
       <span class="title">CentOS 8 Documentation</span>
       <ul class="versions">
-        <li class="version is-current is-latest">
+        <li class="version is-current">
           <a href="../../">master</a>
         </li>
       </ul>
@@ -1187,16 +1187,24 @@
     <li class="component">
       <span class="title">CentOS Documentation</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../docs/">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Contributor's Guide</span>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../../stream-contrib/">default</a>
         </li>
       </ul>
     </li>
     <li class="component">
       <span class="title">Installation Guide</span>
       <ul class="versions">
-        <li class="version is-latest">
-          <a href="../../../centos/install-guide/">master</a>
+        <li class="version">
+          <a href="../../../centos/">master</a>
         </li>
       </ul>
     </li>
@@ -1268,7 +1276,7 @@
 <i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
-Both BaseOS and AppStream content sets are required for a basic installation. For installation instructions, see the <a href="../../standard-install/" class="page">Performing a standard installation</a> <a href="../../advanced-install/" class="page">Performing an advanced installation</a> documents.
+Both BaseOS and AppStream content sets are required for a basic installation. For installation instructions, see the <a href="../../standard-install/" class="xref page">Performing a standard installation</a> <a href="../../advanced-install/" class="xref page">Performing an advanced installation</a> documents.
 </td>
 </tr>
 </table>
@@ -1299,7 +1307,7 @@ Not all modules are Application Streams. Dependencies of other modules are not c
 </div>
 </div>
 <div class="sect1">
-<h2 id="packaging-methods-in-rhel-8_using-appstream"><a class="anchor" href="#packaging-methods-in-rhel-8_using-appstream"></a>Packaging methods in CentOS 8.0.1905</h2>
+<h2 id="packaging-methods-in-rhel-8_using-appstream"><a class="anchor" href="#packaging-methods-in-rhel-8_using-appstream"></a>Packaging methods in CentOS 8</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The AppStream repository contains content packaged in two ways:</p>
@@ -1319,7 +1327,7 @@ Not all modules are Application Streams. Dependencies of other modules are not c
 </div>
 </div>
 <div class="sect1">
-<h2 id="package-management-using-yum-in-rhel-8_using-appstream"><a class="anchor" href="#package-management-using-yum-in-rhel-8_using-appstream"></a>Package management using YUM in CentOS 8.0.1905</h2>
+<h2 id="package-management-using-yum-in-rhel-8_using-appstream"><a class="anchor" href="#package-management-using-yum-in-rhel-8_using-appstream"></a>Package management using YUM in CentOS 8</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The <strong class="application">YUM</strong> package management tool is now based on the DNF technology and it adds support for the new modular features.</p>
@@ -1328,7 +1336,7 @@ Not all modules are Application Streams. Dependencies of other modules are not c
 <p>Usage of <strong class="application">YUM</strong> has not been changed when handling individual RPM packages. For handling the modular content, the <code class="command">yum module</code> command has been added.</p>
 </div>
 <div class="paragraph">
-<p>See <a href="../assembly_installing-rhel-8-content/" class="page">Installing CentOS Content</a> for additional details.</p>
+<p>See <a href="../assembly_installing-rhel-8-content/" class="xref page">Installing CentOS Content</a> for additional details.</p>
 </div>
 <div class="paragraph">
 <p>Where required, the modular functionality automatically selects the appropriate combination of modules and streams to enable installation of logical sets of packages for convenient usage.</p>

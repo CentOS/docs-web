@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Planning for Installation on IBM Power&#160;Systems :: CentOS Docs Site</title>
     <link rel="canonical" href="https://docs.centos.org/centos/install-guide/Steps-ppc/">
-    <meta name="generator" content="Antora 2.0.0">
+    <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../../../_/css/site.css">
   </head>
   <body class="article">
@@ -31,7 +31,7 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="../">Installation Guide</a></h3>
+    <h3 class="title"><a href="../../">Installation Guide</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
@@ -82,7 +82,7 @@
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../Part_Install_x86/">Installing on x86_64 and ARM 64</a>
+    <a class="nav-link" href="#Part_Install_x86.adoc.adoc">Installing on x86_64 and ARM 64</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="../Simple_Installation/">Quick Installation Guide</a>
@@ -343,7 +343,7 @@
     <li class="component">
       <span class="title">CentOS 8 Documentation</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../8-docs/">master</a>
         </li>
       </ul>
@@ -351,16 +351,24 @@
     <li class="component">
       <span class="title">CentOS Documentation</span>
       <ul class="versions">
-        <li class="version is-latest">
+        <li class="version">
           <a href="../../../docs/">master</a>
+        </li>
+      </ul>
+    </li>
+    <li class="component">
+      <span class="title">Contributor's Guide</span>
+      <ul class="versions">
+        <li class="version">
+          <a href="../../../stream-contrib/">default</a>
         </li>
       </ul>
     </li>
     <li class="component is-current">
       <span class="title">Installation Guide</span>
       <ul class="versions">
-        <li class="version is-current is-latest">
-          <a href="../">master</a>
+        <li class="version is-current">
+          <a href="../../">master</a>
         </li>
       </ul>
     </li>
@@ -375,7 +383,7 @@
   <a href="../../../docs/" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="../">Installation Guide</a></li>
+    <li><a href="../../">Installation Guide</a></li>
     <li><a href="../Part_Install_ppc/">Installing on IBM Power Systems</a></li>
     <li><a href="./">Planning for Installation</a></li>
   </ul>
@@ -585,7 +593,7 @@
 <li>
 <p>Information about the partitions used on the system. This information can include file system types, device node names, file system labels, and sizes. This will allow you to identify specific partitions during the partitioning process. Remember that different operating systems identify partitions and drives differently, therefore even if the other operating system is a Unix operating system, the device names can be reported by CentOS differently. This information can usually be found by executing the equivalent of the <code class="command">mount</code> command and <code class="command">blkid</code> command and in the <code>/etc/fstab</code> file.</p>
 <div class="paragraph">
-<p>If you have other operating systems already installed, the CentOS&#160;7.8.2003 installation program attempts to automatically detect and configure to boot them. You can manually configure any additional operating systems if they are not detected properly. For more information, see <a href="../StorageSpoke-ppc64/#sect-bootloader-ppc" class="page">Boot Loader Installation (ppc)</a>.</p>
+<p>If you have other operating systems already installed, the CentOS&#160;7 installation program attempts to automatically detect and configure to boot them. You can manually configure any additional operating systems if they are not detected properly. For more information, see <a href="../StorageSpoke-ppc64/#sect-bootloader-ppc" class="xref page">Boot Loader Installation (ppc)</a>.</p>
 </div>
 </li>
 </ul>
@@ -657,7 +665,7 @@
 <h2 id="sect-installation-planning-disk-space-memory-ppc"><a class="anchor" href="#sect-installation-planning-disk-space-memory-ppc"></a>Disk Space and Memory Requirements</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>CentOS, like most current operating systems, uses <em>disk partitions</em>. When you install CentOS, you have to work with disk partitions. For more information about disk partitions, see <a href="../Partitions-x86/#appe-disk-partitions-overview" class="page">An Introduction to Disk Partitions</a>.</p>
+<p>CentOS, like most current operating systems, uses <em>disk partitions</em>. When you install CentOS, you have to work with disk partitions. For more information about disk partitions, see <a href="../Partitions-x86/#appe-disk-partitions-overview" class="xref page">An Introduction to Disk Partitions</a>.</p>
 </div>
 <div class="paragraph">
 <p>The disk space used by CentOS must be separate from the disk space used by other operating systems you might have installed on your system.</p>
@@ -677,7 +685,7 @@
 </table>
 </div>
 <div class="paragraph">
-<p>To install CentOS you must have a minimum of 10 GB of space in either unpartitioned disk space or in partitions which can be deleted. For more information on partition and disk space recommendations, see the recommended partitioning sizes discussed in <a href="../CustomSpoke-ppc64/#sect-recommended-partitioning-scheme-ppc" class="page">Recommended Partitioning Scheme (ppc)</a>.</p>
+<p>To install CentOS you must have a minimum of 10 GB of space in either unpartitioned disk space or in partitions which can be deleted. For more information on partition and disk space recommendations, see the recommended partitioning sizes discussed in <a href="../CustomSpoke-ppc64/#sect-recommended-partitioning-scheme-ppc" class="xref page">Recommended Partitioning Scheme (ppc)</a>.</p>
 </div>
 <div class="paragraph">
 <p>CentOS requires minimum the following amount of RAM:</p>
@@ -728,7 +736,7 @@
 <div class="sect2">
 <h3 id="sect-installation-planning-software-raid-ppc"><a class="anchor" href="#sect-installation-planning-software-raid-ppc"></a>Software RAID</h3>
 <div class="paragraph">
-<p>On systems with more than one hard drive, you can use the CentOS installation program to operate several of the drives as a Linux software RAID array. With a software RAID array, RAID functions are controlled by the operating system rather than dedicated hardware. These functions are explained in detail in <a href="../CustomSpoke-ppc64/#sect-custom-partitioning-ppc" class="page">Manual Partitioning (ppc)</a>.</p>
+<p>On systems with more than one hard drive, you can use the CentOS installation program to operate several of the drives as a Linux software RAID array. With a software RAID array, RAID functions are controlled by the operating system rather than dedicated hardware. These functions are explained in detail in <a href="../CustomSpoke-ppc64/#sect-custom-partitioning-ppc" class="xref page">Manual Partitioning (ppc)</a>.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -760,7 +768,7 @@
 <h2 id="sect-installation-planning-boot-method-ppc"><a class="anchor" href="#sect-installation-planning-boot-method-ppc"></a>Choose an Installation Boot Method</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>You can use several methods to boot the CentOS&#160;7.8.2003 installation program. The method you choose depends upon your installation media.</p>
+<p>You can use several methods to boot the CentOS&#160;7 installation program. The method you choose depends upon your installation media.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -781,19 +789,19 @@
 <dt class="hdlist1">Full installation DVD or USB drive</dt>
 <dd>
 <div class="paragraph">
-<p>You can create bootable media from the full installation DVD ISO image. In this case, a single DVD or USB drive can be used to complete the entire installation - it will serve both as a boot device and as an installation source for installing software packages. See <a href="../Making_Media/#chap-making-media" class="page">Making Media</a> for instructions on how to make a full installation DVD or USB drive.</p>
+<p>You can create bootable media from the full installation DVD ISO image. In this case, a single DVD or USB drive can be used to complete the entire installation - it will serve both as a boot device and as an installation source for installing software packages. See <a href="../Making_Media/#chap-making-media" class="xref page">Making Media</a> for instructions on how to make a full installation DVD or USB drive.</p>
 </div>
 </dd>
 <dt class="hdlist1">Minimal boot CD, DVD or USB Flash Drive</dt>
 <dd>
 <div class="paragraph">
-<p>A minimal boot CD, DVD or USB flash drive is created using a small ISO image, which only contains data necessary to boot the system and start the installation. If you use this boot media, you will need an additional installation source from which packages will be installed. See <a href="../Making_Media/#chap-making-media" class="page">Making Media</a> for instructions on making boot CDs, DVDs and USB flash drives.</p>
+<p>A minimal boot CD, DVD or USB flash drive is created using a small ISO image, which only contains data necessary to boot the system and start the installation. If you use this boot media, you will need an additional installation source from which packages will be installed. See <a href="../Making_Media/#chap-making-media" class="xref page">Making Media</a> for instructions on making boot CDs, DVDs and USB flash drives.</p>
 </div>
 </dd>
 <dt class="hdlist1">PXE Server</dt>
 <dd>
 <div class="paragraph">
-<p>A <em>preboot execution environment</em> (PXE) server allows the installation program to boot over the network. After you boot the system, you complete the installation from a different installation source, such as a local hard drive or a location on a network. For more information on PXE servers, see <a href="../pxe-server/#chap-installation-server-setup" class="page">Preparing for a Network Installation</a>.</p>
+<p>A <em>preboot execution environment</em> (PXE) server allows the installation program to boot over the network. After you boot the system, you complete the installation from a different installation source, such as a local hard drive or a location on a network. For more information on PXE servers, see <a href="../pxe-server/#chap-installation-server-setup" class="xref page">Preparing for a Network Installation</a>.</p>
 </div>
 </dd>
 </dl>
@@ -804,13 +812,13 @@
 <h2 id="sect-installation-planning-kickstart-ppc"><a class="anchor" href="#sect-installation-planning-kickstart-ppc"></a>Automating the Installation with Kickstart</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>CentOS&#160;7.8.2003 offers a way to partially or fully automate the installation process using a <em>Kickstart file</em>. Kickstart files contain answers to all questions normally asked by the installation program, such as what time zone do you want the system to use, how should the drives be partitioned or which packages should be installed. Providing a prepared Kickstart file at the beginning of the installation therefore allows you to perform the entire installation (or parts of it) automatically, without need for any intervention from the user. This is especially useful when deploying CentOS on a large number of systems at once.</p>
+<p>CentOS&#160;7 offers a way to partially or fully automate the installation process using a <em>Kickstart file</em>. Kickstart files contain answers to all questions normally asked by the installation program, such as what time zone do you want the system to use, how should the drives be partitioned or which packages should be installed. Providing a prepared Kickstart file at the beginning of the installation therefore allows you to perform the entire installation (or parts of it) automatically, without need for any intervention from the user. This is especially useful when deploying CentOS on a large number of systems at once.</p>
 </div>
 <div class="paragraph">
 <p>In addition to allowing you to automate the installation, Kickstart files also provide more options regarding software selection. When installing CentOS manually using the graphical installation interface, your software selection is limited to pre-defined environments and add-ons. A Kickstart file allows you to install or remove individual packages as well.</p>
 </div>
 <div class="paragraph">
-<p>For instructions about creating a Kickstart file and using it to automate the installation, see <a href="../Kickstart2/#chap-kickstart-installations" class="page">Kickstart Installations</a>.</p>
+<p>For instructions about creating a Kickstart file and using it to automate the installation, see <a href="../Kickstart2/#chap-kickstart-installations" class="xref page">Kickstart Installations</a>.</p>
 </div>
 </div>
 </div>
