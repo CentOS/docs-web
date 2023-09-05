@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Contributing to CentOS Stream - Quickstart :: CentOS Docs Site</title>
     <link rel="canonical" href="https://docs.centos.org/stream-contrib/quickstart/">
-    <meta name="generator" content="Antora 3.0.1">
+    <meta name="generator" content="Antora 3.1.4">
     <link rel="stylesheet" href="../../_/css/site.css">
   </head>
   <body class="article">
@@ -162,9 +162,9 @@
 </li>
 <li><a href="#_what_you_do_what_the_rhel_maintainer_takes_care_of">What you do, what the RHEL maintainer takes care of</a>
 <ul class="sectlevel2">
-<li><a href="#_1_file_a_bugzilla">1.) File a bugzilla!</a></li>
+<li><a href="#_1_file_an_issue">1.) File an issue!</a></li>
 <li><a href="#_2_develop_your_patch">2.) Develop your patch</a></li>
-<li><a href="#_3_reference_the_bugzilla_you_filed_in_your_commits">3.) Reference the bugzilla you filed in your commits</a></li>
+<li><a href="#_3_reference_the_issue_you_filed_in_your_commits">3.) Reference the issue you filed in your commits</a></li>
 <li><a href="#_4_open_a_merge_request">4.) Open a Merge Request</a></li>
 <li><a href="#_5_work_with_the_rhel_package_maintainer">5.) Work with the RHEL package maintainer</a></li>
 </ul>
@@ -196,7 +196,7 @@
 <p>CentOS Account System - <a href="https://accounts.centos.org/">Sign Up</a></p>
 </li>
 <li>
-<p>Bugzilla - <a href="https://bugzilla.redhat.com/saml2_login.cgi?idp=Fedora%20Account%20System&amp;target=enter_bug.cgi">Sign In</a> using the link for the Fedora Account System using your CentOS Account (CentOS and Fedora now share an authentication system, so your password works in both places)</p>
+<p>Red Hat Issues - <a href="https://issues.redhat.com/">Sign Up</a></p>
 </li>
 </ul>
 </div>
@@ -223,18 +223,18 @@
 <h2 id="_what_you_do_what_the_rhel_maintainer_takes_care_of"><a class="anchor" href="#_what_you_do_what_the_rhel_maintainer_takes_care_of"></a>What you do, what the RHEL maintainer takes care of</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_1_file_a_bugzilla"><a class="anchor" href="#_1_file_a_bugzilla"></a>1.) File a bugzilla!</h3>
+<h3 id="_1_file_an_issue"><a class="anchor" href="#_1_file_an_issue"></a>1.) File an issue!</h3>
 <div class="paragraph">
-<p>CentOS Stream bugs are filed under the Red Hat Enterprise Linux products in bugzilla, <a href="https://bugzilla.redhat.com/enter_bug.cgi?product=Red%20Hat%20Enterprise%20Linux%209&amp;version=CentOS%20Stream">File a bug against CentOS Stream / RHEL 9</a></p>
+<p>CentOS Stream defects and feature requests are filed under the RHEL project in issues.redhat.com, <a href="https://issues.redhat.com/projects/RHEL">Create an issue against CentOS Stream / RHEL 9</a></p>
 </div>
 <div class="paragraph">
 <p>The <code>Component</code> is the name of the package that you want to patch</p>
 </div>
 <div class="paragraph">
-<p>Describe the change that you’d like to make, be sure to double-check for existing bugs that describe the feature request or issue that you’re seeing</p>
+<p>Describe the change that you’d like to make, be sure to double-check for existing issues that describe the feature request or problem that you’re seeing</p>
 </div>
 <div class="paragraph">
-<p>RHEL developers use bugzillas to coordinate with RHEL QE, schedule work with other maintainers, and track progress against development milestones. RHEL maintainers need to get a bugzilla <code>approved</code> for a release before they can merge your change, but don’t worry, this is something they take care of for you. You just need to file the bug and reference it.</p>
+<p>RHEL developers use issues to coordinate with RHEL QE, schedule work with other maintainers, and track progress against development milestones. RHEL maintainers need to get an issue <code>approved</code> for a release before they can merge your change, but don’t worry, this is something they take care of for you. You just need to file the issue and reference it.</p>
 </div>
 </div>
 <div class="sect2">
@@ -250,22 +250,19 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="_3_reference_the_bugzilla_you_filed_in_your_commits"><a class="anchor" href="#_3_reference_the_bugzilla_you_filed_in_your_commits"></a>3.) Reference the bugzilla you filed in your commits</h3>
+<h3 id="_3_reference_the_issue_you_filed_in_your_commits"><a class="anchor" href="#_3_reference_the_issue_you_filed_in_your_commits"></a>3.) Reference the issue you filed in your commits</h3>
 <div class="paragraph">
 <p>Examples:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><code>git commit --signoff -m 'This is my awesome patch, Related: rhbz#123456</code></p>
-</li>
-<li>
-<p><code>git commit --signoff -m 'This is another patch to the same bug, Fixes: #123456 (The checkers let me leave off the rhbz prefix)'</code></p>
+<p><code>git commit --signoff -m 'RHEL-1234 This is my awesome patch</code></p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Every commit made during your contribution MUST come with a Bugzilla referenced in the commit message.</p>
+<p>Every commit made during your contribution MUST come with an issue referenced in the commit message.</p>
 </div>
 <div class="paragraph">
 <p>Once the commits are how you like them, push to your fork in Gitlab.</p>
@@ -354,7 +351,7 @@
 <div class="sect2">
 <h3 id="_pungi_and_the_compose_configs"><a class="anchor" href="#_pungi_and_the_compose_configs"></a>Pungi and the Compose Configs</h3>
 <div class="paragraph">
-<p>If you want to make changes to the overall distribution itself, or the artifacts produced by composes, or you’ll want to refer to the <code>Distribution</code> component in Bugzilla. Please file an appropriate bugzilla describing the change you’d like to make.</p>
+<p>If you want to make changes to the overall distribution itself, or the artifacts produced by composes, you’ll want to refer to the <code>Distribution</code> component in the RHEL project. Please file an appropriate issue describing the change you’d like to make.</p>
 </div>
 <div class="paragraph">
 <p>If you’re familiar with Pungi, you’ll recognize the configs in <a href="https://gitlab.com/redhat/centos-stream/release-engineering/pungi-centos" class="bare">https://gitlab.com/redhat/centos-stream/release-engineering/pungi-centos</a></p>
@@ -366,7 +363,7 @@
 <div class="sect2">
 <h3 id="_the_comps"><a class="anchor" href="#_the_comps"></a>The Comps</h3>
 <div class="paragraph">
-<p>Comps control package groups, and repository split configurations. Changes here most likely require a <code>Distribution</code> component bug in bugzilla.</p>
+<p>Comps control package groups, and repository split configurations. Changes here most likely require a <code>Distribution</code> component issue in the RHEL project.</p>
 </div>
 <div class="paragraph">
 <p><a href="https://gitlab.com/redhat/centos-stream/release-engineering/comps" class="bare">https://gitlab.com/redhat/centos-stream/release-engineering/comps</a></p>
